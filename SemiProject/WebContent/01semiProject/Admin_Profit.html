@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>정산 관리(관리자)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+
+    <style>
+
+        body{
+            margin: 20px;
+        }
+
+        .admin{
+            color: dimgray;
+            margin-top: 20px;
+            text-align: left;
+            font-style: italic;
+        }
+
+        .container{
+            width: 1300px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+        }
+
+        .item{
+            text-align: center;
+        }
+
+        #sidebar{
+            background-color: dimgray;
+            color: white;
+            padding-right: 10px;
+        }
+
+        #main{
+            margin-left: 60px;
+        }
+
+        ul{
+            margin-top: 20px;
+            list-style: none;
+            font-size: large;
+        }
+
+        li{
+            padding: 10px;
+            margin: 30px 0;
+        }
+
+        li:hover{
+            font-style: italic;
+            text-decoration-line: underline;
+        }
+
+        a{
+            text-decoration-line: none;
+            color: white;
+        }
+
+        table, th, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th{
+            background-color: lightgray;
+            color: dimgray;
+        }
+
+        th, td{
+            padding: 10px;
+            width: 250px;
+        }
+
+        .menu{
+            text-align: left;
+            font-style: italic;
+            margin: 20px 10px 10px 10px;
+            font-weight: bold;
+        }
+
+        div#top{
+            text-align: center;
+            font-size: large;
+            color: dimgray;
+            margin: 20px 10px;
+        }
+
+        td.confirm{
+            margin-top: 10px;
+            text-align: right;
+            border-left: hidden;
+            border-right: hidden;
+            border-bottom: hidden;
+        }
+
+        span{
+            padding-right: 30px;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        td.number{
+            text-align: right;
+        }
+
+        .search{
+            text-align: center;
+            margin: 20px 0px;
+        }
+
+        #search{
+            margin: 0px 10px;
+        }
+
+        div#sum{
+            margin: 20px;
+        }
+
+        span#sumNumber{
+            padding-left: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header></header>
+
+<div class="admin">HABIBI 관리자 페이지</div>
+
+<div class = "container">
+
+    <ul class="item" id="sidebar">
+        <li><a href="/habibi/adminProduct.html">상품관리</a></li>
+        <li><a href="/habibi/adminOrder.html">주문관리</a></li>
+        <li><a href="/habibi/adminMember.html">회원관리</a></li>
+        <li><a href="/habibi/adminProfit.html">정산관리</a></li>
+        <li><a href="/habibi/adminReview.html">문의/리뷰</a></li>
+    </ul>
+
+    <div class="item" id="main">
+
+        <div id="top">정산관리</div>
+        <table>
+
+            <tr>
+                <td>이번달 매출</td>
+                <td class="number"><span>5,234,000</span>원</td>
+                <td>이번 달 비용</td>
+                <td class="number"><span>1,923,000</span>원</td>
+                <td>순이익</td>
+                <td class="number"><span>3,565,234</span>원</td>
+            </tr>
+
+        </table>
+
+
+        <div class="menu">결제내역 검색</div>
+        <div class="search">
+            <input id="search" type="button" value="이번 달 결제내역">
+            <input id="searchAll" type="button" value="전체 결제내역">
+        </div>
+
+        <div class="info"></div>
+
+        <!-- 리뷰도 따라 조회가능하게 할 것인지...! -->
+
+    </div>
+</div>
+
+<template>
+    <table>
+
+        <th>상품명</th>
+        <th>구매자명</th>
+        <th>구매일자</th>
+        <th>정산(예정)일자</th>
+        <th>결제금액</th>
+        <th>결제수수료</th>
+        <th>정산구분</th>
+        <th>정산료</th>
+
+        <!-- 반복문으로 이루어질 부분 -->
+        <tr>
+            <td>쇼파</td>
+            <td>이호연</td>
+            <td>2019-06-24</td>
+            <td>2019-07-23</td>
+            <td>300,000</td>
+            <td>5,000</td>
+            <td>정산 예정</td>
+            <td>295,000</td>
+        </tr>
+        <tr>
+            <td>의자</td>
+            <td>김민재</td>
+            <td>2019-08-19</td>
+            <td>2019-09-06</td>
+            <td>54,000</td>
+            <td>5,000</td>
+            <td>정산</td>
+            <td>49,000</td>
+        </tr>
+
+    </table>
+
+    <div id="sum" class="number">총 정산 금액<span id="sumNumber">5,534,000</span>원</div>
+</template>
+
+</body>
+
+<script>
+
+    window.addEventListener('load', function () {
+
+
+        var search = document.querySelector("#search");
+        search.onclick = function () {
+
+            var template = document.querySelector("template");
+            var infoNode = document.importNode(template.content, true);
+            var info = document.querySelector(".info");
+
+            info.innerHTML = "";
+            info.append(infoNode);
+        }
+
+        var searchAll = document.querySelector("#searchAll");
+        searchAll.onclick = function () {
+
+            var template = document.querySelector("template");
+            var infoNode = document.importNode(template.content, true);
+            var info = document.querySelector(".info");
+
+            info.innerHTML = "";
+            info.append(infoNode);
+        }
+
+
+    });
+
+
+</script>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>주문목록(관리자)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+
+    <style>
+
+        body{
+            margin: 20px;
+        }
+
+        .admin{
+            color: dimgray;
+            margin-top: 20px;
+            text-align: left;
+            font-style: italic;
+        }
+
+        .container{
+            width: 1300px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+        }
+
+        .item{
+            text-align: center;
+        }
+
+        #sidebar{
+            background-color: dimgray;
+            color: white;
+            padding-right: 10px;
+        }
+
+        #main{
+            margin-left: 60px;
+        }
+
+        ul{
+            margin-top: 20px;
+            list-style: none;
+            font-size: large;
+        }
+
+        li{
+            padding: 10px;
+            margin: 30px 0;
+        }
+
+        li:hover{
+            font-style: italic;
+            text-decoration-line: underline;
+        }
+
+        a{
+            text-decoration-line: none;
+            color: white;
+        }
+
+        table, th, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th{
+            background-color: lightgray;
+            color: dimgray;
+        }
+
+        th, td{
+            padding: 10px;
+            width: 250px;
+        }
+
+        td.order{
+            text-decoration-line: underline;
+        }
+
+        td.order:hover{
+            cursor: pointer;
+        }
+
+        .menu{
+            text-align: left;
+            font-style: italic;
+            margin: 20px 10px 10px 10px;
+            font-weight: bold;
+        }
+
+        div#top{
+            text-align: center;
+            font-size: large;
+            color: dimgray;
+            margin: 20px 10px;
+        }
+
+        td.confirm{
+            margin-top: 10px;
+            text-align: right;
+            border-left: hidden;
+            border-right: hidden;
+            border-bottom: hidden;
+        }
+
+        span{
+            padding-right: 30px;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        td.number{
+            text-align: right;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header></header>
+
+<div class="admin">HABIBI 관리자 페이지</div>
+
+<div class = "container">
+
+    <ul class="item" id="sidebar">
+        <li><a href="">상품관리</a></li>
+        <li><a href="">주문관리</a></li>
+        <li><a href="">회원관리</a></li>
+        <li><a href="">정산관리</a></li>
+        <li><a href="">문의/리뷰</a></li>
+    </ul>
+
+    <div class="item" id="main">
+
+        <div id="top">주문관리</div>
+        <table>
+
+            <tr>
+                <td>신규주문</td>
+                <td class="number"><span>2</span>건</td>
+                <td>취소요청</td>
+                <td class="number"><span>1</span>건</td>
+                <td>반품/환불요청</td>
+                <td class="number"><span>1</span>건</td>
+            </tr>
+
+        </table>
+
+
+        <div class="menu">주문현황</div>
+        <table>
+
+            <th>발주</th>
+            <th>주문번호</th>
+            <th>상품번호</th>
+            <th>배송상태</th>
+
+            <!-- 반복문으로 이루어질 부분 -->
+            <tr>
+                <td><input type="checkbox"></td>
+                <td class="order">1239942-7374</td>
+                <td>basic-9867</td>
+                <td>상품준비중</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td class="order">1233382-2345</td>
+                <td>basic-2345</td>
+                <td>배송완료</td>
+            </tr>
+            <tr>
+                <td class="confirm" colspan="4"><input type="submit" value="발주"></td>
+            </tr>
+
+        </table>
+
+
+        <div class="menu">취소요청</div>
+        <table>
+
+            <th>발주</th>
+            <th>주문번호</th>
+            <th>상품번호</th>
+            <th>배송상태</th>
+
+            <!-- 반복문으로 이루어질 부분 -->
+            <tr>
+                <td><input type="checkbox"></td>
+                <td class="order">1239942-7374</td>
+                <td>basic-9867</td>
+                <td>상품준비중</td>
+            </tr>
+            <tr>
+                <td class="confirm" colspan="4"><input type="submit" value="승인"></td>
+            </tr>
+
+        </table>
+
+        <div class="menu">반품/환불요청</div>
+        <table>
+
+            <th>발주</th>
+            <th>주문번호</th>
+            <th>상품번호</th>
+            <th>배송상태</th>
+
+            <!-- 반복문으로 이루어질 부분 -->
+            <tr>
+                <td><input type="checkbox"></td>
+                <td class="order">1233382-2345</td>
+                <td>basic-2345</td>
+                <td>배송완료</td>
+            </tr>
+            <tr>
+                <td class="confirm" colspan="4"><input type="submit" value="승인"></td>
+            </tr>
+
+        </table>
+
+
+
+
+
+    </div>
+
+</div>
+
+</body>
+
+<script>
+
+    window.onload = function () {
+
+        var infoArr = document.getElementsByClassName("order");
+
+        // 주문정보조회 팝업창
+        for(var i=0; i<infoArr.length; i++){
+            infoArr[i].addEventListener('click', function () {
+
+                window.open('/habibi/adminOrderInfo.html','주문정보조회','width=750, height=700, scrollbars= 1, toolbar=1');
+
+            });
+        }
+
+
+    };
+
+
+</script>
+</html>

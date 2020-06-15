@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 수정</title>
+<link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+
+<style type="text/css">
+
+body{
+   margin: 0 auto;
+   width: 80%;
+   height: 70%;
+   padding-top: 30px;
+   border: solid 2px black;
+}
+
+div#my_info{
+   width: 90%;
+   margin: 0 auto;
+}
+
+div{
+   font-family: "돋움","맑은 고딕";
+   font-size: 11px;
+}
+
+th{
+   text-align: left;
+   width:200px;
+   height: 50px;
+   color: #555;
+}
+
+li#address>input{
+   display: block;
+}
+
+div#inform{
+   border: solid 1px gray;
+   margin-top: 0;
+}
+
+div#btn{
+   text-align: center;
+}
+
+div#title{
+   text-align: center;
+}
+
+
+h3{
+   font-size: 15px;
+}
+
+input{
+   margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div id="my_info">
+   <div id="title">
+   <h3>MY INFO</h3>
+   <h4>회원 정보 수정</h4>
+   </div>
+   
+   <h4>기본정보</h4>
+   
+   <div id="inform">
+   <table>
+      <tr>
+         <th>아이디</th>
+         <td><input type="text" />   (영문소문자/숫자,4~16자)</td>
+      </tr>
+      
+      <tr>
+         <th>비밀번호</th>
+         <td><input type="password" /></td>
+      </tr>
+      
+      <tr>
+         <th>비밀번호 확인</th>
+         <td><input type="password" /></td>
+      </tr>
+      
+      <tr>
+         <th>비밀번호 확인 질문</th>
+         <td>
+            <select>
+               <option>기억에 남는 추억의 장소는?</option>
+               <option>자신의 보물 제 1호는?</option>
+            </select>
+         </td>
+      </tr>
+      
+      <tr>
+         <th>비밀번호 확인 답변</th>
+         <td><input type="text" /></td>
+      </tr>
+      
+      <tr>
+         <th>이름</th>
+         <td><input type="text" /></td>
+      </tr>
+      
+      <tr>
+         <th>주소</th>
+         <td>
+            <input type="text" />-<input type="button" value="우편번호"/><br>
+            <input type="text" size="30"/>  기본주소<br>
+            <input type="text" size="30"/>  나머지주소
+         </td>
+         
+      </tr>
+      
+      <tr>
+         <th>일반전화</th>
+         <td>
+            <select>
+               <option>02</option>
+               <option>031</option>
+            </select>
+            -
+            <input type="text" size="4"/> - <input type="text" size="4" />
+         </td>
+      </tr>
+      
+      <tr>
+         <th>휴대전화</th>
+         <td>
+            <select>
+               <option>010</option>
+               <option>011</option>
+            </select>
+            -
+            <input type="text" size="4"/> - <input type="text" size="4" />
+         </td>
+      </tr>
+      
+      <tr>
+         <th>SMS 수신여부</th>
+         <td>
+            <input type="radio" id="sms" name="sms"/><label for="sms">수신함</label>
+            <input type="radio" id="smsx" name="sms"/><label for="smsx">수신안함</label>
+            <p>쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다.</p>
+         </td>
+      </tr>
+      
+      <tr>
+         <th>이메일</th>
+         <td><input type="text" /></td>
+      </tr>
+      
+      <tr>
+         <th>이메일 수신여부</th>
+         <td>
+            <input type="radio" id="email" name="email"/><label for="email">수신함</label>
+            <input type="radio" id="emailx" name="email"/><label for="emailx">수신안함</label>
+            <p>쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다.</p>
+         </td>
+      </tr>
+      
+   </table>
+   </div>
+   
+   <div id="btn">
+      <input type="button" value="회원정보수정"/>
+      <input type="button" value="취소"/>
+      <input type="button" value="회원탈퇴" style="float: right;"/>
+   </div>
+</div>
+</body>
+</html>

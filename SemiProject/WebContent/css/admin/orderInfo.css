@@ -1,0 +1,27 @@
+.menu{
+    margin: 20px 10px 10px 10px;
+    font-weight: bold;
+}
+
+table{
+    width: 700px;
+}
+
+table, tr, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td.title{
+    width: 120px;
+    background-color: darkgray;
+    color: white;
+}
+
+td.description{
+    width: 280px;
+}
+
+td{
+    padding: 10px;
+}

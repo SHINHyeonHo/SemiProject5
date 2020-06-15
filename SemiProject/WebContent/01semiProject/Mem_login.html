@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+
+<style type="text/css">
+
+   body {
+      border: solid 1px red;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, "MS Trebuchet", sans-serif;    
+   }
+   
+   #container{
+      width: 80%;
+      margin: 0 auto;
+   }
+   
+   ul {
+      list-style-type: none;
+      padding: 0;
+   }
+   
+   label.title {
+      display: inline-block;
+      width: 100px;
+      color: gray;
+   }
+   input.Logingo{
+      width: 100px;
+      height: 50px;
+   }
+   
+   input.RegisterDo{
+      width: 100px;
+      height: 50px;
+   }
+   
+</style>
+</head>
+<body>
+<div id ="container">
+   <form id ="loginFrm" action="LoginCheck.do">
+      <fieldset>
+         <p>로그인 화면</p>
+         <ul>
+            <li>
+               <label class="title">로그인방식</label>
+               <label for="UserLogin">회원</label>
+               <input type="radio" name="Login" id="UserLogin" value="1" checked />
+               <label for="AdminLogin">관리자</label>
+               <input type="radio" name="Login" id="AdminLogin" value="2" />
+            </li>
+            <li>
+               <label for="userid" class="title">ID</label>
+               <input type="text" name="userid" id="userid" class="myinput" size="20" maxlength="20" autofocus required />          
+            
+            </li>
+            <li>
+               <label for="passwd" class="title">Password</label>
+               <input type="password" name="passwd" id="passwd" class="myinput" size="20" maxlength="20" required />
+            </li>
+            <li>
+               <input type="submit" class="Logingo" value="로그인" />
+            </li>
+         </ul>
+         <p>회원 가입</p>
+            <ul>
+               <li>
+                  <input type="submit" class="RegisterDo" value="Join us"/>
+               </li>
+            </ul>
+               <span class="txt_find">
+                  <a href="/Memeber/find/loginid" class="link_find">Find Id</a>
+                  <a href="/Memeber/find/loginid" class="link_find">Find Password</a>
+               </span>
+      </fieldset>
+   </form>
+</div>
+</body>
+</html>
