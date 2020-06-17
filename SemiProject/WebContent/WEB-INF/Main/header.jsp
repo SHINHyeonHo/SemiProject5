@@ -1,76 +1,87 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-    String ctxPath = request.getContextPath();
-%>
+    
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>:::HABIBI:::</title>
+<meta charset="utf-8">
+<title>HABIBI</title>
 <link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<%= ctxPath%>/css/style.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
 
-<script type="text/javascript">
+body {
+	margin: 0px;
+}
 
-	$(document).ready(function(){
-		
-		var vhtml = "";
-		for(var i=0; i<15; i++) {
-			vhtml += (i+1)+".내용물<br/>";
-		}
-		
-		$("#sideconent").html(vhtml);
-		
-	});
+div#wrap {
+    position: relative;
+    margin: 0 auto 0;
+    width: 1200px;
+}
 
-</script>
+header#header {
+	width: 1200px;
+    padding: 90px 0 33px;
+    overflow: hidden;
+}
+
+div#logo {
+	display: block;
+	margin: 0;
+	float: left;
+}
+
+div.main_menu {
+	float:right;
+	padding: 22px 0 0;
+}
+
+div.header_menu {
+	text-align: right;
+   	float: right;
+   	padding-top: 25px;
+   	height: 30px;
+}
+
+ul#header_menu {
+	list-style-type: none;
+	margin: 0;
+}
+
+li.header_menu {
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 8pt;
+	text-decoration: none;
+}
+	
+
+</style>
+
+<script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"></script>
 
 </head>
 <body>
+<body class="main">
+   <div id="wrap">
+   
+	<header id="header">
+		<div id="logo" >
+			<a href=""><!-- 메인페이지 -->
+				<img src="/SemiProject/images/Main/HABIBILOGO.png" width="175">
+			</a>
+		</div>
 
-<div id="mycontainer">
-
-	<div id="headerImg">
-		<div class="row">
-			<div class="col-md-3">1. 로고이미지/네비게이터</div>
-			<div class="col-md-2"><a href="http://www.samsung.com"><img src="<%= ctxPath %>/images/logo1.png"/></a></div>
-			<div class="col-md-2"><img src="<%= ctxPath %>/images/logo2.png"/></div>
+		<div class="header_menu">
+			<ul id="header_menu">
+				<li class="header_menu">NEWS</li>
+				<li class="header_menu">COMPANY</li>
+				<li class="header_menu">PHOTO</li>
+				<li class="header_menu">LOGIN</li>
+				<li class="header_menu">CART</li>
+			</ul>
 		</div>
-	</div>
-	
-	<div id="headerLink">
-		<div class="row">
-			<div class="col-md-4">
-				<a href="<%= ctxPath %>/index.jsp">HOME</a>
-			</div>
-			
-			<div class="col-md-4">
-				<a href="<%= ctxPath %>/member/memberform.jsp">회원가입</a>
-			</div>
-			
-			<div class="col-md-4">
-				<a href="<%= ctxPath %>/member/memberList.jsp">회원목록</a>
-			</div>
-		</div>
-	</div>
-	
-	<div id="sideinfo">
-		<div class="row">
-			<div class="col-md-12" style="height: 50px; text-align: left; padding: 20px;">
-				2. 로그인/Tree/View
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12" id="sideconent" style="text-align: left; padding: 20px;">
-			</div>
-		</div>	
-	</div>
-	
-	<div id="content" align="center">
+	</header>
