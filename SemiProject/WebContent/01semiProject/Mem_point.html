@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포인트 사용 내역</title>
+<link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+<style type="text/css">
+ 
+ div#contain{
+ 	padding: 5%;
+ }
+ 
+ div.title	{
+   		border: none;
+   		text-align: center;
+   		
+   }
+ 
+ body	{
+   		border: solid 2px black;
+   		margin: 0 auto;
+      	width: 80%;
+      	height: 80%;
+      	
+   }
+ ul	{
+ 
+ 		border: solid 1px gray;
+   		list-style: none;
+   		text-align: left;
+   		display: inline-inline;
+   		margin-top: 50px;
+   		width: 50%;
+   		margin-left: 25%; 
+   	
+   }
+
+ table	{
+	border-collapse: collapse;
+ 	text-align: center;
+ 	display: inline-table;
+ 	width: 60%;
+   	margin-left: 22%;
+}
+
+</style>
+
+</head>
+<body>
+   <div id="contain">
+      <div class="title">
+         <h2>POINT</h2>
+         <p style="font-size:11px;">고객님의 사용가능 적립금 금액 입니다.</p>
+      </div>
+      <div>
+         <div class="myshop">
+            <ul>
+               <li>
+                  <strong class="title">총 적립금</strong>
+                  <span class="data">
+                     <span id="total_mileage">0원</span>&nbsp;
+                  </span>
+               </li>
+               <li class="">
+                  <strong class="title">사용가능 적립금</strong>
+                  <span class="data">
+                     <span id="avail_mileage">0원</span>&nbsp;</span>
+               </li>
+               <li class="">
+                  <strong class="title">사용된 적립금</strong>
+                     <span class="data">
+                     <span id="used_mileage">0원</span>&nbsp;
+                  </span>
+               </li> 
+               <li class="">
+                  <strong class="title">환불예정 적립금</strong>
+                  <span class="data">
+                     <span id="returned_mileage">0원</span>&nbsp;
+                  </span>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="myshop-list">
+         <table border="1">
+            <caption>적립금 내역</caption>
+                        <colgroup>
+            <col style="width:15%">
+            <col style="width:15%">
+            <col style="width:25%">
+            <col style="width:auto">
+            </colgroup>
+            <thead><tr>
+            <th scope="col">주문날짜</th>
+                                <th scope="col">적립금</th>
+                                <th scope="col">관련 주문</th>
+                                <th scope="col">적립내용</th>
+                            </tr></thead>
+            <tbody class="">
+            <tr class="record">
+            <td>yyyy-mm-dd</td>
+                                <td class="right">0원</td>
+                                <td><a href=""></a></td>
+                                <td class="left">적립금</td>
+                            </tr>
+            </tbody>
+            <tfoot class="displaynone"><tr>
+            <td colspan="4" class="noData">적립금 내역이 없습니다.</td>
+                            </tr></tfoot>
+         </table>
+      </div>
+   </div>
+</body>
+</html>
