@@ -1,12 +1,7 @@
 package common.controller;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.io.*;
+import java.util.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
