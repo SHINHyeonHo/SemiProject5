@@ -18,6 +18,9 @@ INDEX VERSION 1.131+/Users/user/eclipse-workspace/SemiProject5-git/.metadata/.pl
 3179961119.index
 1060592389.index
 2525146264.index
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 1536704294.index
 1728328650.index

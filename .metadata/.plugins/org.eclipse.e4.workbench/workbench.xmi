@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="ASCII"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_64PrYLFREeqTPt0oI_JZmg" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_64PrYbFREeqTPt0oI_JZmg" bindingContexts="_64RiB7FREeqTPt0oI_JZmg">
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProductVO.java&quot; tooltip=&quot;SemiProject/src/habibi/model/ProductVO.java&quot;>&#xA;&lt;persistable path=&quot;/SemiProject/src/habibi/model/ProductVO.java&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_64PrYbFREeqTPt0oI_JZmg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_64PrYrFREeqTPt0oI_JZmg" label="%trimmedwindow.label.eclipseSDK" x="57" y="333" width="1197" height="814">
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_VOWEILFMEeqTPt0oI_JZmg" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_VOWEIbFMEeqTPt0oI_JZmg" bindingContexts="_VOYg0rFMEeqTPt0oI_JZmg">
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList/>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_VOWEIbFMEeqTPt0oI_JZmg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_VOWEIrFMEeqTPt0oI_JZmg" label="%trimmedwindow.label.eclipseSDK" x="196" y="82" width="1024" height="768">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
     <tags>topLevel</tags>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <children xsi:type="basic:PartSashContainer" xmi:id="_64PrYrFREeqTPt0oI_JZmg" selectedElement="_64PrY7FREeqTPt0oI_JZmg" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_64PrY7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_64PrZLFREeqTPt0oI_JZmg">
         <children xsi:type="advanced:Perspective" xmi:id="_64PrZLFREeqTPt0oI_JZmg" elementId="org.eclipse.jst.j2ee.J2EEPerspective" selectedElement="_64PrZbFREeqTPt0oI_JZmg" label="Java EE" iconURI="platform:/plugin/org.eclipse.jst.j2ee.ui/icons/full/cview16/j2ee_perspective.gif">
+=======
+    <children xsi:type="basic:PartSashContainer" xmi:id="_VOWEIrFMEeqTPt0oI_JZmg" selectedElement="_VOWEI7FMEeqTPt0oI_JZmg" horizontal="true">
+      <children xsi:type="advanced:PerspectiveStack" xmi:id="_VOWEI7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_VOWEJLFMEeqTPt0oI_JZmg">
+        <children xsi:type="advanced:Perspective" xmi:id="_VOWEJLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.j2ee.J2EEPerspective" selectedElement="_VOWEJbFMEeqTPt0oI_JZmg" label="Java EE" iconURI="platform:/plugin/org.eclipse.jst.j2ee.ui/icons/full/cview16/j2ee_perspective.gif">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <children xsi:type="basic:PartSashContainer" xmi:id="_VOWEIrFMEeqTPt0oI_JZmg" selectedElement="_VOWEI7FMEeqTPt0oI_JZmg" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_VOWEI7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_VOWEJLFMEeqTPt0oI_JZmg">
@@ -84,6 +96,7 @@
           <tags>persp.newWizSC:org.eclipse.jpt.jpa.ui.wizard.newJpaProject</tags>
           <tags>persp.perspSC:org.eclipse.jpt.ui.jpaPerspective</tags>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <children xsi:type="basic:PartSashContainer" xmi:id="_64PrZbFREeqTPt0oI_JZmg" selectedElement="_64Pra7FREeqTPt0oI_JZmg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_64PrZrFREeqTPt0oI_JZmg" elementId="topLeft" containerData="2500" selectedElement="_64PrZ7FREeqTPt0oI_JZmg">
               <children xsi:type="advanced:Placeholder" xmi:id="_64PrZ7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_64Q5sLFREeqTPt0oI_JZmg" closeable="true">
@@ -100,6 +113,8 @@
               </children>
               <children xsi:type="advanced:Placeholder" xmi:id="_64PrarFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" toBeRendered="false" ref="_64Q5zrFREeqTPt0oI_JZmg" closeable="true">
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
           <children xsi:type="basic:PartSashContainer" xmi:id="_VOWEJbFMEeqTPt0oI_JZmg" selectedElement="_VOWEJrFMEeqTPt0oI_JZmg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_VOWEJrFMEeqTPt0oI_JZmg" elementId="topLeft" containerData="2500" selectedElement="_VOWEJ7FMEeqTPt0oI_JZmg">
               <tags>active</tags>
@@ -117,11 +132,15 @@
                 <tags>categoryTag:Java</tags>
               </children>
               <children xsi:type="advanced:Placeholder" xmi:id="_VOWEKrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" toBeRendered="false" ref="_VOXSfrFMEeqTPt0oI_JZmg" closeable="true">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
                 <tags>View</tags>
                 <tags>categoryTag:Java Browsing</tags>
               </children>
             </children>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <children xsi:type="basic:PartSashContainer" xmi:id="_64Pra7FREeqTPt0oI_JZmg" containerData="7500" selectedElement="_64PrbLFREeqTPt0oI_JZmg">
               <children xsi:type="basic:PartSashContainer" xmi:id="_64PrbLFREeqTPt0oI_JZmg" containerData="7000" selectedElement="_64PrbbFREeqTPt0oI_JZmg" horizontal="true">
@@ -137,6 +156,8 @@
                   </children>
                   <children xsi:type="advanced:Placeholder" xmi:id="_64PrcbFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" toBeRendered="false" ref="_64Q5-bFREeqTPt0oI_JZmg" closeable="true">
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
             <children xsi:type="basic:PartSashContainer" xmi:id="_VOWEK7FMEeqTPt0oI_JZmg" containerData="7500" selectedElement="_VOWEMrFMEeqTPt0oI_JZmg">
               <children xsi:type="basic:PartSashContainer" xmi:id="_VOWELLFMEeqTPt0oI_JZmg" containerData="7000" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_VOWELbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.editorss" containerData="7000" ref="_VOXSXrFMEeqTPt0oI_JZmg"/>
@@ -150,12 +171,16 @@
                     <tags>categoryTag:Mylyn</tags>
                   </children>
                   <children xsi:type="advanced:Placeholder" xmi:id="_VOWEMbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" toBeRendered="false" ref="_VOXSp7FMEeqTPt0oI_JZmg" closeable="true">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
                     <tags>View</tags>
                     <tags>categoryTag:General</tags>
                   </children>
                 </children>
               </children>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <children xsi:type="basic:PartStack" xmi:id="_64PrcrFREeqTPt0oI_JZmg" elementId="bottomRight" containerData="3000" selectedElement="_64PrdLFREeqTPt0oI_JZmg">
                 <children xsi:type="advanced:Placeholder" xmi:id="_64Prc7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" toBeRendered="false" ref="_64Q5z7FREeqTPt0oI_JZmg" closeable="true">
@@ -243,6 +268,50 @@
                 </children>
                 <children xsi:type="advanced:Placeholder" xmi:id="_VOWEPbFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" toBeRendered="false" ref="_VOXSmrFMEeqTPt0oI_JZmg" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
+              <children xsi:type="basic:PartStack" xmi:id="_VOWEMrFMEeqTPt0oI_JZmg" elementId="bottomRight" containerData="3000" selectedElement="_VOWEM7FMEeqTPt0oI_JZmg">
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEM7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" ref="_VOXSf7FMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWENLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet" ref="_VOXSkbFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWENbFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.ServersView" ref="_VOXSkrFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:Server</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWENrFMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" ref="_VOXSk7FMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:Data Management</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEN7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" ref="_VOXSlLFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEOLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" toBeRendered="false" ref="_VOXSlbFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEObFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" toBeRendered="false" ref="_VOXSlrFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEOrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" toBeRendered="false" ref="_VOXSl7FMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEO7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" toBeRendered="false" ref="_VOXSmLFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEPLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" toBeRendered="false" ref="_VOXSmbFMEeqTPt0oI_JZmg" closeable="true">
+                  <tags>View</tags>
+                  <tags>categoryTag:General</tags>
+                </children>
+                <children xsi:type="advanced:Placeholder" xmi:id="_VOWEPbFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" toBeRendered="false" ref="_VOXSmrFMEeqTPt0oI_JZmg" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
                 </children>
@@ -251,6 +320,7 @@
           </children>
         </children>
       </children>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <children xsi:type="basic:PartStack" xmi:id="_64PrfrFREeqTPt0oI_JZmg" elementId="stickyFolderRight" toBeRendered="false" containerData="2500">
         <children xsi:type="advanced:Placeholder" xmi:id="_64Prf7FREeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" toBeRendered="false" ref="_64QT4LFREeqTPt0oI_JZmg" closeable="true">
@@ -274,13 +344,29 @@
         </children>
         <children xsi:type="advanced:Placeholder" xmi:id="_VOWEQbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" toBeRendered="false" ref="_VOXSXbFMEeqTPt0oI_JZmg" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
+      <children xsi:type="basic:PartStack" xmi:id="_VOWEPrFMEeqTPt0oI_JZmg" elementId="stickyFolderRight" toBeRendered="false" containerData="2500">
+        <children xsi:type="advanced:Placeholder" xmi:id="_VOWEP7FMEeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" toBeRendered="false" ref="_VOXSWbFMEeqTPt0oI_JZmg" closeable="true">
+          <tags>View</tags>
+          <tags>categoryTag:Help</tags>
+        </children>
+        <children xsi:type="advanced:Placeholder" xmi:id="_VOWEQLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" toBeRendered="false" ref="_VOXSWrFMEeqTPt0oI_JZmg" closeable="true">
+          <tags>View</tags>
+          <tags>categoryTag:General</tags>
+        </children>
+        <children xsi:type="advanced:Placeholder" xmi:id="_VOWEQbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" toBeRendered="false" ref="_VOXSXbFMEeqTPt0oI_JZmg" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
           <tags>View</tags>
           <tags>categoryTag:Help</tags>
         </children>
       </children>
     </children>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64QT4LFREeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSWbFMEeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSWbFMEeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -290,7 +376,11 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64QT4bFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSWrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSWrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -299,6 +389,7 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view>&#xA;&lt;presentation currentPage=&quot;qroot&quot; restore=&quot;true&quot;/>&#xA;&lt;standbyPart/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <menus xmi:id="_64QT4rFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview">
         <tags>ViewMenu</tags>
@@ -316,14 +407,28 @@
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSXbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Cheat Sheets" iconURI="platform:/plugin/org.eclipse.ui.cheatsheets/icons/view16/cheatsheet_view.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
+      <menus xmi:id="_VOXSW7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_VOXSXLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" visible="false"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSXbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Cheat Sheets" iconURI="platform:/plugin/org.eclipse.ui.cheatsheets/icons/view16/cheatsheet_view.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.cheatsheets.views.CheatSheetView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.cheatsheets"/>
       <tags>View</tags>
       <tags>categoryTag:Help</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="advanced:Area" xmi:id="_64QT5bFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.editorss" selectedElement="_64QT5rFREeqTPt0oI_JZmg">
       <children xsi:type="basic:PartStack" xmi:id="_64QT5rFREeqTPt0oI_JZmg" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_64QT57FREeqTPt0oI_JZmg">
+=======
+    <sharedElements xsi:type="advanced:Area" xmi:id="_VOXSXrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.editorss">
+      <children xsi:type="basic:PartStack" xmi:id="_VOXSX7FMEeqTPt0oI_JZmg" elementId="org.eclipse.e4.primaryDataStack">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="advanced:Area" xmi:id="_VOXSXrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.editorss">
       <children xsi:type="basic:PartStack" xmi:id="_VOXSX7FMEeqTPt0oI_JZmg" elementId="org.eclipse.e4.primaryDataStack">
@@ -342,7 +447,11 @@
       </children>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q5sLFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSYLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSYLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -368,6 +477,9 @@
       <toolbar xmi:id="_VOXSdbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSfLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ResourceNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Navigator (Deprecated)" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" closeable="true">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.navigator.ResourceNavigator"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
@@ -375,7 +487,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q5zbFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypeHierarchy" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Type Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/class_hi.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSfbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypeHierarchy" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Type Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/class_hi.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSfbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypeHierarchy" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Type Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/class_hi.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -385,7 +501,11 @@
       <tags>categoryTag:Java</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q5zrFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Packages" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/packages.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSfrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Packages" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/packages.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSfrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Packages" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/packages.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -395,7 +515,11 @@
       <tags>categoryTag:Java Browsing</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q5z7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSf7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSf7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -405,6 +529,7 @@
       <tags>View</tags>
       <tags>categoryTag:General</tags>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <menus xmi:id="_64Q50LFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -413,6 +538,8 @@
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q50rFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/prop_ps.png" tooltip="" closeable="true">
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
       <menus xmi:id="_VOXSgLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -420,11 +547,15 @@
       <toolbar xmi:id="_VOXSjLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSkbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/prop_ps.png" tooltip="" closeable="true">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.properties.PropertySheet"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.views"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <menus xmi:id="_64Q507FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet">
         <tags>ViewMenu</tags>
@@ -437,13 +568,21 @@
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSkrFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.ServersView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Servers" iconURI="platform:/plugin/org.eclipse.wst.server.ui/icons/cview16/servers_view.gif" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSkrFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.ServersView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Servers" iconURI="platform:/plugin/org.eclipse.wst.server.ui/icons/cview16/servers_view.gif" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.wst.server.ui.internal.cnf.ServersView2"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.server.ui"/>
       <tags>View</tags>
       <tags>categoryTag:Server</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q53rFREeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSk7FMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSk7FMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -453,7 +592,11 @@
       <tags>categoryTag:Data Management</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q537FREeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Snippets" iconURI="platform:/plugin/org.eclipse.wst.common.snippets/icons/snippets_view.gif" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSlLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Snippets" iconURI="platform:/plugin/org.eclipse.wst.common.snippets/icons/snippets_view.gif" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSlLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Snippets" iconURI="platform:/plugin/org.eclipse.wst.common.snippets/icons/snippets_view.gif" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -463,7 +606,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q54LFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSlbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSlbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -473,7 +620,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q54bFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSlrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSlrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -483,7 +634,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q54rFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSl7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSl7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -493,7 +648,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q547FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSmLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSmLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -503,7 +662,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q55LFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSmbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSmbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -513,7 +676,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q55bFREeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSmrFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSmrFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -523,7 +690,11 @@
       <tags>categoryTag:General</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q55rFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSm7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSm7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -532,6 +703,7 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <menus xmi:id="_64Q557FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline">
         <tags>ViewMenu</tags>
@@ -549,13 +721,26 @@
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSprFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Task List" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
+      <menus xmi:id="_VOXSnLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_VOXSo7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSprFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Task List" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.mylyn.internal.tasks.ui.views.TaskListView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.mylyn.tasks.ui"/>
       <tags>View</tags>
       <tags>categoryTag:Mylyn</tags>
     </sharedElements>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <sharedElements xsi:type="basic:Part" xmi:id="_64Q5-bFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" closeable="true">
+=======
+    <sharedElements xsi:type="basic:Part" xmi:id="_VOXSp7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" closeable="true">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <sharedElements xsi:type="basic:Part" xmi:id="_VOXSp7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" closeable="true">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -564,6 +749,7 @@
       <tags>View</tags>
       <tags>categoryTag:General</tags>
     </sharedElements>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <trimBars xmi:id="_64Q5-rFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.platform">
       <children xsi:type="menu:ToolBar" xmi:id="_64Q5-7FREeqTPt0oI_JZmg" elementId="group.file" toBeRendered="false">
@@ -691,11 +877,73 @@
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_VOXTLLFMEeqTPt0oI_JZmg" elementId="PerspectiveSwitcher" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.e4.ui.workbench.addons.perspectiveswitcher.PerspectiveSwitcher">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
+    <trimBars xmi:id="_VOXSqLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.platform">
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSqbFMEeqTPt0oI_JZmg" elementId="group.file" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_VOXSqrFMEeqTPt0oI_JZmg" elementId="group.file" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSq7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.workbench.file">
+        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VOXSs7FMEeqTPt0oI_JZmg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_VObjubFMEeqTPt0oI_JZmg"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSuLFMEeqTPt0oI_JZmg" elementId="group.edit" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_VOXSubFMEeqTPt0oI_JZmg" elementId="group.edit" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSurFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.workbench.edit" visible="false">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSvrFMEeqTPt0oI_JZmg" elementId="additions" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_VOXSv7FMEeqTPt0oI_JZmg" elementId="additions" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSwLFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.launchActionSet">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSxrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.j2ee.J2eeMainActionSet">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSyrFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.searchActionSet">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXSz7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.internal.webbrowser.actionSet">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXS0rFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.ws.explorer.explorer">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXTD7FMEeqTPt0oI_JZmg" elementId="group.nav" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_VOXTELFMEeqTPt0oI_JZmg" elementId="group.nav" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXTEbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.workbench.navigate">
+        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VOXTF7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_VOa-8rFMEeqTPt0oI_JZmg"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXTG7FMEeqTPt0oI_JZmg" elementId="group.editor" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_VOXTHLFMEeqTPt0oI_JZmg" elementId="group.editor" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXTHbFMEeqTPt0oI_JZmg" elementId="group.help" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_VOXTHrFMEeqTPt0oI_JZmg" elementId="group.help" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_VOXTH7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.workbench.help" visible="false">
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_VOXTKLFMEeqTPt0oI_JZmg" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+        <tags>stretch</tags>
+        <tags>SHOW_RESTORE_MENU</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_VOXTLLFMEeqTPt0oI_JZmg" elementId="PerspectiveSwitcher" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.e4.ui.workbench.addons.perspectiveswitcher.PerspectiveSwitcher">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
         <tags>Draggable</tags>
         <tags>HIDEABLE</tags>
         <tags>SHOW_RESTORE_MENU</tags>
       </children>
     </trimBars>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <trimBars xmi:id="_64Q6i7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.trim.status" contributorURI="platform:/plugin/org.eclipse.platform" side="Bottom">
       <children xsi:type="menu:ToolControl" xmi:id="_64Q6jLFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.StatusLine" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
@@ -711,11 +959,14 @@
     <trimBars xmi:id="_64Q6mbFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.platform" toBeRendered="false" side="Left">
       <children xsi:type="menu:ToolControl" xmi:id="_64Q6mrFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.perspectivestack(minimized)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
     <trimBars xmi:id="_VOXTLbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.trim.status" contributorURI="platform:/plugin/org.eclipse.platform" side="Bottom">
       <children xsi:type="menu:ToolControl" xmi:id="_VOXTLrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.StatusLine" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
         <tags>stretch</tags>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_VOXTL7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.HeapStatus" contributorURI="platform:/plugin/org.eclipse.platform" toBeRendered="false" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+<<<<<<< HEAD
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_VOXTMLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ProgressBar" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
@@ -1725,6 +1976,20 @@
   </descriptors>
   <descriptors xmi:id="_64SH7bFREeqTPt0oI_JZmg" elementId="org.eclipse.ant.ui.views.AntView" label="Ant" iconURI="platform:/plugin/org.eclipse.ant.ui/icons/full/eview16/ant_view.png" tooltip="" category="Ant" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 =======
+=======
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_VOXTMLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ProgressBar" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+        <tags>Draggable</tags>
+      </children>
+    </trimBars>
+    <trimBars xmi:id="_VOXTO7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.platform" toBeRendered="false" side="Left">
+      <children xsi:type="menu:ToolControl" xmi:id="_VOXTPLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.perspectivestack(minimized)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+    </trimBars>
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
     <trimBars xmi:id="_VOXTPbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.platform" side="Right"/>
   </children>
   <handlers xmi:id="_VOXTPrFMEeqTPt0oI_JZmg" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.ArrangeWindowHandler" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.ArrangeWindowHandler" command="_VObkhrFMEeqTPt0oI_JZmg"/>
@@ -2434,6 +2699,7 @@
     </bindings>
     <bindings xmi:id="_VOX62LFMEeqTPt0oI_JZmg" keySequence="COMMAND+SHIFT+F" command="_VOaW4bFMEeqTPt0oI_JZmg"/>
     <bindings xmi:id="_VOX62bFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+O" command="_VOa9X7FMEeqTPt0oI_JZmg">
+<<<<<<< HEAD
       <tags>platform:cocoa</tags>
     </bindings>
     <bindings xmi:id="_VOX62rFMEeqTPt0oI_JZmg" keySequence="COMMAND+T" command="_VOa-ZLFMEeqTPt0oI_JZmg"/>
@@ -2499,6 +2765,73 @@
     <bindings xmi:id="_VOYggrFMEeqTPt0oI_JZmg" keySequence="COMMAND+/" command="_VOa-IrFMEeqTPt0oI_JZmg"/>
     <bindings xmi:id="_VOYgg7FMEeqTPt0oI_JZmg" keySequence="COMMAND+SHIFT+C" command="_VOa-IrFMEeqTPt0oI_JZmg"/>
   </bindingTables>
+=======
+      <tags>platform:cocoa</tags>
+    </bindings>
+    <bindings xmi:id="_VOX62rFMEeqTPt0oI_JZmg" keySequence="COMMAND+T" command="_VOa-ZLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX627FMEeqTPt0oI_JZmg" keySequence="COMMAND+I" command="_VOa9ibFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX63LFMEeqTPt0oI_JZmg" keySequence="COMMAND+O" command="_VOaWkrFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX63bFMEeqTPt0oI_JZmg" keySequence="COMMAND+2 F" command="_VOa9abFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX63rFMEeqTPt0oI_JZmg" keySequence="COMMAND+2 R" command="_VOa87rFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX637FMEeqTPt0oI_JZmg" keySequence="COMMAND+2 L" command="_VObkQbFMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOX64LFMEeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.contexts.taskview" bindingContext="_VOYhCrFMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOX64bFMEeqTPt0oI_JZmg" keySequence="F5" command="_VObkA7FMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOX64rFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.RepositoriesView" bindingContext="_VOYhC7FMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOX647FMEeqTPt0oI_JZmg" keySequence="COMMAND+ARROW_LEFT" command="_VOaW57FMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX65LFMEeqTPt0oI_JZmg" keySequence="COMMAND+C" command="_VOa897FMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOX65bFMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.SQLEditorScope" bindingContext="_VOYg27FMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOX65rFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+X" command="_VOa92LFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX657FMEeqTPt0oI_JZmg" keySequence="ALT+X" command="_VObkcbFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX66LFMEeqTPt0oI_JZmg" keySequence="COMMAND+SHIFT+P" command="_VOa-5bFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOX66bFMEeqTPt0oI_JZmg" keySequence="ALT+C" command="_VOa887FMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgYLFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+D" command="_VOa9ILFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgYbFMEeqTPt0oI_JZmg" keySequence="COMMAND+/" command="_VOaWhLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgYrFMEeqTPt0oI_JZmg" keySequence="ALT+Q" command="_VObjsrFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgY7FMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+R" command="_VObj4rFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgZLFMEeqTPt0oI_JZmg" keySequence="ALT+S" command="_VOa9rbFMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOYgZbFMEeqTPt0oI_JZmg" elementId="org.eclipse.tm.terminal.TerminalContext" bindingContext="_VOYhCLFMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOYgZrFMEeqTPt0oI_JZmg" keySequence="ALT+Y" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgZ7FMEeqTPt0oI_JZmg" keySequence="ALT+A" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgaLFMEeqTPt0oI_JZmg" keySequence="ALT+B" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgabFMEeqTPt0oI_JZmg" keySequence="ALT+C" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgarFMEeqTPt0oI_JZmg" keySequence="ALT+D" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYga7FMEeqTPt0oI_JZmg" keySequence="ALT+E" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgbLFMEeqTPt0oI_JZmg" keySequence="ALT+F" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgbbFMEeqTPt0oI_JZmg" keySequence="ALT+G" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgbrFMEeqTPt0oI_JZmg" keySequence="ALT+P" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgb7FMEeqTPt0oI_JZmg" keySequence="ALT+R" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgcLFMEeqTPt0oI_JZmg" keySequence="ALT+S" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgcbFMEeqTPt0oI_JZmg" keySequence="ALT+T" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgcrFMEeqTPt0oI_JZmg" keySequence="ALT+V" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgc7FMEeqTPt0oI_JZmg" keySequence="ALT+W" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgdLFMEeqTPt0oI_JZmg" keySequence="ALT+H" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgdbFMEeqTPt0oI_JZmg" keySequence="ALT+L" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgdrFMEeqTPt0oI_JZmg" keySequence="ALT+N" command="_VOa-HLFMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOYgd7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.classFileEditorScope" bindingContext="_VOYg3LFMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOYgeLFMEeqTPt0oI_JZmg" keySequence="COMMAND+1" command="_VObkULFMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOYgebFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.breadcrumbEditorScope" bindingContext="_VOYhD7FMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOYgerFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+B" command="_VObkbLFMEeqTPt0oI_JZmg">
+      <tags>platform:cocoa</tags>
+    </bindings>
+  </bindingTables>
+  <bindingTables xmi:id="_VOYge7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.serverViewScope" bindingContext="_VOYhArFMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOYgfLFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+D" command="_VOa-srFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgfbFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+P" command="_VOa-zbFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgfrFMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+R" command="_VObkRbFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgf7FMEeqTPt0oI_JZmg" keySequence="ALT+COMMAND+S" command="_VOa80rFMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+  <bindingTables xmi:id="_VOYggLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.propertiesEditorScope" bindingContext="_VOYg-rFMEeqTPt0oI_JZmg">
+    <bindings xmi:id="_VOYggbFMEeqTPt0oI_JZmg" keySequence="COMMAND+7" command="_VOa-IrFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYggrFMEeqTPt0oI_JZmg" keySequence="COMMAND+/" command="_VOa-IrFMEeqTPt0oI_JZmg"/>
+    <bindings xmi:id="_VOYgg7FMEeqTPt0oI_JZmg" keySequence="COMMAND+SHIFT+C" command="_VOa-IrFMEeqTPt0oI_JZmg"/>
+  </bindingTables>
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
   <bindingTables xmi:id="_VOYghLFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.wikitext.tasks.ui.markupSourceContext" bindingContext="_VOYg-bFMEeqTPt0oI_JZmg">
     <bindings xmi:id="_VOYghbFMEeqTPt0oI_JZmg" keySequence="COMMAND+SHIFT+O" command="_VOaWorFMEeqTPt0oI_JZmg"/>
   </bindingTables>
@@ -2719,6 +3052,9 @@
     <tags>removeOnHide</tags>
   </descriptors>
   <descriptors xmi:id="_VOYhS7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ant.ui.views.AntView" label="Ant" iconURI="platform:/plugin/org.eclipse.ant.ui/icons/full/eview16/ant_view.png" tooltip="" category="Ant" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
     <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ant.internal.ui.views.AntView"/>
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ant.ui"/>
@@ -2726,7 +3062,11 @@
     <tags>categoryTag:Ant</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH7rFREeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.views.taskview" label="Gradle Tasks" iconURI="platform:/plugin/org.eclipse.buildship.ui/icons/full/eview16/tasks_view.png" tooltip="" category="Gradle" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhTLFMEeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.views.taskview" label="Gradle Tasks" iconURI="platform:/plugin/org.eclipse.buildship.ui/icons/full/eview16/tasks_view.png" tooltip="" category="Gradle" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhTLFMEeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.views.taskview" label="Gradle Tasks" iconURI="platform:/plugin/org.eclipse.buildship.ui/icons/full/eview16/tasks_view.png" tooltip="" category="Gradle" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2736,7 +3076,11 @@
     <tags>categoryTag:Gradle</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH77FREeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.views.executionview" label="Gradle Executions" iconURI="platform:/plugin/org.eclipse.buildship.ui/icons/full/eview16/executions_view.png" tooltip="" category="Gradle" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhTbFMEeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.views.executionview" label="Gradle Executions" iconURI="platform:/plugin/org.eclipse.buildship.ui/icons/full/eview16/executions_view.png" tooltip="" category="Gradle" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhTbFMEeqTPt0oI_JZmg" elementId="org.eclipse.buildship.ui.views.executionview" label="Gradle Executions" iconURI="platform:/plugin/org.eclipse.buildship.ui/icons/full/eview16/executions_view.png" tooltip="" category="Gradle" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2746,7 +3090,11 @@
     <tags>categoryTag:Gradle</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH8LFREeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhTrFMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhTrFMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer" iconURI="platform:/plugin/org.eclipse.datatools.connectivity.ui.dse/icons/full/cview16/enterprise_explorer.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2756,7 +3104,11 @@
     <tags>categoryTag:Data Management</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH8bFREeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.plan.planView" label="Execution Plan" iconURI="platform:/plugin/org.eclipse.datatools.sqltools.plan/icons/sqlplan.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhT7FMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.plan.planView" label="Execution Plan" iconURI="platform:/plugin/org.eclipse.datatools.sqltools.plan/icons/sqlplan.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhT7FMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.plan.planView" label="Execution Plan" iconURI="platform:/plugin/org.eclipse.datatools.sqltools.plan/icons/sqlplan.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2766,7 +3118,11 @@
     <tags>categoryTag:Data Management</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH8rFREeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.result.resultView" label="SQL Results" iconURI="platform:/plugin/org.eclipse.datatools.sqltools.result.ui/icons/sqlresult.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhULFMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.result.resultView" label="SQL Results" iconURI="platform:/plugin/org.eclipse.datatools.sqltools.result.ui/icons/sqlresult.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhULFMEeqTPt0oI_JZmg" elementId="org.eclipse.datatools.sqltools.result.resultView" label="SQL Results" iconURI="platform:/plugin/org.eclipse.datatools.sqltools.result.ui/icons/sqlresult.gif" tooltip="" category="Data Management" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2776,7 +3132,11 @@
     <tags>categoryTag:Data Management</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH87FREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.DebugView" label="Debug" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/debug_view.png" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhUbFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.DebugView" label="Debug" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/debug_view.png" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhUbFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.DebugView" label="Debug" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/debug_view.png" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2786,7 +3146,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH9LFREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.BreakpointView" label="Breakpoints" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/breakpoint_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhUrFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.BreakpointView" label="Breakpoints" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/breakpoint_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhUrFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.BreakpointView" label="Breakpoints" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/breakpoint_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2796,7 +3160,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH9bFREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.VariableView" label="Variables" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/variable_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhU7FMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.VariableView" label="Variables" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/variable_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhU7FMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.VariableView" label="Variables" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/variable_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2806,7 +3174,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH9rFREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.ExpressionView" label="Expressions" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/watchlist_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhVLFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.ExpressionView" label="Expressions" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/watchlist_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhVLFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.ExpressionView" label="Expressions" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/watchlist_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2816,7 +3188,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH97FREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.RegisterView" label="Registers" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/register_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhVbFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.RegisterView" label="Registers" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/register_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhVbFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.RegisterView" label="Registers" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/register_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2826,7 +3202,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH-LFREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.ModuleView" label="Modules" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/module_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhVrFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.ModuleView" label="Modules" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/module_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhVrFMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.ModuleView" label="Modules" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/module_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2836,7 +3216,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH-bFREeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.MemoryView" label="Memory" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/memory_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhV7FMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.MemoryView" label="Memory" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/memory_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhV7FMEeqTPt0oI_JZmg" elementId="org.eclipse.debug.ui.MemoryView" label="Memory" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/memory_view.png" tooltip="" allowMultiple="true" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2846,7 +3230,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH-rFREeqTPt0oI_JZmg" elementId="org.eclipse.eclemma.ui.CoverageView" label="Coverage" iconURI="platform:/plugin/org.eclipse.eclemma.ui/icons/full/eview16/coverage.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhWLFMEeqTPt0oI_JZmg" elementId="org.eclipse.eclemma.ui.CoverageView" label="Coverage" iconURI="platform:/plugin/org.eclipse.eclemma.ui/icons/full/eview16/coverage.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhWLFMEeqTPt0oI_JZmg" elementId="org.eclipse.eclemma.ui.CoverageView" label="Coverage" iconURI="platform:/plugin/org.eclipse.eclemma.ui/icons/full/eview16/coverage.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2856,7 +3244,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH-7FREeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.RepositoriesView" label="Git Repositories" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/repo_rep.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhWbFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.RepositoriesView" label="Git Repositories" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/repo_rep.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhWbFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.RepositoriesView" label="Git Repositories" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/repo_rep.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2866,7 +3258,11 @@
     <tags>categoryTag:Git</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH_LFREeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.StagingView" label="Git Staging" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/staging.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhWrFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.StagingView" label="Git Staging" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/staging.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhWrFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.StagingView" label="Git Staging" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/staging.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2876,7 +3272,11 @@
     <tags>categoryTag:Git</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH_bFREeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.InteractiveRebaseView" label="Git Interactive Rebase" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/rebase_interactive.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhW7FMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.InteractiveRebaseView" label="Git Interactive Rebase" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/rebase_interactive.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhW7FMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.InteractiveRebaseView" label="Git Interactive Rebase" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/rebase_interactive.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2886,7 +3286,11 @@
     <tags>categoryTag:Git</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH_rFREeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.CompareTreeView" label="Git Tree Compare" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/obj16/gitrepository.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhXLFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.CompareTreeView" label="Git Tree Compare" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/obj16/gitrepository.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhXLFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.CompareTreeView" label="Git Tree Compare" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/obj16/gitrepository.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2897,7 +3301,11 @@
     <tags>NoRestore</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SH_7FREeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.ReflogView" label="Git Reflog" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/reflog.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhXbFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.ReflogView" label="Git Reflog" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/reflog.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhXbFMEeqTPt0oI_JZmg" elementId="org.eclipse.egit.ui.ReflogView" label="Git Reflog" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/reflog.png" tooltip="" category="Git" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2907,7 +3315,11 @@
     <tags>categoryTag:Git</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIALFREeqTPt0oI_JZmg" elementId="org.eclipse.gef.ui.palette_view" label="Palette" iconURI="platform:/plugin/org.eclipse.gef/icons/palette_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhXrFMEeqTPt0oI_JZmg" elementId="org.eclipse.gef.ui.palette_view" label="Palette" iconURI="platform:/plugin/org.eclipse.gef/icons/palette_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhXrFMEeqTPt0oI_JZmg" elementId="org.eclipse.gef.ui.palette_view" label="Palette" iconURI="platform:/plugin/org.eclipse.gef/icons/palette_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2917,7 +3329,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIAbFREeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhX7FMEeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhX7FMEeqTPt0oI_JZmg" elementId="org.eclipse.help.ui.HelpView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2927,7 +3343,11 @@
     <tags>categoryTag:Help</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIArFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.debug.ui.DisplayView" label="Debug Shell" iconURI="platform:/plugin/org.eclipse.jdt.debug.ui/icons/full/etool16/disp_sbook.png" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhYLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.debug.ui.DisplayView" label="Debug Shell" iconURI="platform:/plugin/org.eclipse.jdt.debug.ui/icons/full/etool16/disp_sbook.png" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhYLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.debug.ui.DisplayView" label="Debug Shell" iconURI="platform:/plugin/org.eclipse.jdt.debug.ui/icons/full/etool16/disp_sbook.png" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2937,7 +3357,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIA7FREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.junit.ResultView" label="JUnit" iconURI="platform:/plugin/org.eclipse.jdt.junit/icons/full/eview16/junit.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhYbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.junit.ResultView" label="JUnit" iconURI="platform:/plugin/org.eclipse.jdt.junit/icons/full/eview16/junit.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhYbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.junit.ResultView" label="JUnit" iconURI="platform:/plugin/org.eclipse.jdt.junit/icons/full/eview16/junit.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2947,7 +3371,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIBLFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/package.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhYrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/package.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhYrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/package.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2957,7 +3385,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIBbFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/class_hi.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhY7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/class_hi.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhY7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypeHierarchy" label="Type Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/class_hi.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2967,7 +3399,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIBrFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.ProjectsView" label="Projects" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/projects.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhZLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.ProjectsView" label="Projects" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/projects.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhZLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.ProjectsView" label="Projects" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/projects.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2977,7 +3413,11 @@
     <tags>categoryTag:Java Browsing</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIB7FREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" label="Packages" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/packages.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhZbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" label="Packages" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/packages.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhZbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.PackagesView" label="Packages" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/packages.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2987,7 +3427,11 @@
     <tags>categoryTag:Java Browsing</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SICLFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypesView" label="Types" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/types.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhZrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypesView" label="Types" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/types.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhZrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.TypesView" label="Types" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/types.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -2997,7 +3441,11 @@
     <tags>categoryTag:Java Browsing</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SICbFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.MembersView" label="Members" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/members.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhZ7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.MembersView" label="Members" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/members.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhZ7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.MembersView" label="Members" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/members.png" tooltip="" category="Java Browsing" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3007,7 +3455,11 @@
     <tags>categoryTag:Java Browsing</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SICrFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/call_hierarchy.png" tooltip="" allowMultiple="true" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhaLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/call_hierarchy.png" tooltip="" allowMultiple="true" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhaLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/call_hierarchy.png" tooltip="" allowMultiple="true" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3017,7 +3469,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIC7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.texteditor.TemplatesView" label="Templates" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/templates.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhabFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.texteditor.TemplatesView" label="Templates" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/templates.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhabFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.texteditor.TemplatesView" label="Templates" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/templates.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3027,7 +3483,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIDLFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.SourceView" label="Declaration" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/source.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYharFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.SourceView" label="Declaration" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/source.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYharFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.SourceView" label="Declaration" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/source.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3037,7 +3497,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIDbFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.JavadocView" label="Javadoc" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/javadoc.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYha7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.JavadocView" label="Javadoc" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/javadoc.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYha7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.JavadocView" label="Javadoc" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/javadoc.png" tooltip="" category="Java" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3047,7 +3511,11 @@
     <tags>categoryTag:Java</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIDrFREeqTPt0oI_JZmg" elementId="org.eclipse.jpt.ui.jpaStructureView" label="JPA Structure" iconURI="platform:/plugin/org.eclipse.jpt.jpa.ui/images/views/jpa-structure.gif" tooltip="" category="JPA" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhbLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jpt.ui.jpaStructureView" label="JPA Structure" iconURI="platform:/plugin/org.eclipse.jpt.jpa.ui/images/views/jpa-structure.gif" tooltip="" category="JPA" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhbLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jpt.ui.jpaStructureView" label="JPA Structure" iconURI="platform:/plugin/org.eclipse.jpt.jpa.ui/images/views/jpa-structure.gif" tooltip="" category="JPA" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3057,7 +3525,11 @@
     <tags>categoryTag:JPA</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SID7FREeqTPt0oI_JZmg" elementId="org.eclipse.jpt.ui.jpaDetailsView" label="JPA Details" iconURI="platform:/plugin/org.eclipse.jpt.jpa.ui/images/views/jpa-details.gif" tooltip="" category="JPA" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhbbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jpt.ui.jpaDetailsView" label="JPA Details" iconURI="platform:/plugin/org.eclipse.jpt.jpa.ui/images/views/jpa-details.gif" tooltip="" category="JPA" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhbbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jpt.ui.jpaDetailsView" label="JPA Details" iconURI="platform:/plugin/org.eclipse.jpt.jpa.ui/images/views/jpa-details.gif" tooltip="" category="JPA" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3067,7 +3539,11 @@
     <tags>categoryTag:JPA</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIELFREeqTPt0oI_JZmg" elementId="org.eclipse.jst.jsf.ui.component.ComponentTreeView" label="JSF Component Tree" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="JavaServer Faces" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhbrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.jsf.ui.component.ComponentTreeView" label="JSF Component Tree" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="JavaServer Faces" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhbrFMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.jsf.ui.component.ComponentTreeView" label="JSF Component Tree" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="JavaServer Faces" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3077,7 +3553,11 @@
     <tags>categoryTag:JavaServer Faces</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIEbFREeqTPt0oI_JZmg" elementId="org.eclipse.jst.jsf.ui.tagregistry.TagRegistryView" label="Tag Registry" iconURI="platform:/plugin/org.eclipse.jst.jsf.ui/icons/obj16/library_obj.gif" tooltip="" category="JavaServer Faces" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhb7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.jsf.ui.tagregistry.TagRegistryView" label="Tag Registry" iconURI="platform:/plugin/org.eclipse.jst.jsf.ui/icons/obj16/library_obj.gif" tooltip="" category="JavaServer Faces" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhb7FMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.jsf.ui.tagregistry.TagRegistryView" label="Tag Registry" iconURI="platform:/plugin/org.eclipse.jst.jsf.ui/icons/obj16/library_obj.gif" tooltip="" category="JavaServer Faces" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3087,7 +3567,11 @@
     <tags>categoryTag:JavaServer Faces</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIErFREeqTPt0oI_JZmg" elementId="org.eclipse.jst.ws.jaxws.ui.views.AnnotationsView" label="Annotation Properties" iconURI="platform:/plugin/org.eclipse.jst.ws.jaxws.ui/icons/eview16/prop_ps.gif" tooltip="" category="Web Services" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhcLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.ws.jaxws.ui.views.AnnotationsView" label="Annotation Properties" iconURI="platform:/plugin/org.eclipse.jst.ws.jaxws.ui/icons/eview16/prop_ps.gif" tooltip="" category="Web Services" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhcLFMEeqTPt0oI_JZmg" elementId="org.eclipse.jst.ws.jaxws.ui.views.AnnotationsView" label="Annotation Properties" iconURI="platform:/plugin/org.eclipse.jst.ws.jaxws.ui/icons/eview16/prop_ps.gif" tooltip="" category="Web Services" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3097,7 +3581,11 @@
     <tags>categoryTag:Web Services</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIE7FREeqTPt0oI_JZmg" elementId="org.eclipse.m2e.core.views.MavenRepositoryView" label="Maven Repositories" iconURI="platform:/plugin/org.eclipse.m2e.core.ui/icons/maven_indexes.gif" tooltip="" category="Maven" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhcbFMEeqTPt0oI_JZmg" elementId="org.eclipse.m2e.core.views.MavenRepositoryView" label="Maven Repositories" iconURI="platform:/plugin/org.eclipse.m2e.core.ui/icons/maven_indexes.gif" tooltip="" category="Maven" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhcbFMEeqTPt0oI_JZmg" elementId="org.eclipse.m2e.core.views.MavenRepositoryView" label="Maven Repositories" iconURI="platform:/plugin/org.eclipse.m2e.core.ui/icons/maven_indexes.gif" tooltip="" category="Maven" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3107,7 +3595,11 @@
     <tags>categoryTag:Maven</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIFLFREeqTPt0oI_JZmg" elementId="org.eclipse.m2e.core.views.MavenBuild" label="Maven Workspace Build" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="Maven" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhcrFMEeqTPt0oI_JZmg" elementId="org.eclipse.m2e.core.views.MavenBuild" label="Maven Workspace Build" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="Maven" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhcrFMEeqTPt0oI_JZmg" elementId="org.eclipse.m2e.core.views.MavenBuild" label="Maven Workspace Build" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="Maven" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3117,7 +3609,11 @@
     <tags>categoryTag:Maven</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIFbFREeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.commons.repositories.ui.navigator.Repositories" label="Team Repositories" iconURI="platform:/plugin/org.eclipse.mylyn.commons.repositories.ui/icons/eview16/repositories.gif" tooltip="" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhc7FMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.commons.repositories.ui.navigator.Repositories" label="Team Repositories" iconURI="platform:/plugin/org.eclipse.mylyn.commons.repositories.ui/icons/eview16/repositories.gif" tooltip="" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhc7FMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.commons.repositories.ui.navigator.Repositories" label="Team Repositories" iconURI="platform:/plugin/org.eclipse.mylyn.commons.repositories.ui/icons/eview16/repositories.gif" tooltip="" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3127,7 +3623,11 @@
     <tags>categoryTag:Mylyn</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIFrFREeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif" tooltip="" allowMultiple="true" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhdLFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif" tooltip="" allowMultiple="true" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhdLFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/task-list.gif" tooltip="" allowMultiple="true" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3137,7 +3637,11 @@
     <tags>categoryTag:Mylyn</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIF7FREeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.repositories" label="Task Repositories" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/repositories.gif" tooltip="" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhdbFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.repositories" label="Task Repositories" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/repositories.gif" tooltip="" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhdbFMEeqTPt0oI_JZmg" elementId="org.eclipse.mylyn.tasks.ui.views.repositories" label="Task Repositories" iconURI="platform:/plugin/org.eclipse.mylyn.tasks.ui/icons/eview16/repositories.gif" tooltip="" category="Mylyn" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3147,7 +3651,11 @@
     <tags>categoryTag:Mylyn</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIGLFREeqTPt0oI_JZmg" elementId="org.eclipse.oomph.p2.ui.RepositoryExplorer" label="Repository Explorer" iconURI="platform:/plugin/org.eclipse.oomph.p2.ui/icons/obj16/repository.gif" tooltip="" category="Oomph" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhdrFMEeqTPt0oI_JZmg" elementId="org.eclipse.oomph.p2.ui.RepositoryExplorer" label="Repository Explorer" iconURI="platform:/plugin/org.eclipse.oomph.p2.ui/icons/obj16/repository.gif" tooltip="" category="Oomph" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhdrFMEeqTPt0oI_JZmg" elementId="org.eclipse.oomph.p2.ui.RepositoryExplorer" label="Repository Explorer" iconURI="platform:/plugin/org.eclipse.oomph.p2.ui/icons/obj16/repository.gif" tooltip="" category="Oomph" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3157,7 +3665,11 @@
     <tags>categoryTag:Oomph</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIGbFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.api.tools.ui.views.apitooling.views.apitoolingview" label="API Tools" iconURI="platform:/plugin/org.eclipse.pde.api.tools.ui/icons/full/obj16/api_tools.png" tooltip="" category="API Tools" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhd7FMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.api.tools.ui.views.apitooling.views.apitoolingview" label="API Tools" iconURI="platform:/plugin/org.eclipse.pde.api.tools.ui/icons/full/obj16/api_tools.png" tooltip="" category="API Tools" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhd7FMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.api.tools.ui.views.apitooling.views.apitoolingview" label="API Tools" iconURI="platform:/plugin/org.eclipse.pde.api.tools.ui/icons/full/obj16/api_tools.png" tooltip="" category="API Tools" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3167,7 +3679,11 @@
     <tags>categoryTag:API Tools</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIGrFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.RegistryBrowser" label="Plug-in Registry" iconURI="platform:/plugin/org.eclipse.pde.runtime/icons/eview16/registry.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYheLFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.RegistryBrowser" label="Plug-in Registry" iconURI="platform:/plugin/org.eclipse.pde.runtime/icons/eview16/registry.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYheLFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.RegistryBrowser" label="Plug-in Registry" iconURI="platform:/plugin/org.eclipse.pde.runtime/icons/eview16/registry.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3177,7 +3693,11 @@
     <tags>categoryTag:Plug-in Development</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIG7FREeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.PluginsView" label="Plug-ins" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/eview16/plugin_depend.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhebFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.PluginsView" label="Plug-ins" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/eview16/plugin_depend.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhebFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.PluginsView" label="Plug-ins" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/eview16/plugin_depend.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3187,7 +3707,11 @@
     <tags>categoryTag:Plug-in Development</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIHLFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.FeaturesView" label="Features" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/feature_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYherFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.FeaturesView" label="Features" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/feature_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYherFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.FeaturesView" label="Features" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/feature_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3197,7 +3721,11 @@
     <tags>categoryTag:Plug-in Development</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIHbFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.DependenciesView" label="Plug-in Dependencies" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/req_plugins_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhe7FMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.DependenciesView" label="Plug-in Dependencies" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/req_plugins_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhe7FMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.DependenciesView" label="Plug-in Dependencies" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/req_plugins_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3207,7 +3735,11 @@
     <tags>categoryTag:Plug-in Development</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIHrFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.TargetPlatformState" label="Target Platform State" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/target_profile_xml_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhfLFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.TargetPlatformState" label="Target Platform State" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/target_profile_xml_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhfLFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.TargetPlatformState" label="Target Platform State" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/target_profile_xml_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3217,7 +3749,11 @@
     <tags>categoryTag:Plug-in Development</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIH7FREeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.ImageBrowserView" label="Plug-in Image Browser" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/psearch_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhfbFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.ImageBrowserView" label="Plug-in Image Browser" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/psearch_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhfbFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.ui.ImageBrowserView" label="Plug-in Image Browser" iconURI="platform:/plugin/org.eclipse.pde.ui/icons/obj16/psearch_obj.png" tooltip="" category="Plug-in Development" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3227,7 +3763,11 @@
     <tags>categoryTag:Plug-in Development</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIILFREeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.systemView" label="Remote Systems" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhfrFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.systemView" label="Remote Systems" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhfrFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.systemView" label="Remote Systems" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3237,7 +3777,11 @@
     <tags>categoryTag:Remote Systems</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIIbFREeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.teamView" label="Team" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/team_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhf7FMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.teamView" label="Team" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/team_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhf7FMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.teamView" label="Team" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/team_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3247,7 +3791,11 @@
     <tags>categoryTag:Remote Systems</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIIrFREeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.systemTableView" label="Remote System Details" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhgLFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.systemTableView" label="Remote System Details" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhgLFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.systemTableView" label="Remote System Details" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/cview16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3257,7 +3805,11 @@
     <tags>categoryTag:Remote Systems</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SII7FREeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.SystemSearchView" label="Remote Search" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/obj16/system_search.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhgbFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.SystemSearchView" label="Remote Search" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/obj16/system_search.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhgbFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.SystemSearchView" label="Remote Search" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/obj16/system_search.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3267,7 +3819,11 @@
     <tags>categoryTag:Remote Systems</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIJLFREeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.scratchpad.SystemScratchpadViewPart" label="Remote Scratchpad" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/view16/scratchpad_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhgrFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.scratchpad.SystemScratchpadViewPart" label="Remote Scratchpad" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/view16/scratchpad_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhgrFMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.scratchpad.SystemScratchpadViewPart" label="Remote Scratchpad" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/view16/scratchpad_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3277,7 +3833,11 @@
     <tags>categoryTag:Remote Systems</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIJbFREeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.monitorView" label="Remote Monitor" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/view16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhg7FMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.monitorView" label="Remote Monitor" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/view16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhg7FMEeqTPt0oI_JZmg" elementId="org.eclipse.rse.ui.view.monitorView" label="Remote Monitor" iconURI="platform:/plugin/org.eclipse.rse.ui/icons/full/view16/system_view.gif" tooltip="" category="Remote Systems" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3287,7 +3847,11 @@
     <tags>categoryTag:Remote Systems</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIJrFREeqTPt0oI_JZmg" elementId="org.eclipse.search.SearchResultView" label="Classic Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhhLFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.SearchResultView" label="Classic Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhhLFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.SearchResultView" label="Classic Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3297,7 +3861,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIJ7FREeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhhbFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhhbFMEeqTPt0oI_JZmg" elementId="org.eclipse.search.ui.views.SearchView" label="Search" iconURI="platform:/plugin/org.eclipse.search/icons/full/eview16/searchres.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3307,7 +3875,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIKLFREeqTPt0oI_JZmg" elementId="org.eclipse.team.sync.views.SynchronizeView" label="Synchronize" iconURI="platform:/plugin/org.eclipse.team.ui/icons/full/eview16/synch_synch.png" tooltip="" allowMultiple="true" category="Team" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhhrFMEeqTPt0oI_JZmg" elementId="org.eclipse.team.sync.views.SynchronizeView" label="Synchronize" iconURI="platform:/plugin/org.eclipse.team.ui/icons/full/eview16/synch_synch.png" tooltip="" allowMultiple="true" category="Team" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhhrFMEeqTPt0oI_JZmg" elementId="org.eclipse.team.sync.views.SynchronizeView" label="Synchronize" iconURI="platform:/plugin/org.eclipse.team.ui/icons/full/eview16/synch_synch.png" tooltip="" allowMultiple="true" category="Team" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3317,7 +3889,11 @@
     <tags>categoryTag:Team</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIKbFREeqTPt0oI_JZmg" elementId="org.eclipse.team.ui.GenericHistoryView" label="History" iconURI="platform:/plugin/org.eclipse.team.ui/icons/full/eview16/history_view.png" tooltip="" allowMultiple="true" category="Team" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhh7FMEeqTPt0oI_JZmg" elementId="org.eclipse.team.ui.GenericHistoryView" label="History" iconURI="platform:/plugin/org.eclipse.team.ui/icons/full/eview16/history_view.png" tooltip="" allowMultiple="true" category="Team" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhh7FMEeqTPt0oI_JZmg" elementId="org.eclipse.team.ui.GenericHistoryView" label="History" iconURI="platform:/plugin/org.eclipse.team.ui/icons/full/eview16/history_view.png" tooltip="" allowMultiple="true" category="Team" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3327,17 +3903,23 @@
     <tags>categoryTag:Team</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIKrFREeqTPt0oI_JZmg" elementId="org.eclipse.tips.ide.tipPart" label="Tip of the Day" iconURI="platform:/plugin/org.eclipse.tips.ui/icons/lightbulb.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.tips.ide/org.eclipse.tips.ide.internal.TipPart">
     <tags>View</tags>
     <tags>categoryTag:Help</tags>
   </descriptors>
   <descriptors xmi:id="_64SIK7FREeqTPt0oI_JZmg" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" label="Terminal" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Terminal" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
   <descriptors xmi:id="_VOYhiLFMEeqTPt0oI_JZmg" elementId="org.eclipse.tips.ide.tipPart" label="Tip of the Day" iconURI="platform:/plugin/org.eclipse.tips.ui/icons/lightbulb.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.tips.ide/org.eclipse.tips.ide.internal.TipPart">
     <tags>View</tags>
     <tags>categoryTag:Help</tags>
   </descriptors>
   <descriptors xmi:id="_VOYhibFMEeqTPt0oI_JZmg" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" label="Terminal" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Terminal" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
     <persistedState key="originalCompatibilityViewClass" value="org.eclipse.tm.terminal.view.ui.view.TerminalsView"/>
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.tm.terminal.view.ui"/>
@@ -3345,7 +3927,11 @@
     <tags>categoryTag:Terminal</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SILLFREeqTPt0oI_JZmg" elementId="org.eclipse.tcf.te.ui.terminals.TerminalsView" label="Terminals (Old)" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhirFMEeqTPt0oI_JZmg" elementId="org.eclipse.tcf.te.ui.terminals.TerminalsView" label="Terminals (Old)" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhirFMEeqTPt0oI_JZmg" elementId="org.eclipse.tcf.te.ui.terminals.TerminalsView" label="Terminals (Old)" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3355,7 +3941,11 @@
     <tags>categoryTag:Other</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SILbFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhi7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhi7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.internal.introview" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3365,7 +3955,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SILrFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.browser.view" label="Internal Web Browser" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhjLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.browser.view" label="Internal Web Browser" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhjLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.browser.view" label="Internal Web Browser" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3375,7 +3969,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIL7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="Cheat Sheets" iconURI="platform:/plugin/org.eclipse.ui.cheatsheets/icons/view16/cheatsheet_view.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhjbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="Cheat Sheets" iconURI="platform:/plugin/org.eclipse.ui.cheatsheets/icons/view16/cheatsheet_view.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhjbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="Cheat Sheets" iconURI="platform:/plugin/org.eclipse.ui.cheatsheets/icons/view16/cheatsheet_view.png" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3385,7 +3983,11 @@
     <tags>categoryTag:Help</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIMLFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhjrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhjrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.console.ConsoleView" label="Console" iconURI="platform:/plugin/org.eclipse.ui.console/icons/full/cview16/console_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3395,7 +3997,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIMbFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhj7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhj7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProgressView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3405,7 +4011,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIMrFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ResourceNavigator" label="Navigator (Deprecated)" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhkLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ResourceNavigator" label="Navigator (Deprecated)" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhkLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ResourceNavigator" label="Navigator (Deprecated)" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3415,7 +4025,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIM7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhkbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhkbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.BookmarkView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3425,7 +4039,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SINLFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhkrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhkrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.TaskList" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3435,7 +4053,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SINbFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhk7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhk7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ProblemView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3445,7 +4067,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SINrFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhlLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhlLFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.AllMarkersView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3455,7 +4081,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIN7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhlbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhlbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3465,7 +4095,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIOLFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/prop_ps.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhlrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/prop_ps.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhlrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.PropertySheet" label="Properties" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/prop_ps.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3475,7 +4109,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIObFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhl7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhl7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.ContentOutline" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3485,7 +4123,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIOrFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.LogView" label="Error Log" iconURI="platform:/plugin/org.eclipse.ui.views.log/icons/eview16/error_log.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhmLFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.LogView" label="Error Log" iconURI="platform:/plugin/org.eclipse.ui.views.log/icons/eview16/error_log.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhmLFMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.LogView" label="Error Log" iconURI="platform:/plugin/org.eclipse.ui.views.log/icons/eview16/error_log.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3495,7 +4137,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIO7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhmbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhmbFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.views.minimap.MinimapView" label="Minimap" iconURI="platform:/plugin/org.eclipse.ui.workbench.texteditor/icons/full/eview16/minimap.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3505,7 +4151,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIPLFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="Snippets" iconURI="platform:/plugin/org.eclipse.wst.common.snippets/icons/snippets_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhmrFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="Snippets" iconURI="platform:/plugin/org.eclipse.wst.common.snippets/icons/snippets_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhmrFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="Snippets" iconURI="platform:/plugin/org.eclipse.wst.common.snippets/icons/snippets_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3515,7 +4165,11 @@
     <tags>categoryTag:General</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIPbFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.internet.monitor.view" label="TCP/IP Monitor" iconURI="platform:/plugin/org.eclipse.wst.internet.monitor.ui/icons/cview16/monitorView.gif" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhm7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.internet.monitor.view" label="TCP/IP Monitor" iconURI="platform:/plugin/org.eclipse.wst.internet.monitor.ui/icons/cview16/monitorView.gif" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhm7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.internet.monitor.view" label="TCP/IP Monitor" iconURI="platform:/plugin/org.eclipse.wst.internet.monitor.ui/icons/cview16/monitorView.gif" tooltip="" category="Debug" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3525,7 +4179,11 @@
     <tags>categoryTag:Debug</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIPrFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.TypeHierarchy" label="Hierarchy" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/class_hi.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhnLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.TypeHierarchy" label="Hierarchy" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/class_hi.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhnLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.TypeHierarchy" label="Hierarchy" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/class_hi.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3535,7 +4193,11 @@
     <tags>categoryTag:JavaScript</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIP7FREeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.PackageExplorer" label="Script Explorer" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/package.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhnbFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.PackageExplorer" label="Script Explorer" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/package.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhnbFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.PackageExplorer" label="Script Explorer" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/package.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3545,7 +4207,11 @@
     <tags>categoryTag:JavaScript</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIQLFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.callhierarchy.view" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/call_hierarchy.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhnrFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.callhierarchy.view" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/call_hierarchy.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhnrFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.callhierarchy.view" label="Call Hierarchy" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/call_hierarchy.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3555,7 +4221,11 @@
     <tags>categoryTag:JavaScript</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIQbFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.SourceView" label="Declaration" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/source.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhn7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.SourceView" label="Declaration" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/source.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhn7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.SourceView" label="Declaration" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/source.gif" tooltip="" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3565,7 +4235,11 @@
     <tags>categoryTag:JavaScript</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIQrFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.JavadocView" label="Documentation" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/javadoc.gif" tooltip="JavaScript Documentation" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhoLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.JavadocView" label="Documentation" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/javadoc.gif" tooltip="JavaScript Documentation" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhoLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.jsdt.ui.JavadocView" label="Documentation" iconURI="platform:/plugin/org.eclipse.wst.jsdt.ui/icons/full/eview16/javadoc.gif" tooltip="JavaScript Documentation" category="JavaScript" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3575,7 +4249,11 @@
     <tags>categoryTag:JavaScript</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIQ7FREeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.ServersView" label="Servers" iconURI="platform:/plugin/org.eclipse.wst.server.ui/icons/cview16/servers_view.gif" tooltip="" category="Server" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhobFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.ServersView" label="Servers" iconURI="platform:/plugin/org.eclipse.wst.server.ui/icons/cview16/servers_view.gif" tooltip="" category="Server" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhobFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.server.ui.ServersView" label="Servers" iconURI="platform:/plugin/org.eclipse.wst.server.ui/icons/cview16/servers_view.gif" tooltip="" category="Server" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3585,7 +4263,11 @@
     <tags>categoryTag:Server</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIRLFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.ui.views.annotations.XMLAnnotationsView" label="Documentation" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/full/obj16/comment_obj.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhorFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.ui.views.annotations.XMLAnnotationsView" label="Documentation" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/full/obj16/comment_obj.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhorFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.ui.views.annotations.XMLAnnotationsView" label="Documentation" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/full/obj16/comment_obj.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3595,7 +4277,11 @@
     <tags>categoryTag:XML</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIRbFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.ui.contentmodel.view" label="Content Model" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/full/view16/hierarchy.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYho7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.ui.contentmodel.view" label="Content Model" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/full/view16/hierarchy.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYho7FMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.ui.contentmodel.view" label="Content Model" iconURI="platform:/plugin/org.eclipse.wst.xml.ui/icons/full/view16/hierarchy.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3605,7 +4291,11 @@
     <tags>categoryTag:XML</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIRrFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.views.XPathView" label="XPath" iconURI="platform:/plugin/org.eclipse.wst.xml.xpath.ui/icons/full/xpath.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhpLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.views.XPathView" label="XPath" iconURI="platform:/plugin/org.eclipse.wst.xml.xpath.ui/icons/full/xpath.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhpLFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xml.views.XPathView" label="XPath" iconURI="platform:/plugin/org.eclipse.wst.xml.xpath.ui/icons/full/xpath.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3615,7 +4305,11 @@
     <tags>categoryTag:XML</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SIR7FREeqTPt0oI_JZmg" elementId="org.eclipse.wst.xsl.jaxp.debug.ui.resultview" label="Result" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhpbFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xsl.jaxp.debug.ui.resultview" label="Result" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhpbFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xsl.jaxp.debug.ui.resultview" label="Result" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3625,7 +4319,11 @@
     <tags>categoryTag:XML</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <descriptors xmi:id="_64SISLFREeqTPt0oI_JZmg" elementId="org.eclipse.wst.xsl.ui.view.outline" label="Stylesheet Model" iconURI="platform:/plugin/org.eclipse.wst.xsl.ui/icons/full/hierarchy.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+=======
+  <descriptors xmi:id="_VOYhprFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xsl.ui.view.outline" label="Stylesheet Model" iconURI="platform:/plugin/org.eclipse.wst.xsl.ui/icons/full/hierarchy.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <descriptors xmi:id="_VOYhprFMEeqTPt0oI_JZmg" elementId="org.eclipse.wst.xsl.ui.view.outline" label="Stylesheet Model" iconURI="platform:/plugin/org.eclipse.wst.xsl.ui/icons/full/hierarchy.gif" tooltip="" category="XML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3635,8 +4333,13 @@
     <tags>categoryTag:XML</tags>
   </descriptors>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <trimContributions xmi:id="_64T9A7FREeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_64T9BLFREeqTPt0oI_JZmg" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+=======
+  <trimContributions xmi:id="_VOaWT7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_VOaWULFMEeqTPt0oI_JZmg" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
   <trimContributions xmi:id="_VOaWT7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_VOaWULFMEeqTPt0oI_JZmg" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -3646,7 +4349,11 @@
       <tags>SHOW_RESTORE_MENU</tags>
     </children>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <children xsi:type="menu:ToolControl" xmi:id="_64T9BbFREeqTPt0oI_JZmg" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+=======
+    <children xsi:type="menu:ToolControl" xmi:id="_VOaWUbFMEeqTPt0oI_JZmg" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <children xsi:type="menu:ToolControl" xmi:id="_VOaWUbFMEeqTPt0oI_JZmg" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3655,7 +4362,11 @@
       <tags>SHOW_RESTORE_MENU</tags>
     </children>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <children xsi:type="menu:ToolControl" xmi:id="_64T9BrFREeqTPt0oI_JZmg" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+=======
+    <children xsi:type="menu:ToolControl" xmi:id="_VOaWUrFMEeqTPt0oI_JZmg" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 =======
     <children xsi:type="menu:ToolControl" xmi:id="_VOaWUrFMEeqTPt0oI_JZmg" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
@@ -3664,6 +4375,7 @@
       <tags>SHOW_RESTORE_MENU</tags>
     </children>
   </trimContributions>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <commands xmi:id="_64T9FbFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_64UkCbFREeqTPt0oI_JZmg"/>
   <commands xmi:id="_64T9FrFREeqTPt0oI_JZmg" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_64UCA7FREeqTPt0oI_JZmg"/>
@@ -5031,6 +5743,8 @@
   <categories xmi:id="_64UkCbFREeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.category.source" name="Source" description="Java Source Actions"/>
   <categories xmi:id="_64UkCrFREeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.spy.commands.category" name="Spy"/>
 =======
+=======
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
   <commands xmi:id="_VOaWYbFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_VOblarFMEeqTPt0oI_JZmg"/>
   <commands xmi:id="_VOaWYrFMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_VOblN7FMEeqTPt0oI_JZmg"/>
   <commands xmi:id="_VOaWY7FMEeqTPt0oI_JZmg" elementId="org.eclipse.ui.edit.text.toggleWordWrap" commandName="Toggle Word Wrap" description="Toggle word wrap in the current text editor" category="_VOblNLFMEeqTPt0oI_JZmg"/>
@@ -6396,5 +7110,8 @@
   <categories xmi:id="_VOblabFMEeqTPt0oI_JZmg" elementId="org.eclipse.lsp4e.commandCategory" name="Command"/>
   <categories xmi:id="_VOblarFMEeqTPt0oI_JZmg" elementId="org.eclipse.jdt.ui.category.source" name="Source" description="Java Source Actions"/>
   <categories xmi:id="_VObla7FMEeqTPt0oI_JZmg" elementId="org.eclipse.pde.runtime.spy.commands.category" name="Spy"/>
+<<<<<<< HEAD
+>>>>>>> parent of 0c0ec8b... 이클립스 환경설정
+=======
 >>>>>>> parent of 0c0ec8b... 이클립스 환경설정
 </application:Application>
