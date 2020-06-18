@@ -20,7 +20,7 @@ public class ProductVO {
     }
 
     // 오버로드 생성자
-    public ProductVO(String prod_code, String prod_category, String prod_name, int prod_cost, int prod_price, int prod_stock, String prod_color, String prod_mtl, String prod_size, int prod_status) {
+    public ProductVO(String prod_code, String prod_category, String prod_name, int prod_cost, int prod_price, int prod_stock, String prod_color, String prod_mtl, String prod_sizem, int prod_status) {
         this.prod_code = prod_code;
         this.prod_category = prod_category;
         this.prod_name = prod_name;
