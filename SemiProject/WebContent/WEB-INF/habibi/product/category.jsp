@@ -1,16 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 2020/06/11
-  Time: 11:26 오후
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+ <jsp:include page="../../Main/header.jsp"/>
 
     <style>
 
@@ -53,6 +44,9 @@
             text-align: left;
         }
 
+		#left_sidebar, content {
+			display: inline-block;
+		}
 
 
 
@@ -63,10 +57,17 @@
 
 <header></header>
 
+
+
 <div class="category">SOFA</div>
+
+
 
 <div class = "container">
 
+<jsp:include page="../../Main/sideBar.jsp"/>
+
+<div class="content">
     <div class="item">
         <div class="image">
             <img src="">
@@ -283,8 +284,8 @@
             <div class="color">colors</div>
         </div>
     </div>
+</div>
 
 </div>
 
-</body>
-</html>
+<jsp:include page="../../Main/footer.jsp"/>

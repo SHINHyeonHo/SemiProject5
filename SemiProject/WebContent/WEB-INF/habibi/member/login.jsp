@@ -4,48 +4,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 모달</title>
 <style type="text/css">
 
 </style>
 <script type="text/javascript">
-   $(document).ready(function(){ 
+	
+	$(document).ready(function(){ 
       
-      $("btnSubmit").click(function(){ 
-         
-         goLogin(); // 로그인 시도
-         
-      });
+		$("btnSubmit").click(function(){ 
+			goLogin(); // 로그인 시도
+		});
       
-      $("#loginPwd").keydown(function(event){
-            
-            if(event.keyCode == 13){ // 암호 입력란에 엔터를 했을 경우   
-               goLogin();// 로그인 시도한다.
-            }
-            
-       });
+		$("#passwd").keydown(function(event){
+			if(event.keyCode == 13){ // 암호 입력란에 엔터를 했을 경우   
+				goLogin(); // 로그인 시도한다.
+			}
+		});
       
-   }); // end of $(document).ready(function()
+	}); // end of $(document).ready(function() -----------------------------------
+   
+	function goLogin(){
+
+		var userid = $("#userid").val().trim();
+		var passwd = $("#passwd").val().trim();
          
-   function goLogin(){
-         
-         // alert("확인용 로그인 처리");
-         var loginUserid = $("#loginUserid").val().trim();
-         var loginPwd = $("#loginPwd").val().trim();
-         
-         if(loginUserid == "") {
+         if(userid == "") {
             alert("아이디를 입력하세요!!");
-            $("#loginUserid").val("");
-            $("#loginUserid").focus();
-            
+            $("#userid").val("");
+            $("#userid").focus();
             return;   // goLogin() 함수 종료
          }
          
-         if(loginPwd == "") {
+         if(passwd == "") {
             alert("암호를 입력하세요!!");
-            $("#loginPwd").val("");
-            $("#loginPwd").focus();
-            
+            $("#passwd").val("");
+            $("#passwd").focus();
             return;   // goLogin() 함수 종료
          }
          
@@ -54,38 +48,58 @@
          frm.action = "<%=request.getContextPath()%>/login/login.hb";
          frm.submit();
          
-   } // end of function goLogin(){}      
+   } // end of function goLogin(){} ------------------------------  
 
 </script>
 </head>
 <body>
-      <div class="login">
-         <p style="font-weight:bold; padding-bottom:10px; color: #666;">MEMBER LOGIN</p>
-         <!-- <legend>회원로그인</legend> -->
-         <label class="id">
-            <span>ID</span>
-            <input id="loginUserid" name="userid" type="text" >
-         </label>
-         <label class="password">
-            <span>PASSWORD</span>
-            <input id="loginPwd" name="passwd" type="text" >
-         </label>
-         
-         <p class="security">보안접속</p>
-         
-         <button type="button" style="cursor: pointer;" onclick="goLogin();">LOGIN</button>
-         <button type="button" style="cursor: pointer;" onclick="goLogOut();">LOG OUT</button>
-      </div>
-   
-   <div class="joinpart">
-      <div class="joinbtn">
-         <p style="font-weight:bold; color: #666;">JOIN US</p>
-         <button type="button" style="cursor: pointer;" onclick="MemberRegister();">JOIN</button>
-      </div>
-      <p>
-         <a href="findID.html" style="color: #666;">FIND ID</a>      
-         <a href="findPassword.html" style="color: #666;">FIND PASSWORD</a>   
-      </p>
-   </div>
+
+<!-- 모달 묶음으로 로그인 창처리 -->
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Login</h4>
+        </div>
+        
+        <div class="modal-body">
+	       	<form name="loginFrm">
+	         	<p style="font-weight:bold; padding-bottom:10px; color: #666;">MEMBER LOGIN</p>
+	         	<!-- <legend>회원로그인</legend> -->
+	         	<label class="id">
+	            	<span>ID</span>
+	            	<input id="userid" name="userid" type="text" >
+	         	</label>
+	         	<label class="password">
+	            	<span>PASSWORD</span>
+	            	<input id="passwd" name="passwd" type="password" >
+	         	</label>
+	         
+	         
+	         	<button type="button" style="cursor: pointer;" onclick="goLogin();">LOGIN</button>
+			</form>
+	   
+			<div class="joinpart">
+		      	<div class="joinbtn">
+					<p style="font-weight:bold; color: #666;">JOIN US</p>
+		         	<button type="button" style="cursor: pointer;" onclick="MemberRegister();">JOIN</button>
+		      	</div>
+		      	<p>
+	         		<a href="findID.html" style="color: #666;">FIND ID</a>&nbsp;&nbsp;/&nbsp;&nbsp;       
+		         	<a href="findPassword.html" style="color: #666;">FIND PASSWORD</a>   
+		      	</p>
+		   	</div>
+		</div>
+		
+        <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		
+	</div>
+    </div>
+</div>
+      
 </body>
 </html>

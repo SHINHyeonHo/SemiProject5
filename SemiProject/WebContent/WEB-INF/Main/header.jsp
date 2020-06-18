@@ -5,8 +5,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>HABIBI</title>
-<link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 <style type="text/css">
 
@@ -55,6 +58,7 @@ li.header_menu {
 	margin-right: 5px;
 	font-size: 8pt;
 	text-decoration: none;
+	cursor: pointer;
 }
 	
 
@@ -80,7 +84,7 @@ li.header_menu {
 				<li class="header_menu">NEWS</li>
 				<li class="header_menu">COMPANY</li>
 				<li class="header_menu">PHOTO</li>
-				<li class="header_menu">LOGIN</li>
+				<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
 				<li class="header_menu">CART</li>
 			</ul>
 		</div>

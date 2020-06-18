@@ -48,15 +48,8 @@ a {
 }
 
 div.left_sidebar {
-	border: solid 1px red;
 	width: 25%;
 	float: left;
-}
-
-div.main_banner {
-	border: solid 1px blue;
-	width: 74%;
-	min-height: 3000px
 }
 
 div.middle {
