@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class MemberDAO implements InterMemberDAO {
@@ -14,6 +17,18 @@ public class MemberDAO implements InterMemberDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	
+	// 생성자 
+	   public MemberDAO() {
+	   
+	      try {
+	          Context initContext = new InitialContext();
+	         Context envContext  = (Context)initContext.lookup("java:/comp/env");
+	         ds = (DataSource)envContext.lookup("jdbc/myoracle5");
+	      } catch (NamingException e) {
+	         e.printStackTrace();
+	      }   
+	   }
 	
 	// 사용한 자원을 반납하는 close() 메소드 생성하기
 	public void close() {
