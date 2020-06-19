@@ -1,33 +1,33 @@
-※ Web Server 
- --> html 파일과 
-     jpg, png, gif 확장자로 되어진 이미지 파일로 이루어진 정적인 문서나 이미지 파일을 
-         웹페이지로 보여지게끔 제공해주는 서버이다.
+�� Web Server 
+ --> html �뙆�씪怨� 
+     jpg, png, gif �솗�옣�옄濡� �릺�뼱吏� �씠誘몄� �뙆�씪濡� �씠猷⑥뼱吏� �젙�쟻�씤 臾몄꽌�굹 �씠誘몄� �뙆�씪�쓣 
+         �쎒�럹�씠吏�濡� 蹂댁뿬吏�寃뚮걫 �젣怨듯빐二쇰뒗 �꽌踰꾩씠�떎.
 
-※ WAS(Web Application Server)
- --> Web Server 기능 + Web Container(웹컨테이너) 기능을 합친것을 말한다.
+�� WAS(Web Application Server)
+ --> Web Server 湲곕뒫 + Web Container(�쎒而⑦뀒�씠�꼫) 湲곕뒫�쓣 �빀移쒓쾬�쓣 留먰븳�떎.
 
- ==> Web Container(웹컨테이너)란?
-     -- JSP(HTML 페이지속에 Java 소스가 올라가 있는 페이지) 와 
-        Servlet(웹기능을 하도록 만들어진 Java Class)을 실행시킬수 있는 소프트웨어이다.
+ ==> Web Container(�쎒而⑦뀒�씠�꼫)��?
+     -- JSP(HTML �럹�씠吏��냽�뿉 Java �냼�뒪媛� �삱�씪媛� �엳�뒗 �럹�씠吏�) �� 
+        Servlet(�쎒湲곕뒫�쓣 �븯�룄濡� 留뚮뱾�뼱吏� Java Class)�쓣 �떎�뻾�떆�궗�닔 �엳�뒗 �냼�봽�듃�썾�뼱�씠�떎.
      
-     JSP 와 Servlet 은 자바변수가 사용되어 지므로 입력되어지는 변수값에 따라 그 내용이 변하므로 동적 웹페이지를 구현한다.
-     Web Server에 JSP 페이지를 요청하면  Web Container 가 JSP 파일을  Servlet 으로 변환하여 컴파일을 수행해주고 
-     Servlet 의 실행결과물을  Web Server에게 전달하여 화면에 보여준다.
+     JSP �� Servlet �� �옄諛붾��닔媛� �궗�슜�릺�뼱 吏�誘�濡� �엯�젰�릺�뼱吏��뒗 蹂��닔媛믪뿉 �뵲�씪 洹� �궡�슜�씠 蹂��븯誘�濡� �룞�쟻 �쎒�럹�씠吏�瑜� 援ы쁽�븳�떎.
+     Web Server�뿉 JSP �럹�씠吏�瑜� �슂泥��븯硫�  Web Container 媛� JSP �뙆�씪�쓣  Servlet �쑝濡� 蹂��솚�븯�뿬 而댄뙆�씪�쓣 �닔�뻾�빐二쇨퀬 
+     Servlet �쓽 �떎�뻾寃곌낵臾쇱쓣  Web Server�뿉寃� �쟾�떖�븯�뿬 �솕硫댁뿉 蹂댁뿬以��떎.
 
 
- ※ Web Server 의 종류
-    -- Apache, IIS(Internet Information Server), WebtoB(티맥스소프트,국산) 
+ �� Web Server �쓽 醫낅쪟
+    -- Apache, IIS(Internet Information Server), WebtoB(�떚留μ뒪�냼�봽�듃,援��궛) 
  
- ※ Web Containter 의 종류
-    -- Tomcat, Jeus(티맥스소프트,국산), WebSphere(IBM), WebLogic(오라클사), JBoss(Redhat), Resin(Caucho) 
+ �� Web Containter �쓽 醫낅쪟
+    -- Tomcat, Jeus(�떚留μ뒪�냼�봽�듃,援��궛), WebSphere(IBM), WebLogic(�삤�씪�겢�궗), JBoss(Redhat), Resin(Caucho) 
 
  ---------------------------------------------------------
  
- ===> C:\apache-tomcat-8.5.47\conf\server.xml 파일 수정하기 <====
- C:\apache-tomcat-8.5.47\conf\server.xml 파일에서
- --> 오라클이 사용하고 있는 웹포트번호 8080과 중복을 피하고자 port 번호를 8080 에서 9090 으로 변경하겠다.  
-     form의 method 방식중 get방식으로 요청을 받을 경우 
-         사용자가 입력한 값이 한글인 경우 한글이 깨지는 현상을 방지하기 위해 URIEncoding="UTF-8" 을 해주어야 한다. 
+ ===> C:\apache-tomcat-8.5.47\conf\server.xml �뙆�씪 �닔�젙�븯湲� <====
+ C:\apache-tomcat-8.5.47\conf\server.xml �뙆�씪�뿉�꽌
+ --> �삤�씪�겢�씠 �궗�슜�븯怨� �엳�뒗 �쎒�룷�듃踰덊샇 8080怨� 以묐났�쓣 �뵾�븯怨좎옄 port 踰덊샇瑜� 8080 �뿉�꽌 9090 �쑝濡� 蹂�寃쏀븯寃좊떎.  
+     form�쓽 method 諛⑹떇以� get諛⑹떇�쑝濡� �슂泥��쓣 諛쏆쓣 寃쎌슦 
+         �궗�슜�옄媛� �엯�젰�븳 媛믪씠 �븳湲��씤 寃쎌슦 �븳湲��씠 源⑥��뒗 �쁽�긽�쓣 諛⑹��븯湲� �쐞�빐 URIEncoding="UTF-8" �쓣 �빐二쇱뼱�빞 �븳�떎. 
 
  <Connector port="9090" URIEncoding="UTF-8" protocol="HTTP/1.1"
                connectionTimeout="20000"
@@ -36,15 +36,15 @@
  <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
 
 
-===> C:\apache-tomcat-8.5.47\conf\context.xml 파일 수정하기 <====
- 19번 라인의 <Context> 를 
- <Context reloadable="true" privileged="true"> 으로 수정한다.
- 이것을 수정해주면 프로그램 개발시 Java Class 파일에 수정을 가하여 저장하는 순간 자동으로 톰캣서버에 Java Class 파일이
- 리로드 되어지므로 톰캣서버를 재구동 할 필요가 없어지게 된다.
+===> C:\apache-tomcat-8.5.47\conf\context.xml �뙆�씪 �닔�젙�븯湲� <====
+ 19踰� �씪�씤�쓽 <Context> 瑜� 
+ <Context reloadable="true" privileged="true"> �쑝濡� �닔�젙�븳�떎.
+ �씠寃껋쓣 �닔�젙�빐二쇰㈃ �봽濡쒓렇�옩 媛쒕컻�떆 Java Class �뙆�씪�뿉 �닔�젙�쓣 媛��븯�뿬 ���옣�븯�뒗 �닚媛� �옄�룞�쑝濡� �넱罹ｌ꽌踰꾩뿉 Java Class �뙆�씪�씠
+ 由щ줈�뱶 �릺�뼱吏�誘�濡� �넱罹ｌ꽌踰꾨�� �옱援щ룞 �븷 �븘�슂媛� �뾾�뼱吏�寃� �맂�떎.
 
 
  
-            
+          test  
 
 
 
