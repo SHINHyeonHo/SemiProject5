@@ -1,4 +1,4 @@
-package habibi.controller;
+package product.controller;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.controller.AbstractController;
-import habibi.model.ProductDAO;
-import habibi.model.ProductVO;
+import product.model.ProductDAO;
+import product.model.ProductVO;
 
 public class CategoryAction extends AbstractController {
 
