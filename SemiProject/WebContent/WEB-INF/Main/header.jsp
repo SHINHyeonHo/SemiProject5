@@ -64,7 +64,6 @@ li.header_menu {
 <script type="text/javascript"></script>
 
 </head>
-<body>
 <body class="main">
    <div id="wrap">
    
