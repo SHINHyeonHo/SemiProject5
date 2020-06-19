@@ -4,39 +4,39 @@
 <meta charset="UTF-8">
 <title>마이페이지</title>
 <link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
     div#mypage	{
+    	font-family: "맑은고딕";
+   		color: #555;
    		border: solid 2px black;
-   		margin: 0px auto;
+   		
       	width: 80%;
       	height: 80%;
       	display: inline-block;
       	
+      	float: right;
+      	
    }
-   
-   div	{
-   		
-   		font-family: "맑은고딕";
-   		color: #555;
-   		margin: 0 auto;
-   		width: 100%;
-   }
+  
    
   div#balance {
-      border: solid 1px red;
+      
       width: 95%;
       height: 600px;
       display: inline-block;
    }
    
+
+	div.middle {
+		display: inline-block;
+	}
+	
    div#left_sidebar {
-      border: solid 1px blue;
+      
       width: 15%;
-      height: 400px;
-      display: inline-block;
-      margin-top: 90px;
       float: left;
+      color: black;
    }
    
    div#title	{
@@ -84,8 +84,6 @@
   		
   }
   
-  
-   
   div.main_menu > ul > li > a	{
   	border: solid 1px black;
   	background-color: white;
@@ -107,20 +105,27 @@
   div.main_menu	{
   		background-color: #E6E6E6;
   		text-align: left;
- 		width: 50%; 
+ 		width: 70%;
+ 		margin-right:12%; 
  		line-height: 30px;	
  		height: 200px; 
  		padding-top: 20px;
+ 		float: inherit;
  		
+  }
+  
+  ul#show_point{
+  	margin-top: 40px;
+  	margin-left: 40px;
   }
   
   ul	{
    		list-style: none;
-   		margin-top: 30px;
+   		
    }
    
    ul#button_line1{
-   		margin-top: 5px;
+   		margin-top: 250px;
    		margin-bottom: 200px;
    }
    
@@ -132,6 +137,142 @@
   	display: none;
   }
   
+  body {
+	margin: 0px;
+}
+
+div#wrap {
+    position: relative;
+    margin: 0 auto 0;
+    width: 1200px;
+}
+
+header#header {
+	width: 1200px;
+    padding: 90px 0 33px;
+    overflow: hidden;
+}
+
+div#logo {
+	display: block;
+	margin: 0;
+	float: left;
+}
+
+div.main_menu {
+	float:right;
+	padding: 22px 0 0;
+}
+
+div.header_menu {
+	text-align: right;
+   	float: right;
+   	padding-top: 25px;
+   	height: 30px;
+}
+
+ul#header_menu {
+	list-style-type: none;
+	margin: 0;
+}
+
+li.header_menu {
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 8pt;
+	text-decoration: none;
+	cursor: pointer;
+}
+.search-container {
+  float: left;
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 10px;
+  border: solid 0.5px gray;
+}
+
+button.search {
+  width: 25px;
+  height: 25px;
+  float: right;
+  padding: 0;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+}
+
+div.searchBar {
+	width: 284px;
+	height: 42px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+
+li > ul {
+	padding-left: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+#footer {
+	width: 1200px;
+	margin: 80px auto 0;
+	margin-left: 200px;
+}
+
+.inner {
+	padding-bottom: 60px;
+}
+
+.address {
+	padding-top: 20px;
+}
+
+.address p {
+	padding-left: 70px;
+	font-size: 11px;
+}
+
+div.cominfo {
+	display: inline-block;
+	padding: 0 50px 0 35px;
+}
+
+.sns_menu {
+	padding-bottom: 143px;
+}
+
+p.sns {
+	padding: 0 0 0 12px;
+}
+
 </style>
 
 <script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
@@ -141,6 +282,26 @@
 
 </head>
 <body>
+<body class="main">
+   <div id="wrap">
+   
+	<header id="header">
+		<div id="logo" >
+			<a href=""><!-- 메인페이지 -->
+				<img src="/SemiProject/images/Main/HABIBILOGO.png" width="175">
+			</a>
+		</div>
+
+		<div class="header_menu">
+			<ul id="header_menu">
+				<li class="header_menu">NEWS</li>
+				<li class="header_menu">COMPANY</li>
+				<li class="header_menu">PHOTO</li>
+				<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
+				<li class="header_menu">CART</li>
+			</ul>
+		</div>
+	</header>
 <div id= "balance">
 		<div id="mypage">
 			<div id="contain">
@@ -149,7 +310,7 @@
 				</div>
 				
 				<div class="main_menu">
-					<ul>
+					<ul id="show_point">
 					
 				        <li class="">
 				            <strong class="title">총적립금액</strong>
@@ -198,8 +359,131 @@
 				</ul>	-->
 			</div>
 		</div>
-		<div id="left_sidebar" class="middle">
-	    </div>
+		<div id="left_sidebar" class="left_sidebar middle">
+	<div class="searchBar">
+		<form id="searchBarForm" action="" method="get">
+			<input id="search_action" name="search_action" type="hidden" /> <!-- 검색 변수 저장용 -->
+			<div class="search-container">
+				<input type="text" placeholder="Search.." name="search" size="20">
+				<button type="submit" class="search"> <i class="fa fa-search"></i>
+				</button>
+			</div>
+		</form>
+	</div>
+
+	<div>
+		<ul class="side_menu middle">
+			<li class="side_menu1"><a href="">Brand</a></li>
+			<li class="side_menu1"><a href="">NEW ARRIVALS</a></li>
+			<li class="side_menu1"><a href="">SEATING</a>
+				<ul>
+					<li><a href="">SOFA</a></li>
+					<li><a href="">RECLINER</a></li>
+					<li><a href="">LOUNGE CHAIR</a></li>
+					<li><a href="">DINING CHAIR</a></li>
+					<li><a href="">BAR CHAIR</a></li>
+					<li><a href="">BENCH</a></li>
+					<li><a href="">OFFICE CHAIR</a></li>
+					<li><a href="">STOOL</a></li>
+				</ul>
+			</li>
+			<li class="side_menu1"><a href="">SLEEPING</a>
+				<ul>
+					<li><a href="">BED</a></li>
+					<li><a href="">MATTRESS</a></li>
+					<li><a href="">ETC</a></li>
+				</ul>
+			</li>
+			<li class="side_menu1"><a href="">TABLES</a>
+				<ul>
+					<li><a href="">DINING TABLE</a></li>
+					<li><a href="">DESK</a></li>
+					<li><a href="">SOFA TABLE</a></li>
+					<li><a href="">SIDE TABLE</a></li>
+				</ul>
+			</li>
+			<li class="side_menu1"><a href="">STORAGE</a>
+				<ul>
+					<li><a href="">TV BOARD</a></li>
+					<li><a href="">SHELF</a></li>
+					<li><a href="">CABINET</a></li>
+					<li><a href="">DRESSER</a></li>
+				</ul>
+			</li>
+			<li class="side_menu1"><a href="">LIGHTINGS</a>
+				<ul>
+					<li><a href="">TABLE LAMP</a></li>
+					<li><a href="">FLOOR LAMP</a></li>
+					<li><a href="">WALL LAMP</a></li>
+					<li><a href="">PENDANT</a></li>
+					<li><a href="">ETC</a></li>
+				</ul>
+			</li>
+			<li class="side_menu1"><a href="">ACCESSORIES</a>
+				<ul>
+					<li><a href="">AV</a></li>
+					<li><a href="">CLOCK</a></li>
+					<li><a href="">COAT RACK</a></li>
+					<li><a href="">CUSHION</a></li>
+					<li><a href="">CERAMICS</a></li>
+					<li><a href="">FRAGRANCE</a></li>
+					<li><a href="">MIRROR</a></li>
+					<li><a href="">PARTS</a></li>
+					<li><a href="">POSTER</a></li>
+					<li><a href="">RUG</a></li>
+					<li><a href="">ETC</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</div>
     </div>
+    <div id="footer">
+			<div class="inner">
+				<div class="cominfo sns_menu">
+					<h5>FOLLOW US</h5>
+					<p class="sns">
+						<a href="" title="blog" target="_blank"><img src="/SemiProject/images/Main/blog.png" width="50" height="50"></a>
+					</p>
+					<p class="sns">
+						<a href="" title="instargram" target="_blank"><img src="/SemiProject/images/Main/instargram.png" width="50" height="50"></a>
+					</p>
+				</div>
+				<div class="cominfo">
+					<h3>SEOUL</h3>
+					<p><strong>02.1111.1111</strong></p>
+					<p>mon - fri " 10:00 - 19:00"</p>
+					<p>서울 중구 남대문로 120 대일빌딩 2층 </p>
+					<p>fax. 02.1111.1111</p>
+					<p>e-mail. khac@habibi.hb</p>
+					<p>하나은행 230-010059-41250 하비비</p>
+					<p></p>
+				</div>
+				<div class="cominfo">
+					<h3>SEOUL2</h3>
+					<p><strong>02.1111.1111</strong></p>
+					<p>mon - fri " 10:00 - 19:00"</p>
+					<p>서울 중구 남대문로 120 대일빌딩 2층 </p>
+					<p>fax. 02.1111.1111</p>
+					<p>e-mail. khac@habibi.hb</p>
+					<p>하나은행 230-010059-41250 하비비</p>
+					<p></p>
+				</div>
+				<div class="cominfo">
+					<P>PRIVACY POLICY<P>
+					<P>DELIVERY<P>
+					<P>LOCATION<P>
+				</div>
+			</div>
+	
+			<hr>
+	
+			<div class="address">
+				<p>하비비 가구몰. 대표 권순근 / 120-10-70245 / 제2020-서울종각-02195호[사업자정보확인] / 개인정보관리 권순근 / HAVIVI@HAVIVI.CO.KR / COPYRIGHT &copy; 2020 하비비 ALL RIGHTS RESERVED</p>
+			</div>
+		</div>
+	</div>
+</body>
 </body>
 </html>
