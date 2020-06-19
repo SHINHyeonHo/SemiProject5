@@ -1,0 +1,5 @@
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.ui.workbench.texteditor.blockSelectionModeFont
+PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
+eclipse.preferences.version=1
+org.eclipse.ui.workbench.texteditor.blockSelectionModeFont=1|Menlo|12.0|0|COCOA|1|Menlo-Regular;
