@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
-		description = "사용자가 웹에서 *.hb 를 했을 경우 이 서블릿이 먼저 응답을 해주도록 한다.", 
+		description = "�궗�슜�옄媛� �쎒�뿉�꽌 *.hb 瑜� �뻽�쓣 寃쎌슦 �씠 �꽌釉붾┸�씠 癒쇱� �쓳�떟�쓣 �빐二쇰룄濡� �븳�떎.", 
 		urlPatterns = { "*.hb" }, 
 		initParams = { 
-				@WebInitParam(name = "propertyConfig", value = "/Users/user/semiProject-git/SemiProject/WebContent/WEB-INF/HbbCommand.properties", description = "*.hb 에 대한 클래스의 매핑파일")
+				@WebInitParam(name = "propertyConfig", value = "C:/Users/rubyr/Documents/SemiProject/SemiProject/WebContent/WEB-INF/HbbCommand.properties", description = "*.hb �뿉 ���븳 �겢�옒�뒪�쓽 留ㅽ븨�뙆�씪")
 		})
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,89 +26,89 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 
 		/*
-			웹브라우저 주소창에서 *.up 을 하면 FrontController 서블릿이 응대를 해오는데
-			맨 처음에 자동적으로 실행되어지는 메소드가 init(ServletConfig config) 이다.
-			여기서 중요한 것은 init(ServletConfig config) 메소드는 WAS(톰캣)가 구동되어진 후 
-			딱 1번만 init(ServletConfig config) 메소드가 실행되어지고, 그 이후에는 실행이 되지 않는다.
+			�쎒釉뚮씪�슦�� 二쇱냼李쎌뿉�꽌 *.up �쓣 �븯硫� FrontController �꽌釉붾┸�씠 �쓳��瑜� �빐�삤�뒗�뜲
+			留� 泥섏쓬�뿉 �옄�룞�쟻�쑝濡� �떎�뻾�릺�뼱吏��뒗 硫붿냼�뱶媛� init(ServletConfig config) �씠�떎.
+			�뿬湲곗꽌 以묒슂�븳 寃껋� init(ServletConfig config) 硫붿냼�뱶�뒗 WAS(�넱罹�)媛� 援щ룞�릺�뼱吏� �썑 
+			�뵳 1踰덈쭔 init(ServletConfig config) 硫붿냼�뱶媛� �떎�뻾�릺�뼱吏�怨�, 洹� �씠�썑�뿉�뒗 �떎�뻾�씠 �릺吏� �븡�뒗�떎.
 		 */
 	
-		// *** 확인용 ***
-		// System.out.println("~~~ 확인용 => 서블릿 FrontController 의 init(ServletConfig config) 메소드가 실행됨.");
-		// ~~~ 확인용 => 서블릿 FrontController 의 init(ServletConfig config) 메소드가 실행됨.
+		// *** �솗�씤�슜 ***
+		// System.out.println("~~~ �솗�씤�슜 => �꽌釉붾┸ FrontController �쓽 init(ServletConfig config) 硫붿냼�뱶媛� �떎�뻾�맖.");
+		// ~~~ �솗�씤�슜 => �꽌釉붾┸ FrontController �쓽 init(ServletConfig config) 硫붿냼�뱶媛� �떎�뻾�맖.
 		
 		Properties pr = new Properties(); 
-		// Properties 는 Collection 중 HashMap 계열중의  하나로써
-		// "key","value"으로 이루어져 있는것이다.
-		// 그런데 중요한 것은 Properties 는 key도 String 타입이고, value도 String 타입만 가능하다는 것이다.
-		// key는 중복을 허락하지 않는다. value 값을 얻어오기 위해서는 key값만 알면 된다.
+		// Properties �뒗 Collection 以� HashMap 怨꾩뿴以묒쓽  �븯�굹濡쒖뜥
+		// "key","value"�쑝濡� �씠猷⑥뼱�졇 �엳�뒗寃껋씠�떎.
+		// 洹몃윴�뜲 以묒슂�븳 寃껋� Properties �뒗 key�룄 String ���엯�씠怨�, value�룄 String ���엯留� 媛��뒫�븯�떎�뒗 寃껋씠�떎.
+		// key�뒗 以묐났�쓣 �뿀�씫�븯吏� �븡�뒗�떎. value 媛믪쓣 �뼸�뼱�삤湲� �쐞�빐�꽌�뒗 key媛믩쭔 �븣硫� �맂�떎.
 		
 		
 		FileInputStream fis = null;
-		// 특정 파일에 내용을 읽어오기 위한 용도로 쓰이는 객체
+		// �듅�젙 �뙆�씪�뿉 �궡�슜�쓣 �씫�뼱�삤湲� �쐞�븳 �슜�룄濡� �벐�씠�뒗 媛앹껜
 		
 		try {
 			String props = config.getInitParameter("propertyConfig");
-			// System.out.println("~~~ 확인용 props => " + props);
-			// ~~~ 확인용 props => C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties
+			// System.out.println("~~~ �솗�씤�슜 props => " + props);
+			// ~~~ �솗�씤�슜 props => C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties
 			
 			fis = new FileInputStream(props);
-			// fis 는 C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties 파일의 내용을 읽어오기 위한 용도로 쓰이는 객체를 생성함.
+			// fis �뒗 C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties �뙆�씪�쓽 �궡�슜�쓣 �씫�뼱�삤湲� �쐞�븳 �슜�룄濡� �벐�씠�뒗 媛앹껜瑜� �깮�꽦�븿.
 
 			pr.load(fis);
 			/*
-			    fis 객체를 사용하여 C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties 파일의 내용을 읽어다가 
-			    Properties 클래스이 객체인 pr 에 로드시킨다. 
-			       그러면 pr 은 읽어온 파일(Command.properties)의 내용에서
-			    = 을 기준으로 왼쪽은 key로 보고, 오른쪽은 value 로 인식한다.	  
+			    fis 媛앹껜瑜� �궗�슜�븯�뿬 C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties �뙆�씪�쓽 �궡�슜�쓣 �씫�뼱�떎媛� 
+			    Properties �겢�옒�뒪�씠 媛앹껜�씤 pr �뿉 濡쒕뱶�떆�궓�떎. 
+			       洹몃윭硫� pr �� �씫�뼱�삩 �뙆�씪(Command.properties)�쓽 �궡�슜�뿉�꽌
+			    = �쓣 湲곗��쑝濡� �쇊履쎌� key濡� 蹂닿퀬, �삤瑜몄そ�� value 濡� �씤�떇�븳�떎.	  
 			 */
 
 			Enumeration<Object> en = pr.keys();
 			/*
-			    pr.keys(); 은 
-			    C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties 파일의 내용물에서 
-			    = 을 기준으로 왼쪽에 있는 모든 key 들만 가져오는 것이다.  	
+			    pr.keys(); �� 
+			    C:/myjsp/MyMVC/WebContent/WEB-INF/Command.properties �뙆�씪�쓽 �궡�슜臾쇱뿉�꽌 
+			    = �쓣 湲곗��쑝濡� �쇊履쎌뿉 �엳�뒗 紐⑤뱺 key �뱾留� 媛��졇�삤�뒗 寃껋씠�떎.  	
 			*/
 
-			while( en.hasMoreElements() ) { // 키값이 있는지 확인
+			while( en.hasMoreElements() ) { // �궎媛믪씠 �엳�뒗吏� �솗�씤
 				
 				String key = (String)en.nextElement();
-				// en.nextElement(); 은 리턴 타입이 Object이므로 String 으로 캐스팅을 한다.
+				// en.nextElement(); �� 由ы꽩 ���엯�씠 Object�씠誘�濡� String �쑝濡� 罹먯뒪�똿�쓣 �븳�떎.
 				
-				//System.out.println("~~~ 확인용 key => " + key);
-				//System.out.println("~~~ 확인용 value => " + pr.getProperty(key));
+				//System.out.println("~~~ �솗�씤�슜 key => " + key);
+				//System.out.println("~~~ �솗�씤�슜 value => " + pr.getProperty(key));
 				/*
-				 	~~~ 확인용 key => /main.up
-					~~~ 확인용 value => common.controller.MainController
+				 	~~~ �솗�씤�슜 key => /main.up
+					~~~ �솗�씤�슜 value => common.controller.MainController
 					
-					~~~ 확인용 key => /index.up
-					~~~ 확인용 value => common.controller.IndexController
+					~~~ �솗�씤�슜 key => /index.up
+					~~~ �솗�씤�슜 value => common.controller.IndexController
 				 */
 				
 				
-				String className = pr.getProperty(key); // value 값
+				String className = pr.getProperty(key); // value 媛�
 				
 				if( className != null ) {
 					className = className.trim();
 					
 					Class<?> cls = Class.forName(className);
-					// <?> 는 클래스가 반드시 한개가 있다는 말이다.
-					// value 값을 Class 로 인식하겠다는 말이다.
-					// common.controller.MainController 등등 을 Class 로 보겠다는 말.
-					// String 타입으로 되어진 className 을 클래스화 시켜주는 것이다.
-					// 주의할 점은 실제로 String 으로 되어져 있는 문자열이 클래스로 존재해야만 한다는 것이다.
+					// <?> �뒗 �겢�옒�뒪媛� 諛섎뱶�떆 �븳媛쒓� �엳�떎�뒗 留먯씠�떎.
+					// value 媛믪쓣 Class 濡� �씤�떇�븯寃좊떎�뒗 留먯씠�떎.
+					// common.controller.MainController �벑�벑 �쓣 Class 濡� 蹂닿쿋�떎�뒗 留�.
+					// String ���엯�쑝濡� �릺�뼱吏� className �쓣 �겢�옒�뒪�솕 �떆耳쒖＜�뒗 寃껋씠�떎.
+					// 二쇱쓽�븷 �젏�� �떎�젣濡� String �쑝濡� �릺�뼱�졇 �엳�뒗 臾몄옄�뿴�씠 �겢�옒�뒪濡� 議댁옱�빐�빞留� �븳�떎�뒗 寃껋씠�떎.
 
 					Object obj = cls.newInstance();
-					// 클래스로 부터 실제 객체(인스턴스)를 생성해주는 것이다.
+					// �겢�옒�뒪濡� 遺��꽣 �떎�젣 媛앹껜(�씤�뒪�꽩�뒪)瑜� �깮�꽦�빐二쇰뒗 寃껋씠�떎.
 					
-					// System.out.println("~~~ 확인용 obj.toString() => " + obj.toString());
+					// System.out.println("~~~ �솗�씤�슜 obj.toString() => " + obj.toString());
 					/*
-					 	~~~ 확인용 obj.toString() => 클래스  MainController 의 인스턴스 메소드 toString() 호출함.
-						~~~ 확인용 obj.toString() => 클래스  IndexController 의 인스턴스 메소드 toString() 호출함.
+					 	~~~ �솗�씤�슜 obj.toString() => �겢�옒�뒪  MainController �쓽 �씤�뒪�꽩�뒪 硫붿냼�뱶 toString() �샇異쒗븿.
+						~~~ �솗�씤�슜 obj.toString() => �겢�옒�뒪  IndexController �쓽 �씤�뒪�꽩�뒪 硫붿냼�뱶 toString() �샇異쒗븿.
 					*/
 					
 					cmdMap.put(key, obj);
-					// cmdMap 에서 키값으로 Command.properties 파일에 저장되어진 url 을 주면 
-					// cmdMap 에서 해당 클래스에 대한 객체(인스턴스)를 얻어오도록 만든 것이다.
+					// cmdMap �뿉�꽌 �궎媛믪쑝濡� Command.properties �뙆�씪�뿉 ���옣�릺�뼱吏� url �쓣 二쇰㈃ 
+					// cmdMap �뿉�꽌 �빐�떦 �겢�옒�뒪�뿉 ���븳 媛앹껜(�씤�뒪�꽩�뒪)瑜� �뼸�뼱�삤�룄濡� 留뚮뱺 寃껋씠�떎.
 					
 					
 				} // end of if()
@@ -120,10 +120,10 @@ public class FrontController extends HttpServlet {
 			
 			
 		} catch (ClassNotFoundException e) {
-			System.out.println(">>> 문자열로 명명되어진 클래스가 존재하지 않습니다. <<<");
+			System.out.println(">>> 臾몄옄�뿴濡� 紐낅챸�릺�뼱吏� �겢�옒�뒪媛� 議댁옱�븯吏� �븡�뒿�땲�떎. <<<");
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
-			System.out.println(">>> C:/SemiProject/SemiProject/WebContent/WEB-INF/HbbCommand.properties 파일이 없습니다. <<<");
+			System.out.println(">>> C:/SemiProject/SemiProject/WebContent/WEB-INF/HbbCommand.properties �뙆�씪�씠 �뾾�뒿�땲�떎. <<<");
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -152,29 +152,29 @@ public class FrontController extends HttpServlet {
 
 	private void requestProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 웹브라우저의 주소 입력창에서 
-		// http://localhost:9090/MyMVC/member/idDuplicateCheck.up?userid=leess 와 같이 입력되었더라면
+		// �쎒釉뚮씪�슦���쓽 二쇱냼 �엯�젰李쎌뿉�꽌 
+		// http://localhost:9090/MyMVC/member/idDuplicateCheck.up?userid=leess �� 媛숈씠 �엯�젰�릺�뿀�뜑�씪硫�
 		// String url =  request.getRequestURL().toString();
-		// System.out.println("~~~ 확인용 url => " + url);
-		// ~~~ 확인용 url => http://localhost:9090/MyMVC/member/idDuplicateCheck.up
+		// System.out.println("~~~ �솗�씤�슜 url => " + url);
+		// ~~~ �솗�씤�슜 url => http://localhost:9090/MyMVC/member/idDuplicateCheck.up
 		
 		String uri = request.getRequestURI();
-		// System.out.println("~~~ 확인용 uri => " + uri);
-		// ~~~ 확인용 uri => /MyMVC/member/idDuplicateCheck.up
+		// System.out.println("~~~ �솗�씤�슜 uri => " + uri);
+		// ~~~ �솗�씤�슜 uri => /MyMVC/member/idDuplicateCheck.up
 		
 		String ctxPath = request.getContextPath();
-		// System.out.println("~~~ 확인용 ctxPath => " + ctxPath);
-		// ~~~ 확인용 ctxPath => /MyMVC
+		// System.out.println("~~~ �솗�씤�슜 ctxPath => " + ctxPath);
+		// ~~~ �솗�씤�슜 ctxPath => /MyMVC
 		
 		String key = uri.substring(ctxPath.length());
-		// System.out.println("~~~ 확인용 key => " + key);
-		// ~~~ 확인용 key => /member/idDuplicateCheck.up
+		// System.out.println("~~~ �솗�씤�슜 key => " + key);
+		// ~~~ �솗�씤�슜 key => /member/idDuplicateCheck.up
 		
 		AbstractController action =  (AbstractController) cmdMap.get(key);
-		// 다형성
+		// �떎�삎�꽦
 		
 		if(action == null) {
-			System.out.println(">>> " + key + " URL 패턴에 매핑된 클래스는 없습니다.");
+			System.out.println(">>> " + key + " URL �뙣�꽩�뿉 留ㅽ븨�맂 �겢�옒�뒪�뒗 �뾾�뒿�땲�떎.");
 		}
 		else {
 			try {
@@ -184,10 +184,10 @@ public class FrontController extends HttpServlet {
 				String viewPage = action.getViewPage();
 				
 				if(!bool) {
-					// bool 이 false 이면
-					// viewPage 에 명기된 view단 페이지로 forward(dispatcher)를 하겠다는 말이다.
-					// forward 되어지면 웹브라우저의 URL주소 변경되지 않고 그대로 이면서 화면에 보여지는 내용은 forward 되어지는 jsp 파일이다.
-					// 또한 forward 방식은 forward 되어지는 페이지로 데이터를 전달할 수 있다는 것이다. 
+					// bool �씠 false �씠硫�
+					// viewPage �뿉 紐낃린�맂 view�떒 �럹�씠吏�濡� forward(dispatcher)瑜� �븯寃좊떎�뒗 留먯씠�떎.
+					// forward �릺�뼱吏�硫� �쎒釉뚮씪�슦���쓽 URL二쇱냼 蹂�寃쎈릺吏� �븡怨� 洹몃�濡� �씠硫댁꽌 �솕硫댁뿉 蹂댁뿬吏��뒗 �궡�슜�� forward �릺�뼱吏��뒗 jsp �뙆�씪�씠�떎.
+					// �삉�븳 forward 諛⑹떇�� forward �릺�뼱吏��뒗 �럹�씠吏�濡� �뜲�씠�꽣瑜� �쟾�떖�븷 �닔 �엳�떎�뒗 寃껋씠�떎. 
 
 					if(viewPage != null) {
 						RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
@@ -195,10 +195,10 @@ public class FrontController extends HttpServlet {
 					}
 				}
 				else {
-					// bool 이 true 이면
-					// viewPage 에 명기된 주소로 sendRedirect(웹브라우저의 URL주소 변경됨)를 하겠다는 말이다.
-					// 즉, 단순히 페이지이동을 하겠다는 말이다. 
-					// 암기할 내용은 sendRedirect 방식은 sendRedirect 되어지는 페이지로 데이터를 전달할 수가 없다는 것이다. 
+					// bool �씠 true �씠硫�
+					// viewPage �뿉 紐낃린�맂 二쇱냼濡� sendRedirect(�쎒釉뚮씪�슦���쓽 URL二쇱냼 蹂�寃쎈맖)瑜� �븯寃좊떎�뒗 留먯씠�떎.
+					// 利�, �떒�닚�엳 �럹�씠吏��씠�룞�쓣 �븯寃좊떎�뒗 留먯씠�떎. 
+					// �븫湲고븷 �궡�슜�� sendRedirect 諛⑹떇�� sendRedirect �릺�뼱吏��뒗 �럹�씠吏�濡� �뜲�씠�꽣瑜� �쟾�떖�븷 �닔媛� �뾾�떎�뒗 寃껋씠�떎. 
 					if(viewPage != null) {
 						response.sendRedirect(viewPage);
 					}
