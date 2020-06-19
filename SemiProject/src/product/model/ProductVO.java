@@ -1,4 +1,4 @@
-package habibi.model;
+package product.model;
 
 public class ProductVO {
 

@@ -1,4 +1,4 @@
-package habibi.model;
+package product.model;
 
 import java.sql.SQLException;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package habibi.controller;
+package member.controller;
 
 import java.util.HashMap;
 
@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import common.controller.AbstractController;
-import habibi.model.*;
+import member.model.InterMemberDAO;
+import member.model.MemberDAO;
+import member.model.MemberVO;
+import product.model.*;
 
 public class LoginAction extends AbstractController {
 
