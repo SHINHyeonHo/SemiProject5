@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 <style type="text/css">
 
 div.main_banner {
-	border: solid 1px blue;
+	/*border: solid 1px blue;*/
 	width: 74%;
 }
 .category{
@@ -33,7 +33,7 @@ tr{
 td{
 	position: relative;
 	width: 25%;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 }
 
 
@@ -42,7 +42,7 @@ td{
 	top: 0px;
     height: 70%;
     width: 100%;
-    background-color: gray;
+   /* background-color: gray; */
 }
 
 .description{
@@ -81,21 +81,16 @@ td{
 
 	<div id="main_banner" class="main_banner middle">
 	
+	<c:set var="category" value="${param.category}"/>
 	<div class="category">SLEEPING</div>
 
 		<table class="product">
 		<c:forEach var="list" items="${prodList}" varStatus="st">
 			
-			<c:if test="${(st.index+1) % 4 == 1}">
-				<c:out value="${(st.index+1) % 4 == 1}"/>
-				<c:out value="<tr>"/>
-			</c:if>
+			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
 				<td>
-					<div class="image">
-						<img src="../../images/${list.prod_code}.png"/>
-						<c:out value="../../images/${list.prod_code}.png"/>
-					</div>
+					<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png"/>
 					<div class="description">
 						<div class="prod_name">${list.prod_name}</div>
 						<div class="prod_color">${list.prod_color}</div>
@@ -103,77 +98,11 @@ td{
 					</div>
 				</td>
 			
-			
-			<c:if test="${(st.index+1) % 4 == 0}">
-				<c:out value="${(st.index+1) % 4 == 0}"/>
-				<c:out value="</tr>"/>
-			</c:if>
-			
+			<c:if test="${(st.index+1) % 4 == 0}"></tr></c:if>
 		
 		</c:forEach>
 		
-		<!-- 
-			<tr>
-				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
-					<div class="description">
-						<div class="prod_name">VINTAGE QUEEN BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
-					</div>
-				</td>				
-				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
-					<div class="description">
-						<div class="prod_name">CASTOR FABRIC BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
-					</div>
-				</td>				
-				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
-					<div class="description">
-						<div class="prod_name">STANDARD BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
-					</div>
-				</td>		
-			</tr>
-			
-			
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>			
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			 -->
-			 
-			 
+	
 		</table>
 		
 	</div>
