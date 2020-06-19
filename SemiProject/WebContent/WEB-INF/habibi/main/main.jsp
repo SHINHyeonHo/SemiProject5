@@ -23,10 +23,9 @@ div.main_banner {
 
 </head>
 
-<div id="container">
-		
-<jsp:include page="../../Main/sideBar.jsp"/>
 <jsp:include page="../member/login.jsp" />
+<jsp:include page="../../Main/sideBar.jsp"/>
+
 
 	<div id="main_banner" class="main_banner middle">
 		<div id="main_banner_top">

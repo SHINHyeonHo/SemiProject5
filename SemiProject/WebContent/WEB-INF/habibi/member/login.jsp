@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,34 +22,35 @@
 				goLogin(); // 로그인 시도한다.
 			}
 		});
-      
 	}); // end of $(document).ready(function() -----------------------------------
    
-	function goLogin(){
-
+	function goLogin() {
 		var userid = $("#userid").val().trim();
 		var passwd = $("#passwd").val().trim();
          
-         if(userid == "") {
-            alert("아이디를 입력하세요!!");
+        if(userid == "") {
+			alert("아이디를 입력하세요!!");
             $("#userid").val("");
             $("#userid").focus();
             return;   // goLogin() 함수 종료
          }
          
-         if(passwd == "") {
-            alert("암호를 입력하세요!!");
+		if(passwd == "") {
+			alert("암호를 입력하세요!!");
             $("#passwd").val("");
             $("#passwd").focus();
             return;   // goLogin() 함수 종료
-         }
+        }
          
-         var frm = document.loginFrm;
-         frm.method = "post";
-         frm.action = "<%=request.getContextPath()%>/login/login.hb";
-         frm.submit();
-         
+        var frm = document.loginFrm;
+        frm.method = "post";
+        frm.action = "<%=request.getContextPath()%>/member/login.hb";
+		frm.submit();
    } // end of function goLogin(){} ------------------------------  
+   
+	function MemberRegister() {
+		location.href="<%=request.getContextPath()%>/member/memberRegister.hb"
+	} // end of function MemberRegister() -----------------------------
 
 </script>
 </head>
@@ -83,7 +85,6 @@
 	   
 			<div class="joinpart">
 		      	<div class="joinbtn">
-					<p style="font-weight:bold; color: #666;">JOIN US</p>
 		         	<button type="button" style="cursor: pointer;" onclick="MemberRegister();">JOIN</button>
 		      	</div>
 		      	<p>

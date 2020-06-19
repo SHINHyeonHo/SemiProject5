@@ -48,7 +48,7 @@ a {
 }
 
 div.left_sidebar {
-	width: 25%;
+	width: 22%;
 	float: left;
 }
 
@@ -68,7 +68,13 @@ div.middle {
   transition: 0.4s;
 }
 
+div#container {
+	min-height: 1500px;
+}
+
 </style>
+
+<div id="container">
 
 <div id="left_sidebar" class="left_sidebar middle">
 	<div class="searchBar">

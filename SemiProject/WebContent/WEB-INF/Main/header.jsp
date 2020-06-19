@@ -74,7 +74,7 @@ li.header_menu {
    
 	<header id="header">
 		<div id="logo" >
-			<a href=""><!-- 메인페이지 -->
+			<a href="<%= request.getContextPath()%>/habibi.hb"><!-- 메인페이지 -->
 				<img src="/SemiProject/images/Main/HABIBILOGO.png" width="175">
 			</a>
 		</div>
