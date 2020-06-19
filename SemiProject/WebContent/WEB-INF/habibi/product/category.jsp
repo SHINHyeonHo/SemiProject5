@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <jsp:include page="../../Main/header.jsp"/>
 
@@ -83,17 +84,36 @@ td{
 	<div class="category">SLEEPING</div>
 
 		<table class="product">
-			<tr>
+		<c:forEach var="list" items="${prodList}" varStatus="st">
+			
+			<c:if test="${(st.index+1) % 4 == 1}">
+				<c:out value="${(st.index+1) % 4 == 1}"/>
+				<c:out value="<tr>"/>
+			</c:if>
+			
 				<td>
 					<div class="image">
-						<img src=""/>
+						<img src="../../images/${list.prod_code}.png"/>
+						<c:out value="../../images/${list.prod_code}.png"/>
 					</div>
 					<div class="description">
-						<div class="prod_name">STANDARD BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
+						<div class="prod_name">${list.prod_name}</div>
+						<div class="prod_color">${list.prod_color}</div>
+						<div class="prod_price">${list.prod_price}원</div>
 					</div>
 				</td>
+			
+			
+			<c:if test="${(st.index+1) % 4 == 0}">
+				<c:out value="${(st.index+1) % 4 == 0}"/>
+				<c:out value="</tr>"/>
+			</c:if>
+			
+		
+		</c:forEach>
+		
+		<!-- 
+			<tr>
 				<td>
 					<div class="image">
 						<img src=""/>
@@ -125,6 +145,8 @@ td{
 					</div>
 				</td>		
 			</tr>
+			
+			
 			<tr>
 				<td></td>
 				<td></td>
@@ -149,7 +171,9 @@ td{
 				<td></td>
 				<td></td>
 			</tr>
-			
+			 -->
+			 
+			 
 		</table>
 		
 	</div>
