@@ -81,7 +81,7 @@ p.sns {
 			<div class="address">
 				<p>하비비 가구몰. 대표 권순근 / 120-10-70245 / 제2020-서울종각-02195호[사업자정보확인] / 개인정보관리 권순근 / HAVIVI@HAVIVI.CO.KR / COPYRIGHT &copy; 2020 하비비 ALL RIGHTS RESERVED</p>
 			</div>
-		</div>
 	</div>
+</div>
 </body>
 </html>
