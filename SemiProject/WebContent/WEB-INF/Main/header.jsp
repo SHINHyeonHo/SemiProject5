@@ -85,7 +85,7 @@ li.header_menu {
 				<li class="header_menu">COMPANY</li>
 				<li class="header_menu">PHOTO</li>
 				<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
-				<li class="header_menu">CART</li>
+				<li class="header_menu"><a href="<%= request.getContextPath()%>/prod/cartmain.hb">CART</a></li>
 			</ul>
 		</div>
 	</header>

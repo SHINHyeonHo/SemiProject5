@@ -1,17 +1,18 @@
-package habibi.controller;
+package member.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.controller.AbstractController;
 
-public class MemberRegisterAction extends AbstractController {
+public class CategoryAction extends AbstractController {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		super.setViewPage("/WEB-INF/habibi/member/memberRegister.jsp");
 
+		super.setRedirect(false);
+		super.setViewPage("/WEB-INF/habibi/product/category.jsp");
+		
 	}
 
 }

@@ -56,8 +56,6 @@ span#emailCheck {
 			
 	function goRegister() {
 		
-		var agree = $("#agree").prop("checked");
-		
 		var bRequiredInfo = false;
 
 		$(".requiredInfo").each(function(){
@@ -69,13 +67,18 @@ span#emailCheck {
 			}
 		});
 		
-		if(!bRequiredInfo) {
-		   	  var frm = document.registerFrm;
-		   	  frm.method = "POST";
-		   	  frm.action = "memberRegister.up";
-		   	  frm.submit();
+		var agree = $("#agree").prop("checked");
+		
+		if(agree == false) {
+			alert("이용약관에 동의해주시기 바랍니다.");
 		}
 		
+		if(!bRequiredInfo && agree) {
+		   	  var frm = document.registerFrm;
+		   	  frm.method = "POST";
+		   	  frm.action = "<%=request.getContextPath()%>/member/memberRegister.up";
+		   	  frm.submit();
+		}
 		
 	}
 	
@@ -125,7 +128,7 @@ span#emailCheck {
 		</tr>
 		<tr>
 			<td style="width: 20%; font-weight: bold;">비밀번호확인&nbsp;<span class="star">*</span></td>
-			<td style="width: 80%; text-align: left;"><input type="password" id="pwdcheck" class="requiredInfo" /> 
+			<td style="width: 80%; text-align: left;"><input type="password" name="pwdcheck" id="pwdcheck" class="requiredInfo" /> 
 				<span class="error">암호가 일치하지 않습니다.</span>
 			</td>
 		</tr>
@@ -160,86 +163,22 @@ span#emailCheck {
 			<td style="width: 20%; font-weight: bold;">주소&nbsp;<span class="star">*</span></td></td>
 			<td style="width: 80%; text-align: left;">
 			   <input type="text" id="address" name="address" class="requiredInfo" size="40" placeholder="주소" /><br/>
-			   <input type="text" id="detailAddress" name="detailAddress" class="requiredInfo" size="40" placeholder="상세주소" />&nbsp;<input type="text" id="extraAddress" name="extraAddress" size="40" placeholder="참고항목" /> 
+			   <input type="text" id="detailAddress" name="detailAddress" class="requiredInfo" size="40" placeholder="상세주소" />&nbsp;
 			   <span class="error">주소를 입력하세요</span>
-			</td>
-		</tr>
-		
-		<tr>
-			<td style="width: 20%; font-weight: bold;">성별</td>
-			<td style="width: 80%; text-align: left;">
-			   <input type="radio" id="male" name="gender" value="1" /><label for="male" style="margin-left: 2%;">남자</label>
-			   <input type="radio" id="female" name="gender" value="2" style="margin-left: 10%;" /><label for="female" style="margin-left: 2%;">여자</label>
-			</td>
-		</tr>
-		
-		<tr>
-			<td style="width: 20%; font-weight: bold;">생년월일</td>
-			<td style="width: 80%; text-align: left;">
-				<input type="number" id="birthyyyy" name="birthyyyy" min="1950" max="2050" step="1" value="1995" style="width: 80px;" required />
-			   
-				<select id="birthmm" name="birthmm" style="margin-left: 2%; width: 60px; padding: 8px;">
-					<option value ="01">01</option>
-					<option value ="02">02</option>
-					<option value ="03">03</option>
-					<option value ="04">04</option>
-					<option value ="05">05</option>
-					<option value ="06">06</option>
-					<option value ="07">07</option>
-					<option value ="08">08</option>
-					<option value ="09">09</option>
-					<option value ="10">10</option>
-					<option value ="11">11</option>
-					<option value ="12">12</option>
-				</select> 
-			   
-			   	<select id="birthdd" name="birthdd" style="margin-left: 2%; width: 60px; padding: 8px;">
-			   		<option value ="01">01</option>
-					<option value ="02">02</option>
-					<option value ="03">03</option>
-					<option value ="04">04</option>
-					<option value ="05">05</option>
-					<option value ="06">06</option>
-					<option value ="07">07</option>
-					<option value ="08">08</option>
-					<option value ="09">09</option>
-					<option value ="10">10</option>
-					<option value ="11">11</option>
-					<option value ="12">12</option>
-					<option value ="13">13</option>
-					<option value ="14">14</option>
-					<option value ="15">15</option>
-					<option value ="16">16</option>
-					<option value ="17">17</option>
-					<option value ="18">18</option>
-					<option value ="19">19</option>
-					<option value ="20">20</option>
-					<option value ="21">21</option>
-					<option value ="22">22</option>
-					<option value ="23">23</option>
-					<option value ="24">24</option>
-					<option value ="25">25</option>
-					<option value ="26">26</option>
-					<option value ="27">27</option>
-					<option value ="28">28</option>
-					<option value ="29">29</option>
-					<option value ="30">30</option>
-					<option value ="31">31</option>
-				</select> 
 			</td>
 		</tr>
 		
 		<tr>
 			<td style="width: 20%; font-weight: bold;">SMS 수신여부</td>
 			<td style="width: 80%; text-align: left;">
-				<label for="sms" style="margin-left: 2%;">동의&nbsp;&nbsp;</label><input type="checkbox" id="sms" name="sms" />
+				<label for="sms" style="margin-left: 2%;">동의&nbsp;&nbsp;</label><input type="checkbox" id="smsad" name="smsad" />
 			</td>
 		</tr>
 		
 		<tr>
 			<td style="width: 20%; font-weight: bold;">E-Mail 수신여부</td>
 			<td style="width: 80%; text-align: left;">
-				<label for="email" style="margin-left: 2%;">동의&nbsp;&nbsp;</label><input type="checkbox" id="email" name="email"/>
+				<label for="email" style="margin-left: 2%;">동의&nbsp;&nbsp;</label><input type="checkbox" id="emailad" name="emailad"/>
 			</td>
 		</tr>
 			
