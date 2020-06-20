@@ -92,8 +92,8 @@ div#container {
 		<ul class="side_menu middle">
 			<li class="side_menu1"><a href="">Brand</a></li>
 			<li class="side_menu1"><a href="">NEW ARRIVALS</a></li>
-			<li class="side_menu1"><a href="">SEATING</a>
-				<ul>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=seating">SEATING</a>
+<!--				<ul>
 					<li><a href="">SOFA</a></li>
 					<li><a href="">RECLINER</a></li>
 					<li><a href="">LOUNGE CHAIR</a></li>
@@ -102,41 +102,41 @@ div#container {
 					<li><a href="">BENCH</a></li>
 					<li><a href="">OFFICE CHAIR</a></li>
 					<li><a href="">STOOL</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">SLEEPING</a>
-				<ul>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=sleeping">SLEEPING</a>
+<!--				<ul>
 					<li><a href="">BED</a></li>
 					<li><a href="">MATTRESS</a></li>
 					<li><a href="">ETC</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">TABLES</a>
-				<ul>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=table">TABLE</a>
+<!--				<ul>
 					<li><a href="">DINING TABLE</a></li>
 					<li><a href="">DESK</a></li>
 					<li><a href="">SOFA TABLE</a></li>
 					<li><a href="">SIDE TABLE</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">STORAGE</a>
-				<ul>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=storage">STORAGE</a>
+<!--				<ul>
 					<li><a href="">TV BOARD</a></li>
 					<li><a href="">SHELF</a></li>
 					<li><a href="">CABINET</a></li>
 					<li><a href="">DRESSER</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">LIGHTINGS</a>
-				<ul>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=lighting">LIGHTING</a>
+<!-- 				<ul>
 					<li><a href="">TABLE LAMP</a></li>
 					<li><a href="">FLOOR LAMP</a></li>
 					<li><a href="">WALL LAMP</a></li>
 					<li><a href="">PENDANT</a></li>
 					<li><a href="">ETC</a></li>
-				</ul>
-			</li>
-			<li class="side_menu1"><a href="">ACCESSORIES</a>
+				</ul>  -->
+			</li> 
+<!--			<li class="side_menu1"><a href="">ACCESSORIES</a>
 				<ul>
 					<li><a href="">AV</a></li>
 					<li><a href="">CLOCK</a></li>
@@ -150,7 +150,7 @@ div#container {
 					<li><a href="">RUG</a></li>
 					<li><a href="">ETC</a></li>
 				</ul>
-			</li>
+			</li> -->
 		</ul>
 
 	</div>

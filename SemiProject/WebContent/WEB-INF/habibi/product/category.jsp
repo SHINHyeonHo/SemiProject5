@@ -81,8 +81,7 @@ td{
 
 	<div id="main_banner" class="main_banner middle">
 	
-	<c:set var="category" value="${param.category}"/>
-	<div class="category">SLEEPING</div>
+	<div class="category">${param.category}</div>
 
 		<table class="product">
 		<c:forEach var="list" items="${prodList}" varStatus="st">
