@@ -7,10 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import common.controller.AbstractController;
-import member.model.InterMemberDAO;
-import member.model.MemberDAO;
-import member.model.MemberVO;
-import product.model.*;
+import member.model.*;
 
 public class LoginAction extends AbstractController {
 
@@ -42,14 +39,14 @@ public class LoginAction extends AbstractController {
 		
 		InterMemberDAO memberdao = new MemberDAO();
 		
-		MemberVO loginuser = memberdao.selectOneMember(paraMap);
-	       
-		if(loginuser != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("loginuser", loginuser);
-		}
-	       
-		super.setViewPage("/WEB-INF/habibi/main/main.jsp");
+		/*
+		 * MemberVO loginuser = memberdao.selectOneMember(paraMap);
+		 * 
+		 * if(loginuser != null) { HttpSession session = request.getSession();
+		 * session.setAttribute("loginuser", loginuser); }
+		 * 
+		 * super.setViewPage("/WEB-INF/habibi/main/main.jsp");
+		 */
 	      
 	}
 
