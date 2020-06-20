@@ -33,10 +33,10 @@ public class CategoryAction extends AbstractController {
 		}
 		else {// get방식으로 들어왔다면 
 		
-			//String category = request.getParameter("category");
+			String category = request.getParameter("category");
 			
 			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList("sleeping");
+			List<ProductVO> prodList =  pao.getProductList(category);
 			
 			request.setAttribute("prodList", prodList);
 			
