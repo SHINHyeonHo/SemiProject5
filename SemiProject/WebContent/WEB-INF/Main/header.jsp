@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+    <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>  
+<%
+    String ctxPath = request.getContextPath();
+    //    /MyMVC
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,6 +91,12 @@ li.header_menu {
 				<li class="header_menu">PHOTO</li>
 				<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
 				<li class="header_menu">CART</li>
+				<c:if test="${sessionScope.loginuser.userid eq 'admin'}">
+				<li class="header_menu">ADMINPAGE</li>
+				</c:if>
+			
 			</ul>
+			
+	
 		</div>
 	</header>

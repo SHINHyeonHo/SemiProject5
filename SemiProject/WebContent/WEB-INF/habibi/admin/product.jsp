@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="/style/admin/admin.css" type="text/css">
+    <link rel="stylesheet" href="/SemiProject/css/admin/admin.css" type="text/css">
     <style>
         .search{
             text-align: center;

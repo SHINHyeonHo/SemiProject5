@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>주문정보조회</title>
 
-    <link rel="stylesheet" href="/style/orderInfo.css" type="text/css">
+    <link rel="stylesheet" href="/SemiProject/css/admin/admin.css" type="text/css">
 
 </head>
 <body>
