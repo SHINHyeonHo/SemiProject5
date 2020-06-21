@@ -47,7 +47,7 @@ public class AdminDAO implements InterAdminDAO{
 	
 	// 상품 검색, 조회
 	@Override
-	public List<ProductVO> getProductInfo(String prodName) throws SQLException {
+	public List<ProductVO> getProductInfo(String name) throws SQLException {
 
 		List<ProductVO> prodList = new ArrayList<>();
 		
@@ -56,7 +56,7 @@ public class AdminDAO implements InterAdminDAO{
 
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status\n " + 
 					"from habibi_product\n" + 
-					"where prod_name like '%"+prodName+"%'";
+					"where prod_name like '%"+name+"%'";
 	         
 			pstmt = conn.prepareStatement(sql);
 	         
@@ -95,6 +95,31 @@ public class AdminDAO implements InterAdminDAO{
 	public int registerProduct(ProductVO pvo) throws SQLException {
 
 		int result = 0;
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "insert into habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
+					" values (?,?,?,?,?,?,?,?,?,?)"; // 
+	         
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pvo.getProd_code());
+			pstmt.setString(2, pvo.getProd_category());
+			pstmt.setString(3, pvo.getProd_name());
+			pstmt.setInt(4, pvo.getProd_stock());
+			pstmt.setInt(5, pvo.getProd_cost());
+			pstmt.setInt(6, pvo.getProd_price());
+			pstmt.setString(7, pvo.getProd_color());
+			pstmt.setString(8, pvo.getProd_mtl());
+			pstmt.setString(9, pvo.getProd_size());
+			pstmt.setInt(10, pvo.getProd_status());
+
+	        result = pstmt.executeUpdate();
+	        
+	        
+		} finally {
+			close();
+		}
 		
 		return result;
 	}

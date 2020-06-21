@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +46,8 @@
 
     <div class="item" id="main">
 
+<form method="post" action=""> <!------------------------------ form tag ------------------------------>
+
         <div id="top">상품관리</div>
         <table>
 
@@ -68,13 +72,15 @@
             <th>원가</th>
             <th>정가</th>
             <th>색상</th>
+            <th>재료</th>
+        	<th>사이즈</th>
             <th>판매상태</th>
             <th>재고수량</th>
 
             <tr>
-                <td><input name="register-product" type="text" placeholder="상품코드" size="10px"></td>
+                <td><input id="prodCode" name="prodCode" type="text" placeholder="상품코드" size="10px"></td>
                 <td>
-                    <select name="register-product">
+                    <select name="prodCategory">
                         <option value="seating"selected>seating</option>
                         <option value="sleeping">sleeping</option>
                         <option value="table" >table</option>
@@ -82,65 +88,73 @@
                         <option value="lighting">lighting</option>
                     </select>
                 </td>
-                <td><input name="register-product" type="text" placeholder="상품명" size="15px"></td>
-                <td><input name="register-product" type="text" placeholder="원가" size="10px"></td>
-                <td><input name="register-product" type="text" placeholder="정가" size="10px"></td>
-                <td><input name="register-product" type="text" placeholder="색상" size="10px"></td>
+                <td><input id="prodName" name="prodName" type="text" placeholder="상품명" size="15px"></td>
+                <td><input id="prodCost" name="prodCost" type="text" placeholder="원가" size="10px"></td>
+                <td><input id="prodPrice" name="prodPrice" type="text" placeholder="정가" size="10px"></td>
+                <td><input id="prodColor" name="prodColor" type="text" placeholder="색상" size="10px"></td>
+                <td><input id="prodMtl" name="prodMtl" type="text" placeholder="재료" size="10px"></td>
+                <td><input id="prodSize" name="prodSize" type="text" placeholder="사이즈" size="10px"></td>
                 <td>
-                    <select name="register-product">
+                    <select name="prodStatus">
                         <option value="1" selected>판매중</option>
                         <option value="0">판매중지</option>
                     </select>
                 </td>
-                <td><input name="register-product" type="number" name="number" size="10px" value="0" min="0" max="30"></td>
+                <td><input name="prodStock" type="number" name="prodStock" size="10px" value="0" min="0" max="30"></td>
             </tr>
 
         </table>
-        <div id="register-product" class="product-button"><input type="submit" value="상품등록"></div>
+        <div class="product-button"><input id="register-product" name="submitButton" type="submit" value="상품등록" onclick="return func_checkProdValue(this.value)"></div>
 
 
 
         <div class="menu">상품검색</div>
 
-        <form method="post" action=""> <!------------------------------ form tag ------------------------------>
+        
             <div class="search">
                 <input name="name" id="name" type="text" placeholder="상품명" value="${param.name}">
-                <input name="searchButton" id="search" type="submit" value="검색">
-                <input name="searchButton" id="searchAll" type="submit" value="전체조회">
+                <input name="submitButton" id="search" type="submit" value="검색" onclick="return func_checkSearchValue(this.value)">
+                <input name="submitButton" id="searchAll" type="submit" value="전체조회">
             </div>
-        </form>
-
-        <div class="info">
-<!--
-        목록 들어가는 곳
--->
-
-<!-- <template> -->
+        
 <c:if test="${method == 'POST'}">
     <table>
+    
+        <c:if test="${fn:length(prodList) == 0}">
+        	<div>일치하는 상품이 없습니다.</div>
+        </c:if>
+        
+        <c:if test="${fn:length(prodList) != 0}">
+	        <th>선택</th>
+	        <th>상품코드</th>
+	        <th>상품분류</th>
+	        <th>상품명</th>
+	        <th>원가</th>
+	        <th>정가</th>
+	        <th>색상</th>
+	        <th>재료</th>
+	        <th>사이즈</th>
+	        <th>판매상태</th>
+	        <th>재고수량</th>
+        </c:if>
 
-        <th>선택</th>
-        <th>상품코드</th>
-        <th>상품분류</th>
-        <th>상품명</th>
-        <th>원가</th>
-        <th>정가</th>
-        <th>색상</th>
-        <th>판매상태</th>
-        <th>재고수량</th>
+        
 
         <!-- 반복문으로 이루어질 부분 -->
         <c:forEach var="list" items="${prodList}">
 
 		        <tr>
-		            <td><input type="checkbox"></td>
+		            <td><input class="checkbox" type="checkbox"></td>
 		            <td>${list.prod_code}</td>
 		            <td>${list.prod_category}</td>
 		            <td>${list.prod_name}</td>
 		            <td>${list.prod_cost}</td>
 		            <td>${list.prod_price}</td>
 		            <td>${list.prod_color}</td>
-		            <td>${list.prod_status}
+		            <td>${list.prod_mtl}</td>
+		            <td>${list.prod_size}</td>
+		            <td>
+		            	<input type="number" name="number" size="10px" value="${list.prod_status}" min="0" max="30">
 		                <input type="submit" name="update" value="변경">
 		            </td>
 		            <td>
@@ -153,10 +167,13 @@
 
     </table>
 
-    <div id="delete-product" class="product-button"><input type="submit" value="상품삭제"></div>
+    <c:if test="${fn:length(prodList) != 0}">
+    	<div id="delete-product" class="product-button"><input name="submitButton" type="submit" value="상품삭제" onclick="return func_checkDeleteValue(this.value)"></div>
+    </c:if>
     
 </c:if>
-<!-- </template> -->
+
+</form><!----------------------------------- form tag----------------------------------------------->
 
         </div>
     </div>
@@ -167,42 +184,79 @@
 
 <script>
 
+function func_checkSearchValue(){ // 상품 검색 유효성 검사
+	
+	 
+	var name = document.querySelector("#name");
+	if(name.value == '' || name.value == null){
+		alert("상품명을 입력하세요.");
+		
+		return false;
+	} 
+	
+};
+
+function func_checkProdValue(){ // 상품등록 유효성 검사
+		
+	var prodCode = document.querySelector("#prodCode").value;
+	var prodName = document.querySelector("#prodName").value;
+	var prodCost = document.querySelector("#prodCost").value;
+	var prodPrice = document.querySelector("#prodPrice").value;
+	var prodColor = document.querySelector("#prodColor").value;
+	var prodMtl = document.querySelector("#prodMtl").value;
+	var prodSize = document.querySelector("#prodSize").value;
+	
+	if(prodCode.trim() == '' || prodName.trim() == '' || prodCost.trim() == '' || prodPrice.trim() == '' || 
+			prodColor.trim() == '' || prodMtl.trim() == '' || prodSize.trim() == ''){
+				
+				alert("모든 상품 정보를 입력하세요.");
+				return false;
+				
+			}
+
+	
+    if(!Number.isInteger(parseInt(prodCost))){
+    	alert("상품 원가는 숫자만 입력가능합니다.");
+    	return false;
+    }
+    
+    if(!Number.isInteger(parseInt(prodPrice))){
+    	alert("상품 정가는 숫자만 입력가능합니다.");
+    	return false;
+    }
+    
+    alert("상품이 등록되었습니다.");
+    
+};
+
+function func_checkDeleteValue(){ // 상품 삭제 유효성 검사
+	
+	var arrCheckbox = document.querySelectorAll(".checkbox");
+	
+	var cnt = 0;
+	for(var i=0; i<arrCheckbox.length; i++){
+		
+		if(arrCheckbox[i].checked)
+			cnt++;
+	}
+	
+	if(cnt == 0)
+		alert("선택된 상품이 없습니다.");
+		return false;
+}
+
+
 
     window.addEventListener('load', function () {
-
-
-        var search = document.querySelector("#search");
-        search.onclick = function () {
-        	
-        	var name = document.querySelector("#name");
-        	if(name.value == "" || name.value == null){
-        		
-        		alert("상품명을 입력하세요.");
-        	}
-        	/*
-            var template = document.querySelector("template");
-            var infoNode = document.importNode(template.content, true);
-            var info = document.querySelector(".info");
-
-            info.innerHTML = "";
-            info.append(infoNode);*/
-        }
-
+    	
          var searchAll = document.querySelector("#searchAll");
         searchAll.onclick = function () {
         	
         	var name = document.querySelector("#name");
         	name.value = "";
 
-         /*   var template = document.querySelector("template");
-            var infoNode = document.importNode(template.content, true);
-            var info = document.querySelector(".info");
-
-            info.innerHTML = "";
-            info.append(infoNode); */
         }
-
-
+   
     });
 
 

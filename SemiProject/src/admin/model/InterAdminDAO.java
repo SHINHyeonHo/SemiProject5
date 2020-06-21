@@ -10,7 +10,7 @@ public interface InterAdminDAO {
 	// ***** 상품관리 *****
 	
 	//상품검색, 조회
-	List<ProductVO> getProductInfo(String prodName) throws SQLException;
+	List<ProductVO> getProductInfo(String name) throws SQLException;
 	
 	// 상품등록
 	int registerProduct(ProductVO pvo) throws SQLException;
