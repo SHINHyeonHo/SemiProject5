@@ -15,6 +15,9 @@ public interface InterAdminDAO {
 	// 상품등록
 	int registerProduct(ProductVO pvo) throws SQLException;
 	
+	// 상품삭제
+	int DeleteProduct(String deleteCheck) throws SQLException;
+	
 	
 	
 	

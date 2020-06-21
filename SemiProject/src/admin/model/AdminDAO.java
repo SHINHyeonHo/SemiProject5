@@ -100,7 +100,7 @@ public class AdminDAO implements InterAdminDAO{
 			conn = ds.getConnection();
 
 			String sql = "insert into habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
-					" values (?,?,?,?,?,?,?,?,?,?)"; // 
+					" values (?,?,?,?,?,?,?,?,?,?)";
 	         
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, pvo.getProd_code());
@@ -114,6 +114,29 @@ public class AdminDAO implements InterAdminDAO{
 			pstmt.setString(9, pvo.getProd_size());
 			pstmt.setInt(10, pvo.getProd_status());
 
+	        result = pstmt.executeUpdate();
+	        
+	        
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
+
+	// 상품 삭제
+	@Override
+	public int DeleteProduct(String deleteCheck) throws SQLException {
+
+		int result = 0;
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "delete habibi_product where prod_code in ("+deleteCheck+")";
+	         
+			pstmt = conn.prepareStatement(sql);
+	
 	        result = pstmt.executeUpdate();
 	        
 	        

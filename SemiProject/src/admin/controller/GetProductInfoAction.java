@@ -1,5 +1,6 @@
 package admin.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -103,13 +104,28 @@ public class GetProductInfoAction extends AbstractController{
 			    
 			    // 상품 등록 insert
 			    int result = adao.registerProduct(pvo);
-			    System.out.println("1이면 성공 : "+result);
+			    System.out.println("등록 1이면 성공 : "+result);
 				
-				return;
+				return; // get 방식으로 들어온 페이지로 간다.
 				
 				//break;
 				
 			case "상품삭제" :
+				
+				String[] arrDeleteCheck = request.getParameterValues("deleteCheck");
+				
+				List<String> listDeleteCheck = new ArrayList<>();
+				
+				for(int i=0; i<arrDeleteCheck.length; i++)
+					listDeleteCheck.add("'"+arrDeleteCheck[i]+"'");
+				
+				String deleteCheck = String.join(",", listDeleteCheck);
+				System.out.println(deleteCheck); //확인용
+				
+				int result2 = adao.DeleteProduct(deleteCheck);
+				System.out.println("삭제 0 아니면 성공 : "+result2); //확인용
+				
+				name = ""; // 성공하면 전체조회 보이게 한다. 
 				
 				break;
 				
