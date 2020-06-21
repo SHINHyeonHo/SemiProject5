@@ -104,7 +104,7 @@
             </tr>
 
         </table>
-        <div class="product-button"><input id="register-product" name="submitButton" type="submit" value="상품등록" onclick="return func_checkProdValue(this.value)"></div>
+        <div class="product-button"><input name="submitButton" id="register-product" type="submit" value="상품등록" onclick="return func_checkProdValue(this.value)"></div>
 
 
 
@@ -144,7 +144,7 @@
         <c:forEach var="list" items="${prodList}">
 
 		        <tr>
-		            <td><input class="checkbox" type="checkbox"></td>
+		            <td><input class="checkbox" type="checkbox" name="deleteCheck" value="${list.prod_code}"></td>
 		            <td>${list.prod_code}</td>
 		            <td>${list.prod_category}</td>
 		            <td>${list.prod_name}</td>
@@ -168,7 +168,7 @@
     </table>
 
     <c:if test="${fn:length(prodList) != 0}">
-    	<div id="delete-product" class="product-button"><input name="submitButton" type="submit" value="상품삭제" onclick="return func_checkDeleteValue(this.value)"></div>
+    	<div class="product-button"><input name="submitButton" id="delete-product" type="submit" value="상품삭제" onclick="return func_checkDeleteValue(this.value)"></div>
     </c:if>
     
 </c:if>
@@ -229,20 +229,31 @@ function func_checkProdValue(){ // 상품등록 유효성 검사
     
 };
 
+
 function func_checkDeleteValue(){ // 상품 삭제 유효성 검사
 	
 	var arrCheckbox = document.querySelectorAll(".checkbox");
 	
 	var cnt = 0;
+    var deleteProdCode = '';
 	for(var i=0; i<arrCheckbox.length; i++){
 		
-		if(arrCheckbox[i].checked)
+		if(arrCheckbox[i].checked){
 			cnt++;
+			deleteProdCode += (arrCheckbox[i].value + ', ');
+		}
 	}
 	
-	if(cnt == 0)
+	if(cnt == 0) {
 		alert("선택된 상품이 없습니다.");
 		return false;
+	}
+	
+	// 삭제된 상품 마지막 콤마 없애기
+	deleteProdCode = deleteProdCode.substring(0, deleteProdCode.length-2);
+	
+	alert("상품코드 "+deleteProdCode+" 가 삭제되었습니다.");
+	
 }
 
 
