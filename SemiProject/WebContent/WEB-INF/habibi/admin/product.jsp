@@ -104,7 +104,7 @@
 
         <form method="post" action=""> <!------------------------------ form tag ------------------------------>
             <div class="search">
-                <input name="name" type="text" placeholder="상품명">
+                <input name="name" id="name" type="text" placeholder="상품명" value="${param.name}">
                 <input name="searchButton" id="search" type="submit" value="검색">
                 <input name="searchButton" id="searchAll" type="submit" value="전체조회">
             </div>
@@ -167,35 +167,44 @@
 
 <script>
 
-/*
+
     window.addEventListener('load', function () {
 
 
         var search = document.querySelector("#search");
         search.onclick = function () {
-
+        	
+        	var name = document.querySelector("#name");
+        	if(name.value == "" || name.value == null){
+        		
+        		alert("상품명을 입력하세요.");
+        	}
+        	/*
             var template = document.querySelector("template");
             var infoNode = document.importNode(template.content, true);
             var info = document.querySelector(".info");
 
             info.innerHTML = "";
-            info.append(infoNode);
+            info.append(infoNode);*/
         }
 
-        var searchAll = document.querySelector("#searchAll");
+         var searchAll = document.querySelector("#searchAll");
         searchAll.onclick = function () {
+        	
+        	var name = document.querySelector("#name");
+        	name.value = "";
 
-            var template = document.querySelector("template");
+         /*   var template = document.querySelector("template");
             var infoNode = document.importNode(template.content, true);
             var info = document.querySelector(".info");
 
             info.innerHTML = "";
-            info.append(infoNode);
+            info.append(infoNode); */
         }
 
 
     });
-*/
+
 
 </script>
 </html>

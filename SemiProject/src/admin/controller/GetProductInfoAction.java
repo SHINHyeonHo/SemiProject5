@@ -18,51 +18,46 @@ public class GetProductInfoAction extends AbstractController{
 		String method = request.getMethod();
 		System.out.println("매소드 : "+method);
 		
-/*		if(!"POST".equalsIgnoreCase(method)) { // post 방식으로 들어온게 아니라면
-			
-			String message = "비정상적인 경로로 들어왔습니다.";
-			String loc = "javascript:history.back()";
-			
-			request.setAttribute("message", message);
-			request.setAttribute("loc", loc);
-			
-			super.setRedirect(false);
-			super.setViewPage("/WEB-INF/Main/msg.jsp");
-			
-			return;	
-			
+		if(!"POST".equalsIgnoreCase(method)) { // get 방식으로 들어왔다면 
+
 			
 		}
+		
 		else { // Post 방식으로 들어왔다면 
 			
-		*/	
-			String prodName = request.getParameter("name");
-			//String searchButton = request.getParameter("searchButton");
-			//System.out.println("버튼 : "+searchButton);
+			request.setCharacterEncoding("UTF-8");
 			
-			if(prodName.isEmpty()) 
-				prodName = "";
-		
+			String name = request.getParameter("name");
+			String searchButton = request.getParameter("searchButton");
+			System.out.println("버튼 : "+searchButton);
+			
+			
+			switch (searchButton) {
+			
+			case "검색":
+				
+				if(name.isEmpty() || name == null) { // 상품명을 입력하지 않고 검색 누르면
+			
+					return;
+				}
+				
+				break;
+				
+			case "전체조회":
+					name = "";	
+				break;
+
+			}
 			
 			InterAdminDAO adao = new AdminDAO();
-			List<ProductVO> prodList = adao.getProductInfo(prodName);
+			List<ProductVO> prodList = adao.getProductInfo(name);
 			
 			request.setAttribute("prodList", prodList);
 			request.setAttribute("method", method);
+		
 			
-			if(prodList.isEmpty()) {
-				System.out.println("비었다.");
-			}else {
-				System.out.println("들어있음");
-			}
-			
-			//System.out.println(prodList.get(1).getProd_code());
-
-	//	}
-		
-		
-		
-		
+		}
+	
 		super.setRedirect(false);
 		super.setViewPage("/WEB-INF/habibi/admin/product.jsp");
 		
