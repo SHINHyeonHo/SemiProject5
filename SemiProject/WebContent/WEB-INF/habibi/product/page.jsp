@@ -10,10 +10,14 @@ pageEncoding="UTF-8"%>
 	<style type="text/css">
 
 		#container {
-			width: 900px;
 			font-size: 0.9em;
 			font-family: Verdana, Dotum, AppleGothic, sans-serif;
 			color: #4c4b4b;
+		}
+		
+		div.main_banner {
+			/*border: solid 1px blue;*/
+			width: 74%;
 		}
 
 		#divPageTop {
@@ -47,6 +51,7 @@ pageEncoding="UTF-8"%>
 		#prodName {
 			height: 50px;
 			line-height: 50px;
+			border-top: solid 1px #adadad;
 			border-bottom: solid 1px #adadad;
 			margin-bottom: 20px;
 		}
@@ -99,12 +104,13 @@ pageEncoding="UTF-8"%>
 			background-color: white;
 			border: solid 1px gray;
 			outline: 0;
+			border-radius: 0;
 		}
 
 		.btnBuy {
-			color: #eeeeee;
-			background-color: gray;
-			border: solid 1px gray;
+			color: white;
+			background-color: #A4A4A4;
+			border: solid 1px #A4A4A4;
 		}
 
 		#pageBtn {
@@ -117,15 +123,15 @@ pageEncoding="UTF-8"%>
 			width: 260px;
 			height: 40px;
 			margin: 30px -5px 20px 0;
-			background-color: white;
 			color: gray;
+			background-color: white;
 			border: solid 1px gray;
 		}
 
 		.btn2:focus {
-			color: #eeeeee;
-			background-color: gray;
-			border: solid 1px gray;
+			color: white;
+			background-color: #A4A4A4;
+			border: solid 1px #A4A4A4;
 			outline: 0;
 		}
 
@@ -156,44 +162,36 @@ pageEncoding="UTF-8"%>
 <jsp:include page="../member/login.jsp" />
 
 <div id="container">
-
+<div id="main_banner" class="main_banner middle">
 	<div id="divPageTop">
+<c:forEach var="list" items="${prodList}">
 		<div id="prodImg">
 			<!-- 제품 이미지 -->
-			<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png"/>
+			<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png" style="width:500px; height:500px;"/>
 		</div>
 
 		<div id="prodInfo">
 			<!-- 제품 정보 -->
-			<div class="item" id="prodName">product name</div>
+			<div class="item" id="prodName">${list.prod_name}</div>
 
 			<div class="item infoArea">브랜드</div>
 			<div class="item infoArea">habibi</div>
 			<div class="item infoArea">원산지</div>
 			<div class="item infoArea">korea</div>
-			<div class="item infoArea">상품코드</div>
-			<div class="item infoArea">C20200522-ABC</div>
+			<div class="item infoArea">상품코드</div>			
+			<div class="item infoArea">${list.prod_code}</div>
 			<div class="item infoArea">가격</div>
-			<div class="item infoArea"><span id="price">350,000</span>원</div>
-			<div class="item infoArea">원목/색상</div>
-			<div class="item infoArea">
-				<select name="wood" id="woodSel">
-					<option selected>-- 선택 --</option>
-					<option value="sheerWhite">시어 화이트</option>
-					<option value="maple">메이플</option>
-					<option value="oak">오크</option>
-					<option value="moltBrown">몰트 브라운</option>
-					<option value="mochaBrown">모카 브라운</option>
-				</select>
-			</div>
+			<div class="item infoArea"><span id="price">${list.prod_price}</span>원</div>
+			<div class="item infoArea">색상</div>
+			<div class="item infoArea">${list.prod_color}</div>
 
 			<!-- 제품 수량 -->
 			<div class="item" id="prodQty">
-				<span class="tblCell">product name</span>
+				<span class="tblCell">${list.prod_name}</span>
 				<input class="tblCell" id="qty" type="number" min="1" max="10" value="1">
-				<span class="tblCell"><span id="inputPrice">350,000</span>원</span>
+				<span class="tblCell"><span id="inputPrice">${list.prod_price}</span>원</span>
 			</div>
-
+</c:forEach>
 			<!-- 구매 및 장바구니 버튼 -->
 			<div class="item btnArea">
 				<button class="btn btnBuy" onclick="">BUY NOW</button>
@@ -206,16 +204,16 @@ pageEncoding="UTF-8"%>
 
 	<!-- 정보, 후기, 문의 버튼 -->
 	<div id="pageBtn">
-		<button class="btn2" id="dp" onclick="func_movePage('Prod_DetailPage.html');" autofocus>상세 정보</button>
+		<button class="btn2" id="dp" onclick="func_movePage('detailPage.jsp');" autofocus>상세 정보</button>
 		<button class="btn2" id="rp" onclick="func_movePage('Mem_ReviewPage.html');">사용 후기</button>
 		<button class="btn2" id="qp" onclick="func_movePage('Mem_QNAPage.html');">상품 Q&A</button>
 	</div>
 
 	<!-- iframe -->
-	<iframe id="frame" src="Prod_DetailPage.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" onload="resizeIframe(this)"></iframe>
+	<iframe id="frame" src="../detailPage.jsp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" onload="resizeIframe(this)"></iframe>
 
 
-
+</div>
 </div>
 
 <jsp:include page="../../Main/footer.jsp"/>

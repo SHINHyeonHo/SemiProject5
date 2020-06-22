@@ -44,7 +44,7 @@ public class ProductDAO implements InterProductDAO {
 	
 	
 	@Override
-	public List<ProductVO> getProductList(String category) throws SQLException {
+	public List<ProductVO> getProductList(String category, String prodCode) throws SQLException {
 		
 		List<ProductVO> prodList = new ArrayList<>();
 		
@@ -53,7 +53,7 @@ public class ProductDAO implements InterProductDAO {
 
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size\n" + 
 					"from habibi_product\n" + 
-					"where prod_status = 1 and prod_category = ?";
+					"where prod_status = 1 and prod_category = ? and prod_code like '%"+prodCode+"%'";
 	         
 			pstmt = conn.prepareStatement(sql);
 	        pstmt.setString(1, category);
@@ -75,14 +75,12 @@ public class ProductDAO implements InterProductDAO {
 	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, 1);
 		        
 	        	prodList.add(pvo);
-
-	        }
 	        
+	        }        
 	        
 		} finally {
 			close();
 		}
-
 		
 		return prodList;
 	}

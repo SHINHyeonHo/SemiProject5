@@ -17,6 +17,7 @@ public class PageAction extends AbstractController {
 		
 		String method = request.getMethod();
 		
+		
 		if(!"GET".equalsIgnoreCase(method)) { // get 방식으로 들어온게 아니라면
 			
 			String message = "비정상적인 경로로 들어왔습니다.";
@@ -33,13 +34,15 @@ public class PageAction extends AbstractController {
 		}
 		else {// get방식으로 들어왔다면 
 		
+			String prodCode = request.getParameter("prodCode");
 			String category = request.getParameter("category");
 			
 			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category);
+			List<ProductVO> prodList =  pao.getProductList(category, prodCode);
+						
+			System.out.println(prodList.isEmpty());
 			
 			request.setAttribute("prodList", prodList);
-			
 		}
 	
 		super.setRedirect(false);
