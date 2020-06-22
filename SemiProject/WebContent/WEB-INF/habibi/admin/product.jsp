@@ -59,7 +59,7 @@
                 <td>총 상품</td>
                 <td class="number"><span>17</span>개</td>
             </tr>
-
+ 
         </table>
 
         <div class="menu">상품등록</div>
@@ -116,6 +116,10 @@
                 <input name="submitButton" id="search" type="submit" value="검색" onclick="return func_checkSearchValue(this.value)">
                 <input name="submitButton" id="searchAll" type="submit" value="전체조회">
             </div>
+   
+   
+<!-------------------------- 임시로 옮긴 폼 태그 ------------------------------ -->
+   
         
 <c:if test="${method == 'POST'}">
     <table>
@@ -137,11 +141,11 @@
 	        <th>판매상태</th>
 	        <th>재고수량</th>
         </c:if>
-
         
-
         <!-- 반복문으로 이루어질 부분 -->
         <c:forEach var="list" items="${prodList}">
+
+
 
 		        <tr>
 		            <td><input class="checkbox" type="checkbox" name="deleteCheck" value="${list.prod_code}"></td>
@@ -153,17 +157,24 @@
 		            <td>${list.prod_color}</td>
 		            <td>${list.prod_mtl}</td>
 		            <td>${list.prod_size}</td>
+		            
+		            
+		            
 		            <td>
 		            	<input type="number" name="number" size="10px" value="${list.prod_status}" min="0" max="30">
-		                <input type="submit" name="update" value="변경">
+		                <button type="submit" name="submitButton" value="판매상태변경">변경</button>
 		            </td>
 		            <td>
 		                <input type="number" name="number" size="10px" value="${list.prod_stock}" min="0" max="30">
-		                <input type="submit" name="update" value="변경">
+		                <button type="submit" id="changeProdStock" name="submitButton" value="판매수량변경">변경</button>
 		            </td>
+		            
+		       
 		        </tr>
+		        
 	   
         </c:forEach>
+		       		     
 
     </table>
 
@@ -173,11 +184,11 @@
     
 </c:if>
 
-</form><!----------------------------------- form tag----------------------------------------------->
+   </form> <!----------------------------------- 원래 form tag----------------------------------------------->
 
         </div>
     </div>
-</div>
+<!-- </div>  -->
 
 
 </body>
@@ -257,6 +268,10 @@ function func_checkDeleteValue(){ // 상품 삭제 유효성 검사
 }
 
 
+// ***** 상품 수량 변경 ajax *****
+
+
+
 
     window.addEventListener('load', function () {
     	
@@ -267,6 +282,20 @@ function func_checkDeleteValue(){ // 상품 삭제 유효성 검사
         	name.value = "";
 
         }
+      
+        
+/*
+      	var changeProdStock = document.querySelector("#changeProdStock");
+      	chanageProdStock.onclick = function(){
+      		
+      		var 
+      		
+      		
+      	};
+        	
+ */       	
+        	
+ 
    
     });
 

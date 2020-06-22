@@ -1,4 +1,4 @@
-package admin.model;
+package admin.product.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 import product.model.ProductVO;
 
-public class AdminDAO implements InterAdminDAO{
+public class AdminProductDAO implements InterAdminProductDAO{
 	
 	private DataSource ds;
 	private Connection conn;
@@ -22,7 +22,7 @@ public class AdminDAO implements InterAdminDAO{
 	private ResultSet rs;
 	
 	// 생성자 
-	   public AdminDAO() {
+	   public AdminProductDAO() {
 	   
 	      try {
 	          Context initContext = new InitialContext();

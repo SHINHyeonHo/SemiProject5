@@ -89,12 +89,15 @@ td{
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
 				<td>
-					<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png"/>
-					<div class="description">
-						<div class="prod_name">${list.prod_name}</div>
-						<div class="prod_color">${list.prod_color}</div>
-						<div class="prod_price">${list.prod_price}원</div>
-					</div>
+						<a href="/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}">
+							<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png"/>
+						</a>
+						<div class="description">
+							<div class="prod_name" onclick="location.href ='/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}'" style="cursor:pointer;">${list.prod_name}</div>
+							<div class="prod_color">${list.prod_color}</div>
+							<div class="prod_price">${list.prod_price}원</div>
+						</div>
+					
 				</td>
 			
 			<c:if test="${(st.index+1) % 4 == 0}"></tr></c:if>
