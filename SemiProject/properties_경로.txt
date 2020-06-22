@@ -1,2 +1,2 @@
 이호연
-C:/Users/hppngrh/Documents/SemiProject_git/SemiProject/WebContent/WEB-INF/HbbCommand.properties
+C:/Users/hppngrh/Documents/KH/SemiProject/WebContent/WEB-INF/HbbCommand.properties
