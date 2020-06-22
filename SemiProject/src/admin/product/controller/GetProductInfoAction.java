@@ -1,4 +1,4 @@
-package admin.controller;
+package admin.product.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.model.AdminDAO;
-import admin.model.InterAdminDAO;
+import admin.product.model.AdminProductDAO;
+import admin.product.model.InterAdminProductDAO;
 import common.controller.AbstractController;
 import product.model.ProductVO;
 
@@ -32,7 +32,7 @@ public class GetProductInfoAction extends AbstractController{
 			String submitButton = request.getParameter("submitButton");
 			System.out.println(submitButton);
 			
-			InterAdminDAO adao = new AdminDAO();
+			InterAdminProductDAO adao = new AdminProductDAO();
 			
 			String name = null;
 			switch (submitButton) {

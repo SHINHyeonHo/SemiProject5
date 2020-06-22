@@ -1,11 +1,11 @@
-package admin.model;
+package admin.product.model;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import product.model.ProductVO;
 
-public interface InterAdminDAO {
+public interface InterAdminProductDAO {
 
 	// ***** 상품관리 *****
 	
