@@ -8,6 +8,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" /> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <link rel="stylesheet" href="/SemiProject/css/admin/admin.css" type="text/css">
     <style>
         .search{
@@ -22,6 +26,12 @@
         .product-button {
             text-align: right;
             margin: 20px;
+        }
+        
+        #searchTable{
+        	margin : 0 auto;
+        	border : solid 0px white;
+        
         }
 
 
@@ -46,8 +56,7 @@
 
     <div class="item" id="main">
 
-<form method="post" action=""> <!------------------------------ form tag ------------------------------>
-
+<!--
         <div id="top">상품관리</div>
         <table>
 
@@ -61,9 +70,11 @@
             </tr>
  
         </table>
-
+-->
         <div class="menu">상품등록</div>
-
+        
+        
+<form name="registerProductFrm">
         <table>
 
             <th>상품코드</th>
@@ -103,89 +114,30 @@
                 <td><input name="prodStock" type="number" name="prodStock" size="10px" value="0" min="0" max="30"></td>
             </tr>
 
-        </table>
-        <div class="product-button"><input name="submitButton" id="register-product" type="submit" value="상품등록" onclick="return func_checkProdValue(this.value)"></div>
 
+
+        </table>
+        
+</form><!-- <form name="registerProdcutFrm" action="" > -->
+        
+        <div class="product-button"><button id="registerButton" type="button">상품등록</button></div>
 
 
         <div class="menu">상품검색</div>
-
-        
+	
             <div class="search">
-                <input name="name" id="name" type="text" placeholder="상품명" value="${param.name}">
-                <input name="submitButton" id="search" type="submit" value="검색" onclick="return func_checkSearchValue(this.value)">
-                <input name="submitButton" id="searchAll" type="submit" value="전체조회">
+                <input name="searchName" id="searchName" type="text" placeholder="상품명" value="">
+                <button id="searchButton" type="button">검색</button>
+                <button id="searchAllButton" type="button">전체조회</button>
             </div>
+  		
+  		<!-- 검색한 값이 들어오는 곳 -->
+  		
+  		<div id="searchTable"></div>
+ 
+  		
+  		
    
-   
-<!-------------------------- 임시로 옮긴 폼 태그 ------------------------------ -->
-   
-        
-<c:if test="${method == 'POST'}">
-    <table>
-    
-        <c:if test="${fn:length(prodList) == 0}">
-        	<div>일치하는 상품이 없습니다.</div>
-        </c:if>
-        
-        <c:if test="${fn:length(prodList) != 0}">
-	        <th>선택</th>
-	        <th>상품코드</th>
-	        <th>상품분류</th>
-	        <th>상품명</th>
-	        <th>원가</th>
-	        <th>정가</th>
-	        <th>색상</th>
-	        <th>재료</th>
-	        <th>사이즈</th>
-	        <th>판매상태</th>
-	        <th>재고수량</th>
-        </c:if>
-        
-        <!-- 반복문으로 이루어질 부분 -->
-        <c:forEach var="list" items="${prodList}">
-
-
-
-		        <tr>
-		            <td><input class="checkbox" type="checkbox" name="deleteCheck" value="${list.prod_code}"></td>
-		            <td>${list.prod_code}</td>
-		            <td>${list.prod_category}</td>
-		            <td>${list.prod_name}</td>
-		            <td>${list.prod_cost}</td>
-		            <td>${list.prod_price}</td>
-		            <td>${list.prod_color}</td>
-		            <td>${list.prod_mtl}</td>
-		            <td>${list.prod_size}</td>
-		            
-		            
-		            
-		            <td>
-		            	<input type="number" name="number" size="10px" value="${list.prod_status}" min="0" max="30">
-		                <button type="submit" name="submitButton" value="판매상태변경">변경</button>
-		            </td>
-		            <td>
-		                <input type="number" name="number" size="10px" value="${list.prod_stock}" min="0" max="30">
-		                <button type="submit" id="changeProdStock" name="submitButton" value="판매수량변경">변경</button>
-		            </td>
-		            
-		       
-		        </tr>
-		        
-	   
-        </c:forEach>
-		       		     
-
-    </table>
-
-    <c:if test="${fn:length(prodList) != 0}">
-    	<div class="product-button"><input name="submitButton" id="delete-product" type="submit" value="상품삭제" onclick="return func_checkDeleteValue(this.value)"></div>
-    </c:if>
-    
-</c:if>
-
-   </form> <!----------------------------------- 원래 form tag----------------------------------------------->
-
         </div>
     </div>
 <!-- </div>  -->
@@ -195,110 +147,194 @@
 
 <script>
 
-function func_checkSearchValue(){ // 상품 검색 유효성 검사
+$(document).ready(function(){ // 로드되면
+			
+	func_prodAll("");	
 	
-	 
-	var name = document.querySelector("#name");
-	if(name.value == '' || name.value == null){
-		alert("상품명을 입력하세요.");
+	$("#searchAllButton").click(function(){
 		
-		return false;
-	} 
-	
-};
-
-function func_checkProdValue(){ // 상품등록 유효성 검사
+		func_prodAll("");
 		
-	var prodCode = document.querySelector("#prodCode").value;
-	var prodName = document.querySelector("#prodName").value;
-	var prodCost = document.querySelector("#prodCost").value;
-	var prodPrice = document.querySelector("#prodPrice").value;
-	var prodColor = document.querySelector("#prodColor").value;
-	var prodMtl = document.querySelector("#prodMtl").value;
-	var prodSize = document.querySelector("#prodSize").value;
+	});
 	
-	if(prodCode.trim() == '' || prodName.trim() == '' || prodCost.trim() == '' || prodPrice.trim() == '' || 
-			prodColor.trim() == '' || prodMtl.trim() == '' || prodSize.trim() == ''){
+	// 상품 검색
+	$("#searchButton").click(function(){ // 검색버튼 누르면
+		
+		var searchName = $("#searchName").val().trim();
+		if(searchName == ""){
+			
+			alert("상품명을 입력하세요.");
+			return;
+		}
+		
+		func_prodAll(searchName);		
+	});
+	
+	
+	// 상품 등록
+	$("#registerButton").click(function(){
+		
+		
+		// 유효성 검사
+		if ($("#prodCode").val().trim() == '' || $("#prodName").val().trim() == '' || $("#prodCost").val().trim() == '' || $("#prodPrice").val().trim() == '' 
+			|| $("#prodCode").val().trim() == '' || $("#prodColor").val().trim() == '' || $("#prodMtl").val().trim() == '' || $("#prodSize").val().trim() == '' ){
+			
+			alert("모든 상품 정보를 입력하세요.");
+			return;
+		}
+		
+		var prodCost = $("#prodCost").val().trim();
+		var prodPrice = $("#prodPrice").val().trim();
+		var result = func_numberCheck(prodCost, prodPrice);
+		
+		if(result == -1){
+			return;
+		}
+	
+		var queryString  = $("form[name=registerProductFrm]").serialize();
+		
+		alert(queryString);
+		
+		$.ajax({
+				url:"/SemiProject/admin/registerProduct.hb",
+				type:"POST",
+				data:queryString,
+				success:function(){
+					
+					alert("상품이 등록되었습니다.");	
+					func_prodAll(""); // 전체 상품 조회		
 				
-				alert("모든 상품 정보를 입력하세요.");
-				return false;
+				},
+			
+			error: function(request, status, error){
+				alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
+			}	
+		});
+
+	});
+	
+	
+	
+	//상품 삭제
+	
+	$(document).on('click','#deleteButton',function(){
+		
+		var checkedValue = [];
+		
+		$("input[type=checkbox]:checked").each(function(){
+			
+			checkedValue.push($(this).val());
+		});
+		
+		// 유효성 검사
+		if(checkedValue.length == 0){
+			alert("선택된 상품이 없습니다.");
+			return;
+		}
+					
+		var prodCodeString = "'";
+	    for(var i=0; i<checkedValue.length; i++){ // array to string
+	    	
+	    	prodCodeString += checkedValue[i]+"','"; 	
+	    }
+	    prodCodeString = prodCodeString.substring(0, prodCodeString.length-2);
+		
+		$.ajax({
+			url:"/SemiProject/admin/deleteProduct.hb",
+			type:"GET",
+			data:{"prodCodeString":prodCodeString},
+			success:function(){
+				
+				alert("총 "+checkedValue.length+"개의 상품이 삭제되었습니다.");	
+				func_prodAll(""); // 전체 상품 조회		
+			
+			},
+		
+		error: function(request, status, error){
+			alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
+		}	
+	}); // ajax
+
+		
+	});
+
+	
+	
+	
+//end of document ready	
+});
+	
+	
+function func_prodAll(searchName) {
+	
+	$.ajax({
+		url:"/SemiProject/admin/searchProduct.hb", // json 들어 있는 controller 주소
+		type:"GET",
+		data:{"searchName":searchName},
+		dataType:"json",
+		success:function(json){
+			
+			$("#searchName").val(searchName); // 입력한 검색어 그대로 두기
+
+			var html =  "";
+			if(json.length  > 0){
+				
+				html += "<table><thead><th>선택</th>"
+	       		+ "<th>상품코드</th>"
+		        + "<th>상품분류</th>"
+		        + "<th>상품명</th>"
+		        + "<th>원가</th>"
+		        + "<th>정가</th>"
+		        + "<th>색상</th>"
+		        + "<th>재료</th>"
+		        + "<th>사이즈</th>"
+		        + "<th>판매상태</th>"
+		        + "<th>재고수량</th></thead><tbody>";
+				
+				$.each(json, function(index, item){
+					
+					html +=  
+		 					 "<tr>"
+							+ "<td><input type='checkbox' value='"+item.prod_code+"'></td>"
+							+ "<td>"+item.prod_code+"</td>"
+							+ "<td>"+item.prod_category+"</td>"
+							+ "<td>"+item.prod_name+"</td>"
+							+ "<td>"+item.prod_cost+"</td>"
+							+ "<td>"+item.prod_price+"</td>"
+							+ "<td>"+item.prod_color+"</td>"
+							+ "<td>"+item.prod_mtl+"</td>"
+							+ "<td>"+item.prod_size+"</td>"
+							+ "<td>"+item.prod_status+"</td>"
+							+ "<td>"+item.prod_stock+"</td>"
+							+ "</tr>";
+				});
+				
+				html += "</tbody></table><div class='product-button'><button id='deleteButton' type='button'>상품삭제</button></div>";
+				$("#searchTable").html(html);
 				
 			}
-
-	
-    if(!Number.isInteger(parseInt(prodCost))){
-    	alert("상품 원가는 숫자만 입력가능합니다.");
-    	return false;
-    }
-    
-    if(!Number.isInteger(parseInt(prodPrice))){
-    	alert("상품 정가는 숫자만 입력가능합니다.");
-    	return false;
-    }
-    
-    alert("상품이 등록되었습니다.");
-    
-};
-
-
-function func_checkDeleteValue(){ // 상품 삭제 유효성 검사
-	
-	var arrCheckbox = document.querySelectorAll(".checkbox");
-	
-	var cnt = 0;
-    var deleteProdCode = '';
-	for(var i=0; i<arrCheckbox.length; i++){
-		
-		if(arrCheckbox[i].checked){
-			cnt++;
-			deleteProdCode += (arrCheckbox[i].value + ', ');
+			else{
+				
+				$("#searchTable").html("일치하는 상품명이 없습니다.");
+			}
+		},
+		error: function(request, status, error){
+			alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
 		}
-	}
+
+	});
 	
-	if(cnt == 0) {
-		alert("선택된 상품이 없습니다.");
-		return false;
-	}
+};// end of func_prodAll(searchName)---------------
 	
-	// 삭제된 상품 마지막 콤마 없애기
-	deleteProdCode = deleteProdCode.substring(0, deleteProdCode.length-2);
 	
-	alert("상품코드 "+deleteProdCode+" 가 삭제되었습니다.");
+function func_numberCheck(prodCode, prodPrice){
 	
-}
-
-
-// ***** 상품 수량 변경 ajax *****
-
-
-
-
-    window.addEventListener('load', function () {
-    	
-         var searchAll = document.querySelector("#searchAll");
-        searchAll.onclick = function () {
-        	
-        	var name = document.querySelector("#name");
-        	name.value = "";
-
-        }
-      
-        
-/*
-      	var changeProdStock = document.querySelector("#changeProdStock");
-      	chanageProdStock.onclick = function(){
-      		
-      		var 
-      		
-      		
-      	};
-        	
- */       	
-        	
- 
-   
-    });
-
+	if(!Number.isInteger(parseInt(prodCost)) || !Number.isInteger(parseInt(prodPrice))){
+    	alert("상품 원가, 정가는 숫자만 입력가능합니다.");
+    	return -1;
+    }
+	
+};
 
 </script>
 </html>

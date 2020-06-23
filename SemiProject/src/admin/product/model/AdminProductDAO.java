@@ -126,14 +126,14 @@ public class AdminProductDAO implements InterAdminProductDAO{
 
 	// 상품 삭제
 	@Override
-	public int DeleteProduct(String deleteCheck) throws SQLException {
+	public int DeleteProduct(String prodCodeString) throws SQLException {
 
 		int result = 0;
 		
 		try {
 			conn = ds.getConnection();
 
-			String sql = "delete habibi_product where prod_code in ("+deleteCheck+")";
+			String sql = "delete habibi_product where prod_code in ("+prodCodeString+")";
 	         
 			pstmt = conn.prepareStatement(sql);
 	
