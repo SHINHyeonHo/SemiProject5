@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <jsp:include page="../../Main/header.jsp"/>
 
@@ -8,7 +9,7 @@ pageEncoding="UTF-8"%>
 <style type="text/css">
 
 div.main_banner {
-	border: solid 1px blue;
+	/*border: solid 1px blue;*/
 	width: 74%;
 }
 .category{
@@ -32,7 +33,7 @@ tr{
 td{
 	position: relative;
 	width: 25%;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 }
 
 
@@ -41,7 +42,7 @@ td{
 	top: 0px;
     height: 70%;
     width: 100%;
-    background-color: gray;
+   /* background-color: gray; */
 }
 
 .description{
@@ -80,76 +81,27 @@ td{
 
 	<div id="main_banner" class="main_banner middle">
 	
-	<div class="category">SLEEPING</div>
+	<div class="category">${param.category}</div>
 
 		<table class="product">
-			<tr>
+		<c:forEach var="list" items="${prodList}" varStatus="st">
+			
+			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
+			
 				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
+					<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png"/>
 					<div class="description">
-						<div class="prod_name">STANDARD BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
+						<div class="prod_name">${list.prod_name}</div>
+						<div class="prod_color">${list.prod_color}</div>
+						<div class="prod_price">${list.prod_price}원</div>
 					</div>
 				</td>
-				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
-					<div class="description">
-						<div class="prod_name">VINTAGE QUEEN BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
-					</div>
-				</td>				
-				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
-					<div class="description">
-						<div class="prod_name">CASTOR FABRIC BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
-					</div>
-				</td>				
-				<td>
-					<div class="image">
-						<img src=""/>
-					</div>
-					<div class="description">
-						<div class="prod_name">STANDARD BED</div>
-						<div class="prod_color">brown</div>
-						<div class="prod_price">3,567,000원</div>
-					</div>
-				</td>		
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>			
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
 			
+			<c:if test="${(st.index+1) % 4 == 0}"></tr></c:if>
+		
+		</c:forEach>
+		
+	
 		</table>
 		
 	</div>
@@ -159,3 +111,12 @@ td{
 	</div>
       
 <jsp:include page="../../Main/footer.jsp"/>
+
+
+
+
+
+
+
+
+

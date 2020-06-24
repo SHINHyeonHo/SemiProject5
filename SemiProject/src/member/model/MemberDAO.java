@@ -46,16 +46,14 @@ public class MemberDAO implements InterMemberDAO {
 	// 회원가입하기
 	@Override
 	public int registerMember(MemberVO mvo) throws SQLException {
-		
-		mvo = null;
-        int rs = 0;
+        int result = 0;
         
 		try {
 			conn = ds.getConnection();
 
 			String sql = " insert into habibi_member(idx, userid, passwd, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email) " 
-					   + " values(seq_habibi_memno.nextval, ?, ?, ?, ?, ?, ?, ?, ? ) ";
-	         
+					   + " values(seq_habibi_memno.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) ";
+	        
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mvo.getUserid());
 			pstmt.setString(2, mvo.getPasswd());
@@ -67,20 +65,63 @@ public class MemberDAO implements InterMemberDAO {
 			pstmt.setString(8, mvo.getMobile1());
 			pstmt.setString(9, mvo.getMobile2());
 			pstmt.setString(10, mvo.getMobile3());
-			pstmt.setString(11, mvo.getIs_sms());
-			pstmt.setString(12, mvo.getIs_email());
+			String sms = "";
+			if("ON".equalsIgnoreCase(mvo.getIs_sms())) {
+				sms = "1";
+			}
+			else if(mvo.getIs_email() == null) {
+				sms = "0";
+			}
+			else {
+				sms = "0";
+			}
+			pstmt.setString(11, sms);
+			String email = "";
+			if("ON".equalsIgnoreCase(mvo.getIs_sms())) {
+				email = "1";
+			}
+			else if(mvo.getIs_email() == null){
+				email = "0";
+			}
+			else {
+				email = "0";
+			}
+			pstmt.setString(12, email);
 			
-			rs = pstmt.executeUpdate();
-	        
+			result = pstmt.executeUpdate();
 		} finally {
 			close();
 		}
-
-		return rs;
-	}
+		return result;
+	} // end of public int registerMember(MemberVO mvo)
 	
 	
-	 // 아이디 중복검사
+	// 아이디 중복검사( userid 가 있으면 true, 없으면 false 리턴 )
+	@Override
+	public boolean idDuplicateCheck(String userid) throws SQLException {
+		boolean isUse = false;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String sql = " select userid "
+					   + " from habibi_member "
+					   + " where userid = ? ";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
+			
+			isUse = !rs.next();
+		} finally {
+			close();
+		}
+		return isUse;
+	} // end of public boolean idDuplicateCheck(String userid)
+	
+	
+	// 아이디 찾기
 	@Override
 	public String finduserid(HashMap<String, String> paraMap) throws SQLException {
 	      
@@ -114,7 +155,6 @@ public class MemberDAO implements InterMemberDAO {
 		return userid;
 	}
 
-	
 
 	
 

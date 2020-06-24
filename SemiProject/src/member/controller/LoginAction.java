@@ -29,13 +29,13 @@ public class LoginAction extends AbstractController {
 			return;
 		}
 		
-		String userid = request.getParameter("userid");
-		String passwd = request.getParameter("passwd");
+		String loginUserid = request.getParameter("loginUserid");
+		String loginPasswd = request.getParameter("loginPasswd");
 		
 		HashMap<String, String> paraMap = new HashMap<String, String>();
 		
-		paraMap.put("userid", userid);
-		paraMap.put("passwd", passwd);
+		paraMap.put("loginUserid", loginUserid);
+		paraMap.put("loginPasswd", loginPasswd);
 		
 		InterMemberDAO memberdao = new MemberDAO();
 		

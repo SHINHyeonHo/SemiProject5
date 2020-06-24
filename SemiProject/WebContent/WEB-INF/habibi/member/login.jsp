@@ -17,7 +17,7 @@
 			goLogin(); // 로그인 시도
 		});
       
-		$("#passwd").keydown(function(event){
+		$("#loginPasswd").keydown(function(event){
 			if(event.keyCode == 13){ // 암호 입력란에 엔터를 했을 경우   
 				goLogin(); // 로그인 시도한다.
 			}
@@ -25,20 +25,20 @@
 	}); // end of $(document).ready(function() -----------------------------------
    
 	function goLogin() {
-		var userid = $("#userid").val().trim();
-		var passwd = $("#passwd").val().trim();
+		var userid = $("#loginUserid").val().trim();
+		var passwd = $("#loginPasswd").val().trim();
          
         if(userid == "") {
 			alert("아이디를 입력하세요!!");
-            $("#userid").val("");
-            $("#userid").focus();
+            $("#loginUserid").val("");
+            $("#loginUserid").focus();
             return;   // goLogin() 함수 종료
          }
          
 		if(passwd == "") {
 			alert("암호를 입력하세요!!");
-            $("#passwd").val("");
-            $("#passwd").focus();
+            $("#loginPasswd").val("");
+            $("#loginPasswd").focus();
             return;   // goLogin() 함수 종료
         }
          
@@ -48,7 +48,7 @@
 		frm.submit();
    } // end of function goLogin(){} ------------------------------  
    
-	function MemberRegister() {
+	function goMemberRegister() {
 		location.href="<%=request.getContextPath()%>/member/memberRegister.hb"
 	} // end of function MemberRegister() -----------------------------
 
@@ -72,11 +72,11 @@
 	         	<!-- <legend>회원로그인</legend> -->
 	         	<label class="id">
 	            	<span>ID</span>
-	            	<input id="userid" name="userid" type="text" >
+	            	<input id="loginUserid" name="loginUserid" type="text" >
 	         	</label>
 	         	<label class="password">
 	            	<span>PASSWORD</span>
-	            	<input id="passwd" name="passwd" type="password" >
+	            	<input id="loginPasswd" name="loginPasswd" type="password" >
 	         	</label>
 	         
 	         
@@ -85,7 +85,7 @@
 	   
 			<div class="joinpart">
 		      	<div class="joinbtn">
-		         	<button type="button" style="cursor: pointer;" onclick="MemberRegister();">JOIN</button>
+		         	<button type="button" style="cursor: pointer;" onclick="goMemberRegister();">JOIN</button>
 		      	</div>
 		      	<p>
 	         		<a href="findID.html" style="color: #666;">FIND ID</a>&nbsp;&nbsp;/&nbsp;&nbsp;       

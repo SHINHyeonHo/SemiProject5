@@ -30,8 +30,6 @@ public class MemberRegisterAction extends AbstractController {
 			String smsad = request.getParameter("smsad");
 			String emailad = request.getParameter("emailad");
 			
-			System.out.println(smsad + ", " + emailad);
-			
 			MemberVO mvo = new MemberVO();
 			mvo.setName(name);
 			mvo.setUserid(userid);
@@ -50,6 +48,23 @@ public class MemberRegisterAction extends AbstractController {
 			
 			int n = mdao.registerMember(mvo);
 			
+			String message = "";
+			String loc = "";
+			
+			if(n==1) {
+				message = "회원가입 성공";
+				loc = request.getContextPath()+"/habibi.hb";
+			}
+			else {
+				message = "회원가입 실패";
+				loc = "javascript: history.back()";
+			}
+			
+			request.setAttribute("message", message);
+			request.setAttribute("loc", loc);
+			
+			super.setRedirect(false);
+			super.setViewPage("/WEB-INF/Main/msg.jsp");
 			
 		}
 		

@@ -1,4 +1,4 @@
-package member.model;
+package product.model;
 
 public class ProductVO {
 
@@ -11,14 +11,16 @@ public class ProductVO {
     private String prod_color;
     private String prod_mtl;
     private String prod_size;
+    private int prod_status;
 
-    // 기본 생성자
+
+	// 기본 생성자
     public ProductVO(){
 
     }
 
     // 오버로드 생성자
-    public ProductVO(String prod_code, String prod_category, String prod_name, int prod_cost, int prod_price, int prod_stock, String prod_color, String prod_mtl, String prod_size) {
+    public ProductVO(String prod_code, String prod_category, String prod_name, int prod_cost, int prod_price, int prod_stock, String prod_color, String prod_mtl, String prod_size, int prod_status) {
         this.prod_code = prod_code;
         this.prod_category = prod_category;
         this.prod_name = prod_name;
@@ -28,6 +30,7 @@ public class ProductVO {
         this.prod_color = prod_color;
         this.prod_mtl = prod_mtl;
         this.prod_size = prod_size;
+        this.prod_status = prod_status;
     }
 
     public String getProd_code() {
@@ -102,5 +105,12 @@ public class ProductVO {
         this.prod_size = prod_size;
     }
 
+    public int getProd_status() {
+		return prod_status;
+	}
+
+	public void setProd_status(int prod_status) {
+		this.prod_status = prod_status;
+	}
 
 }
