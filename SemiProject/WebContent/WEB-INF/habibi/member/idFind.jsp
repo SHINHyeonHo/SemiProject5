@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <%
     String ctxPath = request.getContextPath();
-    //    /MyMVC
+   
 %>    
+<jsp:include page="../../Main/header.jsp"/>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +16,7 @@
 <script type="text/javascript">
    
    $(document).ready(function(){
-       
+     
       var method = "${method}";
    //   console.log("method : " + method);
    
@@ -45,7 +46,7 @@
 <form name="idFindFrm">
    <div id="div_name" align="center">
       <span style="color: blue; font-size: 12pt;">성명</span><br/> 
-      <input type="text" name="name" id="name" size="15" placeholder="홍길동" autocomplete="off" required />
+      <input type="text" name="name" id="name" size="15" placeholder="하비비" autocomplete="off" required />
    </div>
    
    <div id="div_mobile" align="center">
@@ -62,3 +63,9 @@
    </div>
    
 </form>
+
+
+      
+<jsp:include page="../../Main/footer.jsp"/>
+
+

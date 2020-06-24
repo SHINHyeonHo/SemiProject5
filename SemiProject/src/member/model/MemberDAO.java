@@ -121,39 +121,172 @@ public class MemberDAO implements InterMemberDAO {
 	} // end of public boolean idDuplicateCheck(String userid)
 	
 	
-	// 아이디 찾기
-	@Override
-	public String finduserid(HashMap<String, String> paraMap) throws SQLException {
-	      
-		String userid = null;
-	      
-		try {
-			conn = ds.getConnection();
-	         
-			String sql = " select userid " 
-					   + " from habibi_member " 
-					   + " where is_member = 1 and " 
-					   + " name = ? and " 
-					   + " trim(mobile1) || trim(mobile2) || trim(mobile3) = ? ";
-	         
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, paraMap.get("name"));
-	         
-			String mobile = paraMap.get("mobile");  // 01023456789
-			mobile = mobile.substring(0, 3) + mobile.substring(3, 7) + mobile.substring(7);
-			pstmt.setString(2, mobile);
-	         
-			rs = pstmt.executeQuery();
-	         
-			if(rs.next()) {
-				userid = rs.getString("userid");
+	// 로그인 처리 
+		@Override
+		public MemberVO selectOneMember(HashMap<String, String> paraMap) throws SQLException {
+			
+			MemberVO mvo = null;
+			
+			try {
+				conn = ds.getConnection();
+				String sql = " select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email, point, is_member, join_date "
+						   + " from habibi_member "
+						   + " where is_member = 1 and userid = ? and passwd = ? "; 
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, paraMap.get("userid"));
+				pstmt.setString(2, paraMap.get("passwd"));
+				
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					mvo = new MemberVO();
+					mvo.setIdx(rs.getInt("idx"));
+					mvo.setUserid(rs.getString("userid"));
+					mvo.setName(rs.getString("name"));
+					mvo.setEmail(rs.getString("email"));
+					mvo.setMobile1(rs.getString("mobile1"));
+					mvo.setMobile2(rs.getString("mobile2"));
+					mvo.setMobile3(rs.getString("mobile3"));
+					mvo.setPostcode(rs.getString("postcode"));
+					mvo.setAddress1(rs.getString("address1"));
+					mvo.setAddress2(rs.getString("address2"));
+					mvo.setIs_sms(rs.getString("is_sms"));
+					mvo.setIs_email(rs.getString("is_email"));
+					mvo.setPoint(rs.getInt("point"));
+					mvo.setIs_member(rs.getString("is_member"));
+					mvo.setJoin_date(rs.getString("join_date"));
+				}
+				
+			} finally {
+				close();
 			}
-	         
-		} finally {
-			close();
+			
+			return mvo;
+		} // end of public MemberVO selectOneMember(HashMap<String, String> paraMap) throws SQLException
+		
+		
+		 // 아이디 찾기(성명 휴대폰 번호로 찾기)
+		@Override
+		public String finduserid(HashMap<String, String> paraMap) throws SQLException {
+		      
+			String userid = null;
+		      
+			try {
+				conn = ds.getConnection();
+		         
+				String sql = " select userid " 
+						   + " from habibi_member " 
+						   + " where is_member = 1 and " 
+						   + " name = ? and " 
+						   + " trim(mobile1) || trim(mobile2) || trim(mobile3) = ? ";
+		         
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, paraMap.get("name"));
+		         
+				String mobile = paraMap.get("mobile");  // 01023456789
+				mobile = mobile.substring(0, 3) + mobile.substring(3, 7) + mobile.substring(7);
+				pstmt.setString(2, mobile);
+		         
+				rs = pstmt.executeQuery();
+		         
+				if(rs.next()) {
+					userid = rs.getString("userid");
+				}
+		         
+			} finally {
+				close();
+			}
+			return userid;
 		}
-		return userid;
-	}
+
+		// 비밀번호 찾기(아이디 이메일주소로 찾기)
+		@Override
+		public boolean isUserExist(HashMap<String, String> paraMap) throws SQLException {
+			boolean isUserExist = false;
+			try {
+				conn = ds.getConnection();
+				
+				String sql = " select userid "+
+							 " from habibi_member "+
+							 " where is_member = 1 and userid = ? and email = ? ";
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, paraMap.get("userid"));
+				pstmt.setString(2, paraMap.get("email"));
+				
+				rs = pstmt.executeQuery();
+				
+				isUserExist = rs.next();
+				
+			} finally {
+				close();
+			}
+			return isUserExist;
+		} // end of public boolean isUserExist(HashMap<String, String> paraMap) throws SQLException
+
+		// 비밀번호 업데이트 하기
+		@Override
+		public int passwdUpdate(String passwd, String userid) throws SQLException {
+			int result = 0;
+			
+			try {
+				conn = ds.getConnection();
+				
+				String sql = " update habibi_member set passwd = ? "+
+						     " where userid = ? ";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, passwd);
+				pstmt.setString(2, userid);
+				
+				result = pstmt.executeUpdate();
+				
+				
+			} finally {
+				close();
+			}
+			
+			
+			return result;
+		}
+
+		// MyInfo 페이지 생성
+		@Override
+		public MemberVO myInfo(String idx) throws SQLException {
+			
+			MemberVO mvo = null;
+			
+			try {
+				conn = ds.getConnection();
+
+				String sql = " select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email "+
+							 " from habibi_member  "+
+							 " where idx = ? ";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, idx);
+				
+				if(rs.next()) {
+					mvo = new MemberVO();
+					mvo.setIdx(rs.getInt("idx"));
+					mvo.setUserid(rs.getString("userid"));
+					mvo.setName(rs.getString("name"));
+					mvo.setEmail(rs.getString("email"));
+					mvo.setMobile1(rs.getString("mobile1"));
+					mvo.setMobile2(rs.getString("mobile2"));
+					mvo.setMobile3(rs.getString("mobile3"));
+					mvo.setPostcode(rs.getString("postcode"));
+					mvo.setAddress1(rs.getString("address1"));
+					mvo.setAddress2(rs.getString("address2"));
+					mvo.setIs_sms(rs.getString("is_sms"));
+					mvo.setIs_email(rs.getString("is_email"));
+				}
+			} finally {
+				close();
+			}
+			
+			
+			return mvo;
+		}
 
 
 	

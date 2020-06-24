@@ -29,25 +29,32 @@ public class LoginAction extends AbstractController {
 			return;
 		}
 		
-		String loginUserid = request.getParameter("loginUserid");
-		String loginPasswd = request.getParameter("loginPasswd");
+		String userid = request.getParameter("userid");
+		String passwd = request.getParameter("passwd");
 		
 		HashMap<String, String> paraMap = new HashMap<String, String>();
 		
-		paraMap.put("loginUserid", loginUserid);
-		paraMap.put("loginPasswd", loginPasswd);
+		paraMap.put("userid", userid);
+		paraMap.put("passwd", passwd);
 		
 		InterMemberDAO memberdao = new MemberDAO();
+		MemberVO loginuser = memberdao.selectOneMember(paraMap); // 로그인된 정보를 MemberVO에 저장시키기
 		
-		/*
-		 * MemberVO loginuser = memberdao.selectOneMember(paraMap);
-		 * 
-		 * if(loginuser != null) { HttpSession session = request.getSession();
-		 * session.setAttribute("loginuser", loginuser); }
-		 * 
-		 * super.setViewPage("/WEB-INF/habibi/main/main.jsp");
-		 */
-	      
-	}
+		String goBackURL = request.getContextPath()+"/habibi.hb";
+		
+		if( loginuser != null) {
+			HttpSession session = request.getSession(); // session storage에  임시 저장
+			session.setAttribute("loginuser", loginuser);
+			
+			// 비밀번호 변경 alert는 차주 구현 예정
+			
+		} 
+		
+		// 시작페이지로 이동
+		super.setRedirect(true);
+		super.setViewPage(goBackURL);
+		
+		return;
+	} // end of public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception
 
 }

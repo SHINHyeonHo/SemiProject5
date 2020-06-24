@@ -1,12 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>로그인 모달</title>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
+
+
 <style type="text/css">
+
+td {
+	padding: 5px;
+}
 
 </style>
 <script type="text/javascript">
@@ -17,7 +22,7 @@
 			goLogin(); // 로그인 시도
 		});
       
-		$("#loginPasswd").keydown(function(event){
+		$("#passwd").keydown(function(event){
 			if(event.keyCode == 13){ // 암호 입력란에 엔터를 했을 경우   
 				goLogin(); // 로그인 시도한다.
 			}
@@ -25,82 +30,78 @@
 	}); // end of $(document).ready(function() -----------------------------------
    
 	function goLogin() {
-		var userid = $("#loginUserid").val().trim();
-		var passwd = $("#loginPasswd").val().trim();
+		var userid = $("#userid").val().trim();
+		var passwd = $("#passwd").val().trim();
          
         if(userid == "") {
 			alert("아이디를 입력하세요!!");
-            $("#loginUserid").val("");
-            $("#loginUserid").focus();
+            $("#userid").val("");
+            $("#userid").focus();
             return;   // goLogin() 함수 종료
          }
          
 		if(passwd == "") {
 			alert("암호를 입력하세요!!");
-            $("#loginPasswd").val("");
-            $("#loginPasswd").focus();
+            $("#passwd").val("");
+            $("#passwd").focus();
             return;   // goLogin() 함수 종료
         }
          
         var frm = document.loginFrm;
+        
         frm.method = "post";
         frm.action = "<%=request.getContextPath()%>/member/login.hb";
 		frm.submit();
    } // end of function goLogin(){} ------------------------------  
    
-	function goMemberRegister() {
+	function MemberRegister() {
 		location.href="<%=request.getContextPath()%>/member/memberRegister.hb"
 	} // end of function MemberRegister() -----------------------------
 
 </script>
-</head>
-<body>
+
+
 
 <!-- 모달 묶음으로 로그인 창처리 -->
-<div class="modal fade" id="myModal" role="dialog">
-	<div class="modal-dialog">
-	<div class="modal-content">
-	
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">Login</h4>
-        </div>
-        
-        <div class="modal-body">
-	       	<form name="loginFrm">
-	         	<p style="font-weight:bold; padding-bottom:10px; color: #666;">MEMBER LOGIN</p>
-	         	<!-- <legend>회원로그인</legend> -->
-	         	<label class="id">
-	            	<span>ID</span>
-	            	<input id="loginUserid" name="loginUserid" type="text" >
-	         	</label>
-	         	<label class="password">
-	            	<span>PASSWORD</span>
-	            	<input id="loginPasswd" name="loginPasswd" type="password" >
-	         	</label>
-	         
-	         
-	         	<button type="button" style="cursor: pointer;" onclick="goLogin();">LOGIN</button>
-			</form>
-	   
-			<div class="joinpart">
-		      	<div class="joinbtn">
-		         	<button type="button" style="cursor: pointer;" onclick="goMemberRegister();">JOIN</button>
-		      	</div>
-		      	<p>
-	         		<a href="findID.html" style="color: #666;">FIND ID</a>&nbsp;&nbsp;/&nbsp;&nbsp;       
-		         	<a href="findPassword.html" style="color: #666;">FIND PASSWORD</a>   
-		      	</p>
-		   	</div>
-		</div>
+
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		<div class="modal-content">
 		
-        <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Login</h4>
+	        </div>
+	        
+	        <div class="modal-body">
+		       	<form name="loginFrm">
+		         	<p style="font-weight:bold; padding-bottom:10px; color: #666;">MEMBER LOGIN</p>
+		         	<!-- <legend>회원로그인</legend> -->
+		         	<table>
+		         		<tr>
+		         			<td><span>ID</span></td>
+		         			<td><input id="userid" name="userid" type="text" ></td>
+		         		</tr>
+		         		<tr>
+		         			<td><span>PASSWORD</span></td>
+		         			<td><input id="passwd" name="passwd" type="password" ></td>
+		         		</tr>
+		         		<tr>
+		         			<td><button type="button" style="cursor: pointer;" onclick="goLogin();">LOGIN</button></td>
+		         			<td><button type="button" style="cursor: pointer;" onclick="MemberRegister();">JOIN</button></td>
+		         		</tr>
+		         		<tr>
+		         			<td><a href="<%= request.getContextPath() %>/member/idFind.hb" style="color: #666;">FIND ID</a>&nbsp;&nbsp;&nbsp;&nbsp; /</td>
+		         			<td><a href="<%= request.getContextPath() %>/member/passwdFind.hb" style="color: #666;">FIND PASSWORD</a></td>
+		         		</tr>
+		         	</table>
+				</form>
+			</div>
+			
+	        <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+			
 		</div>
-		
+	    </div>
 	</div>
-    </div>
-</div>
-      
-</body>
-</html>

@@ -16,8 +16,8 @@ input[type=text] {
 }
 
 button.search {
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   float: right;
   padding: 0;
   margin-top: 8px;
@@ -43,10 +43,6 @@ li > ul {
 	padding-left: 20px;
 }
 
-a {
-	text-decoration: none;
-}
-
 div.left_sidebar {
 	width: 22%;
 	float: left;
@@ -69,7 +65,7 @@ div.middle {
 }
 
 div#container {
-	min-height: 1500px;
+	min-height: 3000px;
 }
 
 </style>

@@ -2,6 +2,7 @@ package member.model;
 
 public class MemberVO {
 
+   private int idx;
    private String userid;
    private String passwd;
    private String name;
@@ -22,7 +23,7 @@ public class MemberVO {
 
    public MemberVO() {}
    
-   public MemberVO(String userid, String passwd, String name, String email, String postcode, String address1, String address2, String mobile1, String mobile2, String mobile3
+   public MemberVO(int idx, String userid, String passwd, String name, String email, String postcode, String address1, String address2, String mobile1, String mobile2, String mobile3
          , String is_sms, String is_email, int point, String is_member, String join_date, String last_passwd_date, String last_login_date) {
       this.userid = userid;
       this.passwd = passwd;
@@ -43,7 +44,15 @@ public class MemberVO {
       this.last_login_date = last_login_date;
       
    }
-   public String getUserid() {
+   public int getIdx() {
+	return idx;
+}
+
+public void setIdx(int idx) {
+	this.idx = idx;
+}
+
+public String getUserid() {
       return userid;
    }
 

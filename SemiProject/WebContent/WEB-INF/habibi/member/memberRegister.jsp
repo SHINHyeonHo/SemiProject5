@@ -207,7 +207,7 @@ span#emailCheck {
 	<table id="tblMemberRegister">
 		<thead>
 		<tr>
-			<th colspan="2" id="th">::: 회원가입 (<span style="font-size: 10pt; font-style: italic;"><span class="star">*</span>표시는 필수입력사항</span>) :::</th>
+			<th colspan="2" id="th">::: 회원가입 (&nbsp;&nbsp;<span style="font-size: 10pt; font-style: italic;"><span class="star">*</span>표시는 필수입력사항</span>&nbsp;&nbsp;) :::</th>
 		</tr>
 		</thead>
 		
