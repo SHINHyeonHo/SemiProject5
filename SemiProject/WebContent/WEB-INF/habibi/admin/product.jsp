@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <link rel="stylesheet" href="/SemiProject/css/admin/admin.css" type="text/css">
+    <link rel="stylesheet" href="/SemiProject/css/admin/admin9.css" type="text/css">
     <style>
         .search{
             text-align: center;
@@ -33,8 +33,12 @@
         	border : solid 0px white;
         
         }
-
-
+        
+        body{
+        	font-size: small;
+        
+        }
+    
     </style>
 
 </head>
@@ -56,21 +60,21 @@
 
     <div class="item" id="main">
 
-<!--
+
         <div id="top">상품관리</div>
         <table>
 
             <tr>
                 <td>품절임박</td>
-                <td class="number"><span>3</span>개</td>
+                <td class="soldout-check"><span>3</span>개</td>
                 <td>품절</td>
-                <td class="number"><span>2</span>개</td>
+                <td class="soldout-check"><span>2</span>개</td>
                 <td>총 상품</td>
-                <td class="number"><span>17</span>개</td>
+                <td class="soldout-check"><span>17</span>개</td>
             </tr>
  
         </table>
--->
+
         <div class="menu">상품등록</div>
         
         
@@ -89,9 +93,9 @@
             <th>재고수량</th>
 
             <tr>
-                <td><input id="prodCode" name="prodCode" type="text" placeholder="상품코드" size="10px"></td>
+                <td><input id="prodCode" class="register-product" name="prodCode" type="text" placeholder="상품코드" size="8px"></td>
                 <td>
-                    <select name="prodCategory">
+                    <select id="prodCategory" name="prodCategory">
                         <option value="seating"selected>seating</option>
                         <option value="sleeping">sleeping</option>
                         <option value="table" >table</option>
@@ -99,19 +103,24 @@
                         <option value="lighting">lighting</option>
                     </select>
                 </td>
-                <td><input id="prodName" name="prodName" type="text" placeholder="상품명" size="15px"></td>
-                <td><input id="prodCost" name="prodCost" type="text" placeholder="원가" size="10px"></td>
-                <td><input id="prodPrice" name="prodPrice" type="text" placeholder="정가" size="10px"></td>
-                <td><input id="prodColor" name="prodColor" type="text" placeholder="색상" size="10px"></td>
-                <td><input id="prodMtl" name="prodMtl" type="text" placeholder="재료" size="10px"></td>
-                <td><input id="prodSize" name="prodSize" type="text" placeholder="사이즈" size="10px"></td>
+                <td><input id="prodName" class="register-product" name="prodName" type="text" placeholder="상품명" size="15px"></td>
+                <td><input id="prodCost" class="register-product number-check" name="prodCost" type="text" placeholder="원가" size="6px"></td>
+                <td><input id="prodPrice" class="register-product number-check" name="prodPrice" type="text" placeholder="정가" size="6px"></td>
+                <td><input id="prodColor" class="register-product" name="prodColor" type="text" placeholder="색상" size="6px"></td>
+                <td><input id="prodMtl" class="register-product" name="prodMtl" type="text" placeholder="재료" size="5px"></td>
                 <td>
-                    <select name="prodStatus">
+                	<input id="prodSize1" class="register-product number-check" name="prodSize1" type="text" placeholder="가로" size="4px"><span>x</span>
+	                <input id="prodSize2" class="register-product number-check" name="prodSize2" type="text" placeholder="세로" size="4px"><span>x</span>
+	                <input id="prodSize3" class="register-product number-check" name="prodSize3" type="text" placeholder="높이" size="4px">
+	                <span>mm</span>
+                </td>
+                <td>
+                    <select id="prodStatus" name="prodStatus">
                         <option value="1" selected>판매중</option>
                         <option value="0">판매중지</option>
                     </select>
                 </td>
-                <td><input name="prodStock" type="number" name="prodStock" size="10px" value="0" min="0" max="30"></td>
+                <td><input id="prodStock" name="prodStock" type="number" name="prodStock" size="10px" value="0" min="0" max="30"></td>
             </tr>
 
 
@@ -147,6 +156,9 @@
 
 <script>
 
+// ---------------------------- <script> --------------------------------- <script> --------------------------------------- <script> ----------------------
+
+
 $(document).ready(function(){ // 로드되면
 			
 	func_prodAll("");	
@@ -170,27 +182,60 @@ $(document).ready(function(){ // 로드되면
 		func_prodAll(searchName);		
 	});
 	
-	
-	// 상품 등록
+	// ---------------------------- 상품 등록 --------------------------------- 상품 등록 --------------------------------------- 상품 등록 ----------------------
+
+
 	$("#registerButton").click(function(){
 		
 		
+		var prodCode = $("#prodCode").val().trim();
+		var prodCategory = $("#prodCategory").val();
+		var prodName = $("#prodName").val().trim();
+		var prodCost = $("#prodCost").val().trim();
+		var prodPrice = $("#prodPrice").val().trim();
+		var prodColor = $("#prodColor").val().trim();
+		var prodMtl = $("#prodMtl").val().trim();
+		var prodSize1 = $("#prodSize1").val().trim();
+		var prodSize2 = $("#prodSize1").val().trim();
+		var prodSize3 = $("#prodSize1").val().trim();
+		var prodStatus = $("#prodStatus").val();
+		var prodStock = $("#prodStock").val();
+		var prodSize = "w"+prodSize1+" x d"+prodSize2+" x h"+prodSize3+" mm";
+		
+		if(prodStatus == 1){
+			prodStatus = "판매중";
+		}
+		else{
+			prodStatus = "판매중지";
+		}
+		
+		
 		// 유효성 검사
-		if ($("#prodCode").val().trim() == '' || $("#prodName").val().trim() == '' || $("#prodCost").val().trim() == '' || $("#prodPrice").val().trim() == '' 
-			|| $("#prodCode").val().trim() == '' || $("#prodColor").val().trim() == '' || $("#prodMtl").val().trim() == '' || $("#prodSize").val().trim() == '' ){
+		if (prodCode == '' || prodName == '' || prodCost == '' || prodPrice == '' 
+			|| prodColor == '' || prodMtl == '' || prodSize1 == '' || prodSize2 == '' || prodSize3 == ''){
 			
 			alert("모든 상품 정보를 입력하세요.");
 			return;
 		}
 		
-		var prodCost = $("#prodCost").val().trim();
-		var prodPrice = $("#prodPrice").val().trim();
-		var result = func_numberCheck(prodCost, prodPrice);
+		var flag = false;
+		$(".number-check").each(function(){
+			
+			var column = ($(this).attr('placeholder'));
+			var number = $(this).val().trim();
+			result = func_numberCheck(number);
+			if(result == -1){
+				alert(column+"는 숫자만 입력가능합니다.");
+				flag = true;
+				return false;
+			} 
+		});
 		
-		if(result == -1){
+		if(flag == true){
 			return;
 		}
-	
+		
+
 		var queryString  = $("form[name=registerProductFrm]").serialize();
 		
 		alert(queryString);
@@ -202,8 +247,37 @@ $(document).ready(function(){ // 로드되면
 				success:function(){
 					
 					alert("상품이 등록되었습니다.");	
-					func_prodAll(""); // 전체 상품 조회		
-				
+					
+					$(".register-product").each(function(){
+						$(this).val('');
+					});
+					
+					$("#prodCategory").val("seating");
+					$("#prodStatus").val("1");
+					$("#prodStock").val(0);
+
+					if($("#searchName").val().trim() == ''){ // 검색어가 없을 때만 바로 보여준다.					
+					
+					$("#tbody").prepend("<tr>"
+										+ "<td><input type='checkbox' value='"+prodCode+"'></td>"
+										+ "<td>"+prodCode+"</td>"
+										+ "<td>"+prodCategory+"</td>"
+										+ "<td>"+prodName+"</td>"
+										+ "<td>"+prodCost+"</td>"
+										+ "<td>"+prodPrice+"</td>"
+										+ "<td>"+prodColor+"</td>"
+										+ "<td>"+prodMtl+"</td>"
+										+ "<td>"+prodSize+"</td>"
+										+ "<td><span>"+prodStatus+"</span><button id='changeStatusButton' type='button' value='"+prodCode+"'>변경</button></td>"
+										+ "<td><div id='stock-check'>"+prodStock+"</div><button id='changeStockButton' type='button' value='"+prodCode+"'>변경</button></td>"
+										+ "</tr>");
+					
+					// 품절임박 빨간색
+					var stock = $("#stock-check");
+					func_stockCheck(stock);
+					
+					}
+						
 				},
 			
 			error: function(request, status, error){
@@ -215,7 +289,7 @@ $(document).ready(function(){ // 로드되면
 	
 	
 	
-	//상품 삭제
+	// ---------------------------- 상품 삭제 --------------------------------- 상품 삭제 --------------------------------------- 상품 삭제 ----------------------
 	
 	$(document).on('click','#deleteButton',function(){
 		
@@ -246,18 +320,121 @@ $(document).ready(function(){ // 로드되면
 			success:function(){
 				
 				alert("총 "+checkedValue.length+"개의 상품이 삭제되었습니다.");	
-				func_prodAll(""); // 전체 상품 조회		
+				
+				$("input[type=checkbox]:checked").each(function(){
+					$(this).parent().parent().remove();
+				});
+				
+				//func_prodAll(""); // 전체 상품 조회		
 			
 			},
-		
-		error: function(request, status, error){
-			alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
-		}	
-	}); // ajax
+			
+			error: function(request, status, error){
+				alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
+			}	
+		}); // ajax
 
 		
 	});
 
+	
+	
+	// ---------------------------- 수량 변경 --------------------------------- 수량 변경 --------------------------------------- 수량 변경 ----------------------
+	
+	$(document).on('click','#changeStockButton',function(){
+		
+		var prodStock = $(this).prev();
+		var stockValue = $(this).prev().text();
+		var prodCode= $(this).val();
+		
+		alert(stockValue);
+	
+		var changeStock = prompt("변경할 수량을 적어주세요.", changeStock);
+		
+		if(changeStock == null){
+			return;
+		}
+		
+		// 유효성 검사
+		var result = func_numberCheck(changeStock);
+		if(result == -1){
+			alert("재고 수량은 숫자만 입력가능합니다.");
+			return;
+		}
+		
+		var data = changeStock+","+prodCode;
+		alert("data : "+ data);
+		
+		$.ajax({
+			url:"/SemiProject/admin/changeStock.hb",
+			type:"GET",
+			data:{"data":data},
+			success:function(){
+				
+				//품절임박 색깔 
+				var stock = prodStock.text(changeStock);
+				func_stockCheck(stock);
+		
+				
+				alert("재고수량이 "+stockValue+"개 에서 "+changeStock+"개로 변경되었습니다.");
+			},
+			
+			error: function(request, status, error){
+				alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
+			}	
+		}); // ajax
+		
+		
+	});
+	
+	
+	// ---------------------------- 판매 상태 변경 --------------------------- 판매 상태 변경 ---------------------------------- 판매 상태 변경 ----------------------
+
+	
+	$(document).on('click','#changeStatusButton',function(){
+		
+		var prodStatus = $(this).prev();
+		var statusValue = prodStatus.text();
+		var prodCode= $(this).val();
+				
+		var newStatusValue = "";
+		var changeStatus = true;
+		if(statusValue == "판매중"){
+			newStatusValue = "판매중지";
+			changeStatus = confirm("상태를 "+newStatusValue+"로 변경하시겠습니까?");
+			
+		}else{
+			newStatusValue = "판매중";
+			changeStatus = confirm("상태를 "+newStatusValue+"으로 변경하시겠습니까?");
+		}
+		
+		if(changeStatus == false){
+			return;
+		}
+				
+		var data = newStatusValue+","+prodCode;
+		alert("data : "+ data);
+		
+		$.ajax({
+			url:"/SemiProject/admin/changeStatus.hb",
+			type:"GET",
+			data:{"data":data},
+			success:function(){
+				
+				//alert(prodStatus);
+				prodStatus.text(newStatusValue);
+				alert("변경되었습니다.");
+				
+			},
+			
+			error: function(request, status, error){
+				alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
+			}	
+		}); // ajax
+		
+		
+	});
+	
 	
 	
 	
@@ -289,9 +466,17 @@ function func_prodAll(searchName) {
 		        + "<th>재료</th>"
 		        + "<th>사이즈</th>"
 		        + "<th>판매상태</th>"
-		        + "<th>재고수량</th></thead><tbody>";
+		        + "<th>재고수량</th></thead><tbody id='tbody'>";
 				
 				$.each(json, function(index, item){
+					
+					var prod_status = "";
+					if(item.prod_status == 1){
+						prod_status = "판매중";
+					}
+					else{
+						prod_status = "판매중지";
+					}
 					
 					html +=  
 		 					 "<tr>"
@@ -304,13 +489,23 @@ function func_prodAll(searchName) {
 							+ "<td>"+item.prod_color+"</td>"
 							+ "<td>"+item.prod_mtl+"</td>"
 							+ "<td>"+item.prod_size+"</td>"
-							+ "<td>"+item.prod_status+"</td>"
-							+ "<td>"+item.prod_stock+"</td>"
+							+ "<td><span>"+prod_status+"</span><button id='changeStatusButton' type='button' value='"+item.prod_code+"'>변경</button></td>"
+							+ "<td><div class='stock-check'>"+item.prod_stock+"</div><button id='changeStockButton' type='button' value='"+item.prod_code+"'>변경</button></td>"
 							+ "</tr>";
 				});
 				
 				html += "</tbody></table><div class='product-button'><button id='deleteButton' type='button'>상품삭제</button></div>";
 				$("#searchTable").html(html);
+				
+					
+				// 품절임박 수량 색깔 변경
+				$(".stock-check").each(function(){
+	
+					var stock = $(this);
+					func_stockCheck(stock);
+				});
+				
+								
 				
 			}
 			else{
@@ -327,13 +522,21 @@ function func_prodAll(searchName) {
 };// end of func_prodAll(searchName)---------------
 	
 	
-function func_numberCheck(prodCode, prodPrice){
+function func_stockCheck(stock){ // stock은 node
+	if(stock.text() < 6)
+		stock.css('color','red');
+	else
+		stock.css('color','black');
+};
+
 	
-	if(!Number.isInteger(parseInt(prodCost)) || !Number.isInteger(parseInt(prodPrice))){
-    	alert("상품 원가, 정가는 숫자만 입력가능합니다.");
-    	return -1;
-    }
 	
+function func_numberCheck(number){
+	
+	var regexp = /^[0-9]*$/
+	if( !regexp.test(number) ) {
+			return -1;
+		}
 };
 
 </script>

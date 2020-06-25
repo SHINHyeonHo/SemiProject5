@@ -21,10 +21,13 @@ public class RegisterProductAction extends AbstractController{
 	    int prodPrice = Integer.parseInt(request.getParameter("prodPrice"));
 	    String prodColor = request.getParameter("prodColor");
 		String prodMtl = request.getParameter("prodMtl");
-		String prodSize = request.getParameter("prodSize");
+		String prodSize1 = request.getParameter("prodSize1");
+		String prodSize2 = request.getParameter("prodSize2");
+		String prodSize3 = request.getParameter("prodSize3");
 		int prodStatus = Integer.parseInt(request.getParameter("prodStatus"));
 		int prodStock = Integer.parseInt(request.getParameter("prodStock"));
 		
+		String prodSize = "w"+prodSize1+" x d"+prodSize2+" x h"+prodSize3+" mm";
 		
 	    ProductVO pvo = new ProductVO();
 	    pvo.setProd_code(prodCode);

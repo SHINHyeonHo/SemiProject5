@@ -56,7 +56,8 @@ public class AdminProductDAO implements InterAdminProductDAO{
 
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status\n " + 
 					"from habibi_product\n" + 
-					"where prod_name like '%"+name+"%'";
+					"where prod_name like '%"+name+"%'\n" +
+					"order by prod_insert_date desc";
 	         
 			pstmt = conn.prepareStatement(sql);
 	         
@@ -136,6 +137,55 @@ public class AdminProductDAO implements InterAdminProductDAO{
 			String sql = "delete habibi_product where prod_code in ("+prodCodeString+")";
 	         
 			pstmt = conn.prepareStatement(sql);
+	
+	        result = pstmt.executeUpdate();
+	        
+	        
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public int changeProductStock(int prodStock, String prodCode) throws SQLException {
+
+		int result = 0;
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "update habibi_product set prod_stock = "+prodStock+" \n" + 
+					"where prod_code = ?";
+	         
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, prodCode);
+	
+	        result = pstmt.executeUpdate();
+	        
+	        
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public int changeProductStatus(int prodStatus, String prodCode) throws SQLException {
+
+
+		int result = 0;
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "update habibi_product set prod_status = "+prodStatus+" \n" + 
+					"where prod_code = ?";
+	         
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, prodCode);
 	
 	        result = pstmt.executeUpdate();
 	        
