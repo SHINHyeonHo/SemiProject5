@@ -18,20 +18,11 @@ public interface InterAdminProductDAO {
 	// 상품삭제
 	int DeleteProduct(String prodCodeString) throws SQLException;
 	
-	
-	
-	
-	// ***** 주문관리 *****
-	
-	
-	// ***** 회원관리 *****
-	
-	
-	
-	// ***** 정산관리 *****
-	
-	
-	// ***** 리뷰관리 *****
+	// 재고수량변경
+	int changeProductStock(int prodStock, String prodCode) throws SQLException;
+
+	// 판매상태변경
+	int changeProductStatus(int prodStatus, String prodCode) throws SQLException;
 	
 	
 }
