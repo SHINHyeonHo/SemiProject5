@@ -1,5 +1,6 @@
 package admin.member.model;
 
+<<<<<<< HEAD
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -19,4 +20,8 @@ public interface InterAdminMemberDAO {
 	
 	//회원삭제(강제탈퇴)
 	//int DeleteProduct(String deleteCheck) throws SQLException;
+=======
+public interface InterAdminMemberDAO {
+
+>>>>>>> refs/heads/master
 }

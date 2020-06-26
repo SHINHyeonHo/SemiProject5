@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public interface InterMemberDAO {
 
+<<<<<<< HEAD
 	// 회원가입하기( insert )
 	int registerMember(MemberVO mvo) throws SQLException;
 	
@@ -25,5 +26,12 @@ public interface InterMemberDAO {
 
 	// MyInfo 페이지 생성
 	MemberVO myInfo(String idx) throws SQLException;
+=======
+	// 회원가입하기
+	int registerMember(MemberVO mvo) throws SQLException;
+	
+	// 아이디 찾기
+	String finduserid(HashMap<String, String> paraMap) throws SQLException;
+>>>>>>> refs/heads/master
 	
 }

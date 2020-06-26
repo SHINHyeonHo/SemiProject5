@@ -1,0 +1,91 @@
+body{
+    margin: 30px;
+}
+
+.admin{
+    color: dimgray;
+    margin-top: 20px;
+    text-align: left;
+    font-style: italic;
+}
+
+.container{
+    width: 1300px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.item{
+    text-align: center;
+}
+
+#sidebar{
+    background-color: dimgray;
+    color: white;
+    padding-right: 10px;
+    height: 500px;
+}
+
+#main{
+    margin-left: 60px;
+}
+
+ul{
+    margin-top: 20px;
+    list-style: none;
+    font-size: large;
+}
+
+li{
+    padding: 10px;
+    margin: 30px 0;
+}
+
+li:hover{
+    font-style: italic;
+    text-decoration-line: underline;
+}
+
+a{
+    text-decoration-line: none;
+    color: white;
+}
+
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: lightgray;
+    color: dimgray;
+}
+
+th, td{
+    padding: 10px;
+    width: 250px;
+}
+
+.menu{
+    text-align: left;
+    font-style: italic;
+    margin: 20px 10px 10px 10px;
+    font-weight: bold;
+}
+
+div#top{
+    text-align: center;
+    font-size: large;
+    color: dimgray;
+    margin: 20px 10px;
+}
+
+span.font-bold {
+    padding-right: 30px;
+    font-weight: bold;
+    font-size: large;
+}
+
+td.number{
+    text-align: right;
+}

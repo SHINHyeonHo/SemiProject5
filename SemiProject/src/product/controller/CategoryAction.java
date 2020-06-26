@@ -35,10 +35,15 @@ public class CategoryAction extends AbstractController {
 		
 			String category = request.getParameter("category");
 			
+<<<<<<< HEAD
 			String prod_code = "";
 			
 			ProductDAO pao = new ProductDAO();
 			List<ProductVO> prodList =  pao.getProductList(category, prod_code);
+=======
+			ProductDAO pao = new ProductDAO();
+			List<ProductVO> prodList =  pao.getProductList(category, "");
+>>>>>>> refs/heads/master
 			
 			request.setAttribute("prodList", prodList);
 			

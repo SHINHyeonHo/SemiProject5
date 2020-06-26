@@ -18,6 +18,7 @@ public class MemberRegisterAction extends AbstractController {
 		}
 		else {
 			String name = request.getParameter("name");
+<<<<<<< HEAD
 			String userid = request.getParameter("useridregister");
 			String pwd = request.getParameter("pwd");
 			String email = request.getParameter("email");
@@ -65,6 +66,40 @@ public class MemberRegisterAction extends AbstractController {
 			
 			super.setRedirect(false);
 			super.setViewPage("/WEB-INF/Main/msg.jsp");
+=======
+			String userid = request.getParameter("userid");
+			String pwd = request.getParameter("pwd");
+			String email = request.getParameter("email");
+			String hp1 = request.getParameter("hp1");
+			String hp2 = request.getParameter("hp2");
+			String hp3 = request.getParameter("hp3");
+			String postcode = request.getParameter("postcode");
+			String address = request.getParameter("address");
+			String detailAddress = request.getParameter("detailAddress");
+			String smsad = request.getParameter("smsad");
+			String emailad = request.getParameter("emailad");
+			
+			System.out.println(smsad + ", " + emailad);
+			
+			MemberVO mvo = new MemberVO();
+			mvo.setName(name);
+			mvo.setUserid(userid);
+			mvo.setPasswd(pwd);
+			mvo.setEmail(email);
+			mvo.setMobile1(hp1);
+			mvo.setMobile2(hp2);
+			mvo.setMobile3(hp3);
+			mvo.setPostcode(postcode);
+			mvo.setAddress1(address);
+			mvo.setAddress2(detailAddress);
+			mvo.setIs_sms(smsad);
+			mvo.setIs_email(emailad);
+			
+			InterMemberDAO mdao = new MemberDAO();
+			
+			int n = mdao.registerMember(mvo);
+			
+>>>>>>> refs/heads/master
 			
 		}
 		
