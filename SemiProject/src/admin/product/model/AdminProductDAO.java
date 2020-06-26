@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -47,7 +49,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	
 	// 상품 검색, 조회
 	@Override
-	public List<ProductVO> getProductInfo(String name) throws SQLException {
+	public List<ProductVO> getProductInfo(String category, String name) throws SQLException {
 
 		List<ProductVO> prodList = new ArrayList<>();
 		
@@ -56,7 +58,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status\n " + 
 					"from habibi_product\n" + 
-					"where prod_name like '%"+name+"%'\n" +
+					"where prod_category like '%"+category+"%' and prod_name like '%"+name+"%'\n" +
 					"order by prod_insert_date desc";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -148,6 +150,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		return result;
 	}
 
+	// 재고 수량 변경
 	@Override
 	public int changeProductStock(int prodStock, String prodCode) throws SQLException {
 
@@ -172,10 +175,12 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		return result;
 	}
 
+	// 판매 상태 변경
 	@Override
 	public int changeProductStatus(int prodStatus, String prodCode) throws SQLException {
 
-
+		System.out.println("prodStatus : "+prodStatus);
+		
 		int result = 0;
 		
 		try {
@@ -195,6 +200,62 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		}
 		
 		return result;
+	}
+
+	
+	
+	// 품절 임박 상품 가져오기
+	@Override
+	public Map<String, Object> getSoldoutInfo(int soldoutNum) throws SQLException {
+
+		String condition = "";
+		if(soldoutNum != 1)
+			condition = " and prod_stock > 0";
+		
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		List<ProductVO> prodList = new ArrayList<>();
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "select prod_code, prod_category, prod_stock\n" + 
+					" from habibi_product\n" + 
+					" where prod_status = 1 and prod_stock < "+soldoutNum+condition;
+	         
+			pstmt = conn.prepareStatement(sql);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        int count = 0;
+	        while(rs.next()) {
+	        	
+	        	count++;
+	        	
+	        	String prod_code = rs.getString(1);
+	        	String prod_category = rs.getString(2);
+	        	int prod_stock = rs.getInt(3);
+	        	
+	        	ProductVO pvo = new ProductVO();
+	        	pvo.setProd_code(prod_code);
+	        	pvo.setProd_category(prod_category);
+	        	pvo.setProd_stock(prod_stock);
+		        
+	        	prodList.add(pvo);
+
+	        }
+	        
+	        map.put("prodList", prodList);
+	        map.put("count", count);
+	        
+	        System.out.println(count);
+	        
+		} finally {
+			close();
+		}
+		
+		return map;
 	}
 
 

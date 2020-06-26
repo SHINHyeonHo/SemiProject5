@@ -66,11 +66,11 @@
 
             <tr>
                 <td>품절임박</td>
-                <td class="soldout-check"><span>3</span>개</td>
+                <td class="soldout-check"><span id="before-soldout-product"></span>개</td>
                 <td>품절</td>
-                <td class="soldout-check"><span>2</span>개</td>
+                <td class="soldout-check"><span id="soldout-product"></span>개</td>
                 <td>총 상품</td>
-                <td class="soldout-check"><span>17</span>개</td>
+                <td class="soldout-check"><span id="all-product"></span>개</td>
             </tr>
  
         </table>
@@ -135,6 +135,14 @@
         <div class="menu">상품검색</div>
 	
             <div class="search">
+            	<select id="searchCategory">
+            		<option value="" selected>전체</option>
+                    <option value="seating">seating</option>
+                    <option value="sleeping">sleeping</option>
+                    <option value="table" >table</option>
+                    <option value="storage">storage</option>
+                    <option value="lighting">lighting</option>
+            	</select>
                 <input name="searchName" id="searchName" type="text" placeholder="상품명" value="">
                 <button id="searchButton" type="button">검색</button>
                 <button id="searchAllButton" type="button">전체조회</button>
@@ -161,17 +169,27 @@
 
 $(document).ready(function(){ // 로드되면
 			
-	func_prodAll("");	
+	var smallStock = 5;
+	func_soldoutCheck(smallStock); // 품절 임박 개수
+	func_soldoutCheck(1); // 품절 개수
 	
-	$("#searchAllButton").click(function(){
+	func_prodAll("","",smallStock);	
+	
+	
+	$("#searchAllButton").click(function(){ // 전체조회 버튼 누르면
 		
-		func_prodAll("");
+		func_prodAll("","",smallStock);
 		
 	});
+	
+	
+
+	
 	
 	// 상품 검색
 	$("#searchButton").click(function(){ // 검색버튼 누르면
 		
+		var searchCategory = $("#searchCategory").val();
 		var searchName = $("#searchName").val().trim();
 		if(searchName == ""){
 			
@@ -179,7 +197,7 @@ $(document).ready(function(){ // 로드되면
 			return;
 		}
 		
-		func_prodAll(searchName);		
+		func_prodAll(searchCategory,searchName,smallStock);		
 	});
 	
 	// ---------------------------- 상품 등록 --------------------------------- 상품 등록 --------------------------------------- 상품 등록 ----------------------
@@ -217,14 +235,32 @@ $(document).ready(function(){ // 로드되면
 			alert("모든 상품 정보를 입력하세요.");
 			return;
 		}
-		
+				
 		var flag = false;
-		$(".number-check").each(function(){
+		$(".unique-check").each(function(){ // 상품 코드 유니크 검사
+			
+			if($(this).text() == prodCode){
+				alert("이미 존재하는 상품코드입니다.");
+				flag = true;
+				return false;
+			}
+		
+		});
+		
+		if(flag == true){
+			return;
+		}
+		
+		$(".number-check").each(function(){ // 원가, 정가, 사이즈 숫자 검사
 			
 			var column = ($(this).attr('placeholder'));
 			var number = $(this).val().trim();
 			result = func_numberCheck(number);
 			if(result == -1){
+				
+				if(column == "가로" || column == "세로" || column == "높이"){
+					column == "사이즈";
+				}
 				alert(column+"는 숫자만 입력가능합니다.");
 				flag = true;
 				return false;
@@ -255,12 +291,19 @@ $(document).ready(function(){ // 로드되면
 					$("#prodCategory").val("seating");
 					$("#prodStatus").val("1");
 					$("#prodStock").val(0);
-
+					
+					func_soldoutCheck(smallStock); // 품절 임박 개수
+					func_soldoutCheck(1); // 품절 개수
+					
+					var allProd = parseInt($("#all-product").text()); // 총 상품 개수
+					$("#all-product").text(allProd + 1);
+					
+					
 					if($("#searchName").val().trim() == ''){ // 검색어가 없을 때만 바로 보여준다.					
 					
 					$("#tbody").prepend("<tr>"
 										+ "<td><input type='checkbox' value='"+prodCode+"'></td>"
-										+ "<td>"+prodCode+"</td>"
+										+ "<td class='unique-check'>"+prodCode+"</td>"
 										+ "<td>"+prodCategory+"</td>"
 										+ "<td>"+prodName+"</td>"
 										+ "<td>"+prodCost+"</td>"
@@ -269,12 +312,12 @@ $(document).ready(function(){ // 로드되면
 										+ "<td>"+prodMtl+"</td>"
 										+ "<td>"+prodSize+"</td>"
 										+ "<td><span>"+prodStatus+"</span><button id='changeStatusButton' type='button' value='"+prodCode+"'>변경</button></td>"
-										+ "<td><div id='stock-check'>"+prodStock+"</div><button id='changeStockButton' type='button' value='"+prodCode+"'>변경</button></td>"
+										+ "<td><div id='reg-stock-check' class='stock-check'>"+prodStock+"</div><button id='changeStockButton' type='button' value='"+prodCode+"'>변경</button></td>"
 										+ "</tr>");
 					
 					// 품절임박 빨간색
-					var stock = $("#stock-check");
-					func_stockCheck(stock);
+					var stock = $("#reg-stock-check");
+					func_stockColor(stock, smallStock);
 					
 					}
 						
@@ -321,11 +364,21 @@ $(document).ready(function(){ // 로드되면
 				
 				alert("총 "+checkedValue.length+"개의 상품이 삭제되었습니다.");	
 				
+				var count = 0;
 				$("input[type=checkbox]:checked").each(function(){
-					$(this).parent().parent().remove();
+					
+					count ++;
+					var tr = $(this).parent().parent();
+					tr.remove();
+		
 				});
 				
-				//func_prodAll(""); // 전체 상품 조회		
+				var allProd = parseInt($("#all-product").text()); // 총 상품 개수
+				$("#all-product").text(allProd - count);
+				
+				func_soldoutCheck(smallStock); // 품절 임박 개수
+				func_soldoutCheck(1); // 품절 개수
+				
 			
 			},
 			
@@ -363,7 +416,6 @@ $(document).ready(function(){ // 로드되면
 		}
 		
 		var data = changeStock+","+prodCode;
-		alert("data : "+ data);
 		
 		$.ajax({
 			url:"/SemiProject/admin/changeStock.hb",
@@ -373,10 +425,14 @@ $(document).ready(function(){ // 로드되면
 				
 				//품절임박 색깔 
 				var stock = prodStock.text(changeStock);
-				func_stockCheck(stock);
-		
+				func_stockColor(stock, smallStock);
+				alert(smallStock);
+
 				
 				alert("재고수량이 "+stockValue+"개 에서 "+changeStock+"개로 변경되었습니다.");
+				
+				func_soldoutCheck(smallStock); // 품절 임박 개수
+				func_soldoutCheck(1); // 품절 개수
 			},
 			
 			error: function(request, status, error){
@@ -421,9 +477,12 @@ $(document).ready(function(){ // 로드되면
 			data:{"data":data},
 			success:function(){
 				
-				//alert(prodStatus);
 				prodStatus.text(newStatusValue);
 				alert("변경되었습니다.");
+				
+				func_soldoutCheck(smallStock); // 품절 임박 개수
+				func_soldoutCheck(1); // 품절 개수
+				
 				
 			},
 			
@@ -432,6 +491,7 @@ $(document).ready(function(){ // 로드되면
 			}	
 		}); // ajax
 		
+
 		
 	});
 	
@@ -442,15 +502,16 @@ $(document).ready(function(){ // 로드되면
 });
 	
 	
-function func_prodAll(searchName) {
-	
+function func_prodAll(searchCategory, searchName, smallStock) {
+		
 	$.ajax({
 		url:"/SemiProject/admin/searchProduct.hb", // json 들어 있는 controller 주소
 		type:"GET",
-		data:{"searchName":searchName},
+		data:{"searchCategory":searchCategory,"searchName":searchName},
 		dataType:"json",
 		success:function(json){
 			
+			$("#searchCategory").val(searchCategory);
 			$("#searchName").val(searchName); // 입력한 검색어 그대로 두기
 
 			var html =  "";
@@ -481,7 +542,7 @@ function func_prodAll(searchName) {
 					html +=  
 		 					 "<tr>"
 							+ "<td><input type='checkbox' value='"+item.prod_code+"'></td>"
-							+ "<td>"+item.prod_code+"</td>"
+							+ "<td><span class='unique-check'>"+item.prod_code+"</span></td>"
 							+ "<td>"+item.prod_category+"</td>"
 							+ "<td>"+item.prod_name+"</td>"
 							+ "<td>"+item.prod_cost+"</td>"
@@ -499,14 +560,19 @@ function func_prodAll(searchName) {
 				
 					
 				// 품절임박 수량 색깔 변경
+				var count = 0;
+				
 				$(".stock-check").each(function(){
-	
+				
+					count++;
 					var stock = $(this);
-					func_stockCheck(stock);
+					func_stockColor(stock, smallStock);
 				});
 				
-								
-				
+				if(searchName == ""){
+					$("#all-product").text(count); // 총 상품 개수
+				}
+		
 			}
 			else{
 				
@@ -520,10 +586,49 @@ function func_prodAll(searchName) {
 	});
 	
 };// end of func_prodAll(searchName)---------------
+
+
+
+function func_soldoutCheck(number){ // 품절 개수 관리
 	
+	var count = 0;
 	
-function func_stockCheck(stock){ // stock은 node
-	if(stock.text() < 6)
+	$.ajax({
+		url:"/SemiProject/admin/getStock.hb",
+		type:"GET",
+		data:{"soldoutNum":number},
+		dataType:"json",
+		success:function(json){
+					
+			if(json.length  > 0){
+				
+				$.each(json, function(index, item){
+					// 상품정보도 들어있음..
+					count = item.count;
+				});
+			}
+	     
+			if(number == 1){ // 품절 개수
+				$("#soldout-product").text(count);	
+			}
+			else{ // 품절 임박 개수
+				$("#before-soldout-product").text(count);	
+			}
+	
+		},
+		
+		error: function(request, status, error){
+			alert("code : "+request.status+"\n"+"message : "+request.responseText+"\n"+"error : "+error);
+		}
+
+	}); // ajax
+
+};
+
+
+	
+function func_stockColor(stock, smallStock){ // stock은 node
+	if(stock.text() < smallStock)
 		stock.css('color','red');
 	else
 		stock.css('color','black');
@@ -531,13 +636,14 @@ function func_stockCheck(stock){ // stock은 node
 
 	
 	
-function func_numberCheck(number){
+function func_numberCheck(number){ // 숫자 유효성 검사
 	
 	var regexp = /^[0-9]*$/
 	if( !regexp.test(number) ) {
 			return -1;
 		}
 };
+
 
 </script>
 </html>

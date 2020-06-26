@@ -1,6 +1,7 @@
 package admin.product.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,21 +14,24 @@ import admin.product.model.InterAdminProductDAO;
 import common.controller.AbstractController;
 import product.model.ProductVO;
 
-public class SearchProductAction extends AbstractController{
+public class GetStockAction extends AbstractController{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		String searchCategory = request.getParameter("searchCategory");
-		String searchName = request.getParameter("searchName");
+		int soldoutNum = Integer.parseInt(request.getParameter("soldoutNum"));
+		
+		System.out.println(soldoutNum);
 		
 		InterAdminProductDAO pdao = new AdminProductDAO();
 		
 		JSONArray jsArr = new JSONArray();
 		
-		List<ProductVO> prodList = pdao.getProductInfo(searchCategory, searchName);
 		
-		
+		Map<String, Object> map = pdao.getSoldoutInfo(soldoutNum);
+		List<ProductVO> prodList = (List<ProductVO>) map.get("prodList");
+		int count = (int) map.get("count");
+	
 		if(prodList != null) {
 			
 			for(ProductVO pvo : prodList) {
@@ -35,17 +39,14 @@ public class SearchProductAction extends AbstractController{
 				JSONObject jsObj = new JSONObject();
 				jsObj.put("prod_code", pvo.getProd_code());
 				jsObj.put("prod_category", pvo.getProd_category());
-				jsObj.put("prod_name", pvo.getProd_name());
-				jsObj.put("prod_cost", pvo.getProd_cost());
-				jsObj.put("prod_price", pvo.getProd_price());
-				jsObj.put("prod_color", pvo.getProd_color());
-				jsObj.put("prod_mtl", pvo.getProd_mtl());
 				jsObj.put("prod_stock", pvo.getProd_stock());
-				jsObj.put("prod_size", pvo.getProd_size());
-				jsObj.put("prod_status", pvo.getProd_status());
-
 				jsArr.put(jsObj);
 			}
+			
+			
+			JSONObject jsObj = new JSONObject();
+			jsObj.put("count",count);
+			jsArr.put(jsObj);
 		
 		}
 		
@@ -56,5 +57,7 @@ public class SearchProductAction extends AbstractController{
 		super.setViewPage("/WEB-INF/jsonResult.jsp");
 		
 		
+		
 	}
+
 }
