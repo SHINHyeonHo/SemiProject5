@@ -150,6 +150,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		return result;
 	}
 
+	// 재고 수량 변경
 	@Override
 	public int changeProductStock(int prodStock, String prodCode) throws SQLException {
 
@@ -174,10 +175,12 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		return result;
 	}
 
+	// 판매 상태 변경
 	@Override
 	public int changeProductStatus(int prodStatus, String prodCode) throws SQLException {
 
-
+		System.out.println("prodStatus : "+prodStatus);
+		
 		int result = 0;
 		
 		try {

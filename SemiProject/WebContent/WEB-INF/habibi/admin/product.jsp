@@ -165,20 +165,20 @@
 <script>
 
 // ---------------------------- <script> --------------------------------- <script> --------------------------------------- <script> ----------------------
-	var smallStock = 5;
 
 
 $(document).ready(function(){ // 로드되면
 			
+	var smallStock = 5;
 	func_soldoutCheck(smallStock); // 품절 임박 개수
 	func_soldoutCheck(1); // 품절 개수
 	
-	func_prodAll("","");	
+	func_prodAll("","",smallStock);	
 	
 	
 	$("#searchAllButton").click(function(){ // 전체조회 버튼 누르면
 		
-		func_prodAll("","");
+		func_prodAll("","",smallStock);
 		
 	});
 	
@@ -197,7 +197,7 @@ $(document).ready(function(){ // 로드되면
 			return;
 		}
 		
-		func_prodAll(searchCategory,searchName);		
+		func_prodAll(searchCategory,searchName,smallStock);		
 	});
 	
 	// ---------------------------- 상품 등록 --------------------------------- 상품 등록 --------------------------------------- 상품 등록 ----------------------
@@ -294,7 +294,10 @@ $(document).ready(function(){ // 로드되면
 					
 					func_soldoutCheck(smallStock); // 품절 임박 개수
 					func_soldoutCheck(1); // 품절 개수
-
+					
+					var allProd = parseInt($("#all-product").text()); // 총 상품 개수
+					$("#all-product").text(allProd + 1);
+					
 					
 					if($("#searchName").val().trim() == ''){ // 검색어가 없을 때만 바로 보여준다.					
 					
@@ -314,7 +317,7 @@ $(document).ready(function(){ // 로드되면
 					
 					// 품절임박 빨간색
 					var stock = $("#reg-stock-check");
-					func_stockColor(stock);
+					func_stockColor(stock, smallStock);
 					
 					}
 						
@@ -361,12 +364,17 @@ $(document).ready(function(){ // 로드되면
 				
 				alert("총 "+checkedValue.length+"개의 상품이 삭제되었습니다.");	
 				
+				var count = 0;
 				$("input[type=checkbox]:checked").each(function(){
 					
+					count ++;
 					var tr = $(this).parent().parent();
 					tr.remove();
 		
 				});
+				
+				var allProd = parseInt($("#all-product").text()); // 총 상품 개수
+				$("#all-product").text(allProd - count);
 				
 				func_soldoutCheck(smallStock); // 품절 임박 개수
 				func_soldoutCheck(1); // 품절 개수
@@ -408,7 +416,6 @@ $(document).ready(function(){ // 로드되면
 		}
 		
 		var data = changeStock+","+prodCode;
-		alert("data : "+ data);
 		
 		$.ajax({
 			url:"/SemiProject/admin/changeStock.hb",
@@ -418,7 +425,9 @@ $(document).ready(function(){ // 로드되면
 				
 				//품절임박 색깔 
 				var stock = prodStock.text(changeStock);
-				func_stockColor(stock);
+				func_stockColor(stock, smallStock);
+				alert(smallStock);
+
 				
 				alert("재고수량이 "+stockValue+"개 에서 "+changeStock+"개로 변경되었습니다.");
 				
@@ -471,6 +480,10 @@ $(document).ready(function(){ // 로드되면
 				prodStatus.text(newStatusValue);
 				alert("변경되었습니다.");
 				
+				func_soldoutCheck(smallStock); // 품절 임박 개수
+				func_soldoutCheck(1); // 품절 개수
+				
+				
 			},
 			
 			error: function(request, status, error){
@@ -478,6 +491,7 @@ $(document).ready(function(){ // 로드되면
 			}	
 		}); // ajax
 		
+
 		
 	});
 	
@@ -488,8 +502,8 @@ $(document).ready(function(){ // 로드되면
 });
 	
 	
-function func_prodAll(searchCategory, searchName) {
-	
+function func_prodAll(searchCategory, searchName, smallStock) {
+		
 	$.ajax({
 		url:"/SemiProject/admin/searchProduct.hb", // json 들어 있는 controller 주소
 		type:"GET",
@@ -546,11 +560,18 @@ function func_prodAll(searchCategory, searchName) {
 				
 					
 				// 품절임박 수량 색깔 변경
+				var count = 0;
+				
 				$(".stock-check").each(function(){
-	
+				
+					count++;
 					var stock = $(this);
-					func_stockColor(stock);
+					func_stockColor(stock, smallStock);
 				});
+				
+				if(searchName == ""){
+					$("#all-product").text(count); // 총 상품 개수
+				}
 		
 			}
 			else{
@@ -585,11 +606,9 @@ function func_soldoutCheck(number){ // 품절 개수 관리
 					// 상품정보도 들어있음..
 					count = item.count;
 				});
-				
 			}
 	     
 			if(number == 1){ // 품절 개수
-				alert(count);
 				$("#soldout-product").text(count);	
 			}
 			else{ // 품절 임박 개수
@@ -608,7 +627,7 @@ function func_soldoutCheck(number){ // 품절 개수 관리
 
 
 	
-function func_stockColor(stock){ // stock은 node
+function func_stockColor(stock, smallStock){ // stock은 node
 	if(stock.text() < smallStock)
 		stock.css('color','red');
 	else

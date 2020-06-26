@@ -14,18 +14,17 @@ public class ChangeStatusAction extends AbstractController{
 		
 		String data = request.getParameter("data");
 		String[] status = data.split(",");
-		
-		System.out.println(status[0]);
-		System.out.println(status[1]);
-
+	
 		int prodStatus = -1;
-		if(status[0] == "판매중") 
+		if("판매중".equalsIgnoreCase(status[0].trim())) {
 			prodStatus = 1;
-		else
+		}
+		else {
 			prodStatus = 0;
+		}
 		
 		String prodCode = status[1];
-		
+				
 		InterAdminProductDAO pdao = new AdminProductDAO();
 		int result = pdao.changeProductStatus(prodStatus, prodCode);
 		System.out.println("상태변경 성공  : "+result);
