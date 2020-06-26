@@ -16,8 +16,8 @@ input[type=text] {
 }
 
 button.search {
-  width: 25px;
-  height: 25px;
+  width: 34px;
+  height: 34px;
   float: right;
   padding: 0;
   margin-top: 8px;

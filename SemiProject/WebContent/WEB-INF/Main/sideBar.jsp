@@ -16,8 +16,8 @@ input[type=text] {
 }
 
 button.search {
-  width: 27px;
-  height: 27px;
+  width: 34px;
+  height: 34px;
   float: right;
   padding: 0;
   margin-top: 8px;
@@ -68,6 +68,10 @@ div#container {
 	min-height: 3000px;
 }
 
+li.side_menu1 {
+	margin: 10px 0 10px 0;
+}
+
 </style>
 
 <div id="container">
@@ -78,8 +82,7 @@ div#container {
 			<input id="search_action" name="search_action" type="hidden" /> <!-- 검색 변수 저장용 -->
 			<div class="search-container">
 				<input type="text" placeholder="Search.." name="search" size="20">
-				<button type="submit" class="search"> <i class="fa fa-search"></i>
-				</button>
+				<button type="submit" class="search"><i class="fa fa-search"></i></button>
 			</div>
 		</form>
 	</div>

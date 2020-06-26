@@ -144,20 +144,20 @@ div#cart{
 		
 			$("#allCheck").click(function(){
 			
-			$("input:checkbox[name=product_01]").prop("checked",true);
+			$("input:checkbox[name=fk_prod_code]").prop("checked",true);
 			
 			if(this.checked == false){
-				$("input:checkbox[name=product_01]").prop("checked",false);	
+				$("input:checkbox[name=fk_prod_code]").prop("checked",false);	
 			}
 		});
 		
 		// 하위체크박스가 모두 체크되었을때/해제 되었을때 전체체크박스도 체크/해제
 		
-			$("input:checkbox[name=product_01]").click(function(){
+			$("input:checkbox[name=fk_prod_code]").click(function(){
 				
 				var bFlag = false;
 				
-				$("input:checkbox[name=product_01]").each(function(){
+				$("input:checkbox[name=fk_prod_code]").each(function(){
 					var bool = $(this).prop("checked");
 					if(!bool){
 						$("input:checkbox[id=allCheck]").prop("checked",false);
@@ -178,9 +178,6 @@ div#cart{
 		      });
 	
 		
-			$("#spinner").change(function(){
-				alert("알림");
-			});
 	});
 
 
@@ -208,16 +205,16 @@ div#cart{
       
       
       <li class="right">
-    	  장바구니에 담긴 상품은 7일 동안 보관됩니다.
+    	  ${(sessionScope.loginuser).name} 님 장바구니 목록 
       </li>         
    </ul>   
 </div>
 
 <div class="cart">
-     <table border="1" summary="" class="xans-element- xans-order xans-order-normnormal boardList xans-record-">
+     <table border="1">
 	<thead>
 		<tr>
-			<th><input type="checkbox" id="allCheck"></th>
+			<th><input type="checkbox" id="allCheck"> 상품코드</th>
               <th>이미지</th>
               <th>상품정보</th>
               <th>판매가</th>
@@ -230,52 +227,68 @@ div#cart{
         </tr>
    </thead>
    
-   <c:forEach var="cart" items="${cartlist}"> 
+    
    <tbody>
-   		<tr>
-			<td>
-				<input type="checkbox" name="product_01">
-			</td>
-			
-	        <td class="thumb">
-	        	<img src="//www.remod.co.kr/web/product/tiny/201909/803ff7ed045a68592bffe695e1a57278.jpg">
-	        </td>
-	        
-	        <td>      	      
-				<strong>${cart.fk_prod_name}</strong>
-				<br>[옵션: Black] 
-			</td>
+   
+   <c:if test="${empty cartList}">
+      <tr>
+           <td colspan="6" align="center">
+             <span style="color: red; font-weight: bold;">
+                장바구니에 담긴 상품이 없습니다.
+             </span>
+           </td>   
+      </tr>
+   </c:if>  
+   
+   <c:if test="${not empty cartList}">
+	   <c:forEach var="cart" items="${cartList}" varStatus="status">
+	   		<tr>
+				<td>
+					<input type="checkbox" name="fk_prod_code" class="chkboxpnum" id="pnum${status.index}" value="${cart.fk_prod_code}" /> &nbsp;<label for="pnum${status.index}">${cart.fk_prod_code}</label>
+					<%-- 장바구니번호 --%>
+                     <input class="cartno" type="hidden" name="cartno" value="${cart.cart_num}" />
+				</td>
+				
+		        <td class="thumb">
+		        	<img src="/SemiProject/images/Product/${cart.prod.prod_category}/${cart.fk_prod_code}.png" width="100" height="100">
+		        </td>
+		        
+		        <td>      	      
+					<strong>${cart.prod.prod_name}</strong>		
+				</td>
+		
+		        <td class="price">
+			        <div>
+						<strong><fmt:formatNumber value="${cart.prod.prod_price}" pattern="###,###" />원</strong>
+					</div>
+		        </td>
+		                                  
+		        <td>	            
+		            	<div id="example">  
+	                        <input type="text" id="spinner" class ="spinner" value="${cart.cart_stock}" />  
+	                    </div>
+		            
+		        </td>
+		                    
+		        <td>-</td>
+		                               
+		        <td class="delivery">기본배송</td>
+		            
+		        <td>무료</td>
+		          
+		      	<td class="total">
+					<strong id="sum"><fmt:formatNumber value="${cart.prod.totalPrice}" pattern="###,###" />원</strong>
+				</td>
+				
+		        <td class="button">
+		           <a href="javascript:;" >주문하기</a>
+		           <a href="javascript:;" >관심상품등록</a>
+		           <span class="del" style="cursor: pointer;" onClick="goDel('${cart.cart_num}');">삭제</span>
+		        </td>
+			</tr>
+		</c:forEach>
+	</c:if>
 	
-	        <td class="price">
-		        <div>
-					<strong><fmt:formatNumber value="${cart.cart_price}" pattern="###,###" />원</strong>
-				</div>
-	        </td>
-	                                  
-	        <td>
-	            
-	            	<div id="example">  
-                        <input type="text" id="spinner" class ="spinner" value="${cart.cart_stock}" />  
-                    </div>
-	            
-	        </td>
-	                    
-	        <td>-</td>
-	                               
-	        <td class="delivery">기본배송</td>
-	            
-	        <td>무료</td>
-	          
-	      	<td class="total">
-				<strong id="sum">${cart.cart_price}</strong>원
-			</td>
-			
-	        <td class="button">
-	           <a href="javascript:;" onclick="Basket.orderBasketItem(0);">주문하기</a>
-	           <a href="javascript:;" onclick="BasketNew.moveWish(0);">관심상품등록</a>
-	           <a href="javascript:;" onclick="Basket.deleteBasketItem(0);">삭제</a>
-	        </td>
-		</tr>
 	</tbody>
 	
 	
@@ -286,18 +299,18 @@ div#cart{
 					<div class="right"> 
 						<span>상품구매금액</span>
 						<strong>
-							<span><fmt:formatNumber value="${cart.cart_price}" pattern="###,###" />원</span>
+							<span><fmt:formatNumber value="${sumMap.SUMTOTALPRICE}" pattern="###,###" />원</span>
 						</strong>
 						<span> </span> + 배송비 (무료)
 						<span> </span> = 합계 : 
 						<strong>
-							<span><fmt:formatNumber value="${cart.cart_price}" pattern="###,###" />원</span>
+							<span><fmt:formatNumber value="${sumMap.SUMTOTALPRICE}" pattern="###,###" />원</span>
 						</strong>
 					</div> 
 			</td>
 	    </tr>
 	</tfoot>
-	</c:forEach>
+	
 </table>   
 </div>
 

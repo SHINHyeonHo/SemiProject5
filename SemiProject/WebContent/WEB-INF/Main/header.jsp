@@ -3,6 +3,8 @@
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
+<% String ctxPath = request.getContextPath(); %>   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,11 +91,13 @@ function goLogOut(){
 		<c:if test="${empty sessionScope.loginuser}">
 			<div class="header_menu">
 				<ul id="header_menu">
-					<li class="header_menu">NEWS</li>
+					<!--<li class="header_menu">NEWS</li>
 					<li class="header_menu">COMPANY</li>
-					<li class="header_menu">PHOTO</li>
+					<li class="header_menu">PHOTO</li>-->
+					<li class="header_menu">BOARD</li>
 					<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
 					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb" style="color:black; text-decoration:none;">MYINFO</a></li>
+					<li class="header_menu"><a href="<%= ctxPath %>/prod/cartmain.hb" style="color:black; text-decoration:none;">CART</a></li>
 				</ul>
 			</div>
 		</c:if>
@@ -105,11 +109,15 @@ function goLogOut(){
 				    <c:if test="${sessionScope.loginuser.userid eq 'admin' }">
 						<li class="header menu">ADMIN</li>
 					</c:if>
-					<li class="header_menu">NEWS</li>
+					<!--<li class="header_menu">NEWS</li>
 					<li class="header_menu">COMPANY</li>
-					<li class="header_menu">PHOTO</li>
+					<li class="header_menu">PHOTO</li>-->
+					<li class="header_menu">MEMBER</li>
+					<li class="header_menu">PRODUCT</li>
+					<li class="header_menu">BOARD</li>
 					<li class="header_menu"><span onclick="goLogOut()">LOGOUT</span></li>
-					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}">MYINFO</a></li>
+					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}" style="color:black; text-decoration:none;">MYINFO</a></li>
+					<li class="header_menu"><a href="<%= ctxPath %>/prod/cartmain.hb" style="color:black; text-decoration:none;">CART</a></li>
 				</ul>
 			</div>
 	</c:if>	

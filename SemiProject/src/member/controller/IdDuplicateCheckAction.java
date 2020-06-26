@@ -13,7 +13,7 @@ public class IdDuplicateCheckAction extends AbstractController {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	
-		String userid = request.getParameter("userid");
+		String userid = request.getParameter("useridregister");
 		
 		InterMemberDAO memberdao = new MemberDAO();
 		

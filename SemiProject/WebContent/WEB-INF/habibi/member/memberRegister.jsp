@@ -57,6 +57,7 @@ span#emailCheck {
 <script type="text/javascript">
 
 	var bIdDuplicateCheck = false; // 아이디중복 확인 했는지 판단.
+	var bEmailCheck = false;
 
 	$(document).ready(function() {
 		
@@ -74,24 +75,24 @@ span#emailCheck {
 		});
 		
 		// ID check
-		$("#userid").blur(function(){
+		$("#useridregister").blur(function(){
 			var userid = $(this).val();
-			var regExp = /^[A-Za-z0-9]{6,12}$/g; 
-			var bool = regExp.test(userid);
+			var regExp_ID = /^[A-za-z0-9]{5,15}$/g;
+			var bool = regExp_ID.test(userid);
+			var data = userid.trim();
 			
-			var data = $(this).val().trim();
 			if(data == "") {
 				$(this).parent().find(".error").show();
 				$("#idcheckResult").hide();
 			}
 			else {
-				$(this).parent().find(".error").hide();
-				if(!bool) {
-					
+				 if(bool && bIdDuplicateCheck) {
+					$(this).parent().find(".error").hide();
+					$("#idcheckResult").html("아이디 중복을 확인해주세요.");
 				}
-				else {
-					
-				}
+				else if(!bool) {
+					$("#idcheckResult").html("엉어 대,소문자,숫자 6~12자리 조합으로 만들어주세요.");
+				} 
 			}
 		});
 		
@@ -100,15 +101,20 @@ span#emailCheck {
 			$.ajax({
 				url:"<%= ctxPath%>/member/idDuplicateCheck.hb",
 				type:"post",
-				data:{"userid":$("#userid").val()},
+				data:{"useridregister":$("#useridregister").val()},
 				dataType:"json",
 				success:function(json){
 					if(json.isUse){
-						$("#idcheckResult").html("사용가능합니다.").css("color","navy");
-						bIdDuplicateCheck = true;
+						if($("#useridregister").val().trim() != "") {
+							$("#idcheckResult").html("사용가능합니다.").css("color","navy");
+							bIdDuplicateCheck = true;
+						}
+						else {
+							$("#idcheckResult").html("아이디를 입력해주세요.").css("color","red");
+						}
 					}
 					else {
-						$("#idcheckResult").html($("#userid").val() + " 은 중복된 ID 입니다. 사용이 불가능합니다.").css("color", "red");
+						$("#idcheckResult").html($("#useridregister").val() + " 은 중복된 ID 입니다. 사용이 불가능합니다.").css("color", "red");
 						$("#userid").val("");
 					}
 				},
@@ -117,6 +123,74 @@ span#emailCheck {
 				}
 			});			
 		}); // end of $("#idcheck").click(function(){})
+		
+		$("#pwd").blur(function(){
+			var passwd = $(this).val();
+			var regExp_PW = new RegExp(/^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).*$/g); 
+			var bool = regExp_PW.test(passwd);
+			
+			if(!bool) {
+				$(this).parent().find(".error").show();
+			}
+			else {  
+				$(this).parent().find(".error").hide();
+			} 
+		}); // end of $("#pwd").blur()
+		
+		$("#pwdcheck").blur(function(){
+			var passwd = $("#pwd").val();
+			var passwdCheck = $(this).val();
+			
+			if(passwd != passwdCheck) { 
+				$(this).parent().find(".error").show();
+			}
+			else { 
+				$(this).parent().find(".error").hide();
+			}
+		});// end of $("#pwdcheck").blur()
+		
+		$("#email").blur(function(){
+			var email = $(this).val();
+			var regExp_EMAIL = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;  
+			var bool = regExp_EMAIL.test(email);
+			
+			if(!bool) { 
+				$("#emailCheckResult").hide();
+				$(this).parent().find(".error").show();
+			}
+			else { 
+				if(bEmailCheck == false) {
+					$(this).parent().find(".error").hide();		
+					$("#emailCheckResult").html("이메일 인증을 해주세요.");
+				}
+			}
+		});// end of $("#email").blur()
+		
+		$("#hp2").blur(function(){
+			var hp2 = $(this).val();
+			var regExp_HP2 = /^[1-9][0-9]{2,3}$/g;
+			var bool = regExp_HP2.test(hp2);
+			
+			if(!bool) {
+				$(this).parent().find(".error").show();
+			}
+			else {
+				$(this).parent().find(".error").hide();
+			}
+		}); // end of $("#hp2").blur()
+		
+		$("#hp3").blur(function(){
+			var hp3 = $(this).val();
+			var regExp_HP3 = /^\d{4}$/g;
+			var bool = regExp_HP3.test(hp3);
+			
+			if(!bool) {
+				$(this).parent().find(".error").show();
+			}
+			else {
+				$(this).parent().find(".error").hide();
+			}			
+		});// end of $("#hp3").blur()
 		
 		$("#zipcodeSearch").click(function(){
 			new daum.Postcode({
@@ -150,6 +224,14 @@ span#emailCheck {
 		}); // $("#zipcodeSearch").click(function(){})
 		
 	}); // end of $(document).ready(function(){})
+	
+	
+	function isExistEmailCheck() {
+		
+		//순근이형꺼~~ㅎㅎㅎ
+		
+	} // end of function isExistEmailCheck() {}
+	
 	
 	
 	function goRegister() {
@@ -222,16 +304,16 @@ span#emailCheck {
 		<tr>
 			<td style="width: 20%; font-weight: bold;">아이디&nbsp;<span class="star">*</span></td>
 			<td style="width: 80%; text-align: left;">
-			    <input type="text" name="userid" id="userid" class="requiredInfo" placeholder="영 대소문자, 숫자 6~12자리를"/>&nbsp;&nbsp;
+			    <input type="text" name="useridregister" id="useridregister" class="requiredInfo" placeholder="영 대소문자, 숫자 6~12자리를"/>&nbsp;&nbsp;
 			    <!-- 아이디중복체크 -->
 			    <img id="idcheck" src="/SemiProject/images/Member/idCheck.jpg" style="border: solid 1px gray; vertical-align: middle; width: 180px; height: 30px; cursor: pointer;" />
 			    <span id="idcheckResult"></span>
-			    <span class="error">아이디는 필수입력 사항입니다.</span>
+			    <span class="error">아이디는 필수 입력사항입니다.</span>
 			</td> 
 		</tr>
 		<tr>
 			<td style="width: 20%; font-weight: bold;">비밀번호&nbsp;<span class="star">*</span></td>
-			<td style="width: 80%; text-align: left;"><input type="password" name="pwd" id="pwd" class="requiredInfo" />
+			<td style="width: 80%; text-align: left;"><input type="password" name="pwd" id="pwd" class="requiredInfo" placeholder="숫자/문자/특수문자 8~15자리 이내" />
 				<span class="error">암호는 영문자,숫자,특수기호가 혼합된 8~15 글자로 입력하세요.</span>
 			</td>
 		</tr>
@@ -244,9 +326,8 @@ span#emailCheck {
 		<tr>
 			<td style="width: 20%; font-weight: bold;">이메일</td>
 			<td style="width: 80%; text-align: left;"><input type="text" name="email" id="email" class="requiredInfo" placeholder="abc@def.com" /> 
-			    <span class="error">이메일 형식에 맞지 않습니다.</span>
-			    
 			    <span id="emailCheck" onclick="isExistEmailCheck();">이메일중복확인</span> 
+			    <span class="error">이메일 형식에 맞지 않습니다.</span>
 			    <span id="emailCheckResult"></span>
 			</td>
 		</tr>

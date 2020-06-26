@@ -18,7 +18,7 @@ public class MemberRegisterAction extends AbstractController {
 		}
 		else {
 			String name = request.getParameter("name");
-			String userid = request.getParameter("userid");
+			String userid = request.getParameter("useridregister");
 			String pwd = request.getParameter("pwd");
 			String email = request.getParameter("email");
 			String hp1 = request.getParameter("hp1");

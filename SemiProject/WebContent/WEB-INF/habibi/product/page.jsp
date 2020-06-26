@@ -145,7 +145,31 @@ pageEncoding="UTF-8"%>
 		}
 	</style>
 
-	<script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#spinner").spinner( {
+			   spin: function(event, ui) {
+				   if(ui.value > 100) {
+					   $(this).spinner("value", 100);
+					   return false;
+				   }
+				   else if(ui.value < 1) {
+					   $(this).spinner("value", 1);
+					   return false;
+				   }
+			   }
+		   } );  // end of $("#spinner").spinner({});----------------
+		
+	})
+		
+	
 		function func_movePage(url) {
 			document.getElementById('frame').src = url;
 		}
@@ -153,7 +177,42 @@ pageEncoding="UTF-8"%>
 		function resizeIframe(obj) {
 			obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
 		}
-	</script>
+		
+		
+		function goCart(pnum) {
+			   // pnum 은 장바구니에 담을 제품번호이다.
+			   
+			   // === 주문량에 대한 유효성 검사하기 === //
+			   var frm = document.cartOrderFrm;
+			   
+			   var regExp = /^[0-9]+$/;  // 숫자만 체크하는 정규표현식
+			   var cart_stock = frm.cart_stock.value; // name이 oqty인 value값
+			   var bool = regExp.test(cart_stock);
+			   
+			   if(!bool) {
+				   // 숫자 이외의 값이 들어온 경우 
+				   alert("주문갯수는 1개 이상이어야 합니다.");
+				   frm.cart_stock.value = "1";
+				   frm.cart_stock.focus();
+				   return;
+			   }
+			   
+			   // 문자로 숫자가 들어온 경우
+			   cart_stock = parseInt(cart_stock);
+			   if(cart_stock < 1) {
+				   alert("주문갯수는 1개 이상이어야 합니다.");
+				   frm.cart_stock.value = "1";
+				   frm.cart_stock.focus();
+				   return;
+			   }
+			   
+			   // 1개 이상 주문한 경우
+			   frm.method = "POST";
+			   frm.action = "/SemiProject/prod/cartAdd.hb";
+			   frm.submit();
+		   }	
+		
+</script>
 
 </head>
 <body>
@@ -162,7 +221,7 @@ pageEncoding="UTF-8"%>
 <jsp:include page="../member/login.jsp" />
 
 <div id="container">
-
+<form name="cartOrderFrm">
 	<div id="main_banner" class="main_banner middle">
 		<div id="divPageTop">
 		
@@ -191,7 +250,7 @@ pageEncoding="UTF-8"%>
 				<!-- 제품 수량 -->
 				<div class="item" id="prodQty">
 					<span class="tblCell">${list.prod_name}</span>
-					<input class="tblCell" id="qty" type="number" min="1" max="10" value="1">
+					<input class="tblCell" id="spinner" name ="cart_stock" min="1" max="10" value="1" style="width: 20px;">
 					<span class="tblCell"><span id="inputPrice">${list.prod_price}</span>원</span>
 				</div>
 
@@ -201,7 +260,7 @@ pageEncoding="UTF-8"%>
 				<button class="btn btnBuy" onclick="">BUY NOW</button>
 			</div>
 			<div class="item btnArea">
-				<button class="btn" onclick="">ADD TO CART</button>
+				<button type="button" class="btn" onclick="goCart('${list.prod_code}');">ADD TO CART</button>
 			</div>
 		</div>
 	</div>
@@ -219,6 +278,7 @@ pageEncoding="UTF-8"%>
 </c:forEach>
 
 </div>
+</form>
 </div>
 
 <jsp:include page="../../Main/footer.jsp"/>
