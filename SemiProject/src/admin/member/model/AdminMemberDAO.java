@@ -1,6 +1,5 @@
 package admin.member.model;
 
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -144,13 +143,3 @@ public class AdminMemberDAO implements InterAdminMemberDAO {
 
 }//end of InterAdminMemberDAO----
 			
-		
-			
-			
-=======
-public class AdminMemberDAO implements InterAdminMemberDAO {
-
-
-
-}
->>>>>>> refs/heads/master

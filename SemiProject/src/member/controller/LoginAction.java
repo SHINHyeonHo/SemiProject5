@@ -38,7 +38,7 @@ public class LoginAction extends AbstractController {
 		paraMap.put("passwd", passwd);
 		
 		InterMemberDAO memberdao = new MemberDAO();
-<<<<<<< HEAD
+
 		MemberVO loginuser = memberdao.selectOneMember(paraMap); // 로그인된 정보를 MemberVO에 저장시키기
 		String goBackURL = request.getContextPath()+"/habibi.hb";
 		
@@ -56,18 +56,5 @@ public class LoginAction extends AbstractController {
 		
 		return;
 	} // end of public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception
-=======
-		
-		/*
-		 * MemberVO loginuser = memberdao.selectOneMember(paraMap);
-		 * 
-		 * if(loginuser != null) { HttpSession session = request.getSession();
-		 * session.setAttribute("loginuser", loginuser); }
-		 * 
-		 * super.setViewPage("/WEB-INF/habibi/main/main.jsp");
-		 */
-	      
-	}
->>>>>>> refs/heads/master
 
 }

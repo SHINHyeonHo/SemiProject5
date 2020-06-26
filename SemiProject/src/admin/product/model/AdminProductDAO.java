@@ -56,19 +56,10 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-<<<<<<< HEAD
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status " + 
 					" from habibi_product " + 
 					" where prod_category like '%"+category+"%' and prod_name like '%"+name+"%' " +
 					" order by prod_status desc, prod_insert_date desc";
-=======
-			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status\n " + 
-					"from habibi_product\n" + 
-					"where prod_category like '%"+category+"%' and prod_name like '%"+name+"%'\n" +
-					"order by prod_insert_date desc";
->>>>>>> refs/heads/master
-	         
-			pstmt = conn.prepareStatement(sql);
 	         
 	        rs = pstmt.executeQuery();
 	         
