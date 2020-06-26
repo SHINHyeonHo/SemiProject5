@@ -9,7 +9,11 @@ public class MainAction extends AbstractController {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+<<<<<<< HEAD
+		
+=======
 
+>>>>>>> refs/heads/master
 		super.setRedirect(false);
 		super.setViewPage("/WEB-INF/habibi/main/main.jsp");
 		

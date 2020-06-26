@@ -16,7 +16,11 @@ public class IdFindAction extends AbstractController {
       
       String method = request.getMethod();
       // 데이터 전송 방식이 GET or POST인지 확인 !
+<<<<<<< HEAD
+      System.out.println("확인용 method 방식 : " +method);
+=======
       
+>>>>>>> refs/heads/master
       if("POST".equalsIgnoreCase(method)) {
          
          String name = request.getParameter("name");

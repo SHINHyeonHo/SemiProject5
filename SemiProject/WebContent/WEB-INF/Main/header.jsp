@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
+<% String ctxPath = request.getContextPath(); %>   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +13,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 
 <style type="text/css">
 
@@ -60,12 +63,18 @@ li.header_menu {
 	text-decoration: none;
 	cursor: pointer;
 }
-	
 
 </style>
 
 <script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+
+function goLogOut(){ 
+	alert("로그아웃 되었습니다.");
+	location.href="<%= request.getContextPath()%>/member/logout.hb";
+};
+
+</script>
 
 </head>
 <body class="main">
@@ -78,13 +87,39 @@ li.header_menu {
 			</a>
 		</div>
 
-		<div class="header_menu">
-			<ul id="header_menu">
-				<li class="header_menu">NEWS</li>
-				<li class="header_menu">COMPANY</li>
-				<li class="header_menu">PHOTO</li>
-				<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
-				<li class="header_menu">CART</li>
-			</ul>
-		</div>
+		<c:if test="${empty sessionScope.loginuser}">
+			<div class="header_menu">
+				<ul id="header_menu">
+					<!--<li class="header_menu">NEWS</li>
+					<li class="header_menu">COMPANY</li>
+					<li class="header_menu">PHOTO</li>-->
+					<li class="header_menu">BOARD</li>
+					<li class="header_menu"><span data-toggle="modal" data-target="#myModal">LOGIN</span></li>
+					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb" style="color:black; text-decoration:none;">MYINFO</a></li>
+					<li class="header_menu"><a href="<%= ctxPath %>/prod/cartmain.hb" style="color:black; text-decoration:none;">CART</a></li>
+				</ul>
+			</div>
+		</c:if>
+		
+	<c:if test="${not empty sessionScope.loginuser}">
+		
+			<div class="header_menu">
+				<ul id="header_menu">
+				    <c:if test="${sessionScope.loginuser.userid eq 'admin' }">
+						<li class="header menu">ADMIN</li>
+						<li class="header_menu">MEMBER</li>
+						<li class="header_menu">PRODUCT</li>
+					</c:if>
+					<!--<li class="header_menu">NEWS</li>
+					<li class="header_menu">COMPANY</li>
+					<li class="header_menu">PHOTO</li>-->
+					
+					<li class="header_menu">BOARD</li>
+					<li class="header_menu"><span onclick="goLogOut()">LOGOUT</span></li>
+					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}" style="color:black; text-decoration:none;">MYINFO</a></li>
+					<li class="header_menu"><a href="<%= ctxPath %>/prod/cartmain.hb" style="color:black; text-decoration:none;">CART</a></li>
+				</ul>
+			</div>
+	</c:if>	
+
 	</header>

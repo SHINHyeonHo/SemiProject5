@@ -16,7 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 		description = "사용자가 웹에서 *.hb 를 했을 경우 이 서블릿이 먼저 응답을 해주도록 한다.", 
 		urlPatterns = { "*.hb" }, 
 		initParams = { 
+<<<<<<< HEAD
+				@WebInitParam(name = "propertyConfig", value = "C:\\Users\\user1\\git\\SemiProject5\\SemiProject\\WebContent\\WEB-INF\\HbbCommand.properties", description = "*.hb 에 대한 클래스의 매핑파일")
+=======
 				@WebInitParam(name = "propertyConfig", value = "/Users/user/SemiProject5/SemiProject/WebContent/WEB-INF/HbbCommand.properties", description = "*.hb 에 대한 클래스의 매핑파일")
+>>>>>>> refs/heads/master
 		})
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

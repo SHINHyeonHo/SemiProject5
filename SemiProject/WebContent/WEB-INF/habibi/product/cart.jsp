@@ -144,6 +144,257 @@ div#cart{
 		
 			$("#allCheck").click(function(){
 			
+<<<<<<< HEAD
+			$("input:checkbox[name=fk_prod_code]").prop("checked",true);
+			
+			if(this.checked == false){
+				$("input:checkbox[name=fk_prod_code]").prop("checked",false);	
+			}
+		});
+		
+		// 하위체크박스가 모두 체크되었을때/해제 되었을때 전체체크박스도 체크/해제
+		
+			$("input:checkbox[name=fk_prod_code]").click(function(){
+				
+				var bFlag = false;
+				
+				$("input:checkbox[name=fk_prod_code]").each(function(){
+					var bool = $(this).prop("checked");
+					if(!bool){
+						$("input:checkbox[id=allCheck]").prop("checked",false);
+						bFlag = true;
+						return false;
+					}		
+				});
+				
+				if(!bFlag)
+					$("input:checkbox[id=allCheck]").prop("checked",true);
+			});
+		
+
+			$(".spinner").spinner({
+		         min : 0,
+		         max : 30,
+		         step : 1
+		      });
+	
+		
+	}); // end of $(document).ready(function())
+
+	// === 장바구니에서 특정 제품을 비우기 === //  
+	   function goDel(cart_num) {
+	      
+	      var $target = $(event.target);	   	
+	      var pname = $target.parent().parent().find(".prod_name").text();
+	      
+	      var bool = confirm("선택하신 상품을 장바구니에서 제거하시는 것이 맞습니까?");
+	   	      
+	      if(bool) {
+	         
+	         $.ajax({
+	            url:"/SemiProject/prod/cartDel.hb",
+	            type:"POST",
+	            data:{"cart_num":cart_num},
+	            dataType:"JSON",
+	            success:function(json){
+	               if(json.n == 1) { // 특정 제품을 장바구니에서 비운후 페이지이동을 해야 하는데 이동할 페이지는 페이징 처리하여 보고 있던 그 페이지로 가도록 한다. 
+	                  location.href= "<%= request.getContextPath()%>/${goBackURL}"; 
+	               }
+	            },
+	            error: function(request, status, error){
+	               alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+	         });
+	         
+	      }
+	      else {
+	         alert("제품 삭제를 취소하셨습니다.");
+	      }
+	    
+	   }// end of function goDel(cartno)---------------------------
+
+	   
+	   
+	   
+	// 장바구니 수량 수정
+	   function goOqtyEdit(obj) {
+	      
+	      var index = $(".updateBtn").index(obj);
+	      
+	    // alert(index);
+	      
+	      var cart_num = $(".cart_num").eq(index).val();
+	      
+	   //  alert(cart_num) 
+	      var cart_stock = $(".cart_stock").eq(index).val();
+	      
+	      var regExp = /^[0-9]+$/g; // 숫자만 체크하는 정규표현식
+	      var bool = regExp.test(cart_stock);
+	     
+	      
+	      if(!bool) {
+	         alert("수정하시려는 수량은 0개 이상이어야 합니다.");
+	         location.href="javascript:history.go(0);";
+	         return;
+	      }
+	            
+	      //alert("장바구니번호 : " + cart_num + "\n주문량 : " + cart_stock);
+	     
+	      else if (cart_stock == "0") {
+	         goDel(cart_num);
+	      }
+	      
+	      else {
+	         $.ajax({
+	               url:"/SemiProject/prod/cartEdit.hb",
+	               type:"POST",
+	               data:{"cart_num":cart_num,
+	                     "cart_stock":cart_stock},
+	               dataType:"JSON",
+	               success:function(json){
+	                  if(json.n == 1) {  
+	                     location.href= "<%= request.getContextPath()%>/${goBackURL}"; 
+	                  }
+	               },
+	               error: function(request, status, error){
+	                  alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	               }
+	            });
+	      }
+	     
+	   }// end of function goOqtyEdit(obj)-----------------
+	   
+	   
+</script>
+
+<div id="memberinfo">
+	<table>
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<div id="cart">
+<div class="title">
+   <h2>SHOPPING CART</h2>
+   <p>장바구니</p>
+</div>
+
+<div id="link">
+   <ul>
+      
+      
+      
+      <li >
+    	  ${(sessionScope.loginuser).name} 님 장바구니 목록 
+      </li>         
+   </ul>   
+</div>
+
+<div class="cart">
+     <table border="1">
+	<thead>
+		<tr>
+			<th><input type="checkbox" id="allCheck"> 상품코드</th>
+              <th>이미지</th>
+              <th>상품정보</th>
+              <th>판매가</th>
+              <th>수량</th>
+              <th>적립금</th>
+              <th>배송구분</th>
+              <th>배송비</th>
+              <th>합계</th>
+              <th>선택</th>
+        </tr>
+   </thead>
+   
+    
+   <tbody>
+   
+   <c:if test="${empty cartList}">
+      <tr>
+           <td colspan="6" align="center">
+             <span style="color: red; font-weight: bold;">
+                장바구니에 담긴 상품이 없습니다.
+             </span>
+           </td>   
+      </tr>
+   </c:if>  
+   
+   <c:if test="${not empty cartList}">
+	   <c:forEach var="cart" items="${cartList}" varStatus="status">
+	   		<tr>
+				<td>
+					<input type="checkbox" name="fk_prod_code" class="chkboxpnum" id="pnum${status.index}" value="${cart.fk_prod_code}" /> &nbsp;<label for="pnum${status.index}">${cart.fk_prod_code}</label>
+					<%-- 장바구니번호 --%>
+                     <input class="cart_num" type="hidden" name="cart_num" value="${cart.cart_num}" />
+				</td>
+				
+		        <td class="thumb">
+		        	<img src="/SemiProject/images/Product/${cart.prod.prod_category}/${cart.fk_prod_code}.png" width="100" height="100">
+		        </td>
+		        
+		        <td>      	      
+					<strong class="prod_name">${cart.prod.prod_name}</strong>		
+				</td>
+		
+		        <td class="price">
+			        <div>
+						<strong><fmt:formatNumber value="${cart.prod.prod_price}" pattern="###,###" />원</strong>
+					</div>
+		        </td>
+		                                  
+		        <td>	            
+		            	<div id="example">  
+	                        <input type="text" id="spinner" class ="spinner cart_stock" name="cart_stock" value="${cart.cart_stock}" style="width: 30px;"/>
+	                        <button class="updateBtn" type="button" onclick="goOqtyEdit(this);">수정</button>  
+	                    </div>
+		            
+		        </td>
+		                    
+		        <td>-</td>
+		                               
+		        <td class="delivery">기본배송</td>
+		            
+		        <td>무료</td>
+		          
+		      	<td class="total">
+					<strong id="sum"><fmt:formatNumber value="${cart.prod.totalPrice}" pattern="###,###" />원</strong>
+				</td>
+				
+		        <td class="button">
+		           <a href="javascript:;" >주문하기</a>
+		           <a href="javascript:;" >관심상품등록</a>
+		           <span class="del" style="cursor: pointer;" onClick="goDel('${cart.cart_num}');">삭제</span>
+		        </td>
+			</tr>
+		</c:forEach>
+	</c:if>
+	
+	</tbody>
+	
+	
+	<tfoot>
+		<tr>
+			<td colspan="10">
+				<span style="float: left;">[기본배송]</span>
+					<div class="right"> 
+						<span>상품구매금액</span>
+						<strong>
+							<span><fmt:formatNumber value="${sumMap.SUMTOTALPRICE}" pattern="###,###" />원</span>
+						</strong>
+						<span> </span> + 배송비 (무료)
+						<span> </span> = 합계 : 
+						<strong>
+							<span><fmt:formatNumber value="${sumMap.SUMTOTALPRICE}" pattern="###,###" />원</span>
+						</strong>
+					</div> 
+			</td>
+	    </tr>
+	</tfoot>
+	
+=======
 			$("input:checkbox[name=product_01]").prop("checked",true);
 			
 			if(this.checked == false){
@@ -298,6 +549,7 @@ div#cart{
 	    </tr>
 	</tfoot>
 	</c:forEach>
+>>>>>>> refs/heads/master
 </table>   
 </div>
 

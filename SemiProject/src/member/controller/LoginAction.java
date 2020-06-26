@@ -38,6 +38,25 @@ public class LoginAction extends AbstractController {
 		paraMap.put("passwd", passwd);
 		
 		InterMemberDAO memberdao = new MemberDAO();
+<<<<<<< HEAD
+		MemberVO loginuser = memberdao.selectOneMember(paraMap); // 로그인된 정보를 MemberVO에 저장시키기
+		String goBackURL = request.getContextPath()+"/habibi.hb";
+		
+		if( loginuser != null) {
+			HttpSession session = request.getSession(); // session storage에  임시 저장
+			session.setAttribute("loginuser", loginuser);
+			
+			// 비밀번호 변경 alert는 차주 구현 예정
+			
+		} 
+		
+		// 시작페이지로 이동
+		super.setRedirect(true);
+		super.setViewPage(goBackURL);
+		
+		return;
+	} // end of public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception
+=======
 		
 		/*
 		 * MemberVO loginuser = memberdao.selectOneMember(paraMap);
@@ -49,5 +68,6 @@ public class LoginAction extends AbstractController {
 		 */
 	      
 	}
+>>>>>>> refs/heads/master
 
 }
