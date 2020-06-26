@@ -12,6 +12,7 @@ import member.model.MemberVO;
 import product.model.CartVO;
 import product.model.InterProductDAO;
 import product.model.ProductDAO;
+import util.habibi.HabibiUtil;
 
 public class CartAction extends AbstractController{
 
@@ -54,6 +55,8 @@ public class CartAction extends AbstractController{
 		
 		request.setAttribute("sumMap", sumMap);
 		
+		request.setAttribute("goBackURL", HabibiUtil.getCurrentURL(request));
+		System.out.println(HabibiUtil.getCurrentURL(request));
 		
 		super.setRedirect(false);
 		super.setViewPage("/WEB-INF/habibi/product/cart.jsp");

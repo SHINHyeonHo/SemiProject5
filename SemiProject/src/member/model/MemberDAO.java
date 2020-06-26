@@ -1,13 +1,16 @@
 package member.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashMap;
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.security.NoSuchAlgorithmException;
+import java.sql.*;
+import java.util.*;
 
 import javax.naming.*;
 import javax.sql.DataSource;
+
+import util.security.AES256;
+import util.security.Sha256;
 
 public class MemberDAO implements InterMemberDAO {
 
@@ -16,16 +19,21 @@ public class MemberDAO implements InterMemberDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
+	private AES256 aes = null;
 	
 	// 생성자 
 	public MemberDAO() {
 		// 암호화/복호화 키 (양방향암호화) ==> 이메일,휴대폰의 암호화/복호화
+		String key = EncryptMyKey.KEY;
 		
 		try {
 		    Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/myoracle5");
+			aes = new AES256(key);
 		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}	
 	}
@@ -56,15 +64,15 @@ public class MemberDAO implements InterMemberDAO {
 	        
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mvo.getUserid());
-			pstmt.setString(2, mvo.getPasswd());
+			pstmt.setString(2, Sha256.encrypt(mvo.getPasswd()));
 			pstmt.setString(3, mvo.getName());
-			pstmt.setString(4, mvo.getEmail());
+			pstmt.setString(4, aes.encrypt(mvo.getEmail()));
 			pstmt.setString(5, mvo.getPostcode());
 			pstmt.setString(6, mvo.getAddress1());
 			pstmt.setString(7, mvo.getAddress2());
 			pstmt.setString(8, mvo.getMobile1());
-			pstmt.setString(9, mvo.getMobile2());
-			pstmt.setString(10, mvo.getMobile3());
+			pstmt.setString(9, aes.encrypt(mvo.getMobile2()));
+			pstmt.setString(10, aes.encrypt(mvo.getMobile3()));
 			String sms = "";
 			if("ON".equalsIgnoreCase(mvo.getIs_sms())) {
 				sms = "1";
@@ -89,6 +97,9 @@ public class MemberDAO implements InterMemberDAO {
 			pstmt.setString(12, email);
 			
 			result = pstmt.executeUpdate();
+		
+		} catch (UnsupportedEncodingException | GeneralSecurityException e) {
+			e.printStackTrace();
 		} finally {
 			close();
 		}
@@ -135,19 +146,21 @@ public class MemberDAO implements InterMemberDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, paraMap.get("userid"));
-			pstmt.setString(2, paraMap.get("passwd"));
-			
+			pstmt.setString(2, Sha256.encrypt(paraMap.get("passwd")));
 			rs = pstmt.executeQuery();
+			
+			System.out.println(paraMap.get("passwd"));
+			System.out.println(Sha256.encrypt(paraMap.get("passwd")));
 			
 			if(rs.next()) {
 				mvo = new MemberVO();
 				mvo.setIdx(rs.getInt("idx"));
 				mvo.setUserid(rs.getString("userid"));
 				mvo.setName(rs.getString("name"));
-				mvo.setEmail(rs.getString("email"));
+				mvo.setEmail(aes.decrypt(rs.getString("email")));
 				mvo.setMobile1(rs.getString("mobile1"));
-				mvo.setMobile2(rs.getString("mobile2"));
-				mvo.setMobile3(rs.getString("mobile3"));
+				mvo.setMobile2(aes.decrypt(rs.getString("mobile2")));
+				mvo.setMobile3(aes.decrypt(rs.getString("mobile3")));
 				mvo.setPostcode(rs.getString("postcode"));
 				mvo.setAddress1(rs.getString("address1"));
 				mvo.setAddress2(rs.getString("address2"));
@@ -158,6 +171,9 @@ public class MemberDAO implements InterMemberDAO {
 				mvo.setJoin_date(rs.getString("join_date"));
 			}
 			
+			
+		} catch (UnsupportedEncodingException | GeneralSecurityException e) {
+			e.printStackTrace();
 		} finally {
 			close();
 		}
@@ -185,7 +201,7 @@ public class MemberDAO implements InterMemberDAO {
 			pstmt.setString(1, paraMap.get("name"));
 	         
 			String mobile = paraMap.get("mobile");  // 01023456789
-			mobile = mobile.substring(0, 3) + mobile.substring(3, 7) + mobile.substring(7);
+			mobile = mobile.substring(0, 3) + mobile.substring(3, 7) + mobile.substring(7); // 01023456789
 			pstmt.setString(2, mobile);
 	         
 			rs = pstmt.executeQuery();

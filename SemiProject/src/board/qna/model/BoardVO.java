@@ -1,9 +1,9 @@
-package board.model;
+package board.qna.model;
 
 public class BoardVO {
 	
-	private String qna_userid;
-	private String qna_prod_code;
+	private String fk_userid;
+	private String fk_prod_code;
 	private String qna_category;
 	private int qna_no;
 	private String qna_title;
@@ -13,15 +13,17 @@ public class BoardVO {
 	private int qna_count;
 	private String qna_answer;
 	private int qna_is_done;
-	
+	private int qna_status;
+	private int qna_seq;
+
 	public BoardVO() {}
 
-	public BoardVO(String qna_userid, String qna_prod_code, String qna_category, int qna_no, String qna_title,
+	public BoardVO(String fk_userid, String fk_prod_code, String qna_category, int qna_no, String qna_title,
 			String qna_content, String qna_passwd, String qna_write_date, int qna_count, String qna_answer,
-			int qna_is_done) {
-
-		this.qna_userid = qna_userid;
-		this.qna_prod_code = qna_prod_code;
+			int qna_is_done, int qna_status, int qna_seq) {
+		
+		this.fk_userid = fk_userid;
+		this.fk_prod_code = fk_prod_code;
 		this.qna_category = qna_category;
 		this.qna_no = qna_no;
 		this.qna_title = qna_title;
@@ -31,22 +33,24 @@ public class BoardVO {
 		this.qna_count = qna_count;
 		this.qna_answer = qna_answer;
 		this.qna_is_done = qna_is_done;
+		this.qna_status = qna_status;
+		this.qna_seq = qna_seq;
 	}
 
-	public String getQna_userid() {
-		return qna_userid;
+	public String getFk_userid() {
+		return fk_userid;
 	}
 
-	public void setQna_userid(String qna_userid) {
-		this.qna_userid = qna_userid;
+	public void setFk_userid(String fk_userid) {
+		this.fk_userid = fk_userid;
 	}
 
-	public String getQna_prod_code() {
-		return qna_prod_code;
+	public String getFk_prod_code() {
+		return fk_prod_code;
 	}
 
-	public void setQna_prod_code(String qna_prod_code) {
-		this.qna_prod_code = qna_prod_code;
+	public void setFk_prod_code(String fk_prod_code) {
+		this.fk_prod_code = fk_prod_code;
 	}
 
 	public String getQna_category() {
@@ -121,5 +125,20 @@ public class BoardVO {
 		this.qna_is_done = qna_is_done;
 	}
 	
+	public int getQna_status() {
+		return qna_status;
+	}
 
+	public void setQna_status(int qna_status) {
+		this.qna_status = qna_status;
+	}
+
+	public int getQna_seq() {
+		return qna_seq;
+	}
+
+	public void setQna_seq(int qna_seq) {
+		this.qna_seq = qna_seq;
+	}
+	
 }

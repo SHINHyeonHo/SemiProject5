@@ -27,7 +27,7 @@ public class PasswdUpdateEndAction extends AbstractController {
 		request.setAttribute("method", method);
 		request.setAttribute("userid", userid);
 		
-		super.setViewPage("/WEB-INF/habibi/member/passwdUpdate.jsp");
+		super.setViewPage("/WEB-INF/habibi/member/passwdUpdateEnd.jsp");
 		
 	}
 

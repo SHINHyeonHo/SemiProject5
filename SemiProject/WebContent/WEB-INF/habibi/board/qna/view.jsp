@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 입력</title>
+	
 <style type="text/css">
 
 	#container {
@@ -57,33 +58,39 @@
 		padding-left: 10px;
 		vertical-align: top;
 	}
+		
+	a, a:link, a:visited, a:active, a:hover {
+        	text-decoration: none;
+        	color: #4c4b4b; 
+    } 
 	
 </style>
 </head>
-
 <body>
 	<div id="title"><h2>Q&A</h2></div>
-	<c:forEach items="${qnaPost}" var="post">
 	<div id="container">
 		<table>
 			<tr class="info">
 				<td class="row1">제목</td>
-				<td class="row2">${post.qna_title}</td>
+				<td class="row2">${viewQNA.qna_title}</td>
 			</tr>
 			<tr class="info">
 				<td class="row1">작성자</td>
-				<td class="row2" colspan="2">${post.qna_userid}</td>
+				<td class="row2" colspan="2">${viewQNA.fk_userid}</td>
 			</tr>
 			<tr>
-				<td colspan="2" style="text-align: right;">${post.qna_write_date}&nbsp;&nbsp;|&nbsp;&nbsp;조회&nbsp;${post.qna_count}&nbsp;&nbsp;</td>
+				<td colspan="2" style="text-align: right;">${viewQNA.qna_write_date}&nbsp;&nbsp;|&nbsp;&nbsp;조회&nbsp;${viewQNA.qna_count}&nbsp;&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="2" id="content">${post.qna_content}</td>
+				<td colspan="2" id="content" style="font-size: 1em"><pre><c:out value="${viewQNA.qna_content}" /></pre></td>
 			</tr>
 		</table>
-		<a href="/SemiProject/board/list.hb?prodCode=${param.prodCode}">목록</a>
+		<a href="/SemiProject/board/QNAlist.hb?prodCode=${param.prodCode}">목록</a>
+		<a href="/SemiProject/board/QNAwrite.hb?prodCode=${param.prodCode}">글쓰기</a>
+		<a href="/SemiProject/board/QNAlist.hb?prodCode=${param.prodCode}">답글</a>
+		<a href="/SemiProject/board/QNAmodify.hb?prodCode=${param.prodCode}&qnaNo=${param.qnaNo}">수정</a>
+		<a href="/SemiProject/board/QNAdelete.hb?prodCode=${param.prodCode}&qnaNo=${param.qnaNo}" onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a>
 	</div>	
-	</c:forEach>
 
 </body>
 </html>

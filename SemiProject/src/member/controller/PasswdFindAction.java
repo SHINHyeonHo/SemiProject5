@@ -54,7 +54,7 @@ public class PasswdFindAction extends AbstractController {
 				
 				try {
 					mail.sendmail(email, certificationCode);
-					session.setAttribute("certiCode", certificationCode);
+					session.setAttribute("certificationCode", certificationCode);
 				} catch (Exception e) {
 					e.printStackTrace();
 					n = -1;

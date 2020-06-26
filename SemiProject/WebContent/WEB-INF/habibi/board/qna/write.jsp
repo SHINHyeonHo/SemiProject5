@@ -10,7 +10,7 @@
 
 	#container {
 		width: 780px;
-        height: 650px;
+        height: 700px;
         margin: 0 auto;
         font-size: 1em;
         font-family: Verdana, Dotum, AppleGothic, sans-serif;
@@ -94,11 +94,18 @@
 		font-size: 0.8em;
 	}
 	
+	a, a:link, a:visited, a:active, a:hover {
+        	text-decoration: none;
+        	color: #4c4b4b; 
+        } 
+	
 </style>
 </head>
 
 <body>
-	<form action="/SemiProject/board/insert.hb?prodCode=${param.prodCode}" method="post" onsubmit="return formCheck();">
+	<form action="/SemiProject/board/QNAinsert.hb?prodCode=${param.prodCode}" 
+		  method="post" 
+		  onsubmit="return formCheck();">
 	<div id="title"><h2>Q&A</h2></div>
 		<div id="container">
 		<table>
@@ -115,19 +122,19 @@
 			</tr>
 			<tr>
 				<td class="row1">작성자</td>
-				<td colspan="2"><input type="text" name="qna_userid"></td>
+				<td colspan="2"><input type="text" name="fk_userid"></td>
 			</tr>
 			<tr>
 				<td colspan="3" id="txtArea"><textarea name="qna_content"></textarea></td>
 			</tr>
 			<tr>
-				<td class="row1" class="tdLast">비밀번호</td>
-				<td><input type="password" name="qna_passwd" class="tdLast"></td>
-				<td class="tdLast"></td>
+				<td class="row1">비밀번호</td>
+				<td><input type="password" name="qna_passwd"style="width:100px; float:left;"></td>
+				<td></td>
 			</tr>
 			<tr style="display:none;">
 				<td class="row1">제품코드</td>
-				<td colspan="2"><input type="text" name="qna_prod_code" value=${param.prodCode}></td>
+				<td colspan="2"><input type="text" name="fk_prod_code" value=${param.prodCode}></td>
 			</tr>
 		</table>
 		<div id="btn" align="center">

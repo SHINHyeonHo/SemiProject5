@@ -39,7 +39,6 @@ public class LoginAction extends AbstractController {
 		
 		InterMemberDAO memberdao = new MemberDAO();
 		MemberVO loginuser = memberdao.selectOneMember(paraMap); // 로그인된 정보를 MemberVO에 저장시키기
-		
 		String goBackURL = request.getContextPath()+"/habibi.hb";
 		
 		if( loginuser != null) {

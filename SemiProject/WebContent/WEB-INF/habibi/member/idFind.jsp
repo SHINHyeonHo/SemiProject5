@@ -4,7 +4,6 @@
     String ctxPath = request.getContextPath();
    
 %>    
-<jsp:include page="../../Main/header.jsp"/>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,6 +65,5 @@
 
 
       
-<jsp:include page="../../Main/footer.jsp"/>
 
 

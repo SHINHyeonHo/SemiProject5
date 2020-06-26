@@ -6,7 +6,7 @@
 	String ctxPath = request.getContextPath();
 
 %>
-
+<jsp:include page="../../Main/header.jsp"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -25,9 +25,9 @@
 	$(document).ready(function(){ 
 		
 		$("#btnUpdate").click(function(){  
-			var pwd = $("#pwd").val();
-			var pwd2 = $("#pwd2").val();
-			
+			var pwd = $("#passwd").val();
+			var pwd2 = $("#passwd2").val();
+	
 			var regexp_passwd = new RegExp(/^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).*$/g); 
 			/* 암호는 숫자,영문자,특수문자가 포함된 형태의 8~15글자 이하만 허락해주는 정규표현식 객체 생성 */
 			
@@ -38,22 +38,24 @@
 			      
 			if(!bool) {
 				alert("암호는 8글자 이상 15글자 이하에 영문자, 숫자, 특수기호가 혼합되어야 합니다."); 
-				$("#pwd").val("");
-				$("#pwd2").val("");
+				$("#passwd").val("");
+				$("#passwd2").val("");
 				return;
 			}   
 			else if(pwd != pwd2) {
 				alert("암호가 일치하지 않습니다.");
-				$("#pwd").val("");
-				$("#pwd2").val("");
+				$("#passwd").val("");
+				$("#passwd2").val("");
 				return;
 			}
 			else {
 				var frm = document.passwdUpdateFrm;
 				frm.method = "POST";
-				frm.action = "<%= ctxPath%>/member/passwdUpdate.hb";
+				frm.action = "<%= ctxPath%>/member/passwdUpdateEnd.hb";
 				frm.submit();	
 			}
+			
+		
 		});
 		
 		
@@ -65,11 +67,11 @@
 <form name = "passwdUpdateFrm">
 	<div id="div_passwd" align="center">
 		<span style="color: blue; font-size: 12pt;">새 암호</span><br/>
-		<input type="password" name="pwd" id="pwd" size="15" placeholder="PASSWORD" required />
+		<input type="password" name="passwd" id="passwd" size="15" placeholder="PASSWORD" required />
 	</div>
 	<div id="div_passwd2" align="center">
 		<span style="color: blue; font-size: 12pt;">새 암호확인</span><br/>
-		<input type="password" name="pwd2" id="pwd2" size="15" placeholder="PASSWORD" required />
+		<input type="password" name="passwd2" id="passwd2" size="15" placeholder="PASSWORD" required />
 	</div>
 	
 	<input type="hidden" name="userid" id="userid" value="${userid}" />
@@ -86,3 +88,8 @@
 	   </div>		
    </c:if>
 </form>
+
+
+
+
+<jsp:include page="../../Main/footer.jsp"/>

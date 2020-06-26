@@ -14,7 +14,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
 <style type="text/css">
 
 body {
@@ -108,12 +107,13 @@ function goLogOut(){
 				<ul id="header_menu">
 				    <c:if test="${sessionScope.loginuser.userid eq 'admin' }">
 						<li class="header menu">ADMIN</li>
+						<li class="header_menu">MEMBER</li>
+						<li class="header_menu">PRODUCT</li>
 					</c:if>
 					<!--<li class="header_menu">NEWS</li>
 					<li class="header_menu">COMPANY</li>
 					<li class="header_menu">PHOTO</li>-->
-					<li class="header_menu">MEMBER</li>
-					<li class="header_menu">PRODUCT</li>
+					
 					<li class="header_menu">BOARD</li>
 					<li class="header_menu"><span onclick="goLogOut()">LOGOUT</span></li>
 					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}" style="color:black; text-decoration:none;">MYINFO</a></li>

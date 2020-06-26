@@ -44,6 +44,26 @@ public class MemberVO {
       this.last_login_date = last_login_date;
       
    }
+   
+   public MemberVO(String userid, String name, String email,String address1, String address2, String mobile1, String mobile2, String mobile3
+	         , String is_sms, String is_email, int point, String is_member, String join_date, String last_passwd_date, String last_login_date) {
+	      this.userid = userid;
+	      this.name = name;
+	      this.email = email;
+	      this.address1 = address1;
+	      this.address2 = address2;
+	      this.mobile1 = mobile1;
+	      this.mobile2 = mobile2;
+	      this.mobile3 = mobile3;
+	      this.is_sms = is_sms;
+	      this.is_email = is_email;
+	      this.point = point;
+	      this.is_member = is_member;
+	      this.join_date = join_date;
+	      this.last_passwd_date = last_passwd_date;
+	      this.last_login_date = last_login_date;
+	   }
+   
    public int getIdx() {
 	return idx;
 }

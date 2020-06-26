@@ -14,6 +14,16 @@ drop sequence [시퀀스명];
 select *
 from user_sequences;
 
+- 컬럼 추가하기
+alter table [테이블명] add([컬럼명] [데이터타입(사이즈)]);
+
+- 컬럼 수정하기
+alter table [테이블명] modify([컬럼명] [데이터타입(사이즈)]);
+
+alter table habibi_member modify(mobile3 varchar(100));
+
+desc habibi_member;
+
 >>  Member
 ** 회원 테이블 생성
 create table habibi_member
@@ -26,8 +36,8 @@ create table habibi_member
 ,address1           varchar2(200) -- 주소
 ,address2           varchar2(200) -- 상세주소
 ,mobile1            varchar2(3) -- 휴대폰번호1
-,mobile2            varchar2(4) -- 휴대폰번호2
-,mobile3            varchar2(4) -- 휴대폰번호3
+,mobile2            varchar2(100) -- 휴대폰번호2
+,mobile3            varchar2(100) -- 휴대폰번호3
 ,is_sms             varchar(1) -- sms 수신여부(check)
 ,is_email           varchar(1) -- email 수신여부(check)
 ,point              number default 0 -- 적립금
@@ -52,13 +62,18 @@ nocache;
 
 - 관리자 정보 추가
 insert into habibi_member(idx, userid, passwd, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email)
-values(seq_habibi_memno.nextval, 'admin','qwer1234$','관리자','kwonsk8@gmail.com','04540','서울 중구 남대문로 120','대일빌딩3층','010','2872','3091','1','1');
+values(seq_habibi_memno.nextval, 'admin','9695b88a59a1610320897fa84cb7e144cc51f2984520efb77111d94b402a8382','관리자','kwonsk8@gmail.com','04540','서울 중구 남대문로 120','대일빌딩3층','010','2872','3091','1','1');
+
+update habibi_member set passwd ='9695b88a59a1610320897fa84cb7e144cc51f2984520efb77111d94b402a8382'
+where userid = 'admin';
 
 commit;
 
 - 조회
 select *
 from habibi_member;
+
+desc habibi_member;
 
 
 >> Product
@@ -314,8 +329,9 @@ create table habibi_cart
 ,constraint FK_habibi_cart_userid foreign key(fk_userid)
                                 references habibi_member(userid)
 ,constraint FK_habibi_cart_code foreign key(fk_prod_code)
-                                references habibi_product(prod_code)  
+                                references habibi_product(prod_code) 
 );
+
 
 ** 장바구니 번호 시퀀스 생성
 create sequence seq_habibi_cart_cartnum
@@ -366,34 +382,83 @@ values (1234567,'admin','H001SLP','침대1','관리자',1,'서울 중구 남대�
 >> Board
 **  Q&A 테이블 생성
 create table habibi_qna
-(qna_userid   varchar2(20) not null
-,qna_prod_code   varchar2(20) not null
-,qna_category   varchar2(20)
-,qna_no          number
-,qna_title      varchar2(100) not null
-,qna_content   varchar2(4000) not null
+(fk_userid	varchar2(20) not null
+,fk_prod_code	varchar2(20) not null
+,qna_category	varchar2(20)
+,qna_no		    number(10) default 0
+,qna_title		varchar2(100) not null
+,qna_content	varchar2(4000) not null
 ,qna_passwd     varchar2(100) not null
-,qna_write_date   date default sysdate
-,qna_count       number(10)
-,qna_answer       varchar2(4000)
-,qna_is_done   number(1) default 0
+,qna_write_date	date default sysdate
+,qna_count	    number(10)
+,qna_answer	    varchar2(4000)
+,qna_is_done	number(1) default 0
 ,qna_status     number(1) default 1
-,constraint ck_habibi_status check(qna_status in(0,1))
+,constraint pk_habibi_qna primary key(qna_no)
+,constraint fk_habibi_qnaUserid foreign key(fk_userid) references habibi_member(userid)
+,constraint fk_habibi_qnaProdCode foreign key(fk_prod_code) references habibi_product(prod_code)
+,constraint ck_habibi_qnaStatus check(qna_status in(0,1))
 ,constraint ck_habibi_qnaIsDone check(qna_is_done in(0,1))
 );
 
+
+
 **  Review 테이블 생성
 create table habibi_review
-(rev_userid   varchar2(20) not null
-    ,rev_prod_code   varchar2(20) not null
-    ,rev_category   varchar2(20)
-    ,rev_no          number
-    ,rev_title      varchar2(100) not null
-    ,rev_content   varchar2(4000) not null
-    ,rev_passwd     varchar2(100) not null
-    ,rev_write_date   date default sysdate
-    ,rev_count       number(10)
-    ,rev_status     number(1) default 1
-    ,constraint pk_habibi_review primary key(rev_no)
-    ,constraint ck_habibi_rev_status check(rev_status in(0,1))
+(fk_userid	varchar2(20) not null
+,fk_prod_code	varchar2(20) not null
+,rev_category	varchar2(20)
+,rev_no		    number
+,rev_title		varchar2(100) not null
+,rev_content	varchar2(4000) not null
+,rev_passwd     varchar2(100) not null
+,rev_write_date	date default sysdate
+,rev_count	    number(10)
+,rev_status     number(1) default 1
+,constraint pk_habibi_rev primary key(rev_no)
+,constraint fk_habibi_revUserid foreign key(fk_userid) references habibi_member(userid)
+,constraint fk_habibi_revProdCode foreign key(fk_prod_code) references habibi_product(prod_code)
+,constraint ck_habibi_rev_status check(rev_status in(0,1))
+);
+
+
+create view qna_rank_view AS
+select fk_userid, fk_prod_code, qna_category, qna_no, qna_title, qna_content,
+       qna_passwd, to_char(qna_write_date, 'YYYY-MM-DD') AS qna_write_date, qna_count, qna_answer, qna_is_done, qna_status,
+       rank() over (partition by fk_prod_code order by qna_write_date) AS qna_seq
+from habibi_qna
+order by rank() over (partition by fk_prod_code order by qna_write_date) desc;
+
+
+create view rev_rank_view AS
+select fk_userid, fk_prod_code, rev_category, rev_no, rev_title, rev_content,
+       rev_passwd, to_char(rev_write_date, 'YYYY-MM-DD') AS rev_write_date, rev_count, rev_status,
+       rank() over (partition by fk_prod_code order by rev_write_date) AS rev_seq
+from habibi_review
+order by rank() over (partition by fk_prod_code order by rev_write_date) desc;
+
+
+create sequence habibi_qna_seq
+    increment by 1
+    start with 1;
+
+create sequence habibi_review_seq
+    increment by 1
+    start with 1;
+
+create sequence habibi_comment_seq
+    increment by 1
+    start with 1;
+
+-- 미완성 comment
+create table habibi_comment
+(
+    com_no         number(10),
+    fk_userid     varchar2(20),
+    fk_prod_code  varchar2(20),
+    com_content    varchar2(2000),
+    com_write_date date default sysdate
+    ,constraint pk_habibi_comm primary key(com_no)
+    ,constraint fk_habibi_comUserid foreign key(fk_userid) references habibi_member(userid)
+    ,constraint fk_habibi_comProdCode foreign key(fk_prod_code) references habibi_product(prod_code)
 );

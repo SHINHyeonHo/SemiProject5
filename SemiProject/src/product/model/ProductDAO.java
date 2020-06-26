@@ -255,10 +255,58 @@ public class ProductDAO implements InterProductDAO {
 			close();
 		}
 		
-		
-		
-		
 		return result;
 	}
 
+	
+	// 장바구니 테이블에서 특정제품을 장바구니에서 비우기 
+	@Override
+	public int delCart(String cart_num) throws SQLException {
+		
+		int n = 0;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String sql = " delete from habibi_cart "
+					   + " where cart_num = ? ";
+					   
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, cart_num);
+			
+			n = pstmt.executeUpdate();
+			
+		} finally {
+			close();
+		}
+		
+		return n;
+		
+		
+	}
+
+		
+	// 장바구니 테이블에서 특정제품의 수량을 변경시키기
+	@Override
+	public int updateCart(String cart_num, String cart_stock) throws SQLException {
+		int n = 0;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String sql = " update habibi_cart set cart_stock = ? "
+					   + " where cart_num = ? ";
+					   
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, cart_stock);
+			pstmt.setString(2, cart_num);
+			
+			n = pstmt.executeUpdate();
+			
+		} finally {
+			close();
+		}
+		return n;
+	}
+	
 }

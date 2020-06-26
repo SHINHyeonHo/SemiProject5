@@ -172,15 +172,98 @@ div#cart{
 		
 
 			$(".spinner").spinner({
-		         min : 1,
+		         min : 0,
 		         max : 30,
 		         step : 1
 		      });
 	
 		
-	});
+	}); // end of $(document).ready(function())
 
+	// === 장바구니에서 특정 제품을 비우기 === //  
+	   function goDel(cart_num) {
+	      
+	      var $target = $(event.target);	   	
+	      var pname = $target.parent().parent().find(".prod_name").text();
+	      
+	      var bool = confirm("선택하신 상품을 장바구니에서 제거하시는 것이 맞습니까?");
+	   	      
+	      if(bool) {
+	         
+	         $.ajax({
+	            url:"/SemiProject/prod/cartDel.hb",
+	            type:"POST",
+	            data:{"cart_num":cart_num},
+	            dataType:"JSON",
+	            success:function(json){
+	               if(json.n == 1) { // 특정 제품을 장바구니에서 비운후 페이지이동을 해야 하는데 이동할 페이지는 페이징 처리하여 보고 있던 그 페이지로 가도록 한다. 
+	                  location.href= "<%= request.getContextPath()%>/${goBackURL}"; 
+	               }
+	            },
+	            error: function(request, status, error){
+	               alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	            }
+	         });
+	         
+	      }
+	      else {
+	         alert("제품 삭제를 취소하셨습니다.");
+	      }
+	    
+	   }// end of function goDel(cartno)---------------------------
 
+	   
+	   
+	   
+	// 장바구니 수량 수정
+	   function goOqtyEdit(obj) {
+	      
+	      var index = $(".updateBtn").index(obj);
+	      
+	    // alert(index);
+	      
+	      var cart_num = $(".cart_num").eq(index).val();
+	      
+	   //  alert(cart_num) 
+	      var cart_stock = $(".cart_stock").eq(index).val();
+	      
+	      var regExp = /^[0-9]+$/g; // 숫자만 체크하는 정규표현식
+	      var bool = regExp.test(cart_stock);
+	     
+	      
+	      if(!bool) {
+	         alert("수정하시려는 수량은 0개 이상이어야 합니다.");
+	         location.href="javascript:history.go(0);";
+	         return;
+	      }
+	            
+	      //alert("장바구니번호 : " + cart_num + "\n주문량 : " + cart_stock);
+	     
+	      else if (cart_stock == "0") {
+	         goDel(cart_num);
+	      }
+	      
+	      else {
+	         $.ajax({
+	               url:"/SemiProject/prod/cartEdit.hb",
+	               type:"POST",
+	               data:{"cart_num":cart_num,
+	                     "cart_stock":cart_stock},
+	               dataType:"JSON",
+	               success:function(json){
+	                  if(json.n == 1) {  
+	                     location.href= "<%= request.getContextPath()%>/${goBackURL}"; 
+	                  }
+	               },
+	               error: function(request, status, error){
+	                  alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+	               }
+	            });
+	      }
+	     
+	   }// end of function goOqtyEdit(obj)-----------------
+	   
+	   
 </script>
 
 <div id="memberinfo">
@@ -199,12 +282,10 @@ div#cart{
 
 <div id="link">
    <ul>
-      <li>
-      <a href="1.html" style="margin: 0;">국내배송상품(0)</a>
-      </li>
       
       
-      <li class="right">
+      
+      <li >
     	  ${(sessionScope.loginuser).name} 님 장바구니 목록 
       </li>         
    </ul>   
@@ -246,7 +327,7 @@ div#cart{
 				<td>
 					<input type="checkbox" name="fk_prod_code" class="chkboxpnum" id="pnum${status.index}" value="${cart.fk_prod_code}" /> &nbsp;<label for="pnum${status.index}">${cart.fk_prod_code}</label>
 					<%-- 장바구니번호 --%>
-                     <input class="cartno" type="hidden" name="cartno" value="${cart.cart_num}" />
+                     <input class="cart_num" type="hidden" name="cart_num" value="${cart.cart_num}" />
 				</td>
 				
 		        <td class="thumb">
@@ -254,7 +335,7 @@ div#cart{
 		        </td>
 		        
 		        <td>      	      
-					<strong>${cart.prod.prod_name}</strong>		
+					<strong class="prod_name">${cart.prod.prod_name}</strong>		
 				</td>
 		
 		        <td class="price">
@@ -265,7 +346,8 @@ div#cart{
 		                                  
 		        <td>	            
 		            	<div id="example">  
-	                        <input type="text" id="spinner" class ="spinner" value="${cart.cart_stock}" />  
+	                        <input type="text" id="spinner" class ="spinner cart_stock" name="cart_stock" value="${cart.cart_stock}" style="width: 30px;"/>
+	                        <button class="updateBtn" type="button" onclick="goOqtyEdit(this);">수정</button>  
 	                    </div>
 		            
 		        </td>

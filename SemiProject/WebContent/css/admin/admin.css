@@ -1,5 +1,6 @@
 body{
     margin: 30px;
+    font-size: small;
 }
 
 .admin{
@@ -80,7 +81,7 @@ div#top{
     margin: 20px 10px;
 }
 
-span{
+span.font-bold {
     padding-right: 30px;
     font-weight: bold;
     font-size: large;

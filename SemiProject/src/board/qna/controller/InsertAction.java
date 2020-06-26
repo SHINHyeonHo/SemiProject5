@@ -1,10 +1,10 @@
-package board.controller;
+package board.qna.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import board.model.BoardDAO;
-import board.model.BoardVO;
+import board.qna.model.BoardDAO;
+import board.qna.model.BoardVO;
 import common.controller.AbstractController;
 
 public class InsertAction extends AbstractController {
@@ -32,18 +32,18 @@ public class InsertAction extends AbstractController {
 			
 			String qna_category = request.getParameter("qna_category");
 			String qna_title = request.getParameter("qna_title");
-			String qna_userid = request.getParameter("qna_userid");
+			String fk_userid = request.getParameter("fk_userid");
 			String qna_content = request.getParameter("qna_content");
 			String qna_passwd = request.getParameter("qna_passwd");
-			String qna_prod_code = request.getParameter("qna_prod_code");
+			String fk_prod_code = request.getParameter("fk_prod_code");
 			
 			BoardVO bvo = new BoardVO();
 			bvo.setQna_category(qna_category);
 			bvo.setQna_title(qna_title);
-			bvo.setQna_userid(qna_userid);
+			bvo.setFk_userid(fk_userid);
 			bvo.setQna_content(qna_content);
 			bvo.setQna_passwd(qna_passwd);
-			bvo.setQna_prod_code(qna_prod_code);
+			bvo.setFk_prod_code(fk_prod_code);
 			
 			BoardDAO bdao = new BoardDAO();
 			int result =  bdao.insertQNA(bvo);

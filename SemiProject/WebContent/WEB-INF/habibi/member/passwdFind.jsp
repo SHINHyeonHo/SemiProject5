@@ -5,7 +5,6 @@
     String ctxPath = request.getContextPath();
    
 %>    
-<jsp:include page="../../Main/header.jsp"/>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -104,6 +103,3 @@
 	<input type="hidden" name="userid" />
 	<input type="hidden" name="userCertificationCode" />
 </form>
-
-
-<jsp:include page="../../Main/footer.jsp"/>

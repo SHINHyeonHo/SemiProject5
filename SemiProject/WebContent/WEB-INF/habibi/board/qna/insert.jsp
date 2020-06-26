@@ -8,7 +8,7 @@
 <title>게시글 입력</title>
 </head>
 <script>
-	location.href="/SemiProject/board/list.hb?prodCode=${param.prodCode}";
+	location.href="/SemiProject/board/QNAlist.hb?prodCode=${param.prodCode}";
 </script>
 <body>
 </body>

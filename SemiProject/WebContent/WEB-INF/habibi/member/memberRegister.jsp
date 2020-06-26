@@ -86,12 +86,14 @@ span#emailCheck {
 				$("#idcheckResult").hide();
 			}
 			else {
-				 if(bool && bIdDuplicateCheck) {
+				 if(bool && bIdDuplicateCheck == false) {
 					$(this).parent().find(".error").hide();
 					$("#idcheckResult").html("아이디 중복을 확인해주세요.");
+					$("#idcheckResult").show();
 				}
 				else if(!bool) {
 					$("#idcheckResult").html("엉어 대,소문자,숫자 6~12자리 조합으로 만들어주세요.");
+					$("#idcheckResult").show();
 				} 
 			}
 		});
@@ -332,7 +334,7 @@ span#emailCheck {
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 20%; font-weight: bold;">연락처&nbsp;<span class="star">*</span></td></td>
+			<td style="width: 20%; font-weight: bold;">연락처&nbsp;<span class="star">*</span></td>
 			<td style="width: 80%; text-align: left;">
 			    <input type="text" id="hp1" name="hp1" size="6" maxlength="3" value="010" />&nbsp;-&nbsp;
 			    <input type="text" id="hp2" name="hp2" size="6" maxlength="4" />&nbsp;-&nbsp;
@@ -341,7 +343,7 @@ span#emailCheck {
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 20%; font-weight: bold;">우편번호&nbsp;<span class="star">*</span></td></td>
+			<td style="width: 20%; font-weight: bold;">우편번호&nbsp;<span class="star">*</span></td>
 			<td style="width: 80%; text-align: left;">
 			   <input type="text" id="postcode" name="postcode" class="requiredInfo" size="6" maxlength="5" />&nbsp;&nbsp;
 			   <%-- 우편번호 찾기 --%>
@@ -350,7 +352,7 @@ span#emailCheck {
 			</td>
 		</tr>
 		<tr>
-			<td style="width: 20%; font-weight: bold;">주소&nbsp;<span class="star">*</span></td></td>
+			<td style="width: 20%; font-weight: bold;">주소&nbsp;<span class="star">*</span></td>
 			<td style="width: 80%; text-align: left;">
 			   <input type="text" id="address" name="address" class="requiredInfo" size="40" placeholder="주소" /><br/>
 			   <input type="text" id="detailAddress" name="detailAddress" class="requiredInfo" size="40" placeholder="상세주소" />&nbsp;
