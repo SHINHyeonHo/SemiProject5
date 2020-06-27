@@ -69,7 +69,8 @@ div.middle {
 }
 
 div#container {
-	min-height: 1500px;
+	min-height: 3000px;
+	
 }
 
 </style>

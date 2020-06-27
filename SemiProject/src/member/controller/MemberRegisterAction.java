@@ -18,7 +18,7 @@ public class MemberRegisterAction extends AbstractController {
 		}
 		else {
 			String name = request.getParameter("name");
-			String userid = request.getParameter("userid");
+			String userid = request.getParameter("useridregister");
 			String pwd = request.getParameter("pwd");
 			String email = request.getParameter("email");
 			String hp1 = request.getParameter("hp1");
@@ -29,8 +29,6 @@ public class MemberRegisterAction extends AbstractController {
 			String detailAddress = request.getParameter("detailAddress");
 			String smsad = request.getParameter("smsad");
 			String emailad = request.getParameter("emailad");
-			
-			System.out.println(smsad + ", " + emailad);
 			
 			MemberVO mvo = new MemberVO();
 			mvo.setName(name);
@@ -50,6 +48,23 @@ public class MemberRegisterAction extends AbstractController {
 			
 			int n = mdao.registerMember(mvo);
 			
+			String message = "";
+			String loc = "";
+			
+			if(n==1) {
+				message = "회원가입 성공";
+				loc = request.getContextPath()+"/habibi.hb";
+			}
+			else {
+				message = "회원가입 실패";
+				loc = "javascript: history.back()";
+			}
+			
+			request.setAttribute("message", message);
+			request.setAttribute("loc", loc);
+			
+			super.setRedirect(false);
+			super.setViewPage("/WEB-INF/Main/msg.jsp");
 			
 		}
 		

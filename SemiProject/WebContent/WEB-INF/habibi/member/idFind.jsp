@@ -2,20 +2,19 @@
     pageEncoding="UTF-8"%>
 <%
     String ctxPath = request.getContextPath();
-    //    /MyMVC
+   
 %>    
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<%= ctxPath%>/css/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
    
    $(document).ready(function(){
-       
+     
       var method = "${method}";
    //   console.log("method : " + method);
    
@@ -45,7 +44,7 @@
 <form name="idFindFrm">
    <div id="div_name" align="center">
       <span style="color: blue; font-size: 12pt;">성명</span><br/> 
-      <input type="text" name="name" id="name" size="15" placeholder="홍길동" autocomplete="off" required />
+      <input type="text" name="name" id="name" size="15" placeholder="하비비" autocomplete="off" required />
    </div>
    
    <div id="div_mobile" align="center">
@@ -62,3 +61,8 @@
    </div>
    
 </form>
+
+
+      
+
+

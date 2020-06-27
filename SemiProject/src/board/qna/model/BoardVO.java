@@ -1,4 +1,4 @@
-package board.model;
+package board.qna.model;
 
 public class BoardVO {
 	
@@ -13,13 +13,15 @@ public class BoardVO {
 	private int qna_count;
 	private String qna_answer;
 	private int qna_is_done;
-	
+	private int qna_status;
+	private int qna_seq;
+
 	public BoardVO() {}
 
 	public BoardVO(String fk_userid, String fk_prod_code, String qna_category, int qna_no, String qna_title,
 			String qna_content, String qna_passwd, String qna_write_date, int qna_count, String qna_answer,
-			int qna_is_done) {
-
+			int qna_is_done, int qna_status, int qna_seq) {
+		
 		this.fk_userid = fk_userid;
 		this.fk_prod_code = fk_prod_code;
 		this.qna_category = qna_category;
@@ -31,8 +33,10 @@ public class BoardVO {
 		this.qna_count = qna_count;
 		this.qna_answer = qna_answer;
 		this.qna_is_done = qna_is_done;
+		this.qna_status = qna_status;
+		this.qna_seq = qna_seq;
 	}
-	
+
 	public String getFk_userid() {
 		return fk_userid;
 	}
@@ -120,5 +124,21 @@ public class BoardVO {
 	public void setQna_is_done(int qna_is_done) {
 		this.qna_is_done = qna_is_done;
 	}
+	
+	public int getQna_status() {
+		return qna_status;
+	}
 
+	public void setQna_status(int qna_status) {
+		this.qna_status = qna_status;
+	}
+
+	public int getQna_seq() {
+		return qna_seq;
+	}
+
+	public void setQna_seq(int qna_seq) {
+		this.qna_seq = qna_seq;
+	}
+	
 }

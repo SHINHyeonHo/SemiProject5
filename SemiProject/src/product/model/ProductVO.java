@@ -13,7 +13,8 @@ public class ProductVO {
     private String prod_size;
     private int prod_status;
 
-
+    private int totalPrice;         // 판매당시의 제품판매가 * 주문량
+    
 	// 기본 생성자
     public ProductVO(){
 
@@ -111,6 +112,18 @@ public class ProductVO {
 
 	public void setProd_status(int prod_status) {
 		this.prod_status = prod_status;
+	}
+	
+	/////////////////////////////////////////////////
+	// *** 제품의 총판매가(실제판매가 * 주문량) 구해오기 ***
+	public void setTotalPriceTotalPoint(int cart_stock) {   
+	// int oqty 이 주문량이다.
+	
+	totalPrice = prod_price * cart_stock; // 판매당시의 제품판매가 * 주문량
+	}
+	
+	public int getTotalPrice() {
+	return totalPrice;
 	}
 
 }

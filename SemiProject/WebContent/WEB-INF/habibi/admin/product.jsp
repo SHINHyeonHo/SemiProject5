@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <link rel="stylesheet" href="/SemiProject/css/admin/admin9.css" type="text/css">
+    <link rel="stylesheet" href="/SemiProject/css/admin/admin.css" type="text/css">
     <style>
         .search{
             text-align: center;
@@ -36,7 +36,6 @@
         
         body{
         	font-size: small;
-        
         }
     
     </style>
@@ -253,13 +252,14 @@ $(document).ready(function(){ // 로드되면
 		
 		$(".number-check").each(function(){ // 원가, 정가, 사이즈 숫자 검사
 			
-			var column = ($(this).attr('placeholder'));
+			var column = ($(this).attr('placeholder')).trim();
 			var number = $(this).val().trim();
 			result = func_numberCheck(number);
 			if(result == -1){
 				
-				if(column == "가로" || column == "세로" || column == "높이"){
-					column == "사이즈";
+				if(column == '가로' || column == '세로' || column == '높이'){
+					column = '사이즈';
+
 				}
 				alert(column+"는 숫자만 입력가능합니다.");
 				flag = true;
@@ -483,6 +483,16 @@ $(document).ready(function(){ // 로드되면
 				func_soldoutCheck(smallStock); // 품절 임박 개수
 				func_soldoutCheck(1); // 품절 개수
 				
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 			},
 			
@@ -628,10 +638,16 @@ function func_soldoutCheck(number){ // 품절 개수 관리
 
 	
 function func_stockColor(stock, smallStock){ // stock은 node
-	if(stock.text() < smallStock)
-		stock.css('color','red');
-	else
-		stock.css('color','black');
+	
+	var prodStatus = stock.parent().prev().children("span").text().trim();
+		
+	//if(prodStatus == "판매중"){
+		
+		if(stock.text() < smallStock) // 5
+			stock.css('color','red');
+		else
+			stock.css('color','black');
+	//}
 };
 
 	
