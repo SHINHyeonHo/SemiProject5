@@ -14,7 +14,6 @@ public class DeleteProductAction extends AbstractController{
 
 		
 		String prodCodeString = request.getParameter("prodCodeString");
-		System.out.println(prodCodeString);
 		
 		InterAdminProductDAO adao = new AdminProductDAO();
 		int result = adao.DeleteProduct(prodCodeString);

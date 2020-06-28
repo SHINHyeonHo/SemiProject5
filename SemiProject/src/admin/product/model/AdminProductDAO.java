@@ -178,8 +178,6 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	// 판매 상태 변경
 	@Override
 	public int changeProductStatus(int prodStatus, String prodCode) throws SQLException {
-
-		System.out.println("prodStatus : "+prodStatus);
 		
 		int result = 0;
 		
@@ -248,8 +246,6 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	        
 	        map.put("prodList", prodList);
 	        map.put("count", count);
-	        
-	        System.out.println(count);
 	        
 		} finally {
 			close();

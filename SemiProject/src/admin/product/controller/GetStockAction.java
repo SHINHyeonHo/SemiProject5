@@ -20,9 +20,7 @@ public class GetStockAction extends AbstractController{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		int soldoutNum = Integer.parseInt(request.getParameter("soldoutNum"));
-		
-		System.out.println(soldoutNum);
-		
+				
 		InterAdminProductDAO pdao = new AdminProductDAO();
 		
 		JSONArray jsArr = new JSONArray();

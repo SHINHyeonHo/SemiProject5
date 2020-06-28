@@ -14,9 +14,6 @@ public class ChangeStockAction extends AbstractController{
 
 		String data = request.getParameter("data");
 		String[] stock = data.split(",");
-		
-		System.out.println(stock[0]);
-		System.out.println(stock[1]);
 
 		int prodStock = Integer.parseInt(stock[0]);
 		String prodCode = stock[1];

@@ -37,6 +37,15 @@
         body{
         	font-size: small;
         }
+        
+        
+        .back-to-habibi{
+        	padding: 3px;
+        	background-color: lightSteelBlue;
+        	position:absolute;
+        	right: 40px;
+        }
+        
     
     </style>
 
@@ -45,7 +54,10 @@
 
 <header></header>
 
-<div class="admin">HABIBI 관리자 페이지</div>
+<span class="admin">HABIBI 관리자 페이지</span>
+<span class="back-to-habibi">
+	<a href="../habibi.hb">HABIBI main page</a>
+</span>
 
 <div class = "container">
 
@@ -65,11 +77,11 @@
 
             <tr>
                 <td>품절임박</td>
-                <td class="soldout-check"><span id="before-soldout-product"></span>개</td>
+                <td class="soldout-check"><span id="before-soldout-product" class="font-bold"></span>개</td>
                 <td>품절</td>
-                <td class="soldout-check"><span id="soldout-product"></span>개</td>
+                <td class="soldout-check"><span id="soldout-product" class="font-bold"></span>개</td>
                 <td>총 상품</td>
-                <td class="soldout-check"><span id="all-product"></span>개</td>
+                <td class="soldout-check"><span id="all-product" class="font-bold"></span>개</td>
             </tr>
  
         </table>
@@ -77,10 +89,11 @@
         <div class="menu">상품등록</div>
         
         
-<form name="registerProductFrm">
+<form id="registerProductFrm" method="post" action="/SemiProject/admin/registerProduct.hb" enctype="multipart/form-data">
         <table>
 
             <th>상품코드</th>
+            <th>이미지</th>
             <th>상품분류</th>
             <th>상품명</th>
             <th>원가</th>
@@ -93,6 +106,7 @@
 
             <tr>
                 <td><input id="prodCode" class="register-product" name="prodCode" type="text" placeholder="상품코드" size="8px"></td>
+                <td><input id="prodImage" class="register-product" name="prodImage" type="file" placeholder="이미지첨부"></td>    
                 <td>
                     <select id="prodCategory" name="prodCategory">
                         <option value="seating"selected>seating</option>
@@ -234,6 +248,11 @@ $(document).ready(function(){ // 로드되면
 			alert("모든 상품 정보를 입력하세요.");
 			return;
 		}
+		
+		if($("#prodImage")[0].files.length == 0){ 
+			alert("상품이미지를 첨부해주세요.");
+			return false;
+		}
 				
 		var flag = false;
 		$(".unique-check").each(function(){ // 상품 코드 유니크 검사
@@ -248,6 +267,15 @@ $(document).ready(function(){ // 로드되면
 		
 		if(flag == true){
 			return;
+		}
+		
+		var fileFullName = $("#prodImage")[0].files[0].name; // 이미지 첨부 이름검사
+		var fileName = fileFullName.split(".");
+		fileName = fileName[0];
+
+		if(fileName != prodCode){
+			alert("이미지파일명이 상품코드와 일치하지 않습니다.");
+			//return false;
 		}
 		
 		$(".number-check").each(function(){ // 원가, 정가, 사이즈 숫자 검사
@@ -271,17 +299,17 @@ $(document).ready(function(){ // 로드되면
 			return;
 		}
 		
-
-		var queryString  = $("form[name=registerProductFrm]").serialize();
 		
-		alert(queryString);
+		var formData = new FormData($("#registerProductFrm")[0]);
 		
 		$.ajax({
 				url:"/SemiProject/admin/registerProduct.hb",
 				type:"POST",
-				data:queryString,
+				data:formData,
+				processData:false,
+				contentType:false,
 				success:function(){
-					
+	
 					alert("상품이 등록되었습니다.");	
 					
 					$(".register-product").each(function(){
