@@ -45,7 +45,7 @@ public class ProductDAO implements InterProductDAO {
 	
 	
 	@Override
-	public List<ProductVO> getProductList(String category , String prodCode) throws SQLException {
+	public List<ProductVO> getProductList(String category , String prodCode, int page) throws SQLException {
 		
 		String newProd = "";
 		if("new".equalsIgnoreCase(category)) {
@@ -59,12 +59,19 @@ public class ProductDAO implements InterProductDAO {
 		try {
 			conn = ds.getConnection();
 
-			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size\n" + 
-					"from habibi_product\n" + 
-					"where prod_status = 1 and prod_category like '%"+category+"%' and prod_code like '%"+prodCode+"%' "+newProd+"";
-	         
+			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size from ( " + 
+					"                  select rownum NUM, P.* " + 
+					"                  from ( " + 
+					"                      select * from habibi_product " + 
+					"                      where prod_status = 1 and prod_category like '%"+category+"%' and prod_code like '%"+prodCode+"%' "+newProd+" " + 
+					"                      order by prod_insert_date desc " + 
+					"                      ) P " + 
+					"              ) " + 
+					"where NUM between ? and ?";
+			
 			pstmt = conn.prepareStatement(sql);
-	        //pstmt.setString(1, category);
+	        pstmt.setInt(1, 1+(page-1)*16);
+	        pstmt.setInt(2, page*16);
 	         
 	        rs = pstmt.executeQuery();
 	         
@@ -93,6 +100,40 @@ public class ProductDAO implements InterProductDAO {
 
 		
 		return prodList;
+	}
+	
+	
+
+	@Override
+	public int getProductCount(String category, String prodCode) throws SQLException {
+
+		int count = 0;
+		
+		String newProd = "";
+		if("new".equalsIgnoreCase(category)) {
+			
+			category = "";
+			newProd = " and (sysdate - prod_insert_date) < 10 ";
+		}
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "select count(*) COUNT from habibi_product " + 
+						 " where prod_status = 1 and prod_category like '%"+category+"%' and prod_code like '%"+prodCode+"%' "+newProd+"";
+			
+			pstmt = conn.prepareStatement(sql);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        if(rs.next()) 
+	        	count = rs.getInt(1);
+	        
+		} finally {
+			close();
+		}
+
+		return count;
 	}
 
 	
@@ -315,5 +356,6 @@ public class ProductDAO implements InterProductDAO {
 		}
 		return n;
 	}
+
 	
 }
