@@ -12,8 +12,6 @@ public class PasswdUpdateEndAction extends AbstractController {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String method = request.getMethod();
-		System.out.println("확인용 method : "+method);
-		
 		String userid = request.getParameter("userid");
 		
 		if("POST".equalsIgnoreCase(method)) {
