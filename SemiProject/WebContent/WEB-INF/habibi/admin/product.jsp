@@ -337,7 +337,7 @@ $(document).ready(function(){ // 로드되면
 					$("#tbody").prepend("<tr>"
 										+ "<td><input type='checkbox' value='"+prodCode+"'></td>"
 										+ "<td class='unique-check'>"+prodCode+"</td>"
-										+ "<td><img class='prod_image' src='/SemiProject/images/Product/"+item.prod_code+".png'></td>"
+										+ "<td><img class='prod_image' src='/SemiProject/images/Product/"+prodCode+".png'></td>"
 										+ "<td>"+prodCategory+"</td>"
 										+ "<td>"+prodName+"</td>"
 										+ "<td>"+prodCost+"</td>"
