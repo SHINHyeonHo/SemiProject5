@@ -28,7 +28,7 @@ public class RegisterProductAction extends AbstractController{
 		ServletContext svlCtx = session.getServletContext();
 		String imagesDir = svlCtx.getRealPath("/images/Product");
 		
-		System.out.println("=== 첨부되어지는 이미지 파일이 올라가는 절대경로 imagesDir ==> " + imagesDir);
+		//System.out.println("=== 첨부되어지는 이미지 파일이 올라가는 절대경로 imagesDir ==> " + imagesDir);
 		///Users/user/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SemiProject/images/Product
 	
 		try {	
@@ -57,7 +57,7 @@ public class RegisterProductAction extends AbstractController{
 		String prodSize = "w"+prodSize1+" x d"+prodSize2+" x h"+prodSize3+" mm";
 		
 		String prodImage = mutiRequest.getFilesystemName("prodImage");
-		System.out.println("prodImage : "+prodImage);
+		//System.out.println("prodImage : "+prodImage);
 		
 		
 	    ProductVO pvo = new ProductVO();
