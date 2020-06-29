@@ -216,7 +216,6 @@ pageEncoding="UTF-8"%>
 <body>
 
 <jsp:include page="../../Main/sideBar.jsp"/>
-<jsp:include page="../member/login.jsp" />
 
 <div id="container">
 

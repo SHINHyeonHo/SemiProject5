@@ -29,39 +29,16 @@ table{
 
 tr{
 	height: 300px;
-<<<<<<< HEAD
 	border: solid 1px red;
 }
 
-td{
-	/*border: solid 1px black;*/
-	position: relative;
-	width: 25%;
-=======
-	border: solid 1px red;	
->>>>>>> bba0ae2b1fe03398a014e4f5a5907dab1bcc04c0
-}
 
 .image{
-<<<<<<< HEAD
-	position: absolute;
-	top: 0px;
-	left: 0px;
     height: 195px;
     width: 195px;
    /* background-color: gray; */
 }
 
-.description{
-	position: absolute;
-	bottom: 0px;
-    height: 30%;
-    width: 100%;
-=======
-	width: 195px;
-	height:195px;
->>>>>>> bba0ae2b1fe03398a014e4f5a5907dab1bcc04c0
-}
 
 .prod_name{
 	margin-top: 10px;
@@ -107,7 +84,6 @@ td{
 		<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
 		
 		<c:forEach var="list" items="${prodList}" varStatus="st">
-						<!--<c:out value="${fn:length(prodList)}"></c:out>-->
 			
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
@@ -123,13 +99,8 @@ td{
 					
 				</td>
 				
-<<<<<<< HEAD
-			<c:if test="${(st.index+1) % 4 == 0 || fn:length(prodList) < 16}"></tr></c:if>	
-=======
-			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>	
->>>>>>> bba0ae2b1fe03398a014e4f5a5907dab1bcc04c0
-			<!--<c:if test="${(st.index+1) == fn:substringBefore(Math.ceil(count/16),'.')}"></tr></c:if>-->
-			
+
+			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>			
 		
 		</c:forEach>
 		
