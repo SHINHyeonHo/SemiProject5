@@ -34,13 +34,21 @@ public class CategoryAction extends AbstractController {
 		else {// get방식으로 들어왔다면 
 		
 			String category = request.getParameter("category");
+			String page_ = request.getParameter("page");
+			
+			int page = 1;
+			if(page_ != null && !page_.equalsIgnoreCase("")) {
+				page = Integer.parseInt(page_);
+			}
 			
 			String prod_code = "";
 			
 			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category, prod_code);
+			List<ProductVO> prodList =  pao.getProductList(category, prod_code, page);
+			int count = pao.getProductCount(category, prod_code);
 			
 			request.setAttribute("prodList", prodList);
+			request.setAttribute("count", count);
 			
 		}
 	

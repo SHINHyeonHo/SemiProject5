@@ -37,7 +37,7 @@ public class DetailPageAction extends AbstractController {
 			String category = request.getParameter("category");
 			
 			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category, prodCode);
+			List<ProductVO> prodList =  pao.getProductList(category, prodCode, 1);
 						
 			request.setAttribute("prodList", prodList);
 		}

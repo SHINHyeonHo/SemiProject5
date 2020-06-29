@@ -4,7 +4,6 @@
 <jsp:include page="../../Main/header.jsp"/>
 
 <title>HABIBI</title>
-<link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,7 +32,6 @@ h3 {
 
 </head>
 
-<jsp:include page="../member/login.jsp" />
 <jsp:include page="../../Main/sideBar.jsp"/>
 
 
@@ -79,7 +77,7 @@ h3 {
 		
 		<h3>NEW</h3>
 		<div id="main_banner_middle">
-			<div id="main_middle_left" style="border: solid 1px red; width: 50%; float: left;">
+			<div id="main_middle_left" style="width: 50%; float: left;">
 				<div>
 					<a href="">
 					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
@@ -92,7 +90,7 @@ h3 {
 				</div>
 			</div>
 			
-			<div id="main_middle_right" style="border: solid 1px green; width: 50%; float: right;">
+			<div id="main_middle_right" style="width: 50%; float: right;">
 				<div>
 					<a href="">
 					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:300px; margin-bottom: 10px;">
@@ -116,7 +114,7 @@ h3 {
 		
 		<h3>BEST</h3>
 		<div id="main_banner_bottom">
-			<div id="main_bottom_left" style="border: solid 1px red; width: 50%; float: left;">
+			<div id="main_bottom_left" style="width: 50%; float: left;">
 				<div>
 					<a href="">
 					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
@@ -129,7 +127,7 @@ h3 {
 				</div>
 			</div>
 			
-			<div id="main_bottom_right"  style="border: solid 1px green; width: 50%; float: right;">
+			<div id="main_bottom_right"  style="width: 50%; float: right;">
 				<div>
 					<a href="">
 					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:1000px; margin-bottom: 10px;">
@@ -140,7 +138,6 @@ h3 {
 	</div>
 	
 </div>
-
       
       
 <jsp:include page="../../Main/footer.jsp"/>

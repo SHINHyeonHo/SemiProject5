@@ -16,8 +16,8 @@ input[type=text] {
 }
 
 button.search {
-  width: 25px;
-  height: 25px;
+  width: 34px;
+  height: 34px;
   float: right;
   padding: 0;
   margin-top: 8px;
@@ -43,10 +43,6 @@ li > ul {
 	padding-left: 20px;
 }
 
-a {
-	text-decoration: none;
-}
-
 div.left_sidebar {
 	width: 22%;
 	float: left;
@@ -69,8 +65,12 @@ div.middle {
 }
 
 div#container {
-	min-height: 3000px;
-	
+	overflow:hidden;
+	height:auto;
+}
+
+li.side_menu1 {
+	margin: 10px 0 10px 0;
 }
 
 </style>
@@ -83,8 +83,7 @@ div#container {
 			<input id="search_action" name="search_action" type="hidden" /> <!-- 검색 변수 저장용 -->
 			<div class="search-container">
 				<input type="text" placeholder="Search.." name="search" size="20">
-				<button type="submit" class="search"> <i class="fa fa-search"></i>
-				</button>
+				<button type="submit" class="search"><i class="fa fa-search"></i></button>
 			</div>
 		</form>
 	</div>
@@ -92,7 +91,7 @@ div#container {
 	<div>
 		<ul class="side_menu middle">
 			<li class="side_menu1"><a href="">Brand</a></li>
-			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=new">NEW ARRIVALS</a></li>
+			<li class="side_menu1"><a href="">NEW ARRIVALS</a></li>
 			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=seating">SEATING</a>
 <!--				<ul>
 					<li><a href="">SOFA</a></li>

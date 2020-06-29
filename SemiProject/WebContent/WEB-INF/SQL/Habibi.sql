@@ -60,6 +60,11 @@ commit;
 select *
 from habibi_member;
 
+update habibi_member set userid='admin' where userid = 'Admin';
+
+select email
+from habibi_member
+where is_member = 1 and email = 'JkmhBapqomBF0DrFcijww7MyV/JX091ALU4aQUq+eU0=';
 
 -->> Product
 ** 상품 테이블 생성
@@ -78,6 +83,9 @@ create table habibi_product
 ,constraint PK_habibi_product primary key(prod_code)
 ,constraint CK_habibi_product_status check(prod_status in (0,1))
 );
+
+select *
+from habibi_product;
 
 -- insert 하기전에 해주세요 ( & 문자에 대한 대체변수 물어보지 않게 하는 거 )
 set define off;
@@ -449,3 +457,12 @@ create table habibi_comment
     ,constraint fk_habibi_comUserid foreign key(fk_userid) references habibi_member(userid)
     ,constraint fk_habibi_comProdCode foreign key(fk_prod_code) references habibi_product(prod_code)
 );
+
+----------------------------------------------------
+
+select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email, point, is_member, join_date 
+					   from habibi_member 
+					   where is_member = 1 and userid = 'admin' and passwd = '9695b88a59a1610320897fa84cb7e144cc51f2984520efb77111d94b402a8382';
+
+------------------------------------------------------
+commit;

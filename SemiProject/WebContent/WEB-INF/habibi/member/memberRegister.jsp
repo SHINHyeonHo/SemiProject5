@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%
 	String ctxPath = request.getContextPath();
 %> 
@@ -12,10 +14,11 @@
 <style type="text/css">
 
 div#divRegisterFrm {
-	padding-left: 100px;
+	float: right;
 }
 
 table#tblMemberRegister #th {
+	width: 800px;
 	height: 40px;
    	text-align: center;
    	background-color: silver;
@@ -56,8 +59,10 @@ span#emailCheck {
 <script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 
-	var bIdDuplicateCheck = false; // 아이디중복 확인 했는지 판단.
-	var bEmailCheck = false;
+	var bIdDuplicateCheck = false;
+	var bIdExistCheck = false;
+	var bEmailDuplicateCheck = false;
+	var bEmailExistCheck = false;
 
 	$(document).ready(function() {
 		
@@ -78,7 +83,7 @@ span#emailCheck {
 		$("#useridregister").blur(function(){
 			var userid = $(this).val();
 			var regExp_ID = /^[A-za-z0-9]{5,15}$/g;
-			var bool = regExp_ID.test(userid);
+			bIdExistCheck = regExp_ID.test(userid);
 			var data = userid.trim();
 			
 			if(data == "") {
@@ -86,15 +91,16 @@ span#emailCheck {
 				$("#idcheckResult").hide();
 			}
 			else {
-				 if(bool && bIdDuplicateCheck == false) {
+				 if(bIdExistCheck && bIdDuplicateCheck == false) {
 					$(this).parent().find(".error").hide();
-					$("#idcheckResult").html("아이디 중복을 확인해주세요.");
+					$("#idcheckResult").html("아이디 중복을 확인해주세요.").css("color","red");;
 					$("#idcheckResult").show();
 				}
-				else if(!bool) {
-					$("#idcheckResult").html("엉어 대,소문자,숫자 6~12자리 조합으로 만들어주세요.");
+				else if(!bIdExistCheck) {
+					$("#idcheckResult").html("엉어 대,소문자,숫자 6~12자리로 만들어주세요.").css("color","red");;
 					$("#idcheckResult").show();
-				} 
+					$(this).parent().find(".error").hide();
+				}
 			}
 		});
 		
@@ -107,7 +113,7 @@ span#emailCheck {
 				dataType:"json",
 				success:function(json){
 					if(json.isUse){
-						if($("#useridregister").val().trim() != "") {
+						if($("#useridregister").val().trim() != "" && bIdExistCheck) {
 							$("#idcheckResult").html("사용가능합니다.").css("color","navy");
 							bIdDuplicateCheck = true;
 						}
@@ -154,19 +160,59 @@ span#emailCheck {
 		$("#email").blur(function(){
 			var email = $(this).val();
 			var regExp_EMAIL = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;  
-			var bool = regExp_EMAIL.test(email);
+			bEmailExistCheck = regExp_EMAIL.test(email);
 			
-			if(!bool) { 
-				$("#emailCheckResult").hide();
-				$(this).parent().find(".error").show();
+			if( email == "" ) {
+				$(this).parent().find(".error").hide();
+				$("#emailCheckResult").html("이메일은 필수입력사항입니다.").css("color","red");;	
+				$("#emailCheckResult").show();
 			}
-			else { 
-				if(bEmailCheck == false) {
-					$(this).parent().find(".error").hide();		
-					$("#emailCheckResult").html("이메일 인증을 해주세요.");
+			else {
+				if(!bEmailExistCheck) { 
+					$("#emailCheckResult").hide();
+					$(this).parent().find(".error").show();
 				}
+				else { 
+					if(bEmailDuplicateCheck == false) {
+						$(this).parent().find(".error").hide();		
+						$("#emailCheckResult").html("이메일 인증을 해주세요.").css("color","red");;
+						$("#emailCheckResult").show();
+					}
+				}	
 			}
 		});// end of $("#email").blur()
+		
+		$("#useridregister").keydown(function(){
+			bIdlDuplicateCheck == false;
+		});
+		
+		$("#email").keydown(function(){
+			bEmailDuplicateCheck == false;
+		});
+		
+		$("#emailCheck").click(function() {
+			$.ajax({
+				url:"<%= ctxPath%>/member/emailCheck.hb",
+				type:"post",
+				data:{"email":$("#email").val()},
+				dataType:"json",
+				success:function(json){
+					if(json.isUse){
+						if($("#email").val().trim() != "" && bEmailExistCheck) {
+							$("#emailCheckResult").html("사용가능합니다.").css("color","navy");
+							bEmailDuplicateCheck = true;
+						}
+					}
+					else {
+						$("#emailCheckResult").html("중복된 Email 입니다. 사용이 불가능합니다.").css("color", "red");
+						$("#email").val("");
+					}
+				},
+				error:function(request, status, error){
+					alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+				}
+			});	
+		}); // end of function isExistEmailCheck() {}
 		
 		$("#hp2").blur(function(){
 			var hp2 = $(this).val();
@@ -228,14 +274,6 @@ span#emailCheck {
 	}); // end of $(document).ready(function(){})
 	
 	
-	function isExistEmailCheck() {
-		
-		//순근이형꺼~~ㅎㅎㅎ
-		
-	} // end of function isExistEmailCheck() {}
-	
-	
-	
 	function goRegister() {
 		
 		var bRequiredInfo = false;
@@ -281,7 +319,6 @@ span#emailCheck {
 
 
 
-<jsp:include page="../member/login.jsp" />
 <jsp:include page="../../Main/sideBar.jsp"/>
 
 <div id="divRegisterFrm" class="row middle">
@@ -328,7 +365,7 @@ span#emailCheck {
 		<tr>
 			<td style="width: 20%; font-weight: bold;">이메일</td>
 			<td style="width: 80%; text-align: left;"><input type="text" name="email" id="email" class="requiredInfo" placeholder="abc@def.com" /> 
-			    <span id="emailCheck" onclick="isExistEmailCheck();">이메일중복확인</span> 
+			    <span id="emailCheck">이메일중복확인</span> 
 			    <span class="error">이메일 형식에 맞지 않습니다.</span>
 			    <span id="emailCheckResult"></span>
 			</td>

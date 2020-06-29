@@ -25,5 +25,8 @@ public interface InterMemberDAO {
 
 	// MyInfo 페이지 생성
 	MemberVO myInfo(String idx) throws SQLException;
+
+	// 이메일 인증 하기 위한 중복 확인
+	boolean isEmailExist(String email) throws SQLException;
 	
 }

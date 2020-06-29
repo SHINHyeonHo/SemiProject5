@@ -6,9 +6,12 @@
    
 %>    
 
+<jsp:include page="../../Main/header.jsp"/>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%= ctxPath%>/css/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
@@ -63,6 +66,9 @@
 	
 </script>
 
+<title>비밀번호찾기</title>
+<jsp:include page="../../Main/sideBar.jsp"/>
+
 <form name="pwdFindFrm">
    <div id="div_userid" align="center">
       <span style="color: blue; font-size: 12pt;">아이디</span><br/> 
@@ -102,3 +108,5 @@
 	<input type="hidden" name="userid" />
 	<input type="hidden" name="userCertificationCode" />
 </form>
+
+<jsp:include page="../../Main/footer.jsp"/>
