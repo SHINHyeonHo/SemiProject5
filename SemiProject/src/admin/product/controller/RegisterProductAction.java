@@ -6,6 +6,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -27,15 +28,16 @@ public class RegisterProductAction extends AbstractController{
 		ServletContext svlCtx = session.getServletContext();
 		String imagesDir = svlCtx.getRealPath("/images/Product");
 		
-		System.out.println("=== 첨부되어지는 이미지 파일이 올라가는 절대경로 imagesDir ==> " + imagesDir); 
+		System.out.println("=== 첨부되어지는 이미지 파일이 올라가는 절대경로 imagesDir ==> " + imagesDir);
+		///Users/user/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SemiProject/images/Product
 	
 		try {	
 			  mutiRequest = new MultipartRequest(request, imagesDir, 10*1024*1024, "UTF-8", new DefaultFileRenamePolicy() );
 			
 	      } catch(IOException e) {
 	    	  request.setAttribute("message", "업로드 되어질 경로가 잘못되었거나 또는 최대용량 10MB를 초과했으므로 파일업로드 실패함!!");
-	    	  //request.setAttribute("loc", request.getContextPath()+"/shop/admin/productRegister.up"); 
-	    	  //super.setViewPage("/WEB-INF/msg.jsp");
+	    	  request.setAttribute("loc", request.getContextPath()+"/admin/product.hb"); 
+	    	  super.setViewPage("/WEB-INF/habibi/admin/product.jsp");
 	    	  return;
 		  }
 		
@@ -55,6 +57,7 @@ public class RegisterProductAction extends AbstractController{
 		String prodSize = "w"+prodSize1+" x d"+prodSize2+" x h"+prodSize3+" mm";
 		
 		String prodImage = mutiRequest.getFilesystemName("prodImage");
+		System.out.println("prodImage : "+prodImage);
 		
 		
 	    ProductVO pvo = new ProductVO();

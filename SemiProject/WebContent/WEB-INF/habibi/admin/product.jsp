@@ -46,6 +46,11 @@
         	right: 40px;
         }
         
+        .prod_image{
+        	width:50px;
+        	height:50px;
+        }
+        
     
     </style>
 
@@ -332,6 +337,7 @@ $(document).ready(function(){ // 로드되면
 					$("#tbody").prepend("<tr>"
 										+ "<td><input type='checkbox' value='"+prodCode+"'></td>"
 										+ "<td class='unique-check'>"+prodCode+"</td>"
+										+ "<td><img class='prod_image' src='/SemiProject/images/Product/"+item.prod_code+".png'></td>"
 										+ "<td>"+prodCategory+"</td>"
 										+ "<td>"+prodName+"</td>"
 										+ "<td>"+prodCost+"</td>"
@@ -557,6 +563,7 @@ function func_prodAll(searchCategory, searchName, smallStock) {
 				
 				html += "<table><thead><th>선택</th>"
 	       		+ "<th>상품코드</th>"
+	       		+ "<th>상품이미지</th>"
 		        + "<th>상품분류</th>"
 		        + "<th>상품명</th>"
 		        + "<th>원가</th>"
@@ -581,6 +588,7 @@ function func_prodAll(searchCategory, searchName, smallStock) {
 		 					 "<tr>"
 							+ "<td><input type='checkbox' value='"+item.prod_code+"'></td>"
 							+ "<td><span class='unique-check'>"+item.prod_code+"</span></td>"
+							+ "<td><img class='prod_image' src='/SemiProject/images/Product/"+item.prod_code+".png'></td>"
 							+ "<td>"+item.prod_category+"</td>"
 							+ "<td>"+item.prod_name+"</td>"
 							+ "<td>"+item.prod_cost+"</td>"

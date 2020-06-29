@@ -63,7 +63,7 @@ pageEncoding="UTF-8"%>
 	
 	        <!-- 제품 사진 -->
 	        <div id="prodImg">
-	            <img src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png" style="width:500px; height:500px;">
+	            <img src="/SemiProject/images/Product/${list.prod_code}.png" style="width:500px; height:500px;">
 	        </div>
 		</c:forEach>
         <!-- 원목 및 색상 -->

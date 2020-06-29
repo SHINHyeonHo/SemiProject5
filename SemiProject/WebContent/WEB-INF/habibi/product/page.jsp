@@ -227,7 +227,7 @@ pageEncoding="UTF-8"%>
          
          <div id="prodImg">
             <!-- 제품 이미지 -->
-            <img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png" style="width:500px; height:500px;"/>
+            <img class="image" src="/SemiProject/images/Product/${list.prod_code}.png" style="width:500px; height:500px;"/>
          </div>
    
          <div id="prodInfo">
