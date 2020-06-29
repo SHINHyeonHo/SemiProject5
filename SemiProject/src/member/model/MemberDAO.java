@@ -142,11 +142,12 @@ public class MemberDAO implements InterMemberDAO {
 			conn = ds.getConnection();
 			String sql = " select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email, point, is_member, join_date "
 					   + " from habibi_member "
-					   + " where is_member = 1 and userid = ? and passwd = ? "; 
+					   + " where is_member = '1' and userid = ? and passwd = ? "; 
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, paraMap.get("userid"));
 			pstmt.setString(2, Sha256.encrypt(paraMap.get("passwd")));
+			
 			rs = pstmt.executeQuery();
 			
 			
@@ -268,43 +269,70 @@ public class MemberDAO implements InterMemberDAO {
 
 	
 	// MyInfo 페이지 생성
-	   @Override
-	   public MemberVO myInfo(String idx) throws SQLException {
-	      
-	      MemberVO mvo = null;
-	      
-	      try {
-	         conn = ds.getConnection();
+   @Override
+   public MemberVO myInfo(String idx) throws SQLException {
+      
+      MemberVO mvo = null;
+      
+      try {
+         conn = ds.getConnection();
 
-	         String sql = " select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email "+
-	                   " from habibi_member  "+
-	                   " where idx = ? ";
-	         pstmt = conn.prepareStatement(sql);
-	         
-	         pstmt.setString(1, idx);
-	         
-	         rs = pstmt.executeQuery();
-	         
-	         if(rs.next()) {
-	            mvo = new MemberVO();
-	            mvo.setIdx(rs.getInt("idx"));
-	            mvo.setUserid(rs.getString("userid"));
-	            mvo.setName(rs.getString("name"));
-	            mvo.setEmail(rs.getString("email"));
-	            mvo.setMobile1(rs.getString("mobile1"));
-	            mvo.setMobile2(rs.getString("mobile2"));
-	            mvo.setMobile3(rs.getString("mobile3"));
-	            mvo.setPostcode(rs.getString("postcode"));
-	            mvo.setAddress1(rs.getString("address1"));
-	            mvo.setAddress2(rs.getString("address2"));
-	            mvo.setIs_sms(rs.getString("is_sms"));
-	            mvo.setIs_email(rs.getString("is_email"));
-	         }
-	      } finally {
-	         close();
-	      }
-	      return mvo;
-	   }
+         String sql = " select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email "+
+                   " from habibi_member  "+
+                   " where idx = ? ";
+         pstmt = conn.prepareStatement(sql);
+         
+         pstmt.setString(1, idx);
+         
+         rs = pstmt.executeQuery();
+         
+         if(rs.next()) {
+            mvo = new MemberVO();
+            mvo.setIdx(rs.getInt("idx"));
+            mvo.setUserid(rs.getString("userid"));
+            mvo.setName(rs.getString("name"));
+            mvo.setEmail(rs.getString("email"));
+            mvo.setMobile1(rs.getString("mobile1"));
+            mvo.setMobile2(rs.getString("mobile2"));
+            mvo.setMobile3(rs.getString("mobile3"));
+            mvo.setPostcode(rs.getString("postcode"));
+            mvo.setAddress1(rs.getString("address1"));
+            mvo.setAddress2(rs.getString("address2"));
+            mvo.setIs_sms(rs.getString("is_sms"));
+            mvo.setIs_email(rs.getString("is_email"));
+         }
+      } finally {
+         close();
+      }
+      return mvo;
+   }
 
+	   
+	// 이메일이 존재하는지 확인
+	@Override
+	public boolean isEmailExist(String email) throws SQLException {
+		boolean isEmailExist = false;
+		
+		try {
+			conn = ds.getConnection();
+			String sql = " select email " + 
+						 " from habibi_member " + 
+						 " where is_member = 1 and " + 
+						 " email = ? ";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, aes.encrypt(email));
+			
+			rs = pstmt.executeQuery();
+			
+			isEmailExist = rs.next();
+		} catch( UnsupportedEncodingException | GeneralSecurityException e) {
+			e.printStackTrace(); 
+		} finally {
+			close();
+		}
+		return isEmailExist;
+	}
 	
 }

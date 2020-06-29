@@ -21,6 +21,7 @@ div.main_banner {
 }
 
 table{
+	display:table-cell;
 	border-collapse: separate;
 	border-spacing: 20px;
 	width: 100%;
@@ -28,6 +29,7 @@ table{
 
 tr{
 	height: 300px;
+<<<<<<< HEAD
 	border: solid 1px red;
 }
 
@@ -35,10 +37,13 @@ td{
 	/*border: solid 1px black;*/
 	position: relative;
 	width: 25%;
+=======
+	border: solid 1px red;	
+>>>>>>> bba0ae2b1fe03398a014e4f5a5907dab1bcc04c0
 }
 
-
 .image{
+<<<<<<< HEAD
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -52,6 +57,10 @@ td{
 	bottom: 0px;
     height: 30%;
     width: 100%;
+=======
+	width: 195px;
+	height:195px;
+>>>>>>> bba0ae2b1fe03398a014e4f5a5907dab1bcc04c0
 }
 
 .prod_name{
@@ -88,7 +97,6 @@ td{
 <div id="container">
 
 <jsp:include page="../../Main/sideBar.jsp"/>
-<jsp:include page="../member/login.jsp" />
 
 	<div id="main_banner" class="main_banner middle">
 	
@@ -103,7 +111,7 @@ td{
 			
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
-				<td>
+				<td class="td">
 						<a href="/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}">
 							<img class="image" src="/SemiProject/images/Product/${list.prod_code}.png"/>
 						</a>
@@ -115,7 +123,11 @@ td{
 					
 				</td>
 				
+<<<<<<< HEAD
 			<c:if test="${(st.index+1) % 4 == 0 || fn:length(prodList) < 16}"></tr></c:if>	
+=======
+			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>	
+>>>>>>> bba0ae2b1fe03398a014e4f5a5907dab1bcc04c0
 			<!--<c:if test="${(st.index+1) == fn:substringBefore(Math.ceil(count/16),'.')}"></tr></c:if>-->
 			
 		
@@ -146,12 +158,3 @@ td{
 	</div>
       
 <jsp:include page="../../Main/footer.jsp"/>
-
-
-
-
-
-
-
-
-

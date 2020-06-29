@@ -2,12 +2,14 @@
     pageEncoding="UTF-8"%>
 <%
     String ctxPath = request.getContextPath();
-   
 %>    
+
+<jsp:include page="../../Main/header.jsp"/>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%= ctxPath%>/css/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
@@ -39,7 +41,8 @@
    
 </script>
 
-
+<title>아이디찾기</title>
+<jsp:include page="../../Main/sideBar.jsp"/>
 
 <form name="idFindFrm">
    <div id="div_name" align="center">
@@ -62,7 +65,6 @@
    
 </form>
 
-
-      
+<jsp:include page="../../Main/footer.jsp"/>
 
 
