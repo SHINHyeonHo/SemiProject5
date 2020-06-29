@@ -149,8 +149,6 @@ public class MemberDAO implements InterMemberDAO {
 			pstmt.setString(2, Sha256.encrypt(paraMap.get("passwd")));
 			rs = pstmt.executeQuery();
 			
-			System.out.println(paraMap.get("passwd"));
-			System.out.println(Sha256.encrypt(paraMap.get("passwd")));
 			
 			if(rs.next()) {
 				mvo = new MemberVO();
@@ -307,5 +305,6 @@ public class MemberDAO implements InterMemberDAO {
 	      }
 	      return mvo;
 	   }
+
 	
 }

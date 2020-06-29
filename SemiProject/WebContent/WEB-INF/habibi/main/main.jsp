@@ -50,15 +50,15 @@ h3 {
     			<!-- Wrapper for slides -->
     			<div class="carousel-inner">
 	      			<div class="item active">
-	        			<img src="/SemiProject/images/Product/sleeping/H008SLP.png" alt="Los Angeles" style="width:100%;">
+	        			<img src="/SemiProject/images/Product/H008SLP.png" alt="Los Angeles" style="width:100%;">
 	      			</div>
 	
 	      			<div class="item">
-	        			<img src="/SemiProject/images/Product/sleeping/H007SLP.png" alt="Chicago" style="width:100%;">
+	        			<img src="/SemiProject/images/Product/H007SLP.png" alt="Chicago" style="width:100%;">
 	      			</div>
 	    
 	      			<div class="item">
-	        			<img src="/SemiProject/images/Product/sleeping/H006SLP.png" alt="New york" style="width:100%;">
+	        			<img src="/SemiProject/images/Product/H006SLP.png" alt="New york" style="width:100%;">
 	      			</div>
     			</div>
 
@@ -82,12 +82,12 @@ h3 {
 			<div id="main_middle_left" style="border: solid 1px red; width: 50%; float: left;">
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
 					</a>
 				</div>
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
 					</a>
 				</div>
 			</div>
@@ -95,17 +95,17 @@ h3 {
 			<div id="main_middle_right" style="border: solid 1px green; width: 50%; float: right;">
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:300px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:300px; margin-bottom: 10px;">
 					</a>
 				</div>
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:300px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:300px; margin-bottom: 10px;">
 					</a>
 				</div>
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:400px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:400px; margin-bottom: 10px;">
 					</a>
 				</div>
 			</div>
@@ -119,12 +119,12 @@ h3 {
 			<div id="main_bottom_left" style="border: solid 1px red; width: 50%; float: left;">
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
 					</a>
 				</div>
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:500px; margin-bottom: 10px;">
 					</a>
 				</div>
 			</div>
@@ -132,7 +132,7 @@ h3 {
 			<div id="main_bottom_right"  style="border: solid 1px green; width: 50%; float: right;">
 				<div>
 					<a href="">
-					<img src="/SemiProject/images/Product/sleeping/H006SLP.png" style="width:95%; height:1000px; margin-bottom: 10px;">
+					<img src="/SemiProject/images/Product/H006SLP.png" style="width:95%; height:1000px; margin-bottom: 10px;">
 					</a>
 				</div>
 			</div>
@@ -140,6 +140,7 @@ h3 {
 	</div>
 	
 </div>
+
       
       
 <jsp:include page="../../Main/footer.jsp"/>

@@ -19,5 +19,4 @@ public interface InterAdminMemberDAO {
 	
 	//회원삭제(강제탈퇴)
 	//int DeleteProduct(String deleteCheck) throws SQLException;
-
 }

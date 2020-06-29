@@ -90,7 +90,7 @@ td{
 			
 				<td>
 						<a href="/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}">
-							<img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png"/>
+							<img class="image" src="/SemiProject/images/Product/${list.prod_code}.png"/>
 						</a>
 						<div class="description">
 							<div class="prod_name" onclick="location.href ='/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}'" style="cursor:pointer;">${list.prod_name}</div>

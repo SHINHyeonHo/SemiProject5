@@ -25,4 +25,5 @@ public interface InterMemberDAO {
 
 	// MyInfo 페이지 생성
 	MemberVO myInfo(String idx) throws SQLException;
+	
 }

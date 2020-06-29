@@ -227,7 +227,7 @@ pageEncoding="UTF-8"%>
          
          <div id="prodImg">
             <!-- 제품 이미지 -->
-            <img class="image" src="/SemiProject/images/Product/${list.prod_category}/${list.prod_code}.png" style="width:500px; height:500px;"/>
+            <img class="image" src="/SemiProject/images/Product/${list.prod_code}.png" style="width:500px; height:500px;"/>
          </div>
    
          <div id="prodInfo">
@@ -272,6 +272,7 @@ pageEncoding="UTF-8"%>
 
    <!-- iframe -->
    <iframe id="frame" src="/SemiProject/prod/detail.hb?category=${list.prod_category}&prodCode=${list.prod_code}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" onload="resizeIframe(this)"></iframe>
+         
 </c:forEach>
 
 </div>
