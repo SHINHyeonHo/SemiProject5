@@ -29,13 +29,16 @@ table{
 
 tr{
 	height: 300px;
-	border: solid 1px red;	
+	border: solid 1px red;
 }
 
+
 .image{
-	width: 195px;
-	height:195px;
+    height: 195px;
+    width: 195px;
+   /* background-color: gray; */
 }
+
 
 .prod_name{
 	margin-top: 10px;
@@ -81,7 +84,6 @@ tr{
 		<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
 		
 		<c:forEach var="list" items="${prodList}" varStatus="st">
-						<!--<c:out value="${fn:length(prodList)}"></c:out>-->
 			
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
@@ -97,9 +99,8 @@ tr{
 					
 				</td>
 				
-			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>	
-			<!--<c:if test="${(st.index+1) == fn:substringBefore(Math.ceil(count/16),'.')}"></tr></c:if>-->
-			
+
+			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>			
 		
 		</c:forEach>
 		
