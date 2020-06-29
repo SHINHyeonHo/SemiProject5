@@ -21,6 +21,7 @@ div.main_banner {
 }
 
 table{
+	display:table-cell;
 	border-collapse: separate;
 	border-spacing: 20px;
 	width: 100%;
@@ -28,30 +29,12 @@ table{
 
 tr{
 	height: 300px;
-	border: solid 1px red;
+	border: solid 1px red;	
 }
-
-td{
-	/*border: solid 1px black;*/
-	position: relative;
-	width: 25%;
-}
-
 
 .image{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-    height: 195px;
-    width: 195px;
-   /* background-color: gray; */
-}
-
-.description{
-	position: absolute;
-	bottom: 0px;
-    height: 30%;
-    width: 100%;
+	width: 195px;
+	height:195px;
 }
 
 .prod_name{
@@ -102,7 +85,7 @@ td{
 			
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
-				<td>
+				<td class="td">
 						<a href="/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}">
 							<img class="image" src="/SemiProject/images/Product/${list.prod_code}.png"/>
 						</a>
@@ -114,7 +97,7 @@ td{
 					
 				</td>
 				
-			<c:if test="${(st.index+1) % 4 == 0 || fn:length(prodList) < 16}"></tr></c:if>	
+			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>	
 			<!--<c:if test="${(st.index+1) == fn:substringBefore(Math.ceil(count/16),'.')}"></tr></c:if>-->
 			
 		
