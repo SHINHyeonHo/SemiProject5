@@ -91,7 +91,7 @@ li.side_menu1 {
 	<div>
 		<ul class="side_menu middle">
 			<li class="side_menu1"><a href="">Brand</a></li>
-			<li class="side_menu1"><a href="">NEW ARRIVALS</a></li>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=new">NEW ARRIVALS</a></li>
 			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=seating">SEATING</a>
 <!--				<ul>
 					<li><a href="">SOFA</a></li>

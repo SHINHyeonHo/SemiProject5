@@ -93,6 +93,35 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	}
 	
 	
+	
+	// 상품 개수 
+	@Override
+	public int getProdCount(String category, String name) throws SQLException {
+		
+		int count = 0;	
+
+		try {
+			conn = ds.getConnection();
+
+			String sql = "select count(*) COUNT from habibi_product " + 
+						 " where prod_category like '%"+category+"%' and prod_name like '%"+name+"%'";
+			
+			pstmt = conn.prepareStatement(sql);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        if(rs.next()) 
+	        	count = rs.getInt(1);
+	        
+		} finally {
+			close();
+		}
+
+		return count;
+	}
+
+	
+	
 	// 상품 등록
 	@Override
 	public int registerProduct(ProductVO pvo) throws SQLException {
@@ -204,15 +233,13 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	
 	// 품절 임박 상품 가져오기
 	@Override
-	public Map<String, Object> getSoldoutInfo(int soldoutNum) throws SQLException {
+	public List<ProductVO> getSoldoutInfo(int soldoutNum) throws SQLException {
 
 		String condition = "";
 		if(soldoutNum != 1)
 			condition = " and prod_stock > 0";
 		
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		
+				
 		List<ProductVO> prodList = new ArrayList<>();
 		
 		try {
@@ -226,11 +253,8 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	         
 	        rs = pstmt.executeQuery();
 	         
-	        int count = 0;
 	        while(rs.next()) {
-	        	
-	        	count++;
-	        	
+	        		        	
 	        	String prod_code = rs.getString(1);
 	        	String prod_category = rs.getString(2);
 	        	int prod_stock = rs.getInt(3);
@@ -243,15 +267,12 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	        	prodList.add(pvo);
 
 	        }
-	        
-	        map.put("prodList", prodList);
-	        map.put("count", count);
-	        
+	        	        
 		} finally {
 			close();
 		}
 		
-		return map;
+		return prodList;
 	}
 
 

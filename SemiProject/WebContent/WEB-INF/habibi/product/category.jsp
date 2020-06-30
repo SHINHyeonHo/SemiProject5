@@ -39,7 +39,6 @@ tr{
    /* background-color: gray; */
 }
 
-
 .prod_name{
 	margin-top: 10px;
 }
@@ -80,9 +79,7 @@ tr{
 	<div class="category">${param.category}</div>
 
 		<table class="product">
-		
-		<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
-		
+				
 		<c:forEach var="list" items="${prodList}" varStatus="st">
 			
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
@@ -111,6 +108,7 @@ tr{
 			<span class="btn-prev"> << &nbsp;</span>
 			<ul class="page-list">
 			
+				<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
 				<c:forEach var="i" begin="0" end="${lastPage-1}">
 			
 					<li class="page-list"><a href="?category=${param.category}&page=${i+1}">${i+1}</a></li>

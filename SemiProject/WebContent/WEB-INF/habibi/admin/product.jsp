@@ -517,17 +517,7 @@ $(document).ready(function(){ // 로드되면
 				func_soldoutCheck(smallStock); // 품절 임박 개수
 				func_soldoutCheck(1); // 품절 개수
 				
-		
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+	
 			},
 			
 			error: function(request, status, error){
@@ -546,20 +536,24 @@ $(document).ready(function(){ // 로드되면
 });
 	
 	
+	
 function func_prodAll(searchCategory, searchName, smallStock) {
 		
 	$.ajax({
-		url:"/SemiProject/admin/searchProduct.hb", // json 들어 있는 controller 주소
+		url:"/SemiProject/admin/searchProduct.hb",
 		type:"GET",
 		data:{"searchCategory":searchCategory,"searchName":searchName},
 		dataType:"json",
 		success:function(json){
 			
+			var count = json.count;
+			//var count = $(json.prodList).length;
+			
 			$("#searchCategory").val(searchCategory);
 			$("#searchName").val(searchName); // 입력한 검색어 그대로 두기
 
 			var html =  "";
-			if(json.length  > 0){
+			if($(json.prodList).length  > 0){
 				
 				html += "<table><thead><th>선택</th>"
 	       		+ "<th>상품코드</th>"
@@ -574,8 +568,9 @@ function func_prodAll(searchCategory, searchName, smallStock) {
 		        + "<th>판매상태</th>"
 		        + "<th>재고수량</th></thead><tbody id='tbody'>";
 				
-				$.each(json, function(index, item){
-					
+		      
+				$(json.prodList).each(function(index, item){
+										
 					var prod_status = "";
 					if(item.prod_status == 1){
 						prod_status = "판매중";
@@ -602,15 +597,13 @@ function func_prodAll(searchCategory, searchName, smallStock) {
 				});
 				
 				html += "</tbody></table><div class='product-button'><button id='deleteButton' type='button'>상품삭제</button></div>";
+				
 				$("#searchTable").html(html);
 				
 					
 				// 품절임박 수량 색깔 변경
-				var count = 0;
-				
 				$(".stock-check").each(function(){
 				
-					count++;
 					var stock = $(this);
 					func_stockColor(stock, smallStock);
 				});
@@ -635,26 +628,27 @@ function func_prodAll(searchCategory, searchName, smallStock) {
 
 
 
-function func_soldoutCheck(number){ // 품절 개수 관리
+function func_soldoutCheck(smallStock){ // 품절 개수 관리
 	
 	var count = 0;
 	
 	$.ajax({
 		url:"/SemiProject/admin/getStock.hb",
 		type:"GET",
-		data:{"soldoutNum":number},
+		data:{"soldoutNum":smallStock},
 		dataType:"json",
 		success:function(json){
 					
-			if(json.length  > 0){
+			var count = $(json.prodList).length;
+			
+			if(count  > 0){
 				
 				$.each(json, function(index, item){
 					// 상품정보도 들어있음..
-					count = item.count;
 				});
 			}
 	     
-			if(number == 1){ // 품절 개수
+			if(smallStock == 1){ // 품절 개수
 				$("#soldout-product").text(count);	
 			}
 			else{ // 품절 임박 개수
@@ -677,13 +671,11 @@ function func_stockColor(stock, smallStock){ // stock은 node
 	
 	var prodStatus = stock.parent().prev().children("span").text().trim();
 		
-	//if(prodStatus == "판매중"){
 		
 		if(stock.text() < smallStock) // 5
 			stock.css('color','red');
 		else
 			stock.css('color','black');
-	//}
 };
 
 	
@@ -695,6 +687,9 @@ function func_numberCheck(number){ // 숫자 유효성 검사
 			return -1;
 		}
 };
+
+
+
 
 
 </script>
