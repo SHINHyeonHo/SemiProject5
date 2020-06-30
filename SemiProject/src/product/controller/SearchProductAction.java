@@ -6,18 +6,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.controller.AbstractController;
-import product.model.ProductDAO;
-import product.model.ProductVO;
+import product.model.*;
 
-public class CategoryAction extends AbstractController {
+public class SearchProductAction extends AbstractController {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		
 		String method = request.getMethod();
 		
-		if(!"GET".equalsIgnoreCase(method)) { // get 방식으로 들어온게 아니라면
+		if(!"GET".equalsIgnoreCase(method)) {
 			
 			String message = "비정상적인 경로로 들어왔습니다.";
 			String loc = "javascript:history.back()";
@@ -29,11 +27,9 @@ public class CategoryAction extends AbstractController {
 			super.setViewPage("/WEB-INF/Main/msg.jsp");
 			
 			return;	
-			
 		}
-		else {// get방식으로 들어왔다면 
-		
-			String category = request.getParameter("category");
+		else {
+			String searchWord = request.getParameter("searchWord");
 			String page_ = request.getParameter("page");
 			
 			int page = 1;
@@ -41,15 +37,14 @@ public class CategoryAction extends AbstractController {
 				page = Integer.parseInt(page_);
 			}
 			
-			String prod_code = "";
-			
-			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category, prod_code, page);
-			int count = pao.getProductCount(category, prod_code);
+			InterProductDAO pao = new ProductDAO();
+			List<ProductVO> prodList =  pao.getSearchProductList(searchWord, page);
+			int count = pao.getSearchProductCount(searchWord);
 			
 			request.setAttribute("prodList", prodList);
 			request.setAttribute("count", count);
-			request.setAttribute("n", 1); 
+			request.setAttribute("searchWord", searchWord);
+			request.setAttribute("n", 2);
 		}
 	
 		super.setRedirect(false);

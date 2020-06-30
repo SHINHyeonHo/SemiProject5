@@ -135,6 +135,81 @@ public class ProductDAO implements InterProductDAO {
 
 		return count;
 	}
+	
+	
+	// 사이드바 검색 결과
+	@Override
+	public List<ProductVO> getSearchProductList(String searchWord, int page) throws SQLException {
+		
+		List<ProductVO> prodList = new ArrayList<>();
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = " select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size from ( "
+					   + " select rownum NUM, P.* " 
+					   + " from ( "
+					   + " select * from habibi_product "
+					   + " where prod_status = 1 and (prod_category like '%" + searchWord + "%' or prod_code like '%" + searchWord + "%' or prod_name like '%" + searchWord + "%' or prod_mtl like '%" + searchWord + "%' or prod_color like '%" + searchWord + "%' ) "
+					   + " order by prod_status desc, prod_insert_date desc "
+					   + " ) P "
+					   + " ) "
+					   + " where NUM between ? and ? ";
+			
+			pstmt = conn.prepareStatement(sql);
+	        pstmt.setInt(1, 1+(page-1)*16);
+	        pstmt.setInt(2, page*16);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        while(rs.next()) {
+	        	
+	        	String prod_code = rs.getString(1);
+	        	String prod_category = rs.getString(2);
+	        	String prod_name = rs.getString(3);
+	        	int prod_cost = rs.getInt(4);
+	        	int prod_price = rs.getInt(5);
+	        	int prod_stock = rs.getInt(6);
+	        	String prod_color = rs.getString(7);
+	        	String prod_mtl = rs.getString(8);
+	        	String prod_size = rs.getString(9);
+	        	
+	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, 1);
+		        
+	        	prodList.add(pvo);
+	        }
+	        
+		} finally {
+			close();
+		}
+		
+		return prodList;
+	}
+
+	
+	// 사이드바 검색 결과 수
+	@Override
+	public int getSearchProductCount(String searchWord) throws SQLException {
+		int count = 0;
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = " select count(*) COUNT from habibi_product "
+					   + " where prod_status = 1 and (prod_category like '%" + searchWord + "%' or prod_code like '%" + searchWord + "%' or prod_name like '%" + searchWord + "%' or prod_mtl like '%" + searchWord + "%' or prod_color like '%" + searchWord + "%' ) ";
+			
+			pstmt = conn.prepareStatement(sql);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        if(rs.next()) 
+	        	count = rs.getInt(1);
+		} finally {
+			close();
+		}
+
+		return count;
+	}
 
 	
 	// 로그인 되어진 회원의 장바구니 정보가져오기

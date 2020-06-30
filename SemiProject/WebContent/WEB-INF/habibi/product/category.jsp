@@ -21,6 +21,7 @@ div.main_banner {
 }
 
 table{
+	display:table-cell;
 	border-collapse: separate;
 	border-spacing: 20px;
 	width: 100%;
@@ -31,27 +32,11 @@ tr{
 	border: solid 1px red;
 }
 
-td{
-	/*border: solid 1px black;*/
-	position: relative;
-	width: 25%;
-}
-
 
 .image{
-	position: absolute;
-	top: 0px;
-	left: 0px;
     height: 195px;
     width: 195px;
    /* background-color: gray; */
-}
-
-.description{
-	position: absolute;
-	bottom: 0px;
-    height: 30%;
-    width: 100%;
 }
 
 .prod_name{
@@ -81,6 +66,10 @@ td{
 <script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 
+$(document).ready(function() {
+	$("#searchWord").val("${searchWord}");
+});
+
 </script>
 
 </head>
@@ -91,18 +80,19 @@ td{
 
 	<div id="main_banner" class="main_banner middle">
 	
-	<div class="category">${param.category}</div>
-
+	<c:if test="${n == 1}">
+		<div class="category">${param.category}</div>
+	</c:if>
+	<c:if test="${n == 2}">
+		<div class="category">${searchWord} 에 대한 검색 결과..</div>
+	</c:if>
 		<table class="product">
-		
-		<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
-		
+				
 		<c:forEach var="list" items="${prodList}" varStatus="st">
-						<!--<c:out value="${fn:length(prodList)}"></c:out>-->
 			
 			<c:if test="${(st.index+1) % 4 == 1}"><tr></c:if>
 			
-				<td>
+				<td class="td">
 						<a href="/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}">
 							<img class="image" src="/SemiProject/images/Product/${list.prod_code}.png"/>
 						</a>
@@ -111,12 +101,9 @@ td{
 							<div class="prod_color">${list.prod_color}</div>
 							<div class="prod_price">${list.prod_price}원</div>
 						</div>
-					
 				</td>
 				
-			<c:if test="${(st.index+1) % 4 == 0 || fn:length(prodList) < 16}"></tr></c:if>	
-			<!--<c:if test="${(st.index+1) == fn:substringBefore(Math.ceil(count/16),'.')}"></tr></c:if>-->
-			
+			<c:if test="${(st.index+1) % 4 == 0 || st.last}"></tr></c:if>			
 		
 		</c:forEach>
 		
@@ -127,9 +114,15 @@ td{
 			<span class="btn-prev"> << &nbsp;</span>
 			<ul class="page-list">
 			
+				<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
 				<c:forEach var="i" begin="0" end="${lastPage-1}">
 			
+				<c:if test="${n == 1}">
 					<li class="page-list"><a href="?category=${param.category}&page=${i+1}">${i+1}</a></li>
+				</c:if>
+				<c:if test="${n == 2}">
+					<li class="page-list"><a href="?searchWord=${param.searchWord}&page=${i+1}">${i+1}</a></li>
+				</c:if>
 				
 				</c:forEach>
 				

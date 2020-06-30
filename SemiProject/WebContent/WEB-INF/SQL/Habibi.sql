@@ -311,9 +311,21 @@ into habibi_product
 values ('H020STR','storage','premium basic storage',100000,160000,2,'oak brown','오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-1)
 select * from dual;
 
+select *
+from habibi_product;
 
+select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size from (
+                  select rownum NUM, P.*
+                  from (
+                      select * from habibi_product
+                      where prod_status = 1 and (prod_category like '%yellow%' or prod_code like '%yellow%' or prod_name like '%yellow%' or prod_mtl like '%yellow%' or prod_color like '%yellow%' )
+                      order by prod_status desc, prod_insert_date desc
+                      ) P
+              )
+where NUM between 1 and 16;
 
-
+select count(*) COUNT from habibi_product
+where prod_status = 1 and (prod_category like '%%' or prod_code like '%%' or prod_name like '%%' or prod_mtl like '%%' or prod_color like '%%' );
 
 
 
@@ -457,12 +469,3 @@ create table habibi_comment
     ,constraint fk_habibi_comUserid foreign key(fk_userid) references habibi_member(userid)
     ,constraint fk_habibi_comProdCode foreign key(fk_prod_code) references habibi_product(prod_code)
 );
-
-----------------------------------------------------
-
-select idx, userid, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email, point, is_member, join_date 
-					   from habibi_member 
-					   where is_member = 1 and userid = 'admin' and passwd = '9695b88a59a1610320897fa84cb7e144cc51f2984520efb77111d94b402a8382';
-
-------------------------------------------------------
-commit;

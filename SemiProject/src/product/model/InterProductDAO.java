@@ -11,6 +11,12 @@ public interface InterProductDAO {
 	
     // 레코드 개수 알아오기
     int getProductCount(String category, String prodCode) throws SQLException;
+
+    // 사이드바 검색한 정보 가져오기
+    List<ProductVO> getSearchProductList(String searchWord, int page) throws SQLException;
+
+    // 검색 결과 레코드 개수 알아오기
+	int getSearchProductCount(String searchWord) throws SQLException;
     
     // 로그인 되어진 회원의 장바구니 정보가져오기
  	List<CartVO> selectCartList(String userid) throws SQLException;
@@ -28,5 +34,7 @@ public interface InterProductDAO {
 
  	// 장바구니 테이블에서 특정제품의 수량을 변경시키기
  	int updateCart(String cart_num, String cart_stock) throws SQLException;
+
+	
  	
 }

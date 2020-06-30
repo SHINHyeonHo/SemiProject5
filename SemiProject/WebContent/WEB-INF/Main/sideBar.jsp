@@ -75,15 +75,38 @@ li.side_menu1 {
 
 </style>
 
+<script type="text/javascript">
+	
+	function goSearch() {
+		if($("#searchWord").val().trim() == "") {
+			alert("검색어를 입력해주세요.");
+			return;
+		}
+		else{
+			var frm = document.searchBarForm;
+			frm.method = "get";
+			frm.action = "<%= request.getContextPath()%>/prod/searchProduct.hb";
+			frm.submit();
+		}
+		
+		$("#searchWord").keydown(function(event){
+			if(event.keyCode == 13){   
+				goSearch(); 
+			}
+		});
+		
+	}
+	
+</script>
+
 <div id="container">
 
 <div id="left_sidebar" class="left_sidebar middle">
 	<div class="searchBar">
-		<form id="searchBarForm" action="" method="get">
-			<input id="search_action" name="search_action" type="hidden" /> <!-- 검색 변수 저장용 -->
+		<form name="searchBarForm">
 			<div class="search-container">
-				<input type="text" placeholder="Search.." name="search" size="20">
-				<button type="submit" class="search"><i class="fa fa-search"></i></button>
+				<input type="text" placeholder="Search.." id="searchWord" name="searchWord" size="20">
+				<button type="button" id="searchProduct" class="search" onclick="goSearch();"><i class="fa fa-search"></i></button>
 			</div>
 		</form>
 	</div>

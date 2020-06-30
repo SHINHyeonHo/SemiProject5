@@ -29,6 +29,7 @@ div#wrap {
 
 header#header {
 	width: 1200px;
+	height: 190px;
     padding: 90px 0 33px;
     overflow: hidden;
 }
@@ -49,6 +50,7 @@ div.header_menu {
    	float: right;
    	padding-top: 25px;
    	height: 30px;
+   	vertical-align: text-top;
 }
 
 ul#header_menu {
@@ -103,9 +105,9 @@ function goLogOut(){
 		</c:if>
 		
 	<c:if test="${not empty sessionScope.loginuser}">
-			<span style="float: right;">${sessionScope.loginuser.userid} 님..</span>
 			<div class="header_menu">
 				<ul id="header_menu">
+					<li style="display: block;">${sessionScope.loginuser.userid} 님</li>
 				    <c:if test="${sessionScope.loginuser.userid eq 'admin' }">
 						<li class="header_menu"><a href="<%= ctxPath%>/admin/member.hb" style="color:black; text-decoration:none;">MEMBER</a></li>
 						<li class="header_menu"><a href="<%= ctxPath%>/admin/product.hb" style="color:black; text-decoration:none;">PRODUCT</a></li>
