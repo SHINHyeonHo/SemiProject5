@@ -2,6 +2,8 @@
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
     
 <jsp:include page="../../Main/header.jsp"/>
 
@@ -10,8 +12,7 @@ pageEncoding="UTF-8"%>
 <style type="text/css">
 
 div.main_banner {
-	/*border: solid 1px blue;*/
-	width: 74%;
+	width: 85%;
 }
 .category{
 	color: gray;
@@ -23,8 +24,7 @@ div.main_banner {
 table{
 	display:table-cell;
 	border-collapse: separate;
-	border-spacing: 20px;
-	width: 100%;
+	border-spacing: 50px;
 }
 
 tr{
@@ -39,13 +39,33 @@ tr{
    /* background-color: gray; */
 }
 
-.prod_name{
-	margin-top: 10px;
-}
 
-.prod_name, .prod_price, .prod_color {
+.prod_name, .prod_price, .prod_color, .order-sum {
 	text-align: center;
 	font-size: small;
+}
+
+.notice{
+	text-align:center;
+	margin-top: 10px;
+	width: 100%;
+	height: 20px;
+}
+
+span.best{
+	text-align:center;
+	padding: 0px 3px;
+	color: white;
+	background-color: #0404B4;
+	font-size: xx-small;
+}
+
+span.new{
+	text-align:center;
+	padding: 0px 3px;
+	color: white;
+	background-color: orange;
+	font-size: xx-small;
 }
 
 #left_sidebar, content {
@@ -59,6 +79,7 @@ tr{
 .page-list{
 	display: inline-block;
 }
+
 
 </style>
 
@@ -89,9 +110,18 @@ tr{
 							<img class="image" src="/SemiProject/images/Product/${list.prod_code}.png"/>
 						</a>
 						<div class="description">
+						
+							<div class="notice">
+								<c:if test="${list.prod_new_date < 50}">
+									<span class="new">NEW</span> 
+								</c:if>
+								<c:if test="${list.order_sum != 0}">
+									<span class="best">BEST</span> 
+								</c:if>
+							</div> 
 							<div class="prod_name" onclick="location.href ='/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}'" style="cursor:pointer;">${list.prod_name}</div>
 							<div class="prod_color">${list.prod_color}</div>
-							<div class="prod_price">${list.prod_price}원</div>
+							<div class="prod_price"><fmt:formatNumber type="number" pattern="###,###" value="${list.prod_price}"/>&nbsp;원</div>
 						</div>
 					
 				</td>

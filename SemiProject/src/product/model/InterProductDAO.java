@@ -10,7 +10,7 @@ public interface InterProductDAO {
     List<ProductVO> getProductList(String category, String prodCode, int page) throws SQLException;
 	
     // 레코드 개수 알아오기
-    int getProductCount(String category, String prodCode) throws SQLException;
+    int getProductCount(String category) throws SQLException;
     
     // 로그인 되어진 회원의 장바구니 정보가져오기
  	List<CartVO> selectCartList(String userid) throws SQLException;

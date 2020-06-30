@@ -44,7 +44,7 @@ li > ul {
 }
 
 div.left_sidebar {
-	width: 22%;
+	width: 15%;
 	float: left;
 }
 
@@ -67,6 +67,7 @@ div.middle {
 div#container {
 	overflow:hidden;
 	height:auto;
+	min-height: 500px;
 }
 
 li.side_menu1 {

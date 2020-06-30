@@ -78,7 +78,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	        	String prod_size = rs.getString(9);
 	        	int prod_status = rs.getInt(10);
 	        	
-	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status);
+	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status, 1, 0);
 		        
 	        	prodList.add(pvo);
 

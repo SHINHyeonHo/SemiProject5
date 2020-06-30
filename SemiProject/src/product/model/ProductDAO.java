@@ -45,7 +45,7 @@ public class ProductDAO implements InterProductDAO {
 	
 	
 	@Override
-	public List<ProductVO> getProductList(String category , String prodCode, int page) throws SQLException {
+	public List<ProductVO> getProductList(String category, String prodCode, int page) throws SQLException {
 		
 		String newProd = "";
 		if("new".equalsIgnoreCase(category)) {
@@ -59,12 +59,16 @@ public class ProductDAO implements InterProductDAO {
 		try {
 			conn = ds.getConnection();
 
-			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size from ( " + 
+			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_new_date, order_sum from ( " + 
 					"                  select rownum NUM, P.* " + 
 					"                  from ( " + 
-					"                      select * from habibi_product " + 
-					"                      where prod_status = 1 and prod_category like '%"+category+"%' and prod_code like '%"+prodCode+"%' "+newProd+" " + 
-					"                      order by prod_insert_date desc " + 
+					"                      select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, sysdate - prod_insert_date as prod_new_date, nvl(order_sum,0) as order_sum " + 
+					"                      from (select * from habibi_product " + 
+					"                      where prod_status = 1 and prod_code like '%"+prodCode+"%' and prod_category like '%"+category+"%' "+newProd+"" + 
+					"                      )" + 
+					"                        left outer join view_order_sum " + 
+					"                            on fk_prod_code = prod_code " + 
+					"                      order by prod_status desc, prod_insert_date desc " +
 					"                      ) P " + 
 					"              ) " + 
 					"where NUM between ? and ?";
@@ -86,8 +90,10 @@ public class ProductDAO implements InterProductDAO {
 	        	String prod_color = rs.getString(7);
 	        	String prod_mtl = rs.getString(8);
 	        	String prod_size = rs.getString(9);
+	        	int prod_new_date = rs.getInt(10);
+	        	int order_sum = rs.getInt(11);
 	        	
-	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, 1);
+	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, 1, prod_new_date, order_sum);
 		        
 	        	prodList.add(pvo);
 
@@ -103,9 +109,9 @@ public class ProductDAO implements InterProductDAO {
 	}
 	
 	
-
+	// 제품 개수 
 	@Override
-	public int getProductCount(String category, String prodCode) throws SQLException {
+	public int getProductCount(String category) throws SQLException {
 
 		int count = 0;
 		
@@ -120,7 +126,7 @@ public class ProductDAO implements InterProductDAO {
 			conn = ds.getConnection();
 
 			String sql = "select count(*) COUNT from habibi_product " + 
-						 " where prod_status = 1 and prod_category like '%"+category+"%' and prod_code like '%"+prodCode+"%' "+newProd+"";
+						 " where prod_status = 1 and prod_category like '%"+category+"%' "+newProd+"";
 			
 			pstmt = conn.prepareStatement(sql);
 	         
