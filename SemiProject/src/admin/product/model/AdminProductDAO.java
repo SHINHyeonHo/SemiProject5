@@ -49,7 +49,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	
 	// 상품 검색, 조회
 	@Override
-	public List<ProductVO> getProductInfo(String category, String name) throws SQLException {
+	public List<ProductVO> getProductInfo(String category, String name , int start, int end) throws SQLException {
 
 		List<ProductVO> prodList = new ArrayList<>();
 		
@@ -57,11 +57,20 @@ public class AdminProductDAO implements InterAdminProductDAO{
 			conn = ds.getConnection();
 
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status " + 
-					" from habibi_product " + 
-					" where prod_category like '%"+category+"%' and prod_name like '%"+name+"%' " +
-					" order by prod_status desc, prod_insert_date desc";
+					" from ( " + 
+					"         select rownum NUM, P.* " + 
+					"         from ( " + 
+					"                  select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status " + 
+					"                  from habibi_product " + 
+					"                  where prod_category like '%"+category+"%' and prod_name like '%"+name+"%' " + 
+					"                  order by prod_status desc, prod_insert_date desc " + 
+					"              ) P " + 
+					"     ) " + 
+					" where NUM between ? and ? ";
 	         
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 	         
 	        rs = pstmt.executeQuery();
 	         

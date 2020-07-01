@@ -11,7 +11,7 @@ public interface InterAdminProductDAO {
 	// ***** 상품관리 *****
 	
 	//상품검색, 조회
-	List<ProductVO> getProductInfo(String category, String name) throws SQLException;
+	List<ProductVO> getProductInfo(String category, String name, int start, int end) throws SQLException;
 	
 	//상품 개수
 	int getProdCount(String searchCategory, String searchName) throws SQLException;

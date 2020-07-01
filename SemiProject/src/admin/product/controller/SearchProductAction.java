@@ -20,10 +20,13 @@ public class SearchProductAction extends AbstractController{
 
 		String searchCategory = request.getParameter("searchCategory");
 		String searchName = request.getParameter("searchName");
+		int start = Integer.parseInt(request.getParameter("start"));
+		int len = Integer.parseInt(request.getParameter("len"));
+		int end = start + len - 1;
 		
 		InterAdminProductDAO pdao = new AdminProductDAO();
 				
-		List<ProductVO> prodList = pdao.getProductInfo(searchCategory, searchName);
+		List<ProductVO> prodList = pdao.getProductInfo(searchCategory, searchName, start, end);
 		int count = pdao.getProdCount(searchCategory, searchName);
 		
 		JSONObject jsObj = new JSONObject();
