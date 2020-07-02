@@ -44,8 +44,8 @@ public class CategoryAction extends AbstractController {
 			String prodCode = "";
 			
 			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category, prodCode, page, 0);
-			List<ProductVO> prodBestList =  pao.getProductList(category, prodCode, page, 1);
+			List<ProductVO> prodList =  pao.getProductList(category, prodCode, page);
+			List<ProductVO> prodBestList =  pao.prodBestList(category);
 			int count = pao.getProductCount(category);
 			
 			request.setAttribute("prodList", prodList);

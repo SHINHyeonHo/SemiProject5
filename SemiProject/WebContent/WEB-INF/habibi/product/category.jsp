@@ -73,6 +73,14 @@ span.new{
 	font-size: xx-small;
 }
 
+span.soldout{
+	text-align:center;
+	padding: 0px 3px;
+	color: white;
+	background-color: red;
+	font-size: xx-small;
+}
+
 #left_sidebar, content {
 	display: inline-block;
 }
@@ -226,11 +234,14 @@ span.new{
 						<div class="description">
 						
 							<div class="notice">
-								<c:if test="${list.prod_new_date < 50}">
+								<c:if test="${list.prod_new_date < 50 && list.prod_stock != 0}">
 									<span class="new">NEW</span> 
 								</c:if>
-								<c:if test="${list.order_sum != 0}">
+								<c:if test="${list.order_sum != 0 && list.prod_stock != 0}">
 									<span class="best">BEST</span> 
+								</c:if>
+								<c:if test="${list.prod_stock == 0}">
+									<span class="soldout">Sold out</span>
 								</c:if>
 							</div> 
 							<div class="prod_name" onclick="location.href ='/SemiProject/prod/page.hb?category=${list.prod_category}&prodCode=${list.prod_code}'" style="cursor:pointer;">${list.prod_name}</div>

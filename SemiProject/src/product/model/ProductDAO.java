@@ -44,19 +44,16 @@ public class ProductDAO implements InterProductDAO {
 	} // end of public void close() ---------------------------
 	
 	
+	
+	// 제품 정보
 	@Override
-	public List<ProductVO> getProductList(String category, String prodCode, int page, int is_best) throws SQLException {
+	public List<ProductVO> getProductList(String category, String prodCode, int page) throws SQLException {
 		
 		String newProd = "";
 		if("new".equalsIgnoreCase(category)) {
 			
 			category = "";
 			newProd = " and (sysdate - prod_insert_date) < 10 ";
-		}
-		
-		String order_by = "prod_status desc, prod_insert_date desc";
-		if(is_best == 1) {
-			order_by = "order_sum desc";
 		}
 		
 		List<ProductVO> prodList = new ArrayList<>();
@@ -73,7 +70,7 @@ public class ProductDAO implements InterProductDAO {
 					"                      )" + 
 					"                        left outer join view_order_sum " + 
 					"                            on fk_prod_code = prod_code " + 
-					"                      order by "+order_by+" " +
+					"                      order by prod_stock desc, prod_insert_date desc " +
 					"                      ) P " + 
 					"              ) " + 
 					"where NUM between ? and ?";
@@ -112,6 +109,65 @@ public class ProductDAO implements InterProductDAO {
 		
 		return prodList;
 	}
+	
+	
+	// best 제품 정보
+	@Override
+	public List<ProductVO> prodBestList(String category) throws SQLException {
+		
+		List<ProductVO> prodBestList = new ArrayList<>();
+		
+		try {
+			conn = ds.getConnection();
+
+			String sql = "select prod_code, prod_category, prod_name, prod_price, prod_color, order_sum\n" + 
+					"from (\n" + 
+					"  select prod_code, prod_category, prod_name, prod_price, prod_color, nvl(order_sum,0) as order_sum\n" + 
+					"  from (select * from habibi_product\n" + 
+					"  where prod_status = 1 and prod_category like '%"+category+"%' and prod_stock != 0\n" + 
+					"  )\n" + 
+					"    left outer join view_order_sum\n" + 
+					"        on fk_prod_code = prod_code\n" + 
+					"  order by order_sum desc\n" + 
+					"  )";
+			
+			pstmt = conn.prepareStatement(sql);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        while(rs.next()) {
+	        	
+	        	String prod_code = rs.getString(1);
+	        	String prod_category = rs.getString(2);
+	        	String prod_name = rs.getString(3);
+	        	int prod_price = rs.getInt(4);
+	        	String prod_color = rs.getString(5);
+	        	int order_sum = rs.getInt(6);
+	        	
+	        	ProductVO pvo = new ProductVO();
+	        	pvo.setProd_code(prod_code);
+	        	pvo.setProd_category(prod_category);
+	        	pvo.setProd_name(prod_name);
+	        	pvo.setProd_price(prod_price);
+	        	pvo.setProd_color(prod_color);
+	        	pvo.setOrder_sum(order_sum);
+	        	
+	        	prodBestList.add(pvo);
+
+	        }
+	        
+	        
+		} finally {
+			close();
+		}
+
+		
+		return prodBestList;
+	}
+	
+	
+	
+	
 	
 	
 	// 제품 개수 
@@ -367,6 +423,8 @@ public class ProductDAO implements InterProductDAO {
 		}
 		return n;
 	}
+
+
 
 	
 }

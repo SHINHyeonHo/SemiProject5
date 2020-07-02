@@ -7,7 +7,10 @@ import java.util.List;
 public interface InterProductDAO {
 
 	// 카테고리별 정보 가져오기
-    List<ProductVO> getProductList(String category, String prodCode, int page, int is_best) throws SQLException;
+    List<ProductVO> getProductList(String category, String prodCode, int page) throws SQLException;
+    
+    // best 상품들 가져오기
+    List<ProductVO> prodBestList (String category) throws SQLException;
 	
     // 레코드 개수 알아오기
     int getProductCount(String category) throws SQLException;
