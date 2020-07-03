@@ -8,10 +8,10 @@
    
 %>        
 <jsp:include page="../../Main/header.jsp"/>
-<jsp:include page="../../Main/sideBar.jsp"/>
+<jsp:include page="../../Main/sideBarMypage.jsp"/>
+
 <style type="text/css">
-	
-	div#wrap {
+div#wrap {
     position: relative;
     margin: 0 auto 0;
     width: 1200px;
@@ -70,8 +70,8 @@ li.header_menu {
        color: #353535;
        width:80%;
        display: inline-block;
-         
-         float: right;
+       float: right;
+       margin-top: 2%;
    }
    
    div#main_menu{
@@ -83,7 +83,7 @@ li.header_menu {
        height: 200px; 
        padding-top: 20px;
          margin-left: 20%;
-         margin-top: 5%;
+         margin-top: 3%;
          float: right;
    }
    
@@ -143,7 +143,7 @@ li.header_menu {
    
   div.button_line   {
         text-align: center;
-        margin-top: 50px;
+        margin-top: 20px;
         
         
   
@@ -203,7 +203,7 @@ li.header_menu {
   
   ul#button   {
          list-style: none;
-         margin-top: 15%;
+         margin-top: 20%;
          display: inline-block;
          padding: 0 ;
    }
@@ -385,20 +385,20 @@ p.sns {
          </a>
       </li>
       <li id="button_line1">
-         <a href="Order.html">
+         <a href="<%= request.getContextPath() %>/prod/cartmain.hb?idx=${sessionScope.loginuser.idx}">
             <span>CART</span>
             <span class="hover">장바구니</span>
          </a>
       </li>
       <li id="button_line1">
-         <a href="point.html">
+          <a href="<%= request.getContextPath() %>/member/memberOnePoint.hb?idx=${sessionScope.loginuser.idx}">
             <span>POINT</span>
             <span class="hover">적립금</span>
          </a>
       </li>
-      <li id="button_line1">   
-         <a href="Order.html">
-            <span>SHIP</span>
+      <li id="button_line1">
+          <a href="<%= request.getContextPath() %>/member/memberOrderList.hb?idx=${sessionScope.loginuser.idx}">
+            <span>ORDER</span>
             <span class="hover">주문내역</span>
          </a>
       </li>

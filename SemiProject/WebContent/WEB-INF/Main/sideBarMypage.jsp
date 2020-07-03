@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%
+    String ctxPath = request.getContextPath();
+   
+%>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 
@@ -16,8 +19,8 @@ input[type=text] {
 }
 
 button.search {
-  width: 34px;
-  height: 34px;
+  width: 25px;
+  height: 25px;
   float: right;
   padding: 0;
   margin-top: 8px;
@@ -33,13 +36,13 @@ div.searchBar {
 	height: 42px;
 }
 
-ul {
+ul#side {
 	list-style-type: none;
 	padding: 0;
 }
 
 
-li > ul {
+li > ul#side {
 	padding-left: 20px;
 }
 
@@ -89,12 +92,12 @@ div#container {
 	</div>
 
 	<div>
-		<ul class="side_menu middle">
-			<li class="side_menu1"><a href="">Brand</a></li>
+		<ul id="side" class="side_menu middle">
+	  <!--  <li class="side_menu1"><a href="">Brand</a></li>
 			<li class="side_menu1"><a href="">NEW ARRIVALS</a></li>
-			<li class="side_menu1"><a href="">SEATING</a>
-				<ul>
-					<li><a href="<%= request.getContextPath()%>/prod/category.hb">SOFA</a></li>
+			<li class="side_menu1"><a href="">CART</a>-->
+<!--				<ul>
+					<li><a href="">SOFA</a></li>
 					<li><a href="">RECLINER</a></li>
 					<li><a href="">LOUNGE CHAIR</a></li>
 					<li><a href="">DINING CHAIR</a></li>
@@ -102,41 +105,43 @@ div#container {
 					<li><a href="">BENCH</a></li>
 					<li><a href="">OFFICE CHAIR</a></li>
 					<li><a href="">STOOL</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">SLEEPING</a>
+<!--			<li class="side_menu1"><a href="/SemiProject/prod/cartAdd.up">CART</a>
 				<ul>
 					<li><a href="">BED</a></li>
 					<li><a href="">MATTRESS</a></li>
 					<li><a href="">ETC</a></li>
 				</ul>
-			</li>
-			<li class="side_menu1"><a href="">TABLES</a>
-				<ul>
+			</li>-->
+			<li class="side_menu1"><a href="<%= request.getContextPath() %>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}">MYPAGE</a>
+<!--				<ul>
 					<li><a href="">DINING TABLE</a></li>
 					<li><a href="">DESK</a></li>
 					<li><a href="">SOFA TABLE</a></li>
 					<li><a href="">SIDE TABLE</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">STORAGE</a>
-				<ul>
+			
+			<li class="side_menu1"><a href="/SemiProject/member/memberEdit.hb?idx=${sessionScope.loginuser.idx}">MYINFO</a>
+<!--				<ul>
 					<li><a href="">TV BOARD</a></li>
 					<li><a href="">SHELF</a></li>
 					<li><a href="">CABINET</a></li>
 					<li><a href="">DRESSER</a></li>
-				</ul>
+				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="">LIGHTINGS</a>
-				<ul>
+			<li class="side_menu1"><a href="/SemiProject/prod/cartEdit.hb?idx=${sessionScope.loginuser.idx}">CART</a></li>
+			<li class="side_menu1"><a href="/SemiProject/member/point.hb?idx=${sessionScope.loginuser.idx}">POINT</a>
+<!-- 				<ul>
 					<li><a href="">TABLE LAMP</a></li>
 					<li><a href="">FLOOR LAMP</a></li>
 					<li><a href="">WALL LAMP</a></li>
 					<li><a href="">PENDANT</a></li>
 					<li><a href="">ETC</a></li>
-				</ul>
-			</li>
-			<li class="side_menu1"><a href="">ACCESSORIES</a>
+				</ul>  -->
+			</li> 
+<!--			<li class="side_menu1"><a href="">ACCESSORIES</a>
 				<ul>
 					<li><a href="">AV</a></li>
 					<li><a href="">CLOCK</a></li>
@@ -150,7 +155,7 @@ div#container {
 					<li><a href="">RUG</a></li>
 					<li><a href="">ETC</a></li>
 				</ul>
-			</li>
+			</li> -->
 		</ul>
 
 	</div>

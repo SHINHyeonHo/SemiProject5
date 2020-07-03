@@ -2,6 +2,7 @@ package member.model;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 
 public interface InterMemberDAO {
 
@@ -28,5 +29,14 @@ public interface InterMemberDAO {
 
 	// 이메일 인증 하기 위한 중복 확인
 	boolean isEmailExist(String email) throws SQLException;
+
+	// 개인 적립금 내역
+	List<PointVO> memberOnePoint(String userid) throws SQLException;
+	
+	// 회원정보 수정 완료
+	int updateMember(MemberVO membervo) throws SQLException;
+
+	// 회원 탈퇴 처리(update)
+	int memberOneDelete(String idx) throws SQLException;
 	
 }

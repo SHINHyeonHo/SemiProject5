@@ -5,20 +5,30 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.order.model.*;
 import common.controller.AbstractController;
+import product.model.InterProductDAO;
+import product.model.OrderInfoVO;
+import product.model.OrderVO;
+import product.model.ProductDAO;
 
 public class AdminOrderInfoAction extends AbstractController {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		InterOrderDAO adao = new OrderDAO();
 		
-		List<OrderVO> orderlist = adao.selectOrderList();
+		String orderCode = request.getParameter("orderCode");
+		
+	//	System.out.println(orderCode);
+		InterProductDAO pdao = new ProductDAO();
+		
+		OrderVO orderlist = pdao.viewOrderList(orderCode);	
+		List<OrderInfoVO> orderDetailList = pdao.viewOrderDetailList(orderCode);
+			
 		request.setAttribute("orderlist", orderlist);
+		request.setAttribute("orderDetailList", orderDetailList);
 		
 		super.setRedirect(false);
-		super.setViewPage("/WEB-INF/Admin/adminOrderInfo.jsp");
+		super.setViewPage("/WEB-INF/habibi/admin/adminOrderInfo.jsp");
 		
 	}
 

@@ -8,19 +8,23 @@ public class BoardVO {
 	private int qna_no;
 	private String qna_title;
 	private String qna_content;
-	private String qna_passwd;
 	private String qna_write_date;
 	private int qna_count;
 	private String qna_answer;
 	private int qna_is_done;
 	private int qna_status;
 	private int qna_seq;
+	private int qna_secret;
+	
+	private int re_ref;
+	private int re_seq;
+	private int re_lev;
 
 	public BoardVO() {}
 
 	public BoardVO(String fk_userid, String fk_prod_code, String qna_category, int qna_no, String qna_title,
-			String qna_content, String qna_passwd, String qna_write_date, int qna_count, String qna_answer,
-			int qna_is_done, int qna_status, int qna_seq) {
+			String qna_content, String qna_write_date, int qna_count, String qna_answer,
+			int qna_is_done, int qna_status, int qna_seq, int qna_secret, int re_ref, int re_seq, int re_lev) {
 		
 		this.fk_userid = fk_userid;
 		this.fk_prod_code = fk_prod_code;
@@ -28,13 +32,17 @@ public class BoardVO {
 		this.qna_no = qna_no;
 		this.qna_title = qna_title;
 		this.qna_content = qna_content;
-		this.qna_passwd = qna_passwd;
 		this.qna_write_date = qna_write_date;
 		this.qna_count = qna_count;
 		this.qna_answer = qna_answer;
 		this.qna_is_done = qna_is_done;
 		this.qna_status = qna_status;
 		this.qna_seq = qna_seq;
+		this.qna_secret = qna_secret;
+		
+		this.re_ref = re_ref;
+		this.re_seq = re_seq;
+		this.re_lev = re_lev;		
 	}
 
 	public String getFk_userid() {
@@ -85,14 +93,6 @@ public class BoardVO {
 		this.qna_content = qna_content;
 	}
 
-	public String getQna_passwd() {
-		return qna_passwd;
-	}
-
-	public void setQna_passwd(String qna_passwd) {
-		this.qna_passwd = qna_passwd;
-	}
-
 	public String getQna_write_date() {
 		return qna_write_date;
 	}
@@ -133,6 +133,14 @@ public class BoardVO {
 		this.qna_status = qna_status;
 	}
 
+	public int getQna_secret() {
+		return qna_secret;
+	}
+
+	public void setQna_secret(int qna_secret) {
+		this.qna_secret = qna_secret;
+	}
+
 	public int getQna_seq() {
 		return qna_seq;
 	}
@@ -140,5 +148,31 @@ public class BoardVO {
 	public void setQna_seq(int qna_seq) {
 		this.qna_seq = qna_seq;
 	}
+
+	public int getRe_ref() {
+		return re_ref;
+	}
+
+	public void setRe_ref(int re_ref) {
+		this.re_ref = re_ref;
+	}
+
+	public int getRe_seq() {
+		return re_seq;
+	}
+
+	public void setRe_seq(int re_seq) {
+		this.re_seq = re_seq;
+	}
+
+	public int getRe_lev() {
+		return re_lev;
+	}
+
+	public void setRe_lev(int re_lev) {
+		this.re_lev = re_lev;
+	}
+	
+	
 	
 }

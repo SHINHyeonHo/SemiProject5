@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
     
 <jsp:include page="../../Main/header.jsp"/>
 
@@ -146,6 +147,14 @@ pageEncoding="UTF-8"%>
          font-family: Verdana, Dotum, AppleGothic, sans-serif;
          color: #4c4b4b;
       }
+      
+      .soldOut, .soldOut:focus {
+      	 color: white;
+         background-color: #F5A9A9;
+         border: solid 1px #F5A9A9;
+         cursor: default;
+         outline: none;
+      }
    </style>
 
    <script>
@@ -178,38 +187,45 @@ pageEncoding="UTF-8"%>
       
          
       function goCart(pnum) {
-            // pnum 은 장바구니에 담을 제품번호이다.
-            
-            // === 주문량에 대한 유효성 검사하기 === //
-            var frm = document.cartOrderFrm;
-            
-            var regExp = /^[0-9]+$/;  // 숫자만 체크하는 정규표현식
-            var cart_stock = frm.cart_stock.value; // name이 oqty인 value값
-            var bool = regExp.test(cart_stock);
-            
-            if(!bool) {
-               // 숫자 이외의 값이 들어온 경우 
-               alert("주문갯수는 1개 이상이어야 합니다.");
-               frm.cart_stock.value = "1";
-               frm.cart_stock.focus();
-               return;
-            }
-            
-            // 문자로 숫자가 들어온 경우
-            cart_stock = parseInt(cart_stock);
-            if(cart_stock < 1) {
-               alert("주문갯수는 1개 이상이어야 합니다.");
-               frm.cart_stock.value = "1";
-               frm.cart_stock.focus();
-               return;
-            }
-            
-            // 1개 이상 주문한 경우
-            frm.method = "POST";
-            frm.action = "/SemiProject/prod/cartAdd.hb";
-            frm.submit();
-         }   
+         // pnum 은 장바구니에 담을 제품번호이다.
          
+         // === 주문량에 대한 유효성 검사하기 === //
+         var frm = document.cartOrderFrm;
+         
+         var regExp = /^[0-9]+$/;  // 숫자만 체크하는 정규표현식
+         var cart_stock = frm.cart_stock.value; // name이 oqty인 value값
+         var bool = regExp.test(cart_stock);
+         
+         if(!bool) {
+            // 숫자 이외의 값이 들어온 경우 
+            alert("주문갯수는 1개 이상이어야 합니다.");
+            frm.cart_stock.value = "1";
+            frm.cart_stock.focus();
+            return;
+         }
+         
+         // 문자로 숫자가 들어온 경우
+         cart_stock = parseInt(cart_stock);
+         if(cart_stock < 1) {
+            alert("주문갯수는 1개 이상이어야 합니다.");
+            frm.cart_stock.value = "1";
+            frm.cart_stock.focus();
+            return;
+         }
+         
+         // 1개 이상 주문한 경우
+         frm.method = "POST";
+         frm.action = "/SemiProject/prod/cartAdd.hb";
+         frm.submit();
+      }   
+   
+      function goOrder(){
+         
+         var frm = document.cartOrderFrm;
+         frm.method = "POST";
+         frm.action = "/SemiProject/prod/cartAdd.hb";
+         frm.submit();
+      }
    </script>
 
 </head>
@@ -222,13 +238,14 @@ pageEncoding="UTF-8"%>
    <div id="main_banner" class="main_banner middle">
       <div id="divPageTop">
       
-<c:forEach var="list" items="${prodList}">
+   <c:forEach var="list" items="${prodList}">
          
          <div id="prodImg">
             <!-- 제품 이미지 -->
             <img class="image" src="/SemiProject/images/Product/${list.prod_code}.png" style="width:500px; height:500px;"/>
          </div>
    
+   <form name="cartOrderFrm">
          <div id="prodInfo">
             <!-- 제품 정보 -->
             <div class="item" id="prodName">${list.prod_name}</div>
@@ -240,32 +257,40 @@ pageEncoding="UTF-8"%>
             <div class="item infoArea">상품코드</div>         
             <div class="item infoArea">${list.prod_code}</div>
             <div class="item infoArea">가격</div>
-            <div class="item infoArea"><span id="price">${list.prod_price}</span>원</div>
+            <div class="item infoArea"><span id="price"><fmt:formatNumber type="number" pattern="###,###" value="${list.prod_price}"/>&nbsp;</span>원</div>
             <div class="item infoArea">색상</div>
             <div class="item infoArea">${list.prod_color}</div>
+            <input type="hidden" name="prod_code" value="${list.prod_code}" />
    
                <!-- 제품 수량 -->
                <div class="item" id="prodQty">
                   <span class="tblCell">${list.prod_name}</span>
                   <input class="tblCell" id="spinner" name ="cart_stock" min="1" max="10" value="1" style="width: 30px;">
-                  <span class="tblCell"><span id="inputPrice">${list.prod_price}</span>원</span>
+                  <span class="tblCell"><span id="inputPrice"><fmt:formatNumber type="number" pattern="###,###" value="${list.prod_price}"/>&nbsp;</span>원</span>
                </div>
 
-         
          <!-- 구매 및 장바구니 버튼 -->
+         <c:if test="${list.prod_stock > 0}">
          <div class="item btnArea">
             <button class="btn btnBuy" onclick="">BUY NOW</button>
          </div>
+         </c:if>
+         <c:if test="${list.prod_stock <= 0}">
+         <div class="item btnArea">
+            <button class="btn soldOut" onclick="alert('품절된 상품입니다.'); return false;">SOLD OUT</button>
+         </div>
+         </c:if>
          <div class="item btnArea">
             <button class="btn" onclick="goCart('${list.prod_code}');">ADD TO CART</button>
          </div>
+         </form>
       </div>
    </div>
 
    <!-- 정보, 후기, 문의 버튼 -->
    <div id="pageBtn">
       <button class="btn2" id="dp" onclick="func_movePage('/SemiProject/prod/detail.hb?category=${list.prod_category}&prodCode=${list.prod_code}');" autofocus>상세 정보</button>
-      <button class="btn2" id="rp" onclick="func_movePage('/SemiProject/board/REVlist.hb?prodCode=${list.prod_code}');">사용 후기</button>
+      <button class="btn2" id="rp" onclick="func_movePage('/SemiProject/board/REVlist.hb?prodCode=${list.prod_code}&p=1&f=&q=');">사용 후기</button>
       <button class="btn2" id="qp" onclick="func_movePage('/SemiProject/board/QNAlist.hb?prodCode=${list.prod_code}');">상품 Q&A</button>
    </div>
 

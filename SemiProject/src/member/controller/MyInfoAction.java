@@ -20,7 +20,7 @@ public class MyInfoAction extends AbstractController {
       if(loginuser == null) {
          // 비정상적인 접근 막기
          String message = "먼저 로그인 해야 가능합니다.";
-         String loc = "javascript:history.back()";
+         String loc = "/SemiProject/member/login.hb";
          
          request.setAttribute("message", message);
          request.setAttribute("loc", loc);

@@ -12,6 +12,8 @@ public class ProductVO {
     private String prod_mtl;
     private String prod_size;
     private int prod_status;
+    private int prod_new_date;
+    private int order_sum;
 
     private int totalPrice;         // 판매당시의 제품판매가 * 주문량
     
@@ -19,8 +21,8 @@ public class ProductVO {
     public ProductVO(){
 
     }
-
-    // 오버로드 생성자
+    
+ // 오버로드 생성자
     public ProductVO(String prod_code, String prod_category, String prod_name, int prod_cost, int prod_price, int prod_stock, String prod_color, String prod_mtl, String prod_size, int prod_status) {
         this.prod_code = prod_code;
         this.prod_category = prod_category;
@@ -32,6 +34,23 @@ public class ProductVO {
         this.prod_mtl = prod_mtl;
         this.prod_size = prod_size;
         this.prod_status = prod_status;
+       
+    }
+
+    // 오버로드 생성자
+    public ProductVO(String prod_code, String prod_category, String prod_name, int prod_cost, int prod_price, int prod_stock, String prod_color, String prod_mtl, String prod_size, int prod_status, int prod_new_date, int order_sum) {
+        this.prod_code = prod_code;
+        this.prod_category = prod_category;
+        this.prod_name = prod_name;
+        this.prod_cost = prod_cost;
+        this.prod_price = prod_price;
+        this.prod_stock = prod_stock;
+        this.prod_color = prod_color;
+        this.prod_mtl = prod_mtl;
+        this.prod_size = prod_size;
+        this.prod_status = prod_status;
+        this.prod_new_date = prod_new_date;
+        this.order_sum = order_sum;
     }
 
     public String getProd_code() {
@@ -114,6 +133,22 @@ public class ProductVO {
 		this.prod_status = prod_status;
 	}
 	
+	public int getProd_new_date() {
+		return prod_new_date;
+	}
+
+	public void setProd_new_date(int prod_new_date) {
+		this.prod_new_date = prod_new_date;
+	}
+
+	public int getOrder_sum() {
+		return order_sum;
+	}
+
+	public void setOrder_sum(int order_sum) {
+		this.order_sum = order_sum;
+	}
+
 	/////////////////////////////////////////////////
 	// *** 제품의 총판매가(실제판매가 * 주문량) 구해오기 ***
 	public void setTotalPriceTotalPoint(int cart_stock) {   

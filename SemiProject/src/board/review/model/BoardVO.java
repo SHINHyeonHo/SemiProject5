@@ -4,11 +4,9 @@ public class BoardVO {
 	
 	private String fk_userid;
 	private String fk_prod_code;
-	private String rev_category;
 	private int rev_no;
 	private String rev_title;
 	private String rev_content;
-	private String rev_passwd;
 	private String rev_write_date;
 	private int rev_count;
 	private int rev_status;
@@ -16,16 +14,14 @@ public class BoardVO {
 	
 	public BoardVO() {}
 
-	public BoardVO(String fk_userid, String fk_prod_code, String rev_category, int rev_no, String rev_title,
-			String rev_content, String rev_passwd, String rev_write_date, int rev_count, int rev_status, int rev_seq) {
+	public BoardVO(String fk_userid, String fk_prod_code, int rev_no, String rev_title,
+			String rev_content, String rev_write_date, int rev_count, int rev_status, int rev_seq) {
 
 		this.fk_userid = fk_userid;
 		this.fk_prod_code = fk_prod_code;
-		this.rev_category = rev_category;
 		this.rev_no = rev_no;
 		this.rev_title = rev_title;
 		this.rev_content = rev_content;
-		this.rev_passwd = rev_passwd;
 		this.rev_write_date = rev_write_date;
 		this.rev_count = rev_count;
 		this.rev_status = rev_status;
@@ -46,14 +42,6 @@ public class BoardVO {
 
 	public void setFk_prod_code(String fk_prod_code) {
 		this.fk_prod_code = fk_prod_code;
-	}
-
-	public String getRev_category() {
-		return rev_category;
-	}
-
-	public void setRev_category(String rev_category) {
-		this.rev_category = rev_category;
 	}
 
 	public int getRev_no() {
@@ -78,14 +66,6 @@ public class BoardVO {
 
 	public void setRev_content(String rev_content) {
 		this.rev_content = rev_content;
-	}
-
-	public String getRev_passwd() {
-		return rev_passwd;
-	}
-
-	public void setRev_passwd(String rev_passwd) {
-		this.rev_passwd = rev_passwd;
 	}
 
 	public String getRev_write_date() {
@@ -119,6 +99,4 @@ public class BoardVO {
 	public void setRev_seq(int rev_seq) {
 		this.rev_seq = rev_seq;
 	}
-	
-
 }

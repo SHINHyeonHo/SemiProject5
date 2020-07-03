@@ -24,11 +24,11 @@ body {
 div#wrap {
     position: relative;
     margin: 0 auto 0;
-    width: 1200px;
+    width: 1400px;
 }
 
 header#header {
-	width: 1200px;
+	width: 1400px;
 	height: 190px;
     padding: 90px 0 33px;
     overflow: hidden;
@@ -96,6 +96,7 @@ function goLogOut(){
 					<!--<li class="header_menu">NEWS</li>
 					<li class="header_menu">COMPANY</li>
 					<li class="header_menu">PHOTO</li>-->
+					<li class="header_menu"><a href="<%= ctxPath%>/shop/location.hb" style="color:black; text-decoration:none;">SHOP</a></li>
 					<li class="header_menu">BOARD</li>
 					<li class="header_menu"><a href="<%= ctxPath%>/member/login.hb" style="color:black; text-decoration:none;">LOGIN</a></li>
 					<li class="header_menu"><a href="<%= ctxPath%>/member/myInfo.hb" style="color:black; text-decoration:none;">MYINFO</a></li>
@@ -107,15 +108,16 @@ function goLogOut(){
 	<c:if test="${not empty sessionScope.loginuser}">
 			<div class="header_menu">
 				<ul id="header_menu">
-					<li style="display: block;">${sessionScope.loginuser.userid} 님</li>
+					<li style="display: block; margin-bottom: 5px;">${sessionScope.loginuser.userid} 님</li>
 				    <c:if test="${sessionScope.loginuser.userid eq 'admin' }">
 						<li class="header_menu"><a href="<%= ctxPath%>/admin/member.hb" style="color:black; text-decoration:none;">MEMBER</a></li>
 						<li class="header_menu"><a href="<%= ctxPath%>/admin/product.hb" style="color:black; text-decoration:none;">PRODUCT</a></li>
+						<li class="header_menu"><a href="<%= ctxPath%>/admin/adminOrder.hb" style="color:black; text-decoration:none;">ORDER</a></li>
 					</c:if>
 					<!--<li class="header_menu">NEWS</li>
 					<li class="header_menu">COMPANY</li>
 					<li class="header_menu">PHOTO</li>-->
-					
+					<li class="header_menu"><a href="<%= ctxPath%>/shop/location.hb" style="color:black; text-decoration:none;">SHOP</a></li>
 					<li class="header_menu">BOARD</li>
 					<li class="header_menu"><span onclick="goLogOut()">LOGOUT</span></li>
 					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}" style="color:black; text-decoration:none;">MYINFO</a></li>

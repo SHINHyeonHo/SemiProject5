@@ -126,6 +126,14 @@ div#cart{
 	border: solid 1px black;
 }
 
+span.ordershopping{
+	float: right;
+	border: solid 2px gray;
+	background-color: gray;
+	color: white;
+	margin-right: 10px;
+}
+
 </style>
 
 <script type="text/javascript" src="/JqueryStudy/js/jquery-3.3.1.min.js"></script>
@@ -177,7 +185,7 @@ div#cart{
 		         step : 1
 		      });
 	
-		
+			
 	}); // end of $(document).ready(function())
 
 	// === 장바구니에서 특정 제품을 비우기 === //  
@@ -264,6 +272,82 @@ div#cart{
 	   }// end of function goOqtyEdit(obj)-----------------
 	   
 	   
+	// === 장바구니에서 제품 주문하기 === // 
+	   function goOrder() {
+		   
+	   ///// == 체크박스의 체크된 갯수(checked 속성이용) == /////
+	       var checkCnt = $("input:checkbox[name=fk_prod_code]:checked").length; 
+	   
+	       if(checkCnt < 1) {
+	           alert("주문하실 제품을 선택하세요!!");
+	           return;
+	        }
+	       else{
+	    	   var allCnt = $("input:checkbox[name=fk_prod_code]").length;
+	    	   
+	    	   console.log(allCnt);
+	    	   
+	    	   
+	           var cartnoArr = new Array();
+	           var totalPriceArr = new Array();
+	           var prodnameArr = new Array();
+	           var oqtyArr = new Array();
+	           var prodcodeArr = new Array();
+	           var addPointArr = new Array();
+	           
+	           for(var i=0; i<allCnt; i++) {
+	                if( $("input:checkbox[class=chkboxpnum]").eq(i).is(":checked") ) {                  
+	                  cartnoArr.push( $(".cart_num").eq(i).val() );
+	                  totalPriceArr.push( $(".totalPrice").eq(i).val() );
+	                  oqtyArr.push( $(".cart_stock").eq(i).val() );
+	                  prodnameArr.push($("input:hidden[class=prod_name]").eq(i).val() );
+	                  prodcodeArr.push($("input:checkbox[class=chkboxpnum]").eq(i).val() );
+	                  addPointArr.push(Number($("input:hidden[class=addPoint]").eq(i).val()) );
+	               }
+	            }
+	           	           
+	           
+	           var cartnojoin = cartnoArr.join();
+	           var totalPricejoin = totalPriceArr.join();
+	           var prodnamejoin = prodnameArr.join();
+	           var oqtyjoin = oqtyArr.join();
+	           var prodcodejoin = prodcodeArr.join();
+	           var addPointjoin = addPointArr.join();
+	          
+	           
+	           var sumtotalPrice = 0;
+	            for(var i=0; i<totalPriceArr.length; i++) {
+	               sumtotalPrice += parseInt(totalPriceArr[i]);
+	            }	           
+	            
+	              
+	             
+	            
+	            $("input:hidden[name=cartnojoin]").val(cartnojoin);
+	            $("input:hidden[name=totalPricejoin]").val(totalPricejoin);
+	            $("input:hidden[name=prodnamejoin]").val(prodnamejoin);
+	            $("input:hidden[name=sumtotalPrice]").val(sumtotalPrice);
+	            $("input:hidden[name=oqtyjoin]").val(oqtyjoin);
+	            $("input:hidden[name=prodcodejoin]").val(prodcodejoin);
+	            $("input:hidden[name=addPointjoin]").val(addPointjoin);
+	            
+	            
+	            var frm = document.cartSelectFrm;
+	            frm.method = "POST";
+	            frm.action = "/SemiProject/prod/orderform.hb";
+	            frm.submit(); 
+	       }
+	   }
+	   
+	   
+	   
+	   function AllOrder(){
+		   
+		   $("input:checkbox[name=fk_prod_code]").prop("checked",true);
+		   
+		   goOrder();
+	   }
+	   
 </script>
 
 <div id="memberinfo">
@@ -304,7 +388,7 @@ div#cart{
               <th>배송구분</th>
               <th>배송비</th>
               <th>합계</th>
-              <th>선택</th>
+              <th>삭제</th>
         </tr>
    </thead>
    
@@ -331,16 +415,17 @@ div#cart{
 				</td>
 				
 		        <td class="thumb">
-		        	<img src="/SemiProject/images/Product/${cart.prod.prod_category}/${cart.fk_prod_code}.png" width="100" height="100">
+		        	<a href="/SemiProject/prod/page.hb?category=${cart.prod.prod_category}&prodCode=${cart.fk_prod_code}"><img src="/SemiProject/images/Product/${cart.prod.prod_category}/${cart.fk_prod_code}.png" width="100" height="100"></a>
 		        </td>
 		        
 		        <td>      	      
-					<strong class="prod_name">${cart.prod.prod_name}</strong>		
+					<a href="/SemiProject/prod/page.hb?category=${cart.prod.prod_category}&prodCode=${cart.fk_prod_code}"><strong class="prod_name">${cart.prod.prod_name}</strong></a>
+					<input id="prod_name" class="prod_name" type="hidden" value="${cart.prod.prod_name}" />		
 				</td>
 		
 		        <td class="price">
 			        <div>
-						<strong><fmt:formatNumber value="${cart.prod.prod_price}" pattern="###,###" />원</strong>
+						<strong><fmt:formatNumber value="${cart.prod.prod_price}" pattern="###,###" /></strong>원
 					</div>
 		        </td>
 		                                  
@@ -351,20 +436,23 @@ div#cart{
 	                    </div>
 		            
 		        </td>
-		                    
-		        <td>-</td>
-		                               
+		        
+		        <%-- 적립금 --%>         
+		        <td class="addPoint">
+		        <fmt:parseNumber value="${cart.prod.totalPrice*0.01}" /> 원		       		     
+		        <input id="addPoint" class="addPoint" type="hidden" value="${cart.prod.totalPrice*0.01}"/>		    
+		        </td>
 		        <td class="delivery">기본배송</td>
 		            
 		        <td>무료</td>
 		          
 		      	<td class="total">
 					<strong id="sum"><fmt:formatNumber value="${cart.prod.totalPrice}" pattern="###,###" />원</strong>
+					<%-- 총금액 --%>
+					<input class="totalPrice" type="hidden" value="${cart.prod.totalPrice}" />
 				</td>
 				
 		        <td class="button">
-		           <a href="javascript:;" >주문하기</a>
-		           <a href="javascript:;" >관심상품등록</a>
 		           <span class="del" style="cursor: pointer;" onClick="goDel('${cart.cart_num}');">삭제</span>
 		        </td>
 			</tr>
@@ -386,7 +474,7 @@ div#cart{
 						<span> </span> + 배송비 (무료)
 						<span> </span> = 합계 : 
 						<strong>
-							<span><fmt:formatNumber value="${sumMap.SUMTOTALPRICE}" pattern="###,###" />원</span>
+							<span><fmt:formatNumber value="${sumMap.SUMTOTALPRICE}" pattern="###,###"/>원</span>
 						</strong>
 					</div> 
 			</td>
@@ -397,9 +485,20 @@ div#cart{
 </div>
 
 <div id="btn">
-   <input type="button" value="전체상품주문"/>
-   <input type="button" value="선택상품주문"/>
+   <span class="ordershopping" style="cursor: pointer;" onClick="goOrder();">선택상품주문</span>&nbsp;&nbsp;
+   <span class="ordershopping" style="cursor: pointer;" onClick="AllOrder();">전체상품주문</span>
 </div>
+
+<form name="cartSelectFrm">
+		<input type="hidden" name="cartSelect" />
+		<input type="hidden" name="prodnamejoin" />
+		<input type="hidden" name="oqtyjoin" />
+		<input type="hidden" name="cartnojoin" />
+		<input type="hidden" name="totalPricejoin" />
+		<input type="hidden" name="sumtotalPrice" />
+		<input type="hidden" name="addPointjoin" />
+		<input type="hidden" name="prodcodejoin"/>
+</form>
 
 <div class="inform">
 

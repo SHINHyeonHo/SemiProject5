@@ -6,7 +6,7 @@ import java.util.List;
 public interface InterBoardDAO {
 	
 	// 리스트 보기
-	List<BoardVO> getQNAList(String prodCode, String search) throws SQLException;
+	List<BoardVO> getQNAList(String prodCode, String field, String query, int page) throws SQLException;
 
 	// 게시글 작성
 	int insertQNA(BoardVO bvo) throws SQLException;
@@ -22,4 +22,11 @@ public interface InterBoardDAO {
 
 	// 조회수 증가
 	int increaseQNACnt(int qnaNo) throws SQLException;
+
+	// 답글 작성
+	int insertRE(BoardVO bvo) throws SQLException;
+
+	// 답변 여부
+	int updateDone(int qnaNo) throws SQLException;
+
 }

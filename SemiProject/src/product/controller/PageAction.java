@@ -6,8 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.controller.AbstractController;
-import product.model.ProductDAO;
-import product.model.ProductVO;
+import product.model.*;
 
 public class PageAction extends AbstractController {
 
@@ -37,10 +36,17 @@ public class PageAction extends AbstractController {
 			String prodCode = request.getParameter("prodCode");
 			String category = request.getParameter("category");
 			
-			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category, prodCode, 1);
-									
-			request.setAttribute("prodList", prodList);
+			InterProductDAO pao = new ProductDAO();
+
+			if(category != null) {
+				List<ProductVO> prodList =  pao.getProductList(category, prodCode, 1);
+				request.setAttribute("prodList", prodList);
+			}
+			else {
+				List<ProductVO> prodList =  pao.getProductList(prodCode, 1);
+				request.setAttribute("prodList", prodList);
+			}
+			
 		}
 	
 		super.setRedirect(false);

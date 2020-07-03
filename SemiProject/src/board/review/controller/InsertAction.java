@@ -30,19 +30,15 @@ public class InsertAction extends AbstractController {
 		else {
 			request.setCharacterEncoding("UTF-8");
 			
-			String rev_category = request.getParameter("rev_category");
 			String rev_title = request.getParameter("rev_title");
 			String fk_userid = request.getParameter("fk_userid");
 			String rev_content = request.getParameter("rev_content");
-			String rev_passwd = request.getParameter("rev_passwd");
 			String fk_prod_code = request.getParameter("fk_prod_code");
 			
 			BoardVO bvo = new BoardVO();
-			bvo.setRev_category(rev_category);
 			bvo.setRev_title(rev_title);
 			bvo.setFk_userid(fk_userid);
 			bvo.setRev_content(rev_content);
-			bvo.setRev_passwd(rev_passwd);
 			bvo.setFk_prod_code(fk_prod_code);
 			
 			BoardDAO bdao = new BoardDAO();

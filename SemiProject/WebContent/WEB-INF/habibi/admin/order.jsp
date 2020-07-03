@@ -32,13 +32,7 @@
 
 <div class = "container">
 
-    <ul class="item" id="sidebar">
-        <li><a href="product.jsp">상품관리</a></li>
-        <li><a href="order.jsp">주문관리</a></li>
-        <li><a href="member.jsp">회원관리</a></li>
-        <li><a href="profit.jsp">정산관리</a></li>
-        <li><a href="review.jsp">문의/리뷰</a></li>
-    </ul>
+	<jsp:include page="sideBar.jsp"></jsp:include>
 
     <div class="item" id="main">
 

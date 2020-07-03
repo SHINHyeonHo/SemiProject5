@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 입력</title>
+<link rel="shortcut icon" type="image/x-icon" href="/SemiProject/images/Main/titleImage.png">
+    
 <style type="text/css">
 
 	#container {
@@ -113,15 +115,10 @@
 			</tr>
 			<tr>
 				<td class="row1">작성자</td>
-				<td colspan="2"><input type="text" name="fk_userid"></td>
+				<td colspan="2"><input type="text" name="fk_userid" value="${sessionScope.loginuser.userid}" style="border: none; background-color: white;" readonly></td>
 			</tr>
 			<tr>
 				<td colspan="3" id="txtArea"><textarea name="rev_content"></textarea></td>
-			</tr>
-			<tr>
-				<td class="row1">비밀번호</td>
-				<td><input type="password" name="rev_passwd" style="width:100px; float: left;"></td>
-				<td></td>
 			</tr>
 			<tr style="display:none;">
 				<td class="row1">제품코드</td>
@@ -129,7 +126,7 @@
 			</tr>
 		</table>
 		<div id="btn" align="center">
-			<input type="submit" value="확인" class="btn"> 
+			<input type="submit" value="확인" class="btn" onclick="func_write();"> 
 			<input type="button" value="취소" class="btn"> 
 		</div>
 	</div>
@@ -154,7 +151,9 @@
 				dc.rev_content.focus();
 				return false;
 			}
-		}			
+		}
+		
+		
 	</script>
 </body>
 </html>

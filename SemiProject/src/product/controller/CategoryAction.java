@@ -41,15 +41,17 @@ public class CategoryAction extends AbstractController {
 				page = Integer.parseInt(page_);
 			}
 			
-			String prod_code = "";
+			String prodCode = "";
 			
 			ProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getProductList(category, prod_code, page);
-			int count = pao.getProductCount(category, prod_code);
+			List<ProductVO> prodList =  pao.getProductList(category, prodCode, page);
+			List<ProductVO> prodBestList =  pao.prodBestList(category);
+			int count = pao.getProductCount(category);
 			
 			request.setAttribute("prodList", prodList);
+			request.setAttribute("prodBestList", prodBestList);
 			request.setAttribute("count", count);
-			request.setAttribute("n", 1); 
+			
 		}
 	
 		super.setRedirect(false);

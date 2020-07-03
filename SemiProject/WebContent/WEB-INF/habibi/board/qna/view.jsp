@@ -85,9 +85,10 @@
 				<td colspan="2" id="content" style="font-size: 1em"><pre><c:out value="${viewQNA.qna_content}" /></pre></td>
 			</tr>
 		</table>
+		
 		<a href="/SemiProject/board/QNAlist.hb?prodCode=${param.prodCode}">목록</a>
 		<a href="/SemiProject/board/QNAwrite.hb?prodCode=${param.prodCode}">글쓰기</a>
-		<a href="/SemiProject/board/QNAlist.hb?prodCode=${param.prodCode}">답글</a>
+		<a href="/SemiProject/board/REwrite.hb?prodCode=${param.prodCode}&qnaNo=${param.qnaNo}&p=${param.p}&r=${viewQNA.re_ref}&s=${viewQNA.re_seq}&l=${viewQNA.re_lev}">답글</a>
 		<a href="/SemiProject/board/QNAmodify.hb?prodCode=${param.prodCode}&qnaNo=${param.qnaNo}">수정</a>
 		<a href="/SemiProject/board/QNAdelete.hb?prodCode=${param.prodCode}&qnaNo=${param.qnaNo}" onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a>
 	</div>	

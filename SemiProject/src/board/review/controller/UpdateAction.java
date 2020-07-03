@@ -31,16 +31,12 @@ public class UpdateAction extends AbstractController {
 			request.setCharacterEncoding("UTF-8");
 			
 			int revNo = Integer.parseInt(request.getParameter("revNo"));
-			String rev_category = request.getParameter("rev_category");
 			String rev_title = request.getParameter("rev_title");
 			String rev_content = request.getParameter("rev_content");
-			String rev_passwd = request.getParameter("rev_passwd");
 			
 			BoardVO bvo = new BoardVO();
-			bvo.setRev_category(rev_category);
 			bvo.setRev_title(rev_title);
 			bvo.setRev_content(rev_content);
-			bvo.setRev_passwd(rev_passwd);
 			
 			BoardDAO bdao = new BoardDAO();
 			int result =  bdao.updateREV(bvo, revNo);

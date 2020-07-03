@@ -33,16 +33,21 @@ public class InsertAction extends AbstractController {
 			String qna_category = request.getParameter("qna_category");
 			String qna_title = request.getParameter("qna_title");
 			String fk_userid = request.getParameter("fk_userid");
-			String qna_content = request.getParameter("qna_content");
-			String qna_passwd = request.getParameter("qna_passwd");
+			String qna_content = request.getParameter("qna_content");			
 			String fk_prod_code = request.getParameter("fk_prod_code");
+
+			String secret = request.getParameter("qna_secret");
+			if(secret==null)
+				secret="0";
+			
+			int qna_secret = Integer.parseInt(secret);
 			
 			BoardVO bvo = new BoardVO();
 			bvo.setQna_category(qna_category);
 			bvo.setQna_title(qna_title);
 			bvo.setFk_userid(fk_userid);
 			bvo.setQna_content(qna_content);
-			bvo.setQna_passwd(qna_passwd);
+			bvo.setQna_secret(qna_secret);
 			bvo.setFk_prod_code(fk_prod_code);
 			
 			BoardDAO bdao = new BoardDAO();

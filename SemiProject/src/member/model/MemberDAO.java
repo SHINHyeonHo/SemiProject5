@@ -194,21 +194,32 @@ public class MemberDAO implements InterMemberDAO {
 					   + " from habibi_member " 
 					   + " where is_member = 1 and " 
 					   + " name = ? and " 
-					   + " trim(mobile1) || trim(mobile2) || trim(mobile3) = ? ";
+					   + " mobile1 = ? and mobile2 = ? and mobile3 = ? ";
 	         
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, paraMap.get("name"));
 	         
-			String mobile = paraMap.get("mobile");  // 01023456789
-			mobile = mobile.substring(0, 3) + mobile.substring(3, 7) + mobile.substring(7); // 01023456789
-			pstmt.setString(2, mobile);
+			String mobile = paraMap.get("mobile");
+			String mobile1 = mobile.substring(0, 3);
+			String mobile2 = mobile.substring(3, 7);
+			String mobile3 = mobile.substring(7);
+			
+			
+			pstmt.setString(2, mobile1);
+			pstmt.setString(3, aes.encrypt(mobile2));
+			pstmt.setString(4, aes.encrypt(mobile3));
 	         
 			rs = pstmt.executeQuery();
 	         
 			if(rs.next()) {
 				userid = rs.getString("userid");
 			}
-	         
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (GeneralSecurityException e) {
+			e.printStackTrace();
 		} finally {
 			close();
 		}
@@ -229,12 +240,18 @@ public class MemberDAO implements InterMemberDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, paraMap.get("userid"));
-			pstmt.setString(2, paraMap.get("email"));
+			pstmt.setString(2, aes.encrypt(paraMap.get("email")));
 			
 			rs = pstmt.executeQuery();
 			
 			isUserExist = rs.next();
 			
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (GeneralSecurityException e) {
+			e.printStackTrace();
 		} finally {
 			close();
 		}
@@ -326,7 +343,7 @@ public class MemberDAO implements InterMemberDAO {
 			
 			rs = pstmt.executeQuery();
 			
-			isEmailExist = rs.next();
+			isEmailExist = !rs.next();
 		} catch( UnsupportedEncodingException | GeneralSecurityException e) {
 			e.printStackTrace(); 
 		} finally {
@@ -334,5 +351,105 @@ public class MemberDAO implements InterMemberDAO {
 		}
 		return isEmailExist;
 	}
+	
+	
+	// 회원정보 수정   
+	@Override
+	public int updateMember(MemberVO membervo) throws SQLException {
+		int result = 0;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String sql = " update habibi_member set name= ?, passwd=?, email=?, mobile1=?, mobile2=?, mobile3=?, postcode=?, address1=?, address2=? "+
+						 " where idx = ? ";			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, membervo.getName());
+			pstmt.setString(2, Sha256.encrypt(membervo.getPasswd()));
+			pstmt.setString(3, aes.encrypt(membervo.getEmail()));
+			pstmt.setString(4, membervo.getMobile1());
+			pstmt.setString(5, aes.encrypt(membervo.getMobile2()));
+			pstmt.setString(6, aes.encrypt(membervo.getMobile3()));
+			pstmt.setString(7, membervo.getPostcode());
+			pstmt.setString(8, membervo.getAddress1());
+			pstmt.setString(9, membervo.getAddress2());
+			pstmt.setInt(10, membervo.getIdx());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch(UnsupportedEncodingException | GeneralSecurityException e) {
+				e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		
+		return result;
+	}
+	
+
+	// 회원 탈퇴 처리(update)
+	@Override
+	public int memberOneDelete(String idx) throws SQLException {
+		
+		int result = 0;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String sql = " update habibi_member set is_member = 0 "+
+					     " where idx = ? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, idx);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close();
+		}
+		
+		
+		return result;
+	}
+	
+	
+	// 개인 적립금 내역
+	@Override
+	public List<PointVO> memberOnePoint(String userid) throws SQLException{
+		
+		List<PointVO> pointList = new ArrayList<PointVO>();
+		PointVO pvo = null;
+	    
+		try {
+			conn = ds.getConnection();
+
+			String sql = " select to_char(order_date, 'yyyy-mm-dd'), point, fk_order_code, point_comment, fk_userid "
+					   + " from habibi_point "
+					   + " where fk_userid = ? ";
+	         
+	        pstmt = conn.prepareStatement(sql);
+	         
+	        pstmt.setString(1, userid);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        while(rs.next()) {
+	        	pvo = new PointVO();
+	        	pvo.setOrderDate(rs.getString(1));
+	        	pvo.setPoint(rs.getInt(2));
+	        	pvo.setOrderCode(rs.getInt(3));
+	        	pvo.setComment(rs.getString(4));
+	        	pvo.setUserid(rs.getString(5));
+	        	
+	        	pointList.add(pvo);
+	        }
+		} finally {
+			close();
+		}
+		return pointList;
+	}
+	
 	
 }

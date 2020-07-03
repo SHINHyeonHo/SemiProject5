@@ -364,7 +364,7 @@ span#emailCheck {
 		</tr>
 		<tr>
 			<td style="width: 20%; font-weight: bold;">이메일</td>
-			<td style="width: 80%; text-align: left;"><input type="text" name="email" id="email" class="requiredInfo" placeholder="abc@def.com" /> 
+			<td style="width: 80%; text-align: left;"><input type="text" name="email" id="email" placeholder="abc@def.com" /> 
 			    <span id="emailCheck">이메일중복확인</span> 
 			    <span class="error">이메일 형식에 맞지 않습니다.</span>
 			    <span id="emailCheckResult"></span>

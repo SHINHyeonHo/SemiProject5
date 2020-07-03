@@ -6,6 +6,7 @@
 
 .search-container {
   float: left;
+  margin-bottom: 10px;
 }
 
 input[type=text] {
@@ -44,7 +45,7 @@ li > ul {
 }
 
 div.left_sidebar {
-	width: 22%;
+	width: 15%;
 	float: left;
 }
 
@@ -67,6 +68,7 @@ div.middle {
 div#container {
 	overflow:hidden;
 	height:auto;
+	min-height: 500px;
 }
 
 li.side_menu1 {
@@ -105,6 +107,16 @@ li.side_menu1 {
 	<div class="searchBar">
 		<form name="searchBarForm">
 			<div class="search-container">
+				<div>
+					<select name="sel" id="sel">
+	                        <option value="ALL" selected>ALL</option>
+	                        <option value="prod_name">NAME</option>
+	                        <option value="prod_category">CATEGORY</option>
+	                        <option value="prod_color" >COLOR</option>
+	                        <option value="prod_code">CODE</option>
+	                        <option value="prod_mtl">MATERIAL</option>
+	                </select>
+                </div>
 				<input type="text" placeholder="Search.." id="searchWord" name="searchWord" size="20">
 				<button type="button" id="searchProduct" class="search" onclick="goSearch();"><i class="fa fa-search"></i></button>
 			</div>
@@ -113,9 +125,9 @@ li.side_menu1 {
 
 	<div>
 		<ul class="side_menu middle">
-			<li class="side_menu1"><a href="">Brand</a></li>
-			<li class="side_menu1"><a href="">NEW ARRIVALS</a></li>
-			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=seating">SEATING</a>
+			<li class="side_menu1"><a href="" style="color:black;">Brand</a></li>
+			<li class="side_menu1"><a href="" style="color:black;">NEW ARRIVALS</a></li>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=seating" style="color:black;">SEATING</a>
 <!--				<ul>
 					<li><a href="">SOFA</a></li>
 					<li><a href="">RECLINER</a></li>
@@ -127,14 +139,14 @@ li.side_menu1 {
 					<li><a href="">STOOL</a></li>
 				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=sleeping">SLEEPING</a>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=sleeping" style="color:black;">SLEEPING</a>
 <!--				<ul>
 					<li><a href="">BED</a></li>
 					<li><a href="">MATTRESS</a></li>
 					<li><a href="">ETC</a></li>
 				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=table">TABLE</a>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=table" style="color:black;">TABLE</a>
 <!--				<ul>
 					<li><a href="">DINING TABLE</a></li>
 					<li><a href="">DESK</a></li>
@@ -142,7 +154,7 @@ li.side_menu1 {
 					<li><a href="">SIDE TABLE</a></li>
 				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=storage">STORAGE</a>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=storage" style="color:black;">STORAGE</a>
 <!--				<ul>
 					<li><a href="">TV BOARD</a></li>
 					<li><a href="">SHELF</a></li>
@@ -150,7 +162,7 @@ li.side_menu1 {
 					<li><a href="">DRESSER</a></li>
 				</ul>-->
 			</li>
-			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=lighting">LIGHTING</a>
+			<li class="side_menu1"><a href="/SemiProject/prod/category.hb?category=lighting" style="color:black;">LIGHTING</a>
 <!-- 				<ul>
 					<li><a href="">TABLE LAMP</a></li>
 					<li><a href="">FLOOR LAMP</a></li>

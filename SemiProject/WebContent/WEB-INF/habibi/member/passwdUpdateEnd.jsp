@@ -64,6 +64,8 @@
 
 </script>
 
+<jsp:include page="../../Main/sideBar.jsp"/>
+
 <form name = "passwdUpdateFrm">
 	<div id="div_passwd" align="center">
 		<span style="color: blue; font-size: 12pt;">새 암호</span><br/>
@@ -90,6 +92,7 @@
 </form>
 
 
+</div>
 
 
 <jsp:include page="../../Main/footer.jsp"/>

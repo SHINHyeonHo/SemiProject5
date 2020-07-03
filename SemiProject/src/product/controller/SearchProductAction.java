@@ -29,6 +29,7 @@ public class SearchProductAction extends AbstractController {
 			return;	
 		}
 		else {
+			String select = request.getParameter("sel");
 			String searchWord = request.getParameter("searchWord");
 			String page_ = request.getParameter("page");
 			
@@ -38,12 +39,13 @@ public class SearchProductAction extends AbstractController {
 			}
 			
 			InterProductDAO pao = new ProductDAO();
-			List<ProductVO> prodList =  pao.getSearchProductList(searchWord, page);
-			int count = pao.getSearchProductCount(searchWord);
+			List<ProductVO> prodList =  pao.getSearchProductList(searchWord, page, select);
+			int count = pao.getSearchProductCount(searchWord, select);
 			
 			request.setAttribute("prodList", prodList);
 			request.setAttribute("count", count);
 			request.setAttribute("searchWord", searchWord);
+			request.setAttribute("select", select);
 			request.setAttribute("n", 2);
 		}
 	

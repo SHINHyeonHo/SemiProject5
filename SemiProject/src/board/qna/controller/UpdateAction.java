@@ -34,13 +34,13 @@ public class UpdateAction extends AbstractController {
 			String qna_category = request.getParameter("qna_category");
 			String qna_title = request.getParameter("qna_title");
 			String qna_content = request.getParameter("qna_content");
-			String qna_passwd = request.getParameter("qna_passwd");
+			int qna_secret = Integer.parseInt(request.getParameter("qna_secret"));
 			
 			BoardVO bvo = new BoardVO();
 			bvo.setQna_category(qna_category);
 			bvo.setQna_title(qna_title);
 			bvo.setQna_content(qna_content);
-			bvo.setQna_passwd(qna_passwd);
+			bvo.setQna_secret(qna_secret);
 			
 			BoardDAO bdao = new BoardDAO();
 			int result =  bdao.updateQNA(bvo, qnaNo);
