@@ -65,7 +65,7 @@ public class ProductDAO implements InterProductDAO {
 					"                  select rownum NUM, P.* " + 
 					"                  from ( " + 
 					"                      select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, sysdate - prod_insert_date as prod_new_date, nvl(order_sum,0) as order_sum " + 
-					"                      from (select * from habibi_product " + 
+					"                      from (select * from view_habibi_product " + 
 					"                      where prod_status = 1 and prod_code like '%"+prodCode+"%' and prod_category like '%"+category+"%' "+newProd+"" + 
 					"                      )" + 
 					"                        left outer join view_order_sum " + 
@@ -123,7 +123,7 @@ public class ProductDAO implements InterProductDAO {
 			String sql = "select prod_code, prod_category, prod_name, prod_price, prod_color, order_sum\n" + 
 					"from (\n" + 
 					"  select prod_code, prod_category, prod_name, prod_price, prod_color, nvl(order_sum,0) as order_sum\n" + 
-					"  from (select * from habibi_product\n" + 
+					"  from (select * from view_habibi_product\n" + 
 					"  where prod_status = 1 and prod_category like '%"+category+"%' and prod_stock != 0\n" + 
 					"  )\n" + 
 					"    left outer join view_order_sum\n" + 
@@ -186,7 +186,7 @@ public class ProductDAO implements InterProductDAO {
 		try {
 			conn = ds.getConnection();
 
-			String sql = "select count(*) COUNT from habibi_product " + 
+			String sql = "select count(*) COUNT from view_habibi_product " + 
 						 " where prod_status = 1 and prod_category like '%"+category+"%' "+newProd+"";
 			
 			pstmt = conn.prepareStatement(sql);
@@ -215,7 +215,7 @@ public class ProductDAO implements InterProductDAO {
 			conn = ds.getConnection();
 			
 			String sql = " select cart_num,fk_userid,fk_prod_code,cart_stock,prod_name,prod_price,prod_category "+
-						 " from habibi_cart A join habibi_product B "+
+						 " from habibi_cart A join view_habibi_product B "+
 						 " on A.fk_prod_code = B.prod_code "+
 						 " where fk_userid = ? ";
 			
@@ -280,7 +280,7 @@ public class ProductDAO implements InterProductDAO {
 	         conn = ds.getConnection();
 	         
 	         String sql = "select nvl(sum(cart_stock * prod_price), 0) AS SUMTOTALPRICE "+
-	        		 " from habibi_cart A join habibi_product B "+
+	        		 " from habibi_cart A join view_habibi_product B "+
 	        		 " on A.fk_prod_code = B.prod_code "+
 	        		 " where fk_userid = ? ";
 	         

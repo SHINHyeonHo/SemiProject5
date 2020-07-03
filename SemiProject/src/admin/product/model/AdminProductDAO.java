@@ -61,7 +61,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 					"         select rownum NUM, P.* " + 
 					"         from ( " + 
 					"                  select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status " + 
-					"                  from habibi_product " + 
+					"                  from view_habibi_product " + 
 					"                  where prod_category like '%"+category+"%' and prod_name like '%"+name+"%' " + 
 					"                  order by prod_status desc, prod_insert_date desc " + 
 					"              ) P " + 
@@ -112,7 +112,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "select count(*) COUNT from habibi_product " + 
+			String sql = "select count(*) COUNT from view_habibi_product " + 
 						 " where prod_category like '%"+category+"%' and prod_name like '%"+name+"%'";
 			
 			pstmt = conn.prepareStatement(sql);
@@ -140,7 +140,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "insert into habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
+			String sql = "insert into view_habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
 					" values (?,?,?,?,?,?,?,?,?,?)";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -174,7 +174,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "delete habibi_product where prod_code in ("+prodCodeString+")";
+			String sql = "delete view_habibi_product where prod_code in ("+prodCodeString+")";
 	         
 			pstmt = conn.prepareStatement(sql);
 	
@@ -197,7 +197,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "update habibi_product set prod_stock = "+prodStock+" \n" + 
+			String sql = "update view_habibi_product set prod_stock = "+prodStock+" \n" + 
 					"where prod_code = ?";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -222,7 +222,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "update habibi_product set prod_status = "+prodStatus+" \n" + 
+			String sql = "update view_habibi_product set prod_status = "+prodStatus+" \n" + 
 					"where prod_code = ?";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -255,7 +255,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 			conn = ds.getConnection();
 
 			String sql = "select prod_code, prod_category, prod_stock\n" + 
-					" from habibi_product\n" + 
+					" from view_habibi_product\n" + 
 					" where prod_status = 1 and prod_stock < "+soldoutNum+condition;
 	         
 			pstmt = conn.prepareStatement(sql);

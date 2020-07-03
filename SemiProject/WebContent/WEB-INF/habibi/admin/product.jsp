@@ -50,6 +50,15 @@
         	height:50px;
         }
         
+        #topButton {
+        	position: fixed; 
+        	right: 2%;
+        	bottom: 50px; 
+        	display: none; 
+        	z-index: 999;
+        	}
+        
+        
     
     </style>
 
@@ -211,16 +220,33 @@
         </div>
     </div>
 
-
+	<div id="topButton" style="cursor: pointer"><img id="topButtonImg" src="/SemiProject/images/admin/topbutton.png"></div>
+	
 </body>
 
 <script>
 
 // ---------------------------- <script> --------------------------------- <script> --------------------------------------- <script> ----------------------
 
+$(window).scroll(function() {
+    // top button controll
+    if ($(this).scrollTop() > 500) {
+        $('#topButton').fadeIn();
+    } else {
+        $('#topButton').fadeOut();
+    }
+});
 
 $(document).ready(function(){ // 로드되면
 			
+	// Top Button click event handler
+	  $("#topButtonImg").click(function() {
+	    $('html, body').animate({scrollTop:0}, '300');
+	  });
+	
+	
+	
+	
 	var smallStock = 5;
 	func_soldoutCheck(smallStock); // 품절 임박 개수
 	func_soldoutCheck(1); // 품절 개수
@@ -304,7 +330,7 @@ $(document).ready(function(){ // 로드되면
 	
 	// ---------------------------- 상품 등록 --------------------------------- 상품 등록 --------------------------------------- 상품 등록 ----------------------
 
-
+	
 	$("#registerButton").click(function(){
 		
 		
@@ -451,6 +477,7 @@ $(document).ready(function(){ // 로드되면
 	
 	
 	// ---------------------------- 상품 삭제 --------------------------------- 상품 삭제 --------------------------------------- 상품 삭제 ----------------------
+	
 	
 	$(document).on('click','#deleteButton',function(){
 		
