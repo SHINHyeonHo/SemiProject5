@@ -49,7 +49,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	
 	// 상품 검색, 조회
 	@Override
-	public List<ProductVO> getProductInfo(String category, String name) throws SQLException {
+	public List<ProductVO> getProductInfo(String category, String name , int start, int end) throws SQLException {
 
 		List<ProductVO> prodList = new ArrayList<>();
 		
@@ -57,11 +57,20 @@ public class AdminProductDAO implements InterAdminProductDAO{
 			conn = ds.getConnection();
 
 			String sql = "select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status " + 
-					" from habibi_product " + 
-					" where prod_category like '%"+category+"%' and prod_name like '%"+name+"%' " +
-					" order by prod_status desc, prod_insert_date desc";
+					" from ( " + 
+					"         select rownum NUM, P.* " + 
+					"         from ( " + 
+					"                  select prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status " + 
+					"                  from view_habibi_product " + 
+					"                  where prod_category like '%"+category+"%' and prod_name like '%"+name+"%' " + 
+					"                  order by prod_status desc, prod_insert_date desc " + 
+					"              ) P " + 
+					"     ) " + 
+					" where NUM between ? and ? ";
 	         
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 	         
 	        rs = pstmt.executeQuery();
 	         
@@ -78,7 +87,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	        	String prod_size = rs.getString(9);
 	        	int prod_status = rs.getInt(10);
 	        	
-	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status);
+	        	ProductVO pvo = new ProductVO(prod_code, prod_category, prod_name, prod_cost, prod_price, prod_stock, prod_color, prod_mtl, prod_size, prod_status, 1, 0);
 		        
 	        	prodList.add(pvo);
 
@@ -93,6 +102,35 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	}
 	
 	
+	
+	// 상품 개수 
+	@Override
+	public int getProdCount(String category, String name) throws SQLException {
+		
+		int count = 0;	
+
+		try {
+			conn = ds.getConnection();
+
+			String sql = "select count(*) COUNT from view_habibi_product " + 
+						 " where prod_category like '%"+category+"%' and prod_name like '%"+name+"%'";
+			
+			pstmt = conn.prepareStatement(sql);
+	         
+	        rs = pstmt.executeQuery();
+	         
+	        if(rs.next()) 
+	        	count = rs.getInt(1);
+	        
+		} finally {
+			close();
+		}
+
+		return count;
+	}
+
+	
+	
 	// 상품 등록
 	@Override
 	public int registerProduct(ProductVO pvo) throws SQLException {
@@ -102,7 +140,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "insert into habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
+			String sql = "insert into view_habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
 					" values (?,?,?,?,?,?,?,?,?,?)";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -136,7 +174,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "delete habibi_product where prod_code in ("+prodCodeString+")";
+			String sql = "delete view_habibi_product where prod_code in ("+prodCodeString+")";
 	         
 			pstmt = conn.prepareStatement(sql);
 	
@@ -159,7 +197,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "update habibi_product set prod_stock = "+prodStock+" \n" + 
+			String sql = "update view_habibi_product set prod_stock = "+prodStock+" \n" + 
 					"where prod_code = ?";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -184,7 +222,7 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "update habibi_product set prod_status = "+prodStatus+" \n" + 
+			String sql = "update view_habibi_product set prod_status = "+prodStatus+" \n" + 
 					"where prod_code = ?";
 	         
 			pstmt = conn.prepareStatement(sql);
@@ -204,33 +242,28 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	
 	// 품절 임박 상품 가져오기
 	@Override
-	public Map<String, Object> getSoldoutInfo(int soldoutNum) throws SQLException {
+	public List<ProductVO> getSoldoutInfo(int soldoutNum) throws SQLException {
 
 		String condition = "";
 		if(soldoutNum != 1)
 			condition = " and prod_stock > 0";
 		
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		
+				
 		List<ProductVO> prodList = new ArrayList<>();
 		
 		try {
 			conn = ds.getConnection();
 
 			String sql = "select prod_code, prod_category, prod_stock\n" + 
-					" from habibi_product\n" + 
+					" from view_habibi_product\n" + 
 					" where prod_status = 1 and prod_stock < "+soldoutNum+condition;
 	         
 			pstmt = conn.prepareStatement(sql);
 	         
 	        rs = pstmt.executeQuery();
 	         
-	        int count = 0;
 	        while(rs.next()) {
-	        	
-	        	count++;
-	        	
+	        		        	
 	        	String prod_code = rs.getString(1);
 	        	String prod_category = rs.getString(2);
 	        	int prod_stock = rs.getInt(3);
@@ -243,15 +276,12 @@ public class AdminProductDAO implements InterAdminProductDAO{
 	        	prodList.add(pvo);
 
 	        }
-	        
-	        map.put("prodList", prodList);
-	        map.put("count", count);
-	        
+	        	        
 		} finally {
 			close();
 		}
 		
-		return map;
+		return prodList;
 	}
 
 

@@ -11,7 +11,10 @@ public interface InterAdminProductDAO {
 	// ***** 상품관리 *****
 	
 	//상품검색, 조회
-	List<ProductVO> getProductInfo(String category, String name) throws SQLException;
+	List<ProductVO> getProductInfo(String category, String name, int start, int end) throws SQLException;
+	
+	//상품 개수
+	int getProdCount(String searchCategory, String searchName) throws SQLException;
 	
 	// 상품등록
 	int registerProduct(ProductVO pvo) throws SQLException;
@@ -27,7 +30,7 @@ public interface InterAdminProductDAO {
 	
 	
 	// 품절 임박 수량, 품절수량
-	Map<String, Object> getSoldoutInfo(int soldoutNum) throws SQLException;
+	List<ProductVO> getSoldoutInfo(int soldoutNum) throws SQLException;
 	
 	
 	

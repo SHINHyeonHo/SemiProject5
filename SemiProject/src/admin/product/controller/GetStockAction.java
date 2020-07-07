@@ -21,35 +21,19 @@ public class GetStockAction extends AbstractController{
 
 		int soldoutNum = Integer.parseInt(request.getParameter("soldoutNum"));
 				
-		InterAdminProductDAO pdao = new AdminProductDAO();
+		InterAdminProductDAO pdao = new AdminProductDAO();		
 		
-		JSONArray jsArr = new JSONArray();
+		List<ProductVO> prodList = pdao.getSoldoutInfo(soldoutNum);
 		
-		
-		Map<String, Object> map = pdao.getSoldoutInfo(soldoutNum);
-		List<ProductVO> prodList = (List<ProductVO>) map.get("prodList");
-		int count = (int) map.get("count");
-	
-		if(prodList != null) {
-			
-			for(ProductVO pvo : prodList) {
+		JSONObject jsObj = new JSONObject();
+
+		if(prodList != null) 
 				
-				JSONObject jsObj = new JSONObject();
-				jsObj.put("prod_code", pvo.getProd_code());
-				jsObj.put("prod_category", pvo.getProd_category());
-				jsObj.put("prod_stock", pvo.getProd_stock());
-				jsArr.put(jsObj);
-			}
-			
-			
-			JSONObject jsObj = new JSONObject();
-			jsObj.put("count",count);
-			jsArr.put(jsObj);
+			jsObj.put("prodList", prodList);
+				
 		
-		}
 		
-		String json = jsArr.toString();
-		request.setAttribute("json", json);
+		request.setAttribute("json", jsObj);
 		
 		// super.setRedirect(false);
 		super.setViewPage("/WEB-INF/jsonResult.jsp");

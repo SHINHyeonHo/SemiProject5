@@ -20,37 +20,24 @@ public class SearchProductAction extends AbstractController{
 
 		String searchCategory = request.getParameter("searchCategory");
 		String searchName = request.getParameter("searchName");
+		int start = Integer.parseInt(request.getParameter("start"));
+		int len = Integer.parseInt(request.getParameter("len"));
+		int end = start + len - 1;
 		
 		InterAdminProductDAO pdao = new AdminProductDAO();
+				
+		List<ProductVO> prodList = pdao.getProductInfo(searchCategory, searchName, start, end);
+		int count = pdao.getProdCount(searchCategory, searchName);
 		
-		JSONArray jsArr = new JSONArray();
-		
-		List<ProductVO> prodList = pdao.getProductInfo(searchCategory, searchName);
-		
+		JSONObject jsObj = new JSONObject();
 		
 		if(prodList != null) {
 			
-			for(ProductVO pvo : prodList) {
-				
-				JSONObject jsObj = new JSONObject();
-				jsObj.put("prod_code", pvo.getProd_code());
-				jsObj.put("prod_category", pvo.getProd_category());
-				jsObj.put("prod_name", pvo.getProd_name());
-				jsObj.put("prod_cost", pvo.getProd_cost());
-				jsObj.put("prod_price", pvo.getProd_price());
-				jsObj.put("prod_color", pvo.getProd_color());
-				jsObj.put("prod_mtl", pvo.getProd_mtl());
-				jsObj.put("prod_stock", pvo.getProd_stock());
-				jsObj.put("prod_size", pvo.getProd_size());
-				jsObj.put("prod_status", pvo.getProd_status());
-
-				jsArr.put(jsObj);
-			}
-		
+			jsObj.put("prodList", prodList);
+			jsObj.put("count", count);
 		}
 		
-		String json = jsArr.toString();
-		request.setAttribute("json", json);
+		request.setAttribute("json", jsObj);
 		
 		// super.setRedirect(false);
 		super.setViewPage("/WEB-INF/jsonResult.jsp");
