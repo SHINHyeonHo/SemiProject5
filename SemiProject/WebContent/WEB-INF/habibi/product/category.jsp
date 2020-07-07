@@ -234,7 +234,7 @@ span.soldout{
 						<div class="description">
 						
 							<div class="notice">
-								<c:if test="${list.prod_new_date < 50 && list.prod_stock != 0}">
+								<c:if test="${list.prod_new_date < 10 && list.prod_stock != 0}">
 									<span class="new">NEW</span> 
 								</c:if>
 								<c:if test="${list.order_sum != 0 && list.prod_stock != 0}">
@@ -263,12 +263,16 @@ span.soldout{
 			<span class="btn-prev"> << &nbsp;</span>
 			<ul class="page-list">
 			
-				<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>		
-				<c:forEach var="i" begin="0" end="${lastPage-1}">
-			
-					<li class="page-list"><a href="?category=${param.category}&page=${i+1}">${i+1}</a></li>
+				<c:set var="lastPage" value="${fn:substringBefore(Math.ceil(count/16),'.')}"></c:set>	
+					
+				<c:if test="${lastPage > 0}">
 				
-				</c:forEach>
+					<c:forEach var="i" begin="0" end="${lastPage-1}">
+				
+						<li class="page-list"><a href="?category=${param.category}&page=${i+1}">${i+1}</a></li>
+				
+					</c:forEach>
+				</c:if>
 				
 			</ul>
 			<span class="btn-next"> &nbsp; >> </span>
