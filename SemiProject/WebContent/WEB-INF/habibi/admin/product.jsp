@@ -544,9 +544,7 @@ $(document).ready(function(){ // 로드되면
 		var prodStock = $(this).prev();
 		var stockValue = $(this).prev().text();
 		var prodCode= $(this).val();
-		
-		alert(stockValue);
-	
+			
 		var changeStock = prompt("변경할 수량을 적어주세요.", changeStock);
 		
 		if(changeStock == null){
@@ -571,7 +569,6 @@ $(document).ready(function(){ // 로드되면
 				//품절임박 색깔 
 				var stock = prodStock.text(changeStock);
 				func_stockColor(stock, smallStock);
-				alert(smallStock);
 
 				
 				alert("재고수량이 "+stockValue+"개 에서 "+changeStock+"개로 변경되었습니다.");
@@ -614,7 +611,6 @@ $(document).ready(function(){ // 로드되면
 		}
 				
 		var data = newStatusValue+","+prodCode;
-		alert("data : "+ data);
 		
 		$.ajax({
 			url:"/SemiProject/admin/changeStatus.hb",
