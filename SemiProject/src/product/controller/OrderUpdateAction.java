@@ -88,11 +88,13 @@ public class OrderUpdateAction extends AbstractController {
       for(int i=0; i<orderCartNoArr.length; i++) {
          pdao.orderCartDel(orderCartNoArr[i]);
       }
-      
+   
       // 주문한 수량 만큼 감소시키기
       for(int i=0; i<orderOqtyArr.length; i++) {
          pdao.minusProductStock(orderOqtyArr[i],orderProductsCodeArr[i]);
       }
+      
+      pdao.insertCaculate(junpyo, orderUserid, Integer.parseInt(ordersumtotalPrice));
       
       
       request.setAttribute("junpyo", junpyo);

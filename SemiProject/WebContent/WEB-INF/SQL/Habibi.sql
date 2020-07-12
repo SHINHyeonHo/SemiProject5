@@ -58,9 +58,7 @@ nominvalue
 nocycle
 nocache;
 
--- 관리자 정보 추가
-insert into habibi_member(idx, userid, passwd, name, email, postcode, address1, address2, mobile1, mobile2, mobile3, is_sms, is_email)
-values(seq_habibi_memno.nextval, 'admin','qwer1234$','관리자','kwonsk8@gmail.com','04540','서울 중구 남대문로 120','대일빌딩3층','010','2872','3091','1','1');
+
 
 commit;
 
@@ -114,223 +112,447 @@ set define off;
 -- 상품 추가
 insert all
 into habibi_product
-values ('H001SLP','sleeping','single standard bed',230000,14,'white','메이플(maple) 원목','w1166 x d2066 x h350 mm',1, sysdate-100)
+values ('H001SLP','sleeping','single standard bed',230000,40,'white','메이플(maple) 원목','w1166 x d2066 x h350 mm',1, sysdate-100)
 into habibi_product
-values ('H002SLP','sleeping','swedish bed',340000,8,'beige','체리(cherry) 원목','w1866 x d2066 x h350 mm',1, sysdate-99)
+values ('H002SLP','sleeping','swedish bed',340000,39,'beige','체리(cherry) 원목','w1866 x d2066 x h350 mm',1, sysdate-99)
 into habibi_product
-values ('H003SLP','sleeping','premium bed',310000,5,'dark brown','오크(oak) 원목','w1566 x d2066 x h350 mm',1, sysdate-98)
+values ('H003SLP','sleeping','premium bed',310000,38,'dark brown','오크(oak) 원목','w1566 x d2066 x h350 mm',1, sysdate-98)
 into habibi_product
-values ('H004SLP','sleeping','big head bed',450000,20,'brown','월넛(walnut) 원목','w1166 x d2066 x h350 mm',1, sysdate-97)
+values ('H004SLP','sleeping','big head bed',450000,37,'brown','월넛(walnut) 원목','w1166 x d2066 x h350 mm',1, sysdate-97)
 into habibi_product
-values ('H005SLP','sleeping','vintage queen bed',270000,14,'vintage brown','체리(cherry) 원목','w1566 x d2066 x h750 mm',1, sysdate-96)
+values ('H005SLP','sleeping','vintage queen bed',270000,36,'vintage brown','체리(cherry) 원목','w1566 x d2066 x h750 mm',1, sysdate-96)
 into habibi_product
-values ('H006SLP','sleeping','european bed',320000,14,'oak brown','오크(oak) 원목','w1166 x d2088 x h750 mm',1, sysdate-95)
+values ('H006SLP','sleeping','european bed',320000,35,'oak brown','오크(oak) 원목','w1166 x d2088 x h750 mm',1, sysdate-95)
 into habibi_product
-values ('H007SLP','sleeping','over the wall bed',230000,14,'maple brown','월넛(walnut) 원목','w1166 x d2066 x h500 mm',1, sysdate-94)
+values ('H007SLP','sleeping','over the wall bed',230000,34,'maple brown','월넛(walnut) 원목','w1166 x d2066 x h500 mm',1, sysdate-94)
 into habibi_product
-values ('H008SLP','sleeping','double standard bed',190000,3,'beige','체리(cherry) 원목','w1566 x d2066 x h350 mm',1, sysdate-93)
+values ('H008SLP','sleeping','double standard bed',190000,33,'beige','체리(cherry) 원목','w1566 x d2066 x h350 mm',1, sysdate-93)
 into habibi_product
-values ('H009SLP','sleeping','simple flame bed',250000,20,'vintage brown','메이플(maple) 원목','w1866 x d2066 x h350 mm',1, sysdate-92)
+values ('H009SLP','sleeping','simple flame bed',250000,32,'vintage brown','메이플(maple) 원목','w1866 x d2066 x h350 mm',1, sysdate-92)
 into habibi_product
-values ('H010SLP','sleeping','elegant bed',290000,2,'stone gray','월넛(walnut) 원목','w1566 x d2044 x h750 mm',1, sysdate-91)
+values ('H010SLP','sleeping','elegant bed',290000,31,'stone gray','월넛(walnut) 원목','w1566 x d2044 x h750 mm',1, sysdate-91)
 into habibi_product
-values ('H011SLP','sleeping','single standard bed',230000,14,'white','메이플(maple) 원목','w1166 x d2066 x h350 mm',1, sysdate-90)
+values ('H011SLP','sleeping','single standard bed',230000,30,'white','메이플(maple) 원목','w1166 x d2066 x h350 mm',1, sysdate-90)
 into habibi_product
-values ('H012SLP','sleeping','swedish bed',340000,8,'beige','체리(cherry) 원목','w1866 x d2066 x h350 mm',1, sysdate-89)
+values ('H012SLP','sleeping','swedish bed',340000,29,'beige','체리(cherry) 원목','w1866 x d2066 x h350 mm',1, sysdate-89)
 into habibi_product
-values ('H013SLP','sleeping','premium bed',310000,5,'dark brown','오크(oak) 원목','w1566 x d2066 x h350 mm',1, sysdate-88)
+values ('H013SLP','sleeping','premium bed',310000,28,'dark brown','오크(oak) 원목','w1566 x d2066 x h350 mm',1, sysdate-88)
 into habibi_product
-values ('H014SLP','sleeping','big head bed',450000,20,'brown','월넛(walnut) 원목','w1166 x d2066 x h350 mm',1, sysdate-87)
+values ('H014SLP','sleeping','big head bed',450000,27,'brown','월넛(walnut) 원목','w1166 x d2066 x h350 mm',1, sysdate-87)
 into habibi_product
-values ('H015SLP','sleeping','vintage queen bed',270000,14,'vintage brown','체리(cherry) 원목','w1566 x d2066 x h750 mm',1, sysdate-86)
+values ('H015SLP','sleeping','vintage queen bed',270000,26,'vintage brown','체리(cherry) 원목','w1566 x d2066 x h750 mm',1, sysdate-86)
 into habibi_product
-values ('H016SLP','sleeping','european bed',320000,14,'oak brown','오크(oak) 원목','w1166 x d2088 x h750 mm',1, sysdate-85)
+values ('H016SLP','sleeping','european bed',320000,0,'oak brown','오크(oak) 원목','w1166 x d2088 x h750 mm',1, sysdate-85)
 into habibi_product
-values ('H017SLP','sleeping','over the wall bed',230000,14,'maple brown','월넛(walnut) 원목','w1166 x d2066 x h500 mm',1, sysdate-84)
+values ('H017SLP','sleeping','over the wall bed',230000,4,'maple brown','월넛(walnut) 원목','w1166 x d2066 x h500 mm',1, sysdate-84)
 into habibi_product
 values ('H018SLP','sleeping','double standard bed',190000,3,'beige','체리(cherry) 원목','w1566 x d2066 x h350 mm',1, sysdate-83)
 into habibi_product
-values ('H019SLP','sleeping','simple flame bed',250000,20,'vintage brown','메이플(maple) 원목','w1866 x d2066 x h350 mm',1, sysdate-82)
+values ('H019SLP','sleeping','simple flame bed',250000,2,'vintage brown','메이플(maple) 원목','w1866 x d2066 x h350 mm',1, sysdate-82)
 into habibi_product
-values ('H020SLP','sleeping','elegant bed',290000,2,'stone gray','월넛(walnut) 원목','w1566 x d2044 x h750 mm',1, sysdate-81)
+values ('H020SLP','sleeping','elegant bed',290000,0,'stone gray','월넛(walnut) 원목','w1566 x d2044 x h750 mm',1, sysdate-81)
 select * from dual;
-
 
 insert all
 into habibi_product
-values ('H001LTG','lighting','led smart lighting',33000,14,'gray', '니켈 도금 스틸','w110 x d110 x h35 mm',1, sysdate-80)
+values ('H021SLP','sleeping','single standard bed',230000,20,'white','메이플(maple) 원목','w1166 x d2066 x h350 mm',1, sysdate-60)
 into habibi_product
-values ('H002LTG','lighting','modern track lighting',40000,8,'black','도색 플라스틱','w180 x d180 x h35 mm',1, sysdate-79)
+values ('H022SLP','sleeping','swedish bed',340000,19,'beige','체리(cherry) 원목','w1866 x d2066 x h350 mm',1, sysdate-60)
 into habibi_product
-values ('H003LTG','lighting','premium side lighting',35000,5,'rose gold','도금 황동','w150 x d150 x h350 mm',1, sysdate-78)
+values ('H023SLP','sleeping','premium bed',310000,18,'dark brown','오크(oak) 원목','w1566 x d2066 x h350 mm',1, sysdate-59)
 into habibi_product
-values ('H004LTG','lighting','simple white lighting',45000,20,'white','스틸 & 실리콘','w310 x d310 x h550 mm',1, sysdate-77)
+values ('H024SLP','sleeping','big head bed',450000,17,'brown','월넛(walnut) 원목','w1166 x d2066 x h350 mm',1, sysdate-60)
 into habibi_product
-values ('H005LTG','lighting','vintage ceil lighting',29000,14,'beige','스틸 & 페브릭','w360 x d360 x h750 mm',1, sysdate-76)
+values ('H025SLP','sleeping','vintage queen bed',270000,16,'vintage brown','체리(cherry) 원목','w1566 x d2066 x h750 mm',1, sysdate-60)
 into habibi_product
-values ('H006LTG','lighting','european lighting',32000,14,'gray','스틸 & 알루미늄','w210 x d210 x h660 mm',1, sysdate-75)
+values ('H026SLP','sleeping','european bed',320000,15,'oak brown','오크(oak) 원목','w1166 x d2088 x h750 mm',1, sysdate-50)
 into habibi_product
-values ('H007LTG','lighting','led basic lighting',23000,14,'light gray','도색 플라스틱','w360 x d360 x h500 mm',1, sysdate-74)
+values ('H027SLP','sleeping','over the wall bed',230000,14,'maple brown','월넛(walnut) 원목','w1166 x d2066 x h500 mm',1, sysdate-50)
 into habibi_product
-values ('H008LTG','lighting','string lighting',19000,3,'random','니켈 도금 스틸','w350 x d350 x h450 mm',1, sysdate-73)
+values ('H028SLP','sleeping','double standard bed',190000,13,'beige','체리(cherry) 원목','w1566 x d2066 x h350 mm',1, sysdate-45)
 into habibi_product
-values ('H009LTG','lighting','vintage lighting',120000,20,'vintage gold','스틸 & 알루미늄','w480 x d480 x h750 mm',1, sysdate-72)
+values ('H029SLP','sleeping','simple flame bed',250000,12,'vintage brown','메이플(maple) 원목','w1866 x d2066 x h350 mm',1, sysdate-50)
 into habibi_product
-values ('H010LTG','lighting','tall floor lighting',29000,2,'golden yellow','도금 황동','w250 x d250 x h750 mm',1, sysdate-71)
+values ('H030SLP','sleeping','elegant bed',290000,11,'stone gray','월넛(walnut) 원목','w1566 x d2044 x h750 mm',1, sysdate-55)
 into habibi_product
-values ('H011LTG','lighting','golden ceil lighting',23000,14,'gold','니켈 도금 스틸','w300 x d300 x h450 mm',1, sysdate-70)
+values ('H031SLP','sleeping','single standard bed',230000,10,'white','메이플(maple) 원목','w1166 x d2066 x h350 mm',1, sysdate-40)
 into habibi_product
-values ('H012LTG','lighting','mood lighting',34000,8,'white','도색 플라스틱','w480 x d480 x h750 mm',1, sysdate-69)
+values ('H032SLP','sleeping','swedish bed',340000,8,'beige','체리(cherry) 원목','w1866 x d2066 x h350 mm',1, sysdate-30)
 into habibi_product
-values ('H013LTG','lighting','pineapple lighting',31000,5,'beige','도금 황동','w350 x d350 x h850 mm',1, sysdate-68)
+values ('H033SLP','sleeping','premium bed',310000,5,'dark brown','오크(oak) 원목','w1566 x d2066 x h350 mm',1, sysdate-20)
 into habibi_product
-values ('H014LTG','lighting','tall floor lighting',45000,20,'orange','스틸 & 실리콘','w300 x d300 x h1250 mm',1, sysdate-67)
+values ('H034SLP','sleeping','big head bed',450000,4,'brown','월넛(walnut) 원목','w1166 x d2066 x h350 mm',1, sysdate-20)
 into habibi_product
-values ('H015LTG','lighting','modern ceil lighting',90000,14,'white','스틸 & 페브릭','w170 x d170 x h720 mm',1, sysdate-66)
+values ('H035SLP','sleeping','vintage queen bed',270000,3,'vintage brown','체리(cherry) 원목','w1566 x d2066 x h750 mm',1, sysdate-20)
 into habibi_product
-values ('H016LTG','lighting','european lighting',32000,14,'yellow','스틸 & 알루미늄','w710 x d710 x h790 mm',1, sysdate-65)
+values ('H036SLP','sleeping','european bed',320000,12,'oak brown','오크(oak) 원목','w1166 x d2088 x h750 mm',1, sysdate-10)
 into habibi_product
-values ('H017LTG','lighting','simple basic lighting',23000,14,'dark gray','도색 플라스틱','w490 x d490 x h500 mm',1, sysdate-64)
+values ('H037SLP','sleeping','over the wall bed',230000,11,'maple brown','월넛(walnut) 원목','w1166 x d2066 x h500 mm',1, sysdate-5)
+into habibi_product
+values ('H038SLP','sleeping','double standard bed',190000,10,'beige','체리(cherry) 원목','w1566 x d2066 x h350 mm',1, sysdate-4)
+into habibi_product
+values ('H039SLP','sleeping','simple flame bed',250000,10,'vintage brown','메이플(maple) 원목','w1866 x d2066 x h350 mm',1, sysdate-3)
+into habibi_product
+values ('H040SLP','sleeping','elegant bed',290000,10,'stone gray','월넛(walnut) 원목','w1566 x d2044 x h750 mm',1, sysdate-2)
+select * from dual;
+
+insert all
+into habibi_product
+values ('H001LTG','lighting','led smart lighting',33000,40,'gray', '니켈 도금 스틸','w110 x d110 x h35 mm',1, sysdate-80)
+into habibi_product
+values ('H002LTG','lighting','modern track lighting',40000,39,'black','도색 플라스틱','w180 x d180 x h35 mm',1, sysdate-79)
+into habibi_product
+values ('H003LTG','lighting','premium side lighting',35000,38,'rose gold','도금 황동','w150 x d150 x h350 mm',1, sysdate-78)
+into habibi_product
+values ('H004LTG','lighting','simple white lighting',45000,37,'white','스틸 & 실리콘','w310 x d310 x h550 mm',1, sysdate-77)
+into habibi_product
+values ('H005LTG','lighting','vintage ceil lighting',29000,36,'beige','스틸 & 페브릭','w360 x d360 x h750 mm',1, sysdate-76)
+into habibi_product
+values ('H006LTG','lighting','european lighting',32000,35,'gray','스틸 & 알루미늄','w210 x d210 x h660 mm',1, sysdate-75)
+into habibi_product
+values ('H007LTG','lighting','led basic lighting',23000,34,'light gray','도색 플라스틱','w360 x d360 x h500 mm',1, sysdate-74)
+into habibi_product
+values ('H008LTG','lighting','string lighting',19000,33,'random','니켈 도금 스틸','w350 x d350 x h450 mm',1, sysdate-73)
+into habibi_product
+values ('H009LTG','lighting','vintage lighting',120000,32,'vintage gold','스틸 & 알루미늄','w480 x d480 x h750 mm',1, sysdate-72)
+into habibi_product
+values ('H010LTG','lighting','tall floor lighting',29000,31,'golden yellow','도금 황동','w250 x d250 x h750 mm',1, sysdate-71)
+into habibi_product
+values ('H011LTG','lighting','golden ceil lighting',23000,30,'gold','니켈 도금 스틸','w300 x d300 x h450 mm',1, sysdate-70)
+into habibi_product
+values ('H012LTG','lighting','mood lighting',34000,29,'white','도색 플라스틱','w480 x d480 x h750 mm',1, sysdate-69)
+into habibi_product
+values ('H013LTG','lighting','pineapple lighting',31000,28,'beige','도금 황동','w350 x d350 x h850 mm',1, sysdate-68)
+into habibi_product
+values ('H014LTG','lighting','tall floor lighting',45000,27,'orange','스틸 & 실리콘','w300 x d300 x h1250 mm',1, sysdate-67)
+into habibi_product
+values ('H015LTG','lighting','modern ceil lighting',90000,26,'white','스틸 & 페브릭','w170 x d170 x h720 mm',1, sysdate-66)
+into habibi_product
+values ('H016LTG','lighting','european lighting',32000,1,'yellow','스틸 & 알루미늄','w710 x d710 x h790 mm',1, sysdate-65)
+into habibi_product
+values ('H017LTG','lighting','simple basic lighting',23000,4,'dark gray','도색 플라스틱','w490 x d490 x h500 mm',1, sysdate-64)
 into habibi_product
 values ('H018LTG','lighting','designed lighting',19000,3,'gray','니켈 도금 스틸','w580 x d580 x h350 mm',1, sysdate-63)
 into habibi_product
-values ('H019LTG','lighting','bended tall lighting',25000,20,'silver','스틸 & 알루미늄','w410 x d410 x h1700 mm',1, sysdate-62)
+values ('H019LTG','lighting','bended tall lighting',25000,2,'silver','스틸 & 알루미늄','w410 x d410 x h1700 mm',1, sysdate-62)
 into habibi_product
-values ('H020LTG','lighting','elegant lighting',65000,2,'beige','도금 황동','w350 x d350 x h750 mm',1, sysdate-61)
+values ('H020LTG','lighting','elegant lighting',65000,0,'beige','도금 황동','w350 x d350 x h750 mm',1, sysdate-61)
 select * from dual;
 
 
 insert all
 into habibi_product
-values ('H001STG','seating','simple leather sofa',195000,14,'white','가죽','w1120 x d425 x h550 mm',1, sysdate-60)
+values ('H021LTG','lighting','led smart lighting',33000,20,'gray', '니켈 도금 스틸','w110 x d110 x h35 mm',1, sysdate-60)
 into habibi_product
-values ('H002STG','seating','vintage chair',80000,8,'navy','체리(cherry) 원목','w400 x d400 x h550 mm',1, sysdate-59)
+values ('H022LTG','lighting','modern track lighting',40000,19,'black','도색 플라스틱','w180 x d180 x h35 mm',1, sysdate-59)
 into habibi_product
-values ('H003STG','seating','swing chair',94000,5,'light brown','메이플(maple) 원목','w1345 x d750 x h545 mm',1, sysdate-58)
+values ('H023LTG','lighting','premium side lighting',35000,18,'rose gold','도금 황동','w150 x d150 x h350 mm',1, sysdate-58)
 into habibi_product
-values ('H004STG','seating','elegant mini chair',45000,20,'white','가죽','w400 x d400 x h550 mm',1, sysdate-57)
+values ('H024LTG','lighting','simple white lighting',45000,17,'white','스틸 & 실리콘','w310 x d310 x h550 mm',1, sysdate-57)
 into habibi_product
-values ('H005STG','seating','single design chair',57000,14,'baby pink','가죽','w400 x d400 x h550 mm',1, sysdate-56)
+values ('H025LTG','lighting','vintage ceil lighting',29000,16,'beige','스틸 & 페브릭','w360 x d360 x h750 mm',1, sysdate-56)
 into habibi_product
-values ('H006STG','seating','basic chair',92000,14,'light gray','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-55)
+values ('H026LTG','lighting','european lighting',32000,15,'gray','스틸 & 알루미늄','w210 x d210 x h660 mm',1, sysdate-55)
 into habibi_product
-values ('H007STG','seating','comfy round sofa',73000,14,'white','페브릭','w1345 x d950 x h545 mm',1, sysdate-54)
+values ('H027LTG','lighting','led basic lighting',23000,14,'light gray','도색 플라스틱','w360 x d360 x h500 mm',1, sysdate-54)
 into habibi_product
-values ('H008STG','seating','modern sofa',210000,3,'red orange','페브릭','w1120 x d425 x h550 mm',1, sysdate-53)
+values ('H028LTG','lighting','string lighting',19000,13,'random','니켈 도금 스틸','w350 x d350 x h450 mm',1, sysdate-53)
 into habibi_product
-values ('H009STG','seating','simple chair',90000,20,'deep yellow','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-52)
+values ('H029LTG','lighting','vintage lighting',120000,12,'vintage gold','스틸 & 알루미늄','w480 x d480 x h750 mm',1, sysdate-52)
 into habibi_product
-values ('H010STG','seating','vintage chair',84000,2,'muddy pink','페브릭','w400 x d400 x h550 mm',1, sysdate-51)
+values ('H030LTG','lighting','tall floor lighting',29000,11,'golden yellow','도금 황동','w250 x d250 x h750 mm',1, sysdate-51)
 into habibi_product
-values ('H011STG','seating','swedish chair',73000,14,'white','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-50)
+values ('H031LTG','lighting','golden ceil lighting',23000,10,'gold','니켈 도금 스틸','w300 x d300 x h450 mm',1, sysdate-50)
 into habibi_product
-values ('H012STG','seating','premium chair',90000,8,'black','가죽','w400 x d400 x h550 mm',1, sysdate-49)
+values ('H032LTG','lighting','mood lighting',34000,19,'white','도색 플라스틱','w480 x d480 x h750 mm',1, sysdate-49)
 into habibi_product
-values ('H013STG','seating','european chair',130000,5,'white','오크(oak) 원목','w400 x d400 x h550 mm',1, sysdate-48)
+values ('H033LTG','lighting','pineapple lighting',31000,18,'beige','도금 황동','w350 x d350 x h850 mm',1, sysdate-48)
 into habibi_product
-values ('H014STG','seating','basic sofa',125000,20,'gray','페브릭','w1120 x d425 x h550mm',1, sysdate-47)
+values ('H034LTG','lighting','tall floor lighting',45000,17,'orange','스틸 & 실리콘','w300 x d300 x h1250 mm',1, sysdate-47)
 into habibi_product
-values ('H015STG','seating','modern outdoor bench',95000,14,'dark gray','스틸 & 알루미늄','w1120 x d425 x h550 mm',1, sysdate-46)
+values ('H035LTG','lighting','modern ceil lighting',90000,16,'white','스틸 & 페브릭','w170 x d170 x h720 mm',1, sysdate-46)
 into habibi_product
-values ('H016STG','seating','simple design chair',45000,14,'orange','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-45)
+values ('H036LTG','lighting','european lighting',32000,15,'yellow','스틸 & 알루미늄','w710 x d710 x h790 mm',1, sysdate-45)
 into habibi_product
-values ('H017STG','seating','garden bench',73000,14,'maple brown','월넛(walnut) 원목','w1120 x d425 x h550 mm',1, sysdate-44)
+values ('H037LTG','lighting','simple basic lighting',23000,14,'dark gray','도색 플라스틱','w490 x d490 x h500 mm',1, sysdate-44)
+into habibi_product
+values ('H038LTG','lighting','designed lighting',19000,13,'gray','니켈 도금 스틸','w580 x d580 x h350 mm',1, sysdate-3)
+into habibi_product
+values ('H039LTG','lighting','bended tall lighting',25000,10,'silver','스틸 & 알루미늄','w410 x d410 x h1700 mm',1, sysdate-2)
+into habibi_product
+values ('H040LTG','lighting','elegant lighting',65000,10,'beige','도금 황동','w350 x d350 x h750 mm',1, sysdate-1)
+select * from dual;
+
+
+insert all
+into habibi_product
+values ('H001STG','seating','simple leather sofa',195000,40,'white','가죽','w1120 x d425 x h550 mm',1, sysdate-60)
+into habibi_product
+values ('H002STG','seating','vintage chair',80000,39,'navy','체리(cherry) 원목','w400 x d400 x h550 mm',1, sysdate-59)
+into habibi_product
+values ('H003STG','seating','swing chair',94000,38,'light brown','메이플(maple) 원목','w1345 x d750 x h545 mm',1, sysdate-58)
+into habibi_product
+values ('H004STG','seating','elegant mini chair',45000,37,'white','가죽','w400 x d400 x h550 mm',1, sysdate-57)
+into habibi_product
+values ('H005STG','seating','single design chair',57000,36,'baby pink','가죽','w400 x d400 x h550 mm',1, sysdate-56)
+into habibi_product
+values ('H006STG','seating','basic chair',92000,35,'light gray','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-55)
+into habibi_product
+values ('H007STG','seating','comfy round sofa',73000,34,'white','페브릭','w1345 x d950 x h545 mm',1, sysdate-54)
+into habibi_product
+values ('H008STG','seating','modern sofa',210000,33,'red orange','페브릭','w1120 x d425 x h550 mm',1, sysdate-53)
+into habibi_product
+values ('H009STG','seating','simple chair',90000,32,'deep yellow','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-52)
+into habibi_product
+values ('H010STG','seating','vintage chair',84000,31,'muddy pink','페브릭','w400 x d400 x h550 mm',1, sysdate-51)
+into habibi_product
+values ('H011STG','seating','swedish chair',73000,30,'white','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-50)
+into habibi_product
+values ('H012STG','seating','premium chair',90000,29,'black','가죽','w400 x d400 x h550 mm',1, sysdate-49)
+into habibi_product
+values ('H013STG','seating','european chair',130000,28,'white','오크(oak) 원목','w400 x d400 x h550 mm',1, sysdate-48)
+into habibi_product
+values ('H014STG','seating','basic sofa',125000,27,'gray','페브릭','w1120 x d425 x h550mm',1, sysdate-47)
+into habibi_product
+values ('H015STG','seating','modern outdoor bench',95000,26,'dark gray','스틸 & 알루미늄','w1120 x d425 x h550 mm',1, sysdate-46)
+into habibi_product
+values ('H016STG','seating','simple design chair',45000,25,'orange','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-45)
+into habibi_product
+values ('H017STG','seating','garden bench',73000,4,'maple brown','월넛(walnut) 원목','w1120 x d425 x h550 mm',1, sysdate-44)
 into habibi_product
 values ('H018STG','seating','standard chair',65000,3,'white','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-43)
 into habibi_product
-values ('H019STG','seating','vintage bench',160000,20,'light pink','메이플(maple) 원목','w1120 x d425 x h450 mm',1, sysdate-42)
+values ('H019STG','seating','vintage bench',160000,2,'light pink','메이플(maple) 원목','w1120 x d425 x h450 mm',1, sysdate-42)
 into habibi_product
-values ('H020STG','seating','unique design chair',95000,2,'red','플라스틱 & 알루미늄','w412 x d400 x h580 mm',1, sysdate-41)
+values ('H020STG','seating','unique design chair',95000,0,'red','플라스틱 & 알루미늄','w412 x d400 x h580 mm',1, sysdate-41)
+select * from dual;
+
+
+insert all
+into habibi_product
+values ('H021STG','seating','simple leather sofa',195000,19,'white','가죽','w1120 x d425 x h550 mm',1, sysdate-40)
+into habibi_product
+values ('H022STG','seating','vintage chair',80000,18,'navy','체리(cherry) 원목','w400 x d400 x h550 mm',1, sysdate-39)
+into habibi_product
+values ('H023STG','seating','swing chair',94000,17,'light brown','메이플(maple) 원목','w1345 x d750 x h545 mm',1, sysdate-38)
+into habibi_product
+values ('H024STG','seating','elegant mini chair',45000,16,'white','가죽','w400 x d400 x h550 mm',1, sysdate-37)
+into habibi_product
+values ('H025STG','seating','single design chair',57000,15,'baby pink','가죽','w400 x d400 x h550 mm',1, sysdate-36)
+into habibi_product
+values ('H026STG','seating','basic chair',92000,14,'light gray','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-35)
+into habibi_product
+values ('H027STG','seating','comfy round sofa',73000,13,'white','페브릭','w1345 x d950 x h545 mm',1, sysdate-34)
+into habibi_product
+values ('H028STG','seating','modern sofa',210000,13,'red orange','페브릭','w1120 x d425 x h550 mm',1, sysdate-33)
+into habibi_product
+values ('H029STG','seating','simple chair',90000,12,'deep yellow','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-32)
+into habibi_product
+values ('H030STG','seating','vintage chair',84000,10,'muddy pink','페브릭','w400 x d400 x h550 mm',1, sysdate-31)
+into habibi_product
+values ('H031STG','seating','swedish chair',73000,10,'white','스틸 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-30)
+into habibi_product
+values ('H032STG','seating','premium chair',90000,10,'black','가죽','w400 x d400 x h550 mm',1, sysdate-29)
+into habibi_product
+values ('H033STG','seating','european chair',130000,10,'white','오크(oak) 원목','w400 x d400 x h550 mm',1, sysdate-28)
+into habibi_product
+values ('H034STG','seating','basic sofa',125000,10,'gray','페브릭','w1120 x d425 x h550mm',1, sysdate-27)
+into habibi_product
+values ('H035STG','seating','modern outdoor bench',95000,10,'dark gray','스틸 & 알루미늄','w1120 x d425 x h550 mm',1, sysdate-26)
+into habibi_product
+values ('H036STG','seating','simple design chair',45000,10,'orange','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-25)
+into habibi_product
+values ('H037STG','seating','garden bench',73000,13,'maple brown','월넛(walnut) 원목','w1120 x d425 x h550 mm',1, sysdate-24)
+into habibi_product
+values ('H038STG','seating','standard chair',65000,12,'white','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-3)
+into habibi_product
+values ('H039STG','seating','vintage bench',160000,11,'light pink','메이플(maple) 원목','w1120 x d425 x h450 mm',1, sysdate-2)
+into habibi_product
+values ('H040STG','seating','unique design chair',95000,10,'red','플라스틱 & 알루미늄','w412 x d400 x h580 mm',1, sysdate-1)
 select * from dual;
 
 
 
 insert all
 into habibi_product
-values ('H001TBL','table','modern side table',52000,14,'white','스틸 & 알루미늄','w350 x d350 x h650 mm',1, sysdate-40)
+values ('H001TBL','table','modern side table',52000,40,'white','스틸 & 알루미늄','w350 x d350 x h650 mm',1, sysdate-40)
 into habibi_product
-values ('H002TBL','table','simple side table',80000,8,'white','체리(cherry) 원목','w350 x d350 x h650 mm',1, sysdate-39)
+values ('H002TBL','table','simple side table',80000,39,'white','체리(cherry) 원목','w350 x d350 x h650 mm',1, sysdate-39)
 into habibi_product
-values ('H003TBL','table','vintage side table',75000,5,'gray','콘크리트','w350 x d350 x h650 mm',1, sysdate-38)
+values ('H003TBL','table','vintage side table',75000,38,'gray','콘크리트','w350 x d350 x h650 mm',1, sysdate-38)
 into habibi_product
-values ('H004TBL','table','elegant side table',65000,20,'maple brown','오크(oak) 원목','w350 x d350 x h650 mm',1, sysdate-37)
+values ('H004TBL','table','elegant side table',65000,37,'maple brown','오크(oak) 원목','w350 x d350 x h650 mm',1, sysdate-37)
 into habibi_product
-values ('H005TBL','table','simple basic table',50000,14,'white','플라스틱 & 알루미늄','w1150 x d480 x h770 mm',1, sysdate-36)
+values ('H005TBL','table','simple basic table',50000,36,'white','플라스틱 & 알루미늄','w1150 x d480 x h770 mm',1, sysdate-36)
 into habibi_product
-values ('H006TBL','table','modern glass table',92000,14,'black','유리 & 알루미늄','w1150 x d480 x h325 mm',1, sysdate-35)
+values ('H006TBL','table','modern glass table',92000,35,'black','유리 & 알루미늄','w1150 x d480 x h325 mm',1, sysdate-35)
 into habibi_product
-values ('H007TBL','table','wooden table',170000,14,'light brown','메이플(maple) 원목','w1345 x d950 x h845 mm',1, sysdate-34)
+values ('H007TBL','table','wooden table',170000,34,'light brown','메이플(maple) 원목','w1345 x d950 x h845 mm',1, sysdate-34)
 into habibi_product
-values ('H008TBL','table','design side table',85000,3,'gold brown','스틸 & 알루미늄','w350 x d350 x h650 mm',1, sysdate-33)
+values ('H008TBL','table','design side table',85000,33,'gold brown','스틸 & 알루미늄','w350 x d350 x h650 mm',1, sysdate-33)
 into habibi_product
-values ('H009TBL','table','simple mini table',105000,20,'light brown','메이플(maple) 원목','w400 x d400 x h550 mm',1, sysdate-32)
+values ('H009TBL','table','simple mini table',105000,32,'light brown','메이플(maple) 원목','w400 x d400 x h550 mm',1, sysdate-32)
 into habibi_product
-values ('H010TBL','table','premium table',84000,2,'oak brown','월넛(walnut) 원목','w1150 x d480 x h325 mm',1, sysdate-31)
+values ('H010TBL','table','premium table',84000,31,'oak brown','월넛(walnut) 원목','w1150 x d480 x h325 mm',1, sysdate-31)
 into habibi_product
-values ('H011TBL','table','swedish table',73000,14,'maple brown','메이플(maple) 원목','w1150 x d480 x h650 mm',1, sysdate-30)
+values ('H011TBL','table','swedish table',73000,30,'maple brown','메이플(maple) 원목','w1150 x d480 x h650 mm',1, sysdate-30)
 into habibi_product
-values ('H012TBL','table','mini round table',40000,8,'light brown','메이플(maple) 원목','w400 x d400 x h550 mm',1, sysdate-29)
+values ('H012TBL','table','mini round table',40000,29,'light brown','메이플(maple) 원목','w400 x d400 x h550 mm',1, sysdate-29)
 into habibi_product
-values ('H013TBL','table','simple round table',130000,5,'light brown','오크(oak) 원목','w650 x d650 x h750 mm',1, sysdate-28)
+values ('H013TBL','table','simple round table',130000,28,'light brown','오크(oak) 원목','w650 x d650 x h750 mm',1, sysdate-28)
 into habibi_product
-values ('H014TBL','table','standard table',165000,20,'white','플라스틱 & 알루미늄','w550 x d400 x h600 mm',1, sysdate-27)
+values ('H014TBL','table','standard table',165000,27,'white','플라스틱 & 알루미늄','w550 x d400 x h600 mm',1, sysdate-27)
 into habibi_product
-values ('H015TBL','table','modern table',144000,14,'white','스틸 & 알루미늄','w1420 x d525 x h750 mm',1, sysdate-26)
+values ('H015TBL','table','modern table',144000,26,'white','스틸 & 알루미늄','w1420 x d525 x h750 mm',1, sysdate-26)
 into habibi_product
-values ('H016TBL','table','basic round table',55000,14,'white','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-25)
+values ('H016TBL','table','basic round table',55000,4,'white','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-25)
 into habibi_product
-values ('H017TBL','table','european table',93000,14,'maple brown','월넛(walnut) 원목','w1120 x d425 x h750 mm',1, sysdate-24)
+values ('H017TBL','table','european table',93000,4,'maple brown','월넛(walnut) 원목','w1120 x d425 x h750 mm',1, sysdate-24)
 into habibi_product
 values ('H018TBL','table','wooden design table',65000,3,'light brown','월넛(walnut) 원목','w400 x d400 x h250 mm',1, sysdate-23)
 into habibi_product
-values ('H019TBL','table','vintage mini table',80000,20,'oak brown','오크(oak) 원목','w550 x d550 x h750 mm',1, sysdate-22)
+values ('H019TBL','table','vintage mini table',80000,0,'oak brown','오크(oak) 원목','w550 x d550 x h750 mm',1, sysdate-22)
 into habibi_product
-values ('H020TBL','table','premium design table',230000,2,'oak brown','오크(oak) 원목','w1300 x d600 x h750 mm',1, sysdate-21)
+values ('H020TBL','table','premium design table',230000,0,'oak brown','오크(oak) 원목','w1300 x d600 x h750 mm',1, sysdate-21)
 select * from dual;
 
 
 insert all
 into habibi_product
-values ('H001STR','storage','modern wall shelf',45000,14,'cherry brown','체리(cherry) 원목','w280 x d65 x h250 mm',1, sysdate-20)
+values ('H021TBL','table','modern side table',52000,20,'white','스틸 & 알루미늄','w350 x d350 x h650 mm',1, sysdate-20)
 into habibi_product
-values ('H002STR','storage','vintage storage',95000,8,'light gray','스틸 & 체리(cherry) 원목','w750 x d350 x h650 mm',1, sysdate-19)
+values ('H022TBL','table','simple side table',80000,19,'white','체리(cherry) 원목','w350 x d350 x h650 mm',1, sysdate-19)
 into habibi_product
-values ('H003STR','storage','simple black shelf',75000,5,'black','스틸 & 알루미늄','w550 x d250 x h1250 mm',1, sysdate-18)
+values ('H023TBL','table','vintage side table',75000,18,'gray','콘크리트','w350 x d350 x h650 mm',1, sysdate-18)
 into habibi_product
-values ('H004STR','storage','basic white storage',120000,20,'white','파티클보드 & 아크릴 페인트','w750 x d350 x h650 mm',1, sysdate-17)
+values ('H024TBL','table','elegant side table',65000,17,'maple brown','오크(oak) 원목','w350 x d350 x h650 mm',1, sysdate-17)
 into habibi_product
-values ('H005STR','storage','wooden wall shelf',55000,14,'oak brown','오크(oak) 원목','w280 x d65 x h250 mm',1, sysdate-16)
+values ('H025TBL','table','simple basic table',50000,16,'white','플라스틱 & 알루미늄','w1150 x d480 x h770 mm',1, sysdate-16)
 into habibi_product
-values ('H006STR','storage','modern storage',92000,14,'walnut brown','월넛(walnut) 원목','w750 x d350 x h650 mm',1, sysdate-15)
+values ('H026TBL','table','modern glass table',92000,15,'black','유리 & 알루미늄','w1150 x d480 x h325 mm',1, sysdate-15)
 into habibi_product
-values ('H007STR','storage','wooden mini storage',80000,14,'maple brown','메이플(maple) 원목','w1345 x d950 x h845 mm',1, sysdate-14)
+values ('H027TBL','table','wooden table',170000,10,'light brown','메이플(maple) 원목','w1345 x d950 x h845 mm',1, sysdate-14)
 into habibi_product
-values ('H008STR','storage','simple white storage',75000,3,'white','파티클보드 & 아크릴 페인트','w350 x d350 x h700 mm',1, sysdate-13)
+values ('H028TBL','table','design side table',85000,10,'gold brown','스틸 & 알루미늄','w350 x d350 x h650 mm',1, sysdate-13)
 into habibi_product
-values ('H009STR','storage','standard steel storage',105000,20,'gray','스틸 & 알루미늄','w420 x d400 x h1550 mm',1, sysdate-12)
+values ('H029TBL','table','simple mini table',105000,10,'light brown','메이플(maple) 원목','w400 x d400 x h550 mm',1, sysdate-12)
 into habibi_product
-values ('H010STR','storage','premium storage',170000,2,'dark brown','월넛(walnut) 원목','w750 x d350 x h650 mm',1, sysdate-11)
+values ('H030TBL','table','premium table',84000,10,'oak brown','월넛(walnut) 원목','w1150 x d480 x h325 mm',1, sysdate-11)
 into habibi_product
-values ('H011STR','storage','swedish storage',133000,14,'cherry brown','체리(cherry) 원목','w750 x d350 x h650 mm',1, sysdate-10)
+values ('H031TBL','table','swedish table',73000,10,'maple brown','메이플(maple) 원목','w1150 x d480 x h650 mm',1, sysdate-10)
 into habibi_product
-values ('H012STR','storage','glass door storage',90000,8,'white','파티클보드 & 아크릴 페인트','w520 x d400 x h1550 mm',1, sysdate-9)
+values ('H032TBL','table','mini round table',40000,10,'light brown','메이플(maple) 원목','w400 x d400 x h550 mm',1, sysdate-9)
 into habibi_product
-values ('H013STR','storage','vintage storage',180000,5,'dark brown','오크(oak) 원목','w520 x d400 x h1550 mm',1, sysdate-8)
+values ('H033TBL','table','simple round table',130000,10,'light brown','오크(oak) 원목','w650 x d650 x h750 mm',1, sysdate-8)
 into habibi_product
-values ('H014STR','storage','european storage',115000,20,'white','파티클보드 & 오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-7)
+values ('H034TBL','table','standard table',165000,10,'white','플라스틱 & 알루미늄','w550 x d400 x h600 mm',1, sysdate-7)
 into habibi_product
-values ('H015STR','storage','simple wall shelf',44000,14,'maple brown','메이플(maple) 원목','w280 x d65 x h250 mm',1, sysdate-6)
+values ('H035TBL','table','modern table',144000,10,'white','스틸 & 알루미늄','w1420 x d525 x h750 mm',1, sysdate-6)
 into habibi_product
-values ('H016STR','storage','string design shelf',85000,14,'oak brown','월넛(walnut) 원목','w550 x d250 x h1250 mm',1, sysdate-5)
+values ('H036TBL','table','basic round table',55000,13,'white','플라스틱 & 알루미늄','w400 x d400 x h550 mm',1, sysdate-5)
 into habibi_product
-values ('H017STR','storage','modern steel storage',93000,14,'gray','스틸 & 알루미늄','w1345 x d950 x h845 mm',1, sysdate-4)
+values ('H037TBL','table','european table',93000,12,'maple brown','월넛(walnut) 원목','w1120 x d425 x h750 mm',1, sysdate-4)
 into habibi_product
-values ('H018STR','storage','unique glass storage',145000,3,'beige','파티클보드 & 알루미늄','w325 x d325 x h500 mm',1, sysdate-3)
+values ('H038TBL','table','wooden design table',65000,11,'light brown','월넛(walnut) 원목','w400 x d400 x h250 mm',1, sysdate-3)
 into habibi_product
-values ('H019STR','storage','standard wall shelf',210000,20,'maple brown','메이플(maple) 원목','w1560 x d350 x h1780 mm',1, sysdate-2)
+values ('H039TBL','table','vintage mini table',80000,10,'oak brown','오크(oak) 원목','w550 x d550 x h750 mm',1, sysdate-2)
 into habibi_product
-values ('H020STR','storage','premium basic storage',160000,2,'oak brown','오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-1)
+values ('H040TBL','table','premium design table',230000,10,'oak brown','오크(oak) 원목','w1300 x d600 x h750 mm',1, sysdate-1)
 select * from dual;
+
+
+insert all
+into habibi_product
+values ('H001STR','storage','modern wall shelf',45000,40,'cherry brown','체리(cherry) 원목','w280 x d65 x h250 mm',1, sysdate-40)
+into habibi_product
+values ('H002STR','storage','vintage storage',95000,39,'light gray','스틸 & 체리(cherry) 원목','w750 x d350 x h650 mm',1, sysdate-39)
+into habibi_product
+values ('H003STR','storage','simple black shelf',75000,38,'black','스틸 & 알루미늄','w550 x d250 x h1250 mm',1, sysdate-38)
+into habibi_product
+values ('H004STR','storage','basic white storage',120000,37,'white','파티클보드 & 아크릴 페인트','w750 x d350 x h650 mm',1, sysdate-37)
+into habibi_product
+values ('H005STR','storage','wooden wall shelf',55000,36,'oak brown','오크(oak) 원목','w280 x d65 x h250 mm',1, sysdate-36)
+into habibi_product
+values ('H006STR','storage','modern storage',92000,35,'walnut brown','월넛(walnut) 원목','w750 x d350 x h650 mm',1, sysdate-35)
+into habibi_product
+values ('H007STR','storage','wooden mini storage',80000,34,'maple brown','메이플(maple) 원목','w1345 x d950 x h845 mm',1, sysdate-34)
+into habibi_product
+values ('H008STR','storage','simple white storage',75000,33,'white','파티클보드 & 아크릴 페인트','w350 x d350 x h700 mm',1, sysdate-33)
+into habibi_product
+values ('H009STR','storage','standard steel storage',105000,32,'gray','스틸 & 알루미늄','w420 x d400 x h1550 mm',1, sysdate-32)
+into habibi_product
+values ('H010STR','storage','premium storage',170000,31,'dark brown','월넛(walnut) 원목','w750 x d350 x h650 mm',1, sysdate-31)
+into habibi_product
+values ('H011STR','storage','swedish storage',133000,30,'cherry brown','체리(cherry) 원목','w750 x d350 x h650 mm',1, sysdate-30)
+into habibi_product
+values ('H012STR','storage','glass door storage',90000,29,'white','파티클보드 & 아크릴 페인트','w520 x d400 x h1550 mm',1, sysdate-29)
+into habibi_product
+values ('H013STR','storage','vintage storage',180000,25,'dark brown','오크(oak) 원목','w520 x d400 x h1550 mm',1, sysdate-28)
+into habibi_product
+values ('H014STR','storage','european storage',115000,25,'white','파티클보드 & 오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-27)
+into habibi_product
+values ('H015STR','storage','simple wall shelf',44000,25,'maple brown','메이플(maple) 원목','w280 x d65 x h250 mm',1, sysdate-26)
+into habibi_product
+values ('H016STR','storage','string design shelf',85000,2,'oak brown','월넛(walnut) 원목','w550 x d250 x h1250 mm',1, sysdate-25)
+into habibi_product
+values ('H017STR','storage','modern steel storage',93000,4,'gray','스틸 & 알루미늄','w1345 x d950 x h845 mm',1, sysdate-24)
+into habibi_product
+values ('H018STR','storage','unique glass storage',145000,3,'beige','파티클보드 & 알루미늄','w325 x d325 x h500 mm',1, sysdate-23)
+into habibi_product
+values ('H019STR','storage','standard wall shelf',210000,0,'maple brown','메이플(maple) 원목','w1560 x d350 x h1780 mm',1, sysdate-22)
+into habibi_product
+values ('H020STR','storage','premium basic storage',160000,0,'oak brown','오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-21)
+select * from dual;
+
+
+insert all
+into habibi_product
+values ('H021STR','storage','modern wall shelf',45000,19,'cherry brown','체리(cherry) 원목','w280 x d65 x h250 mm',1, sysdate-20)
+into habibi_product
+values ('H022STR','storage','vintage storage',95000,18,'light gray','스틸 & 체리(cherry) 원목','w750 x d350 x h650 mm',1, sysdate-19)
+into habibi_product
+values ('H023STR','storage','simple black shelf',75000,17,'black','스틸 & 알루미늄','w550 x d250 x h1250 mm',1, sysdate-18)
+into habibi_product
+values ('H024STR','storage','basic white storage',120000,15,'white','파티클보드 & 아크릴 페인트','w750 x d350 x h650 mm',1, sysdate-17)
+into habibi_product
+values ('H025STR','storage','wooden wall shelf',55000,14,'oak brown','오크(oak) 원목','w280 x d65 x h250 mm',1, sysdate-16)
+into habibi_product
+values ('H026STR','storage','modern storage',92000,13,'walnut brown','월넛(walnut) 원목','w750 x d350 x h650 mm',1, sysdate-15)
+into habibi_product
+values ('H027STR','storage','wooden mini storage',80000,13,'maple brown','메이플(maple) 원목','w1345 x d950 x h845 mm',1, sysdate-14)
+into habibi_product
+values ('H028STR','storage','simple white storage',75000,12,'white','파티클보드 & 아크릴 페인트','w350 x d350 x h700 mm',1, sysdate-13)
+into habibi_product
+values ('H029STR','storage','standard steel storage',105000,10,'gray','스틸 & 알루미늄','w420 x d400 x h1550 mm',1, sysdate-12)
+into habibi_product
+values ('H030STR','storage','premium storage',170000,10,'dark brown','월넛(walnut) 원목','w750 x d350 x h650 mm',1, sysdate-11)
+into habibi_product
+values ('H031STR','storage','swedish storage',133000,10,'cherry brown','체리(cherry) 원목','w750 x d350 x h650 mm',1, sysdate-10)
+into habibi_product
+values ('H032STR','storage','glass door storage',90000,10,'white','파티클보드 & 아크릴 페인트','w520 x d400 x h1550 mm',1, sysdate-9)
+into habibi_product
+values ('H033STR','storage','vintage storage',180000,9,'dark brown','오크(oak) 원목','w520 x d400 x h1550 mm',1, sysdate-8)
+into habibi_product
+values ('H034STR','storage','european storage',115000,9,'white','파티클보드 & 오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-7)
+into habibi_product
+values ('H035STR','storage','simple wall shelf',44000,18,'maple brown','메이플(maple) 원목','w280 x d65 x h250 mm',1, sysdate-6)
+into habibi_product
+values ('H036STR','storage','string design shelf',85000,17,'oak brown','월넛(walnut) 원목','w550 x d250 x h1250 mm',1, sysdate-5)
+into habibi_product
+values ('H037STR','storage','modern steel storage',93000,17,'gray','스틸 & 알루미늄','w1345 x d950 x h845 mm',1, sysdate-4)
+into habibi_product
+values ('H038STR','storage','unique glass storage',145000,13,'beige','파티클보드 & 알루미늄','w325 x d325 x h500 mm',1, sysdate-3)
+into habibi_product
+values ('H039STR','storage','standard wall shelf',210000,12,'maple brown','메이플(maple) 원목','w1560 x d350 x h1780 mm',1, sysdate-2)
+into habibi_product
+values ('H040STR','storage','premium basic storage',160000,10,'oak brown','오크(oak) 원목','w750 x d350 x h650 mm',1, sysdate-1)
+select * from dual;
+
+commit;
+
+select *
+from  view_habibi_product;
+
 
 select *
 from view_habibi_product;
@@ -358,6 +580,7 @@ where NUM between 1 and 16;
 
 -->> Cart
 --** 장바구니 테이블 생성
+drop table habibi_cart cascade constraint;
 create table habibi_cart
 (cart_num          number(10) not null     -- 장바구니 번호
 ,fk_userid    varchar2(50) not null        -- 회원 아이디
@@ -370,6 +593,7 @@ create table habibi_cart
 );
 
 --** 장바구니 번호 시퀀스 생성
+drop sequence seq_habibi_cart_cartnum;
 create sequence seq_habibi_cart_cartnum
  start with 1
  increment by 1
@@ -396,6 +620,7 @@ where fk_userid = 'admin';
 
 -->> Order
 -- 주문테이블 생성
+drop table habibi_order cascade constraint;
 create table habibi_order
 (order_code number(7) not null      -- 주문번호
 ,fk_userid varchar2(50) not null    -- 아이디
@@ -414,6 +639,7 @@ create table habibi_order
 select *
 from habibi_order;
 -- 주문번호 시퀀스 생성
+drop sequence seq_habibi_order_code;
 create sequence seq_habibi_order_code
  start with 1
  increment by 1
@@ -446,6 +672,7 @@ where fk_userid = 'admin';
 
 
 -- 주문상세 테이블
+drop table habibi_orderinfo cascade constraint;
 create table habibi_orderinfo
 (orderinfo_code number(7) not null   -- 주문상세 시퀀스
 ,fk_order_code number(7) not null    -- 주문번호
@@ -504,7 +731,7 @@ values (2, '최유영', 182000, 135000, sysdate-3, 0);
 insert into habibi_calculate
 values (3, '이호연', 138000, 85000, sysdate-90, 1);
 insert into habibi_calculate
-values (4, '이호연', 138000, 85000, sysdate-3, 1);
+values (4, '이호연', 138000, 85000, sysdate-3, 0);
 insert into habibi_calculate
 values (5, '신현호', 2854100, 85000, sysdate-47, 0);
 insert into habibi_calculate
@@ -524,7 +751,7 @@ delete habibi_calculate where fk_order_code = 4;
 
 select *
 from view_habibi_calculate;
-
+commit;
 update habibi_calculate set is_complete = 0
 where fk_order_code in (4);
 
@@ -596,6 +823,7 @@ group by premonth;
 
 
 // qna 게시판 테이블
+drop table HABIBI_QNA cascade constraint;
 create table HABIBI_QNA
 (
     FK_USERID      VARCHAR2(20)         not null
@@ -628,6 +856,7 @@ create table HABIBI_QNA
 
 
 -- 리뷰 게시판 테이블
+drop table HABIBI_REVIEW cascade constraint;
 create table HABIBI_REVIEW
 (
     FK_USERID      VARCHAR2(20)   not null
@@ -649,6 +878,7 @@ create table HABIBI_REVIEW
 );
 
 -- 리뷰 댓글 테이블
+drop table HABIBI_COMMENT cascade constraint;
 create table HABIBI_COMMENT
 (
     FK_CMT_USERID  VARCHAR2(20)
@@ -665,42 +895,48 @@ create table HABIBI_COMMENT
 );
 
 -- qna view
+drop view QNA_RANK_VIEW;
 create view QNA_RANK_VIEW as
 select fk_userid, fk_prod_code, qna_category, qna_no, qna_title, qna_content, qna_secret,
        to_char(qna_write_date, 'YYYY-MM-DD') AS qna_write_date, qna_count, qna_is_done, qna_status,
-       rank() over (partition by fk_prod_code order by qna_write_date) AS qna_seq, re_ref, re_seq, re_lev
+       row_number() over (partition by fk_prod_code order by qna_write_date) AS qna_seq, re_ref, re_seq, re_lev
 from habibi_qna
-order by rank() over (partition by fk_prod_code order by qna_write_date) desc;
+order by row_number() over (partition by fk_prod_code order by qna_write_date) desc;
 
 
 -- rev view1
+drop view REV_RANK_VIEW;
 create view REV_RANK_VIEW as
 select fk_userid, fk_prod_code, rev_no, rev_title, rev_content,
        to_char(rev_write_date, 'YYYY-MM-DD') AS rev_write_date, rev_count, rev_status,
-       rank() over (partition by fk_prod_code order by rev_write_date) AS rev_seq
+       row_number() over (partition by fk_prod_code order by rev_write_date) AS rev_seq
 from habibi_review;
 
 -- rev view2
+drop view REV_VIEW;
 create view REV_VIEW as
 select R.fk_userid, R.fk_prod_code, R.rev_no, R.rev_title, R.rev_content, to_char(R.rev_write_date, 'YYYY-MM-DD') as rev_write_date,
-       R.rev_count, R.rev_status, rank() over (partition by R.fk_prod_code order by R.rev_write_date) AS rev_seq, count(C.fk_rev_no) cmt_count
+       R.rev_count, R.rev_status, row_number() over (partition by R.fk_prod_code order by R.rev_write_date) AS rev_seq, count(C.fk_rev_no) cmt_count
 from habibi_review R left join habibi_comment C on R.rev_no = C.fk_rev_no
 group by R.fk_userid, R.fk_prod_code, R.rev_no, R.rev_title, R.rev_content, R.rev_write_date, R.rev_count, R.rev_status;
 
 -- cmt view
+drop view REV_CMT_VIEW;
 create view REV_CMT_VIEW as
 select r.fk_userid, r.fk_prod_code, r.rev_no, r.rev_title, r.rev_content, r.rev_write_date, r.rev_count, r.rev_status, r.rev_seq, count(c.fk_rev_no) cmt_count
 from rev_rank_view R
          left join habibi_comment C on R.rev_no = C.fk_rev_no
 group by r.fk_userid, r.fk_prod_code, r.rev_no, r.rev_title, r.rev_content, r.rev_write_Date, r.rev_count, r.rev_status, r.rev_seq;
 
+drop sequence habibi_qna_seq_re;
+ 
 -- 시퀀스
 create sequence habibi_qna_seq
-    increment by 1
+    increment by 100
     start with 1;
 
 create sequence habibi_review_seq
-    increment by 1
+    increment by 1000
     start with 1;
 
 create sequence habibi_comment_seq
@@ -708,7 +944,7 @@ create sequence habibi_comment_seq
     start with 1;
 
 create sequence habibi_qna_seq_re
-    increment by 1
+    increment by 50
     start with 1;
 
 ------------------------------------------------------------------------------------------------------------------------------
@@ -777,7 +1013,6 @@ commit;
 drop table habibi_news;
 drop sequence seq_news_no;
 
-drop table habibi_news;
 create table habibi_news
 ( news_no  varchar2(100) not null
   ,news_title varchar2(100)
@@ -791,6 +1026,9 @@ create table habibi_news
   ,constraint CK_habibi_news_post check(is_post in ('0','1'))
   );
 
+select *
+from habibi_news;
+commit;
 
 create sequence seq_news_no
 start with 1
@@ -800,31 +1038,152 @@ nominvalue
 nocycle
 nocache;
 
+delete from habibi_news
+where news_no=7;
 
 
-select *
-from habibi_news;
 
-select news_no,news_title,news_writer
-from habibi_news
-where news_title like '%본사%';
+commit;
      
      
 select RNO, news_no, news_title, news_writer, regdate, hit
-from 	
+from    
 (  
   select rownum AS RNO, news_no, news_title, news_writer, regdate, hit  
   from 
   (
-    select news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit 
+    select to_number(news_no) AS news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit 
     from habibi_news
-    where news_title like '%'||'크리스마스'||'%'
+    where news_title like '%'||''||'%'
     order by news_no desc 
   ) V 
 ) T 
-where RNO between 1 and 4;
+where RNO between 1 and 15;
+
+select RNO, news_no, news_title, news_writer, regdate, hit
+from    
+(  
+  select rownum AS RNO, news_no, news_title, news_writer, regdate, hit  
+  from 
+  (
+    select to_number(news_no) AS news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit 
+    from habibi_news
+    where news_title like '%'||''||'%'
+    order by news_no desc 
+  ) V 
+) T 
+where RNO between 16 and 30;
+------------------------------------------------------------------------------------------------------------------------------------------------
+insert into habibi_news(news_no, news_title,news_writer,news_content,regdate,hit,is_post) values (seq_news_no.nextval,'비슬리 판매 일시중지','관리자','
+영국 철제 서랍장인 비슬리(BISLEY)의 판매가 일시 중지되었습니다.
+이번에 새로이 수입된 다량의 비슬리 제품에서 약간의 하자가 발생되어 전제품을 다시 수입하고 있습니다.
+따라서 약 2개월 후에나 구입이 가능하실 것으로 예상됩니다.
+기다리게 해드려 죄송하며, 최대한 좋은 제품을 받으실 수 있도록 하기 위한 리모드의 마음을 이해해 주시기 바랍니다.
+감사합니다.',default,default,default);
+insert into habibi_news(news_no, news_title,news_writer,news_content,regdate,hit,is_post) values (seq_news_no.nextval,'회원가입시 적립금 1만원 증정!','관리자','가리모쿠60 공식매장 강남점 - 리모드를 찾아와 주신 모든 분들께 감사드립니다.
+현재는 가리모쿠60 정품 제품만 등록이 되어 있지만, 조만간 다양한 가격대의 가구 및 소품들이 등록될 예정입니다.
+그러므로 지금 회원 가입을 하시고 적립금 1만원을 받으신다면 쇼핑하시면서 유용하게 사용할 수 있습니다.
+지금 당장 구입은 안하시더라도 회원 가입하셔서 적립금 1만원도 받으시고 언제든지 사용하세요~!',default,default,default);
+insert into habibi_news(news_no, news_title,news_writer,news_content,regdate,hit,is_post) values (seq_news_no.nextval,'	2015 Habibi 워크샵 참가 인원 모집 @리모드 부산점','관리자','가리모쿠60 공식매장 강남점 - 리모드를 찾아와 주신 모든 분들께 감사드립니다.
+현재는 가리모쿠60 정품 제품만 등록이 되어 있지만, 조만간 다양한 가격대의 가구 및 소품들이 등록될 예정입니다.
+그러므로 지금 회원 가입을 하시고 적립금 1만원을 받으신다면 쇼핑하시면서 유용하게 사용할 수 있습니다.
+지금 당장 구입은 안하시더라도 회원 가입하셔서 적립금 1만원도 받으시고 언제든지 사용하세요~!',default,default,default);
+commit;	
+
+ select news_no, news_title, news_writer, regdate, hit, is_post
+from
+				  	   (
+				  		  select rownum AS RNO, news_no, news_title, news_writer, regdate, hit, is_post
+				  		  from
+				  		 ( 
+				  		  select news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit, is_post  
+				  		  from habibi_news 
+		  
+			 where news_title like '%'||''||'%' 
+		  
+	order by news_no desc
+		)	 V
+	)	T
+				  		where RNO between 1 and 16  and news_no between 1 and 16
+                    order by news_no desc;
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+SELECT * FROM HABIBI_ORDER;
+SELECT * FROM HABIBI_ORDERINFO;
+select * from habibi_calculate;
+select * from habibi_point;
+
+update habibi_order set order_date = sysdate - 110 where order_code = '1';
+update habibi_order set order_date = sysdate - 100 where order_code = '2';
+update habibi_order set order_date = sysdate - 90 where order_code = '3';
+update habibi_order set order_date = sysdate - 80 where order_code = '4';
+update habibi_order set order_date = sysdate - 70 where order_code = '5';
+update habibi_order set order_date = sysdate - 60 where order_code = '6';
+update habibi_order set order_date = sysdate - 50 where order_code = '7';
+update habibi_order set order_date = sysdate - 40 where order_code = '8';
+update habibi_order set order_date = sysdate - 30 where order_code = '9';
+update habibi_order set order_date = sysdate - 20 where order_code = '10';
+update habibi_order set order_date = sysdate - 10 where order_code = '11';
+update habibi_order set order_date = sysdate - 5 where order_code = '12';
+update habibi_order set order_date = sysdate - 0 where order_code = '13';
+
+commit;
+
+
+update habibi_calculate set fk_order_date = sysdate - 110 where fk_order_code = '1';
+update habibi_calculate set fk_order_date = sysdate - 100 where fk_order_code = '2';
+update habibi_calculate set fk_order_date = sysdate - 90 where fk_order_code = '3';
+update habibi_calculate set fk_order_date = sysdate - 80 where fk_order_code = '4';
+update habibi_calculate set fk_order_date = sysdate - 70 where fk_order_code = '5';
+update habibi_calculate set fk_order_date = sysdate - 60 where fk_order_code = '6';
+update habibi_calculate set fk_order_date = sysdate - 50 where fk_order_code = '7';
+update habibi_calculate set fk_order_date = sysdate - 40 where fk_order_code = '8';
+update habibi_calculate set fk_order_date = sysdate - 30 where fk_order_code = '9';
+update habibi_calculate set fk_order_date = sysdate - 20 where fk_order_code = '10';
+update habibi_calculate set fk_order_date = sysdate - 10 where fk_order_code = '11';
+update habibi_calculate set fk_order_date = sysdate - 5 where fk_order_code = '12';
+update habibi_calculate set fk_order_date = sysdate - 0 where fk_order_code = '13';
 
 
 
-delete from habibi_news
-where news_no='1';
+
+
+
+
+update habibi_order set order_date = addmonths
+
+insert into habibi_calculate
+values(1,'Shine',545000,545000*0.7,sysdate,0);
+
+insert into habibi_calculate
+values(2,'imdud0612',773000,773000*0.7,sysdate,0);
+
+insert into habibi_calculate
+values(3,'rubyruby1010',752000,752000*0.7,sysdate,0);
+
+commit;
+desc habibi_calculate;
+
+
+--delete  habibi_calculate where fk_order_code <30;
+--commit;
+SELECT * FROM VIEW_HABIBI_CALCULATE;
+SELECT * FROM HABIBI_POINT;
+
+commit;
+
+create view news_view as
+select news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit, is_post,
+       row_number() over (order by regdate) AS new_num
+from habibi_news
+order by row_number() over (order by regdate) desc;
+
+commit;
+
+select * from news_view order by new_num;
+
+
+select * from habibi_comm
+

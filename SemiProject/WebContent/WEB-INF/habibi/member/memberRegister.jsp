@@ -411,14 +411,15 @@ span#emailCheck {
 			</td>
 		</tr>
 			
+			
 		<tr>
-			<td colspan="2">
-				<label for="agree">이용약관에 동의합니다&nbsp;<span class="star">*&nbsp;&nbsp;</span></label><input type="checkbox" id="agree" />
+			<td colspan="2" style="text-align: left; vertical-align: middle;">
+				<iframe src="../iframeAgree/agree.html" width="85%" height="150px" class="box" ></iframe>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="text-align: center; vertical-align: middle;">
-				<iframe src="../iframeAgree/agree.html" width="85%" height="150px" class="box" ></iframe>
+			<td colspan="2" style="text-align: right; padding-right: 145px;">
+				<label for="agree">이용약관에 동의합니다&nbsp;<span class="star">*&nbsp;&nbsp;</span></label><input type="checkbox" id="agree" />
 			</td>
 		</tr>
 		<tr>

@@ -27,7 +27,7 @@ public class CMTListAction extends AbstractController {
 			for (CommentVO cvo : cmtList) {
 				JSONObject jsobj = new JSONObject();
 				jsobj.put("cmt_content", cvo.getCmt_content());
-				jsobj.put("fk_userid", cvo.getFk_userid());
+				jsobj.put("fk_cmt_userid", cvo.getFk_cmt_userid());
 				jsobj.put("cmt_write_date", cvo.getCmt_write_date());
 				jsobj.put("cmt_no", cvo.getCmt_no());
 

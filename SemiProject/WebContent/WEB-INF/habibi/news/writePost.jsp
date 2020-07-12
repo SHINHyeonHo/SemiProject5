@@ -64,6 +64,11 @@ th.title{
    height: 80px;
 }
 
+a,a:link,a:visited,a:active,a:hover{
+text-decoration:none;
+color: #4c4b4b;
+}
+
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
@@ -76,7 +81,7 @@ th.title{
 
 
 	
-	<h5 align=center style="margin-right: 5%;ghf ">NEWS</h5>
+	<h5 align=center style="margin-right: 18%;ghf "><a href="/SemiProject/news/list.hb">NEWS</a></h5>
 
 
 	<form method="post" name="registerFrm" action="/SemiProject/news/registerPost.hb" enctype="multipart/form-data" >
@@ -117,10 +122,10 @@ th.title{
    <div class="btnArea" align="center">
    
    <div class="button">
-   <button id="registerButton" type="submit" style="align:center; margin-left: 10%;ghf ">등록</button></div>
+   <button id="registerButton" type="submit" style="align:center; margin-right: 18%;ghf ">등록</button></div>
    </div>
       </form> 
-   
+     
    
 </div>
 		

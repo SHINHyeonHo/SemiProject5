@@ -11,7 +11,7 @@
 <style type="text/css">
 
 div.main_banner {
-	border: solid 1px blue;
+/* 	border: solid 1px blue; */
 	width: 78%;
 	min-height: 1500px;
 	margin-top:50px;
@@ -19,20 +19,23 @@ div.main_banner {
 div#search{
 
 margin-top:40px;
+margin-bottom:40px;
 
 }
 table{
 display:table-cell;
 table-layout:fixed;
+ margin-top: 100px;
 }
 
-table, th, tr, td {
+table,th, tr, td {
     border: 1px solid white;
     border-collapse: collapse;
     text-align:center;
     vertical-align:middle;
     font-size:14px;
     padding:6px 4px;
+  
     
 }
 
@@ -66,23 +69,23 @@ color: #4c4b4b;
     	<h5 align="center"><a href="/SemiProject/news/list.hb">NEWS</a></h5>
     	
     	<div id="search" align="right">
+    	
+    		<c:if test="${sessionScope.loginuser.userid eq 'admin'}">
     		<button type="button" id="btnWrite">글쓰기</button>
-			<input type="text" id="searchWord" name="searchWord" value=""/>
+    		</c:if>
+			<input type="text" id="searchWord2"/>
 			<button type="button" id="btnSearch">search</button>
 		</div>
     	
     	<table>
     		<thead>
     			<th width='120px' id='border'>no</th>
-				<th width='700px' id='border'>title</th>
-				<th width='80px' id='border'>name</th>
+				<th width='750px' id='border'>title</th>
+				<th width='100px' id='border'>name</th>
 				<th width='100px' id='border'>date</th>
-				<th width='40px' id='border'>조회</th>
+				<th width='100px' id='border'>조회</th>
 		</thead>
 		<tbody>
-    	
-    	
-    	 
     			<c:forEach var="nvo" items="${noticeList}">
     			 <c:if test= "${nvo.is_post == 1}">
     					<tr>
@@ -118,23 +121,32 @@ $(document).ready(function(){
 	
 	$("#btnSearch").click(function(){
 		
-		var searchWord=$("#searchWord").val().trim();
-		
-		if(searchWord==""){
+		var searchWord2=$("#searchWord2").val().trim();
+
+		if(searchWord2==""){
 			alert("검색할 단어를 입력하세요.");
 			return;
 		}
 		else{
-		location.href="/SemiProject/news/list.hb?searchWord="+searchWord;
+		location.href="/SemiProject/news/list.hb?searchWord="+searchWord2;
 		
 		}
 		});
 
 	
-	$("#searchWord").keydown(function(key){
+	$("#searchWord2").keydown(function(key){
 		if(key.keyCode==13){
-			var searchWord=$(this).val().trim();
-			location.href="/SemiProject/news/list.hb?searchWord="+searchWord;
+			var searchWord2=$(this).val().trim();
+
+			if(searchWord2==""){
+				alert("검색할 단어를 입력하세요.");
+				return;
+			}
+			else{
+			location.href="/SemiProject/news/list.hb?searchWord="+searchWord2;
+			
+			}
+			
 		}
 	});
 	

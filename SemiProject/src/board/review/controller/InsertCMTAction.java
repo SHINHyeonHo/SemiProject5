@@ -12,11 +12,11 @@ public class InsertCMTAction extends AbstractController {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String cmt_content = request.getParameter("cmt_content");
-		String fk_userid = request.getParameter("fk_userid");
+		String fk_cmt_userid = request.getParameter("fk_cmt_userid");
 		int fk_rev_no = Integer.parseInt(request.getParameter("fk_rev_no"));
 
 		CommentVO cvo = new CommentVO();
-		cvo.setFk_userid(fk_userid);
+		cvo.setFk_cmt_userid(fk_cmt_userid);
 		cvo.setCmt_content(cmt_content.replaceAll("\r\n", "<br/>"));
 		cvo.setFk_rev_no(fk_rev_no);
 

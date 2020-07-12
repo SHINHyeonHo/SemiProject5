@@ -14,6 +14,7 @@
     <style>
         #revPage {
             width: 780px;
+            height: 800px;
             margin: 0 auto;
             font-size: 0.75em;
             font-family: Verdana, Dotum, AppleGothic, sans-serif;
@@ -139,35 +140,39 @@
     
     <c:set var="startNum" value="${page-(page-1)%5}" />    
     <c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/15), '.')}" /> 
-    <div>
+    <div style="float:right; padding-right:40px;">
     	<div><span>${(empty param.p)?1:param.p}</span> / ${lastNum} page</div>
     </div>
-      
-    <div> 
+     <br> 
+     
+     <div style="text-align: center;">
+    <span style="display: inline-block;"> 
     	<c:if test="${startNum>1}">
     	<a href="?prodCode=${param.prodCode}&p=${startNum-1}&f=${param.f}&q=${param.q}" >이전</a>
     	</c:if>
     	<c:if test="${startNum<=1}">
     	<span onclick="alert('이전 페이지가 없습니다.');">이전</span>
     	</c:if>
-   	</div>
+   	</span>
    	
-    <ul style="overflow: auto; list-style-type: none;">
+    <span style="overflow: auto; list-style-type: none; display:inline-block;">
     	<c:forEach var="i" begin="0" end="4">   
     	<c:if test="${(startNum+i) <= lastNum}">		
-    		<li style="list-style:none; float:left; display: inline;"><a style="color:${page==(startNum+i)?'orange':''}" href="?prodCode=${param.prodCode}&p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a><span>&nbsp;</span></li>
+    		<span class="pagelist" style="list-style:none; float:left; display: inline;"><a style="color:${page==(startNum+i)?'orange':''}" href="?prodCode=${param.prodCode}&p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a><span>&nbsp;</span></span>
     	</c:if> 
     	</c:forEach>
-    </ul>
+    </span>
     
-    <div>
+    <span style="display: inline-block;"> 
     	<c:if test="${startNum+4<lastNum}">
     		<a href="?prodCode=${param.prodCode}&p=${startNum+5}&f=${param.f}&q=${param.q}" >다음</a>
     	</c:if>
     	<c:if test="${startNum+4>=lastNum}">
     		<span onclick="alert('다음 페이지가 없습니다.');">다음</span>
     	</c:if>
-   	</div>
+   	</span>
+</div>
+<br>
 
     <form id="search">
     	<select name="f" id="searchType">

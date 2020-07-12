@@ -15,7 +15,14 @@ public class UpdatePostAction extends AbstractController {
 		request.setCharacterEncoding("UTF-8");
 		
 		String news_no=request.getParameter("news_no");
-		request.setAttribute(news_no, news_no);
+		String content=request.getParameter("content");
+		String title=request.getParameter("title");
+		String writer=request.getParameter("writer");
+		request.setAttribute("news_no", news_no);
+		request.setAttribute("content", content);
+		request.setAttribute("title", title);
+		request.setAttribute("writer", writer);
+		
 		super.setRedirect(false);
 		super.setViewPage("/WEB-INF/habibi/news/updatepost.jsp");
 		

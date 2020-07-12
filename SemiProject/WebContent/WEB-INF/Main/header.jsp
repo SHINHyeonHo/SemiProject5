@@ -97,7 +97,7 @@ function goLogOut(){
 					<li class="header_menu">COMPANY</li>
 					<li class="header_menu">PHOTO</li>-->
 					<li class="header_menu"><a href="<%= ctxPath%>/shop/location.hb" style="color:black; text-decoration:none;">SHOP</a></li>
-					<li class="header_menu">BOARD</li>
+					<li class="header_menu"><a href="<%= ctxPath%>/news/list.hb" style="color:black; text-decoration:none;">NEWS</a></li>
 					<li class="header_menu"><a href="<%= ctxPath%>/member/login.hb" style="color:black; text-decoration:none;">LOGIN</a></li>
 					<li class="header_menu"><a href="<%= ctxPath%>/member/myInfo.hb" style="color:black; text-decoration:none;">MYINFO</a></li>
 					<li class="header_menu"><a href="<%= ctxPath %>/prod/cartmain.hb" style="color:black; text-decoration:none;">CART</a></li>
@@ -118,7 +118,7 @@ function goLogOut(){
 					<li class="header_menu">COMPANY</li>
 					<li class="header_menu">PHOTO</li>-->
 					<li class="header_menu"><a href="<%= ctxPath%>/shop/location.hb" style="color:black; text-decoration:none;">SHOP</a></li>
-					<li class="header_menu">BOARD</li>
+					<li class="header_menu"><a href="<%= ctxPath%>/news/list.hb" style="color:black; text-decoration:none;">NEWS</a></li>
 					<li class="header_menu"><span onclick="goLogOut()">LOGOUT</span></li>
 					<li class="header_menu"><a href="<%= request.getContextPath()%>/member/myInfo.hb?idx=${sessionScope.loginuser.idx}" style="color:black; text-decoration:none;">MYINFO</a></li>
 					<li class="header_menu"><a href="<%= ctxPath %>/prod/cartmain.hb" style="color:black; text-decoration:none;">CART</a></li>

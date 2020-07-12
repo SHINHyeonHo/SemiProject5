@@ -329,7 +329,7 @@
    <c:forEach var="cart" items="${cartList}" varStatus="status">
    		<tr>	
 	        <td class="thumb">
-	        	<img src="/SemiProject/images/Product/${cart.prod.prod_category}/${cart.fk_prod_code}.png" width="100" height="100">
+	        	<img src="/SemiProject/images/Product/${cart.fk_prod_code}.png" width="100" height="100">
 	        </td>
 	        
 	        
@@ -521,7 +521,7 @@
 				</tr>
 				
 				<tr>
-					<td colspan="5"><input type="checkbox" class="orderAgree">결제정보를 확인하였으며, 구매진행에 동의합니다.</td>
+					<td colspan="5"><input type="checkbox" class="orderAgree" id="ckBox"><label for="ckBox">결제정보를 확인하였으며, 구매진행에 동의합니다.</label></td>
 				</tr>
 				
 				<tr>

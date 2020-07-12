@@ -132,17 +132,16 @@
 <header></header>
 
 <div class="admin">HABIBI 관리자 페이지</div>
+<span class="back-to-habibi" style="padding: 3px;
+        	background-color: lightSteelBlue;
+        	position:absolute;
+        	right: 40px;">
+	<a href="../habibi.hb">HABIBI main page</a>
+</span>
 
 <div class = "container">
 
-    <ul class="item" id="sidebar">
-        <li><a href="">상품관리</a></li>
-        <li><a href="">주문관리</a></li>
-        <li><a href="">회원관리</a></li>
-        <li><a href="">정산관리</a></li>
-        <li><a href="">문의/리뷰</a></li>
-        <li><a href="/SemiProject/habibi.hb">메인으로</a></li>
-    </ul>
+    <jsp:include page="sideBar.jsp"></jsp:include>
 
     <div class="item" id="main">
 

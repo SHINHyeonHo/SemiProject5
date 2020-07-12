@@ -118,9 +118,9 @@
 				<td class="row1">제목</td>
 				<td id="tdSel">
 					<select name="qna_category">
-						<option selected value="product">상품 문의</option>
-						<option value="delivery">배송 문의</option>
-						<option value="etc">기타 문의</option>
+						<option selected value="상품">상품 문의</option>
+						<option value="배송">배송 문의</option>
+						<option value="기타">기타 문의</option>
 					</select>
 				</td>
 				<td><input type="text" name="qna_title" size=70></td>
@@ -134,7 +134,7 @@
 			</tr>
 			<tr>
 				<td class="row1">비밀글</td>
-				<td align="left"><input type="checkbox" name="qna_secret" id="qna_secret" value="1"></td>
+				<td align="left"><input type="checkbox" name="qna_secret" id="qna_secret" value="1" /></td>
 				<td></td>
 			</tr>
 			<tr style="display:none;">

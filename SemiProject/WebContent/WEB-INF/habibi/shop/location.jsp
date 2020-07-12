@@ -105,6 +105,7 @@ div.mycontent>.desc>img {
 				}); 
 				
 				marker.setMap(mapobj);
+				
 				var iwContent = " <div class='mycontent'> "
 							  + " <div class='title'> "
 						 	  + " <a href='https://map.kakao.com/link/map/HABIBI 가구몰," + latitude + "," + longitude + "' target='_blank'><strong>Habibi 가구몰</strong></a>"

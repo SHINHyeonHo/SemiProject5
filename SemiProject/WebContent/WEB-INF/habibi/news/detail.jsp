@@ -40,7 +40,7 @@ td.detail{
 }
 
 div.btnArea{
-	padding: 10px 0px 20px;
+	padding: 30px 220px 20px 0px ;
 	margin:0 auto;
 }
 tr.border-top{
@@ -75,7 +75,7 @@ border-bottom: 1px solid dimgray;
 
 
 	
-	<h5 align="center">NEWS</h5>
+	<h5 align="center" style="margin-right: 18%;ghf ">NEWS</h5>
 
 
 
@@ -119,14 +119,24 @@ border-bottom: 1px solid dimgray;
 			<td width="780px">${nvo.files}</td> 
 		</tr>
 		</table>
+		<div id="hiddenfrm"  >
+		<form id= "hiddenform" name="hiddenform" method="post" action="/SemiProject/news/updatePost.hb?news_no=${param.news_no}" >
+			<input type="text" name="content" value="${nvo.news_content}" />
+			<input type="text" name="title" value="${nvo.news_title}" />
+			<input type="text" name="writer" value="${nvo.news_writer}" />
+		</form>
+		</div>
+		
 	<div class="btnArea" align="center">
 	<button type="button" id="goback">목록</button>
 	
-	<button type="button" id="update">수정</button>
+	<c:if test="${sessionScope.loginuser.userid eq 'admin'}">
+		<button type="button" id="update">수정</button>
 	
-	<button type="button" id="delete">삭제</button>
+		<button type="button" id="delete">삭제</button>
+    		
+    </c:if>
 	
-	<input  id="news_no" type="text" value="${param.news_no}">
 	
 	</div>
 	
@@ -143,6 +153,10 @@ border-bottom: 1px solid dimgray;
 <script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	
+	
+	$("#hiddenfrm").hide();
+	
+	
 	$("#goback").click(function(){
 		
 		location.href="/SemiProject/news/list.hb";
@@ -154,6 +168,8 @@ border-bottom: 1px solid dimgray;
 		var news_no=$("#news_no").val();
 		// alert(news_no);
 		location.href="/SemiProject/news/updatePost.hb?news_no="+news_no;
+		var frm = document.hiddenform;
+	   	frm.submit();
 		
 	});
 	

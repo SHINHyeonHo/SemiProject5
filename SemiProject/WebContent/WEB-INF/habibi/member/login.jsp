@@ -52,17 +52,22 @@ td {
 
 <jsp:include page="../../Main/sideBar.jsp"/>
 
- <div>
+ <div style="float: right; height: 300px;">
+ 	<div style="border: solid 1px gray; margin-right: 400px; width: 700px; height: 290px; padding: 50px;">
       <form name="loginFrm">
         <p style="font-weight:bold; padding-bottom:10px; color: #666;">MEMBER LOGIN</p>
         <table>
-           <tr>
-              <td><span>ID</span></td>
-              <td><input id="userid" name="userid" type="text" ></td>
+           <tr></tr>
+           <tr style="border: solid 0.5px gray; height: 38px;">
+           	<td><label for="userid" style="font-size: 8pt; color: gray;">ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+           	<td><input id="userid" name="userid" type="text" style="width: 200px; vertical-align: middle; margin: 0px; border: none; background-color: white;"></td>
            </tr>
-           <tr>
-              <td><span>PASSWORD</span></td>
-              <td><input id="passwd" name="passwd" type="password" ></td>
+           <tr style="border: solid 0.5px gray; height: 38px;" >
+            <td><label for="passwd" style="font-size: 8pt; color: gray;">PASSWORD</label></td>
+            <td><input id="passwd" name="passwd" type="password" style="width: 200px; vertical-align: middle; border: none;"></td>
+           </tr>
+           <tr> 
+           <td sytle="width: 30px;"><img src="/SemiProject/images/Member/lock.png" style="border: solid 2px white; width:25px; height:25px;">보안접속</td>
            </tr>
            <tr>
               <td><button type="button" style="cursor: pointer;" onclick="goLogin();">LOGIN</button></td>
@@ -73,7 +78,8 @@ td {
               <td><span onclick="location.href='<%= request.getContextPath()%>/member/passwdFind.hb'" style="color: #666; cursor: pointer; text-decoration: underline;">FIND PASSWORD</span></td>
             </tr>
          </table>
-   </form>
+   		</form>
+   	</div>
 </div>
 
 

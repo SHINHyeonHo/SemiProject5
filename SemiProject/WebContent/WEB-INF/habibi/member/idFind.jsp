@@ -44,27 +44,27 @@
 <title>아이디찾기</title>
 <jsp:include page="../../Main/sideBar.jsp"/>
 
+<div style="border: solid 1px gray; float: right; margin-right: 300px; width: 500px; height: 300px; padding-top: 30px;"> 
 <form name="idFindFrm">
-   <div id="div_name" align="center">
+   <div id="div_name" align="center" style="margin-top: 10px;">
       <span style="color: blue; font-size: 12pt;">성명</span><br/> 
       <input type="text" name="name" id="name" size="15" placeholder="하비비" autocomplete="off" required />
    </div>
    
-   <div id="div_mobile" align="center">
+   <div id="div_mobile" align="center" style="margin-top: 10px;">
         <span style="color: blue; font-size: 12pt;">휴대전화</span><br/>
       <input type="text" name="mobile" id="mobile" size="15" placeholder="-없이 입력하세요" autocomplete="off" required />
    </div>
    
-   <div id="div_findResult" align="center">
+   <div id="div_findResult" align="center" style="margin-top: 10px;">
         ID : <span style="color: red; font-size: 16pt; font-weight: bold;">${userid}</span> 
    </div>
    
-   <div id="div_btnFind" align="center">
+   <div id="div_btnFind" align="center" style="margin-top: 10px;">
          <button type="button" class="btn btn-success" id="btnFind">찾기</button>
    </div>
-   
 </form>
-
+</div>
+</div>
 <jsp:include page="../../Main/footer.jsp"/>
-
 

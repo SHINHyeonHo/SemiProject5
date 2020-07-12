@@ -415,7 +415,7 @@ span.ordershopping{
 				</td>
 				
 		        <td class="thumb">
-		        	<a href="/SemiProject/prod/page.hb?category=${cart.prod.prod_category}&prodCode=${cart.fk_prod_code}"><img src="/SemiProject/images/Product/${cart.prod.prod_category}/${cart.fk_prod_code}.png" width="100" height="100"></a>
+		        	<a href="/SemiProject/prod/page.hb?category=${cart.prod.prod_category}&prodCode=${cart.fk_prod_code}"><img src="/SemiProject/images/Product/${cart.fk_prod_code}.png" width="100" height="100"></a>
 		        </td>
 		        
 		        <td>      	      

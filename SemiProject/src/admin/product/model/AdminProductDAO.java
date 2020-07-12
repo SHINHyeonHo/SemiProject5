@@ -140,20 +140,19 @@ public class AdminProductDAO implements InterAdminProductDAO{
 		try {
 			conn = ds.getConnection();
 
-			String sql = "insert into view_habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_cost, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
-					" values (?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into habibi_product(prod_code, prod_category, prod_name, prod_stock, prod_price, prod_color, prod_mtl, prod_size, prod_status)\n" + 
+					" values (?,?,?,?,?,?,?,?,?)";
 	         
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, pvo.getProd_code());
 			pstmt.setString(2, pvo.getProd_category());
 			pstmt.setString(3, pvo.getProd_name());
 			pstmt.setInt(4, pvo.getProd_stock());
-			pstmt.setInt(5, pvo.getProd_cost());
-			pstmt.setInt(6, pvo.getProd_price());
-			pstmt.setString(7, pvo.getProd_color());
-			pstmt.setString(8, pvo.getProd_mtl());
-			pstmt.setString(9, pvo.getProd_size());
-			pstmt.setInt(10, pvo.getProd_status());
+			pstmt.setInt(5, pvo.getProd_price());
+			pstmt.setString(6, pvo.getProd_color());
+			pstmt.setString(7, pvo.getProd_mtl());
+			pstmt.setString(8, pvo.getProd_size());
+			pstmt.setInt(9, pvo.getProd_status());
 
 	        result = pstmt.executeUpdate();
 	        

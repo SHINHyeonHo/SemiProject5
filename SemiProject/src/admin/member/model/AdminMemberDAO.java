@@ -1,5 +1,8 @@
 package admin.member.model;
 
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +15,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import member.model.EncryptMyKey;
 import member.model.MemberVO;
+import util.security.AES256;
 
 public class AdminMemberDAO implements InterAdminMemberDAO {
 	
@@ -20,17 +25,22 @@ public class AdminMemberDAO implements InterAdminMemberDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-
 	
+	private AES256 aes = null;
+
 	// 생성자 
 	public AdminMemberDAO() {
 		// 암호화/복호화 키 (양방향암호화) ==> 이메일,휴대폰의 암호화/복호화
+		String key = EncryptMyKey.KEY;
 		
 		try {
 		    Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/myoracle5");
+			aes = new AES256(key);
 		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}	
 	}
@@ -78,12 +88,12 @@ public class AdminMemberDAO implements InterAdminMemberDAO {
 					
 					String userid=rs.getString(1);
 					String name=rs.getString(2);
-					String email=rs.getString(3);
+					String email= aes.decrypt(rs.getString(3));
 					String address1= rs.getString(4);
 				    String address2=rs.getString(5);
 					String mobile1=rs.getString(6);
-				    String mobile2=rs.getString(7);
-					String mobile3=rs.getString(8);
+				    String mobile2=aes.decrypt(rs.getString(7));
+					String mobile3=aes.decrypt(rs.getString(8));
 					String is_sms=rs.getString(9);
 					String is_email=rs.getString(10);
 					int point=rs.getInt(11);
@@ -101,7 +111,13 @@ public class AdminMemberDAO implements InterAdminMemberDAO {
 					
 				 }//end of while---
 				 
-			}//end of try--
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			} catch (GeneralSecurityException e) {
+				e.printStackTrace();
+			}
 
 				
 				 finally { 

@@ -46,6 +46,7 @@
 	
 	.info {
 		border-bottom: solid 1px #BDBDBD;
+		
 	}
 	
 	.row1 {
@@ -141,7 +142,7 @@
 				if(json.length > 0) {    
 					$.each(json, function(index, item){
 					  html +=  "<tr><td id='comment'>"
-					  		 + "<span id='userid'>"+item.fk_userid+"</span>&nbsp;&nbsp;|&nbsp;&nbsp;"
+					  		 + "<span id='userid'>"+item.fk_cmt_userid+"</span>&nbsp;&nbsp;|&nbsp;&nbsp;"
 					         + "<span id='date'>"+item.cmt_write_date+"</span>"
 					         + "<span id='no' style='display:none;'>"+item.cmt_no+"</span>"
 					         + "<span id='modify-cmt'>수정</span>"
@@ -255,7 +256,7 @@
     
     <form name="cmtFrm">
     	<div>
-    		<input type="text" name="fk_userid" value="${sessionScope.loginuser.userid}" style="border: none; background-color: white;" readonly>
+    		<input type="text" name="fk_cmt_userid" value="${sessionScope.loginuser.userid}" style="border: none; background-color: white;" readonly>
     		<textarea cols="50" id="cmt_content" name="cmt_content"></textarea>
     		<input type="hidden" name="fk_rev_no" value="${param.revNo}">
     	</div>
@@ -263,12 +264,25 @@
     		<button type="button" class="btnCommentOK">등록</button>
     	</div>
     </form>
-    
+    	<br>
+    	<span style="float:left; padding-left:60px;">
 		<a href="/SemiProject/board/REVlist.hb?prodCode=${param.prodCode}&p=${param.p}&f=${param.f}&q=${param.q}">목록</a>
-		<a href="/SemiProject/board/REVwrite.hb?prodCode=${param.prodCode}">글쓰기</a>
-		<a href="/SemiProject/board/REVmodify.hb?prodCode=${param.prodCode}&revNo=${param.revNo}">수정</a>
-		<a href="/SemiProject/board/REVdelete.hb?prodCode=${param.prodCode}&revNo=${param.revNo}" onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a>
-	</div>	
+		
+ 		<c:set var="loginuser" value="${sessionScope.loginuser.userid}" />
+		<c:if test="${empty loginuser}">
+	    <a class="write" onclick="alert('로그인한 회원만 글을 쓸 수 있습니다.')">글쓰기</a>
+	    </c:if>
+	    <c:if test="${not empty loginuser}">
+	    <a class="write" href="/SemiProject/board/REVwrite.hb?prodCode=${param.prodCode}">글쓰기</a>
+	    </c:if>
+	    </span>
+	    <span style="float:right; padding-right:60px;">
+		<c:if test="${loginuser==viewREV.fk_userid}">
+		<a href="/SemiProject/board/REVmodify.hb?prodCode=${param.prodCode}&revNo=${param.qnaNo}">수정</a>
+		<a href="/SemiProject/board/REVdelete.hb?prodCode=${param.prodCode}&revNo=${param.qnaNo}" onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a>
+		</c:if>	
+		</span>
+		</div>	
 
 </body>
 </html>

@@ -70,14 +70,14 @@ public class NewsDAO implements InterNewsDAO {
 				  		"  select rownum AS RNO, news_no, news_title, news_writer, regdate, hit, is_post " + 
 				  		"  from " + 
 				  		"  ( " + 
-				  		"    select news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit, is_post " + 
+				  		"    select to_number(news_no) AS news_no, news_title, news_writer, to_char(regdate,'yyyy-MM-dd') as regdate, hit, is_post " + 
 				  		"    from habibi_news ";
 		  
 		  if(searchWord != null && !searchWord.trim().isEmpty()) {
 			  	 sql += " where news_title like '%'||?||'%' ";
 		  }//end of if------------------
 		  
-				 sql += " order by news_no desc "+
+				 sql += "order by news_no desc"+
 				  		"  ) V " + 
 				  		") T " + 
 				  		"where RNO between ? and ? ";

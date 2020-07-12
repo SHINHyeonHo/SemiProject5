@@ -29,6 +29,12 @@
 <header></header>
 
 <div class="admin">HABIBI 관리자 페이지</div>
+<span class="back-to-habibi" style="padding: 3px;
+        	background-color: lightSteelBlue;
+        	position:absolute;
+        	right: 40px;">
+	<a href="../habibi.hb">HABIBI main page</a>
+</span>
 
 <div class = "container">
 

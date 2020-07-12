@@ -6,6 +6,7 @@
 #footer {
 	width: 1400px;
 	margin: auto 0;
+	margin-top: 50px;
 }
 
 .inner {
@@ -88,7 +89,7 @@ $("div.left_sidebar").height(container_height);
 			<hr>
 	
 			<div class="address">
-				<p style="font-size: 6px; margin-bottom: 30px;">하비비 가구몰. 대표 권순근 / 120-10-70245 / 제2020-서울종각-02195호[사업자정보확인] / 개인정보관리 권순근 / HAVIVI@HAVIVI.CO.KR / COPYRIGHT &copy; 2020 하비비 ALL RIGHTS RESERVED</p>
+				<p style="font-size: 6px; margin-bottom: 30px; text-align: center;">하비비 가구몰. 대표 권순근 / 120-10-70245 / 제2020-서울종각-02195호[사업자정보확인] / 개인정보관리 권순근 / HAVIVI@HAVIVI.CO.KR / COPYRIGHT &copy; 2020 하비비 ALL RIGHTS RESERVED</p>
 			</div>
 	</div>
 </div>

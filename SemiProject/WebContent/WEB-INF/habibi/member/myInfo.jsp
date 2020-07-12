@@ -77,12 +77,12 @@ li.header_menu {
    div#main_menu{
          background-color: #E6E6E6;
         text-align: left;
-       width: 70%;
-       margin-right:6%; 
+       width: 80%;
+       margin-right: 6%; 
        line-height: 30px;   
        height: 200px; 
        padding-top: 20px;
-         margin-left: 20%;
+         margin-left: 0;
          margin-top: 3%;
          float: right;
    }
@@ -228,7 +228,7 @@ li.header_menu {
   }
   
   div#myInfoMenu{
-     margin-left: 40%;
+     margin-left: 110px;
   }
    
   a   {
@@ -305,7 +305,7 @@ div#main_menu > span
 }
 
 div#container {
-   min-height: 1500px;
+   min-height: 500px;
 }
   
 #footer {
@@ -339,27 +339,26 @@ p.sns {
    padding: 0 0 0 12px;
 }
 
-	
-	
-	
+   
+   
+   
 </style>
 <script type="text/javascript">
-	$(document).ready(function(){ 
-		
-	});
-	
-	
+   $(document).ready(function(){ 
+      
+   });
+   
+   
 </script>
 
+<div style="float: right; margin-right: 200px;">
 <form name="myInfoFrm">
    <div id="myInfo_tittle">
       <h2 align="center">My PAGE</h2>
    </div>
    
-      <div id="myInfoWrap" class="myInfoWrap">
-         
-         <p><span style="color: blue; font-weight: bold;">${(sessionScope.loginuser).name}</span> 고객님, 저희 쇼핑몰을 이용해 주셔서 감사합니다.</p>
-         
+      <div id="myInfoWrap" class="myInfoWrap" style="margin-right: 40px;">
+         <p style="text-align: center; margin: 0;"><span style="color: blue; font-weight: bold;">${(sessionScope.loginuser).name}</span> 고객님, 저희 쇼핑몰을 이용해 주셔서 감사합니다.</p>
       </div>
       <div id="main_menu">   
          <span>아이디</span>
@@ -373,39 +372,38 @@ p.sns {
           <span>원</span>
       </div>
    
+   
+   <div id="myInfoMenu">
+      <ul id="button" class="button_line">
+         <li id="button_line1">
+            <a href="<%= request.getContextPath() %>/member/memberEdit.hb?idx=${sessionScope.loginuser.idx}">
+               <span>MyInfo</span>
+               <span class="hover">나의정보</span>
+            </a>
+         </li>
+         <li id="button_line1">
+            <a href="<%= request.getContextPath() %>/prod/cartmain.hb?idx=${sessionScope.loginuser.idx}">
+               <span>CART</span>
+               <span class="hover">장바구니</span>
+            </a>
+         </li>
+         <li id="button_line1">
+             <a href="<%= request.getContextPath() %>/member/memberOnePoint.hb?idx=${sessionScope.loginuser.idx}">
+               <span>POINT</span>
+               <span class="hover">적립금</span>
+            </a>
+         </li>
+         <li id="button_line1">
+             <a href="<%= request.getContextPath() %>/member/memberOrderList.hb?idx=${sessionScope.loginuser.idx}">
+               <span>ORDER</span>
+               <span class="hover">주문내역</span>
+            </a>
+         </li>
+      </ul>
+   </div>
 </form>
-
-
-<div id="myInfoMenu">
-   <ul id="button" class="button_line">
-      <li id="button_line1">
-         <a href="<%= request.getContextPath() %>/member/memberEdit.hb?idx=${sessionScope.loginuser.idx}">
-            <span>MyInfo</span>
-            <span class="hover">나의정보</span>
-         </a>
-      </li>
-      <li id="button_line1">
-         <a href="<%= request.getContextPath() %>/prod/cartmain.hb?idx=${sessionScope.loginuser.idx}">
-            <span>CART</span>
-            <span class="hover">장바구니</span>
-         </a>
-      </li>
-      <li id="button_line1">
-          <a href="<%= request.getContextPath() %>/member/memberOnePoint.hb?idx=${sessionScope.loginuser.idx}">
-            <span>POINT</span>
-            <span class="hover">적립금</span>
-         </a>
-      </li>
-      <li id="button_line1">
-          <a href="<%= request.getContextPath() %>/member/memberOrderList.hb?idx=${sessionScope.loginuser.idx}">
-            <span>ORDER</span>
-            <span class="hover">주문내역</span>
-         </a>
-      </li>
-   </ul>
-
 </div>
-
+</div>
 
 
 <jsp:include page="../../Main/footer.jsp"/>

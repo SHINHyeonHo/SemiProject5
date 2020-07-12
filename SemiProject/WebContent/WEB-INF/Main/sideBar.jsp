@@ -17,8 +17,8 @@ input[type=text] {
 }
 
 button.search {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   float: right;
   padding: 0;
   margin-top: 8px;
@@ -68,7 +68,7 @@ div.middle {
 div#container {
 	overflow:hidden;
 	height:auto;
-	min-height: 500px;
+	min-height: 800px;
 }
 
 li.side_menu1 {
@@ -78,7 +78,14 @@ li.side_menu1 {
 </style>
 
 <script type="text/javascript">
-	
+
+	$(document).ready(function() {
+		$("#searchWord").keydown(function(event){
+			if(event.keyCode == 13){   
+				goSearch(); 
+			}
+		});
+	});
 	function goSearch() {
 		if($("#searchWord").val().trim() == "") {
 			alert("검색어를 입력해주세요.");
@@ -90,13 +97,6 @@ li.side_menu1 {
 			frm.action = "<%= request.getContextPath()%>/prod/searchProduct.hb";
 			frm.submit();
 		}
-		
-		$("#searchWord").keydown(function(event){
-			if(event.keyCode == 13){   
-				goSearch(); 
-			}
-		});
-		
 	}
 	
 </script>

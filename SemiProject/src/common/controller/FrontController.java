@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 		description = "사용자가 웹에서 *.hb 를 했을 경우 이 서블릿이 먼저 응답을 해주도록 한다.", 
 		urlPatterns = { "*.hb" }, 
 		initParams = { 
-				@WebInitParam(name = "propertyConfig", value = "C:\\Users\\user1\\git\\SemiProject5\\SemiProject\\WebContent\\WEB-INF\\HbbCommand.properties", description = "*.hb 에 대한 클래스의 매핑파일")
+				@WebInitParam(name = "propertyConfig", value = "C:\\Users\\ShinHyeonHo\\git\\SemiProject5\\SemiProject\\WebContent\\WEB-INF\\HbbCommand.properties", description = "*.hb 에 대한 클래스의 매핑파일")
 		})
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -123,7 +123,7 @@ public class FrontController extends HttpServlet {
 			System.out.println(">>> 문자열로 명명되어진 클래스가 존재하지 않습니다. <<<");
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
-			System.out.println(">>> C:/SemiProject/SemiProject/WebContent/WEB-INF/HbbCommand.properties 파일이 없습니다. <<<");
+			System.out.println(">>> C:\\Users\\ShinHyeonHo\\git\\SemiProject5\\SemiProject\\WebContent\\WEB-INF\\HbbCommand.properties 파일이 없습니다. <<<");
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();

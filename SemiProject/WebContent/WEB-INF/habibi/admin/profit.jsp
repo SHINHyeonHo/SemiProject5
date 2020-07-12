@@ -55,6 +55,12 @@
 <header></header>
 
 <div class="admin">HABIBI 관리자 페이지</div>
+<span class="back-to-habibi" style="padding: 3px;
+        	background-color: lightSteelBlue;
+        	position:absolute;
+        	right: 40px;">
+	<a href="../habibi.hb">HABIBI main page</a>
+</span>
 
 <div class = "container">
 
@@ -112,7 +118,7 @@
     <table>
 
         <th>주문번호</th>
-        <th>주문자명</th>
+        <th>회원아이디</th>
         <th>결제금액</th>
         <th>결제일자</th>
         <th>정산(예정)일자</th>
@@ -202,7 +208,7 @@
 	      text: '매출 & 비용 & 수익'  
 	   };
 	   var xAxis = {
-	      categories: [Number(monthArr[0])+"월", Number(monthArr[1])+"월", Number(monthArr[2])+"월", Number(monthArr[3])+"월"],
+	      categories: [Number(monthArr[0])+"월", Number(monthArr[1])+"월", Number(monthArr[2])+"월", 3+"월"],
 	      title: {
 	         text: null
 	      }
@@ -233,7 +239,7 @@
 	      align: 'right',
 	      verticalAlign: 'top',
 	      x: -5,
-	      y: 280,
+	      y: 200,
 	      floating: true,
 	      borderWidth: 1,
 	      backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),

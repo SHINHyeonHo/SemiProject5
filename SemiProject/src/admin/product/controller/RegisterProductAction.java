@@ -44,7 +44,6 @@ public class RegisterProductAction extends AbstractController{
 		String prodCode = mutiRequest.getParameter("prodCode");
 		String prodCategory = mutiRequest.getParameter("prodCategory");
 	    String prodName = mutiRequest.getParameter("prodName");
-	    int prodCost = Integer.parseInt(mutiRequest.getParameter("prodCost"));
 	    int prodPrice = Integer.parseInt(mutiRequest.getParameter("prodPrice"));
 	    String prodColor = mutiRequest.getParameter("prodColor");
 		String prodMtl = mutiRequest.getParameter("prodMtl");
@@ -64,7 +63,6 @@ public class RegisterProductAction extends AbstractController{
 	    pvo.setProd_code(prodCode);
 	    pvo.setProd_category(prodCategory);
 	    pvo.setProd_name(prodName);
-	    pvo.setProd_cost(prodCost);
 	    pvo.setProd_price(prodPrice);
 	    pvo.setProd_color(prodColor);
 	    pvo.setProd_mtl(prodMtl);

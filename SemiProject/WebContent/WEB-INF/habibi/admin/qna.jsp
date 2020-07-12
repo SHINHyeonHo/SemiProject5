@@ -68,13 +68,7 @@ a#qna_title:link, a#qna_title:hover, a#qna_title:visited, a#qna_title:active {
 
 	<div class="container">
 
-		<ul class="item" id="sidebar">
-			<li><a class="sideMenu" href="adminProduct.html">상품관리</a></li>
-			<li><a class="sideMenu" href="adminOrder.html">주문관리</a></li>
-			<li><a class="sideMenu" href="adminMember.html">회원관리</a></li>
-			<li><a class="sideMenu" href="adminProfit.html">정산관리</a></li>
-			<li><a class="sideMenu" href="adminReview.html">문의/리뷰</a></li>
-		</ul>
+	<jsp:include page="sideBar.jsp"></jsp:include>
 
 		<div class="item" id="main">
 
@@ -294,7 +288,6 @@ $(document).ready(function(){ // 로드되면
 		}
 				
 		var data = newStatusValue+","+qnaNo;
-		alert("data : "+ data);
 		
 		$.ajax({
 			url:"/SemiProject/admin/QNAchangeStatus.hb",

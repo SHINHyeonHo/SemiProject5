@@ -77,7 +77,7 @@ th.title{
 	
 
 	
-	<h5 align=center style="margin-right: 5%;ghf ">NEWS</h5>
+	<h5 align=center style="margin-right: 18%;ghf ">NEWS</h5>
 
 
 	<form method="post" name="registerFrm" action="/SemiProject/news/modifyPost.hb?news_no=${param.news_no}" >
@@ -86,14 +86,14 @@ th.title{
 		<tr class="border-top">
 			<th scope="row" width="130px" class="title">title</th>
 			 <td width="780px">
-			  <input type="text" name="title" size="70" maxlength="100"/> 
+			  <input type="text" name="title" id="title" size="70" maxlength="100" value="${title}"/> 
 			 </td> 
 		</tr>
 		
 		<tr style="margin-top: 60px;">
          <th scope="row" width="130px">name</th>
           <td>
-          <input type="text" name="writer" size="70" maxlength="100"/> 
+          <input type="text" name="writer" size="70" maxlength="100" value="${writer}"/> 
           </td> 
       	</tr>
 		
@@ -102,7 +102,7 @@ th.title{
       <tr class="view">
          <td colspan="2">
             <div class="detail" width="910px">
-              <textarea style="border: solid 2px gray;" rows="50" cols="50" name="content"></textarea>
+              <textarea style="border: solid 2px gray;" rows="50" cols="50" name="content">${content}</textarea>
             </div> 
          </td>
       </tr>
@@ -112,8 +112,7 @@ th.title{
    <div class="btnArea" align="center">
    
    <div class="button">
-   <button id="registerButton" type="submit" style="align:center; margin-left: 10%;ghf ">수정완료</button></div>
-   <input  id="news_no" type="text" value="${param.news_no}">
+   <button id="registerButton" type="submit" style="align:center; margin-right:18%;ghf ">수정완료</button></div>
    </div>
    </form> 
    
@@ -125,6 +124,9 @@ th.title{
 
 <script type="text/javascript" src="/SemiProject/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
+
+$(document).ready(function() {
+});
 
 function formCheck() {
 	var dc = document.forms[0];
@@ -144,9 +146,9 @@ function formCheck() {
 		return false;
 	}
 	
-	
-	
-}			
+}
+
+
 
 </script>  
 

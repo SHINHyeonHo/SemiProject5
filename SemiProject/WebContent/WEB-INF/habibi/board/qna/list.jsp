@@ -116,7 +116,7 @@
 		<c:forEach items="${qnaList}" var="list">
         <tr align="center">
             <td width="50px">${list.qna_seq}</td>
-            <td width="400px" align="left">
+            <td width="400px" align="left" style="padding-left:30px;">
             	
            		<c:if test="${list.re_lev > 0}">
            			<c:forEach begin="1" end="${list.re_lev}">
@@ -125,17 +125,17 @@
            			RE : 
            		</c:if>  
            		<c:if test="${list.qna_secret == 0}">
-           			<a href='/SemiProject/board/QNAview.hb?prodCode=${param.prodCode}&qnaNo=${list.qna_no}&p=${page}'>${list.qna_title}</a>
+           			<a href='/SemiProject/board/QNAview.hb?prodCode=${param.prodCode}&qnaNo=${list.qna_no}&p=${page}'><c:if test="${not empty list.qna_category}">[${list.qna_category}] </c:if>${list.qna_title}</a>
            		</c:if>   
            		<c:if test="${list.qna_secret == 1}"> 
            			<c:if test="${not empty loginuser && (loginuser eq list.fk_userid || loginuser eq 'admin')}">
-           				<img src="../images/ProdDetail/lock.png" style="width: 10px; height: 10px;">&nbsp;<a href='/SemiProject/board/QNAview.hb?prodCode=${param.prodCode}&qnaNo=${list.qna_no}&p=${page}'>${list.qna_title}</a>
+           				<a href='/SemiProject/board/QNAview.hb?prodCode=${param.prodCode}&qnaNo=${list.qna_no}&p=${page}'><c:if test="${not empty list.qna_category}">[${list.qna_category}] </c:if>${list.qna_title}</a>&nbsp;<img src="../images/ProdDetail/lock.png" style="width: 10px; height: 10px;">
            			</c:if>
            			<c:if test="${empty loginuser}">
-           				<img src="../images/ProdDetail/lock.png" style="width: 10px; height: 10px;">&nbsp;<a onclick="alert('비밀글은 작성자와 운영자만 볼 수 있습니다.');">${list.qna_title}</a>
+           				<a onclick="alert('비밀글은 작성자와 운영자만 볼 수 있습니다.');"><c:if test="${not empty list.qna_category}">[${list.qna_category}] </c:if>${list.qna_title}</a>&nbsp;<img src="../images/ProdDetail/lock.png" style="width: 10px; height: 10px;">
            			</c:if>
            			<c:if test="${not empty loginuser && (loginuser ne list.fk_userid && loginuser ne 'admin')}">
-           				<img src="../images/ProdDetail/lock.png" style="width: 10px; height: 10px;">&nbsp;<a onclick="alert('비밀글은 작성자와 운영자만 볼 수 있습니다.');">${list.qna_title}</a>
+           				<a onclick="alert('비밀글은 작성자와 운영자만 볼 수 있습니다.');"><c:if test="${not empty list.qna_category}">[${list.qna_category}] </c:if>${list.qna_title}</a>&nbsp;<img src="../images/ProdDetail/lock.png" style="width: 10px; height: 10px;">
            			</c:if>
            		</c:if>  		            	
            	</td>
@@ -155,35 +155,39 @@
     
     <c:set var="startNum" value="${page-(page-1)%5}" />    
     <c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/15), '.')}" /> 
-    <div>
+    <div style="float:right; padding-right:40px;">
     	<div><span>${(empty param.p)?1:param.p}</span> / ${lastNum} page</div>
     </div>
-      
-    <div> 
+     <br> 
+     
+     <div style="text-align: center;">
+    <span style="display: inline-block;"> 
     	<c:if test="${startNum>1}">
-    	<a href="?prodCode=${param.prodCode}&p=${startNum-1}&f=${param.f}&q=${param.q}" >이전 페이지</a>
+    	<a href="?prodCode=${param.prodCode}&p=${startNum-1}&f=${param.f}&q=${param.q}" >이전</a>
     	</c:if>
     	<c:if test="${startNum<=1}">
-    	<span onclick="alert('이전 페이지가 없습니다.');">이전 페이지</span>
+    	<span onclick="alert('이전 페이지가 없습니다.');">이전</span>
     	</c:if>
-   	</div>
+   	</span>
    	
-    <ul>
+    <span style="overflow: auto; list-style-type: none; display:inline-block;">
     	<c:forEach var="i" begin="0" end="4">   
     	<c:if test="${(startNum+i) <= lastNum}">		
-    		<li><a style="color:${page==(startNum+i)?'orange':''}" href="?prodCode=${param.prodCode}&p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a></li>
+    		<span class="pagelist" style="list-style:none; float:left; display: inline;"><a style="color:${page==(startNum+i)?'orange':''}" href="?prodCode=${param.prodCode}&p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a><span>&nbsp;</span></span>
     	</c:if> 
     	</c:forEach>
-    </ul>
+    </span>
     
-    <div>
+    <span style="display: inline-block;"> 
     	<c:if test="${startNum+4<lastNum}">
-    		<a href="?prodCode=${param.prodCode}&p=${startNum+5}&f=${param.f}&q=${param.q}" >다음 페이지</a>
+    		<a href="?prodCode=${param.prodCode}&p=${startNum+5}&f=${param.f}&q=${param.q}" >다음</a>
     	</c:if>
     	<c:if test="${startNum+4>=lastNum}">
-    		<span onclick="alert('다음 페이지가 없습니다.');">다음 페이지</span>
+    		<span onclick="alert('다음 페이지가 없습니다.');">다음</span>
     	</c:if>
-   	</div>
+   	</span>
+</div>
+<br>
 
     <form id="search">
     	<select name="f" id="searchType">

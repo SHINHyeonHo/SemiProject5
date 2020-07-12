@@ -68,23 +68,15 @@ a#rev_title:link, a#rev_title:hover, a#rev_title:visited, a#rev_title:active {
 
 	<div class="container">
 
-		<ul class="item" id="sidebar">
-			<li><a class="sideMenu" href="adminProduct.html">상품관리</a></li>
-			<li><a class="sideMenu" href="adminOrder.html">주문관리</a></li>
-			<li><a class="sideMenu" href="adminMember.html">회원관리</a></li>
-			<li><a class="sideMenu" href="adminProfit.html">정산관리</a></li>
-			<li><a class="sideMenu" href="/SemiProject/admin/qna.hb">문의/리뷰</a></li>
-		</ul>
+		<jsp:include page="sideBar.jsp"></jsp:include>
 
 		<div class="item" id="main">
 
 
 			<div id="top">리뷰관리</div>
-			<table>
+			<table style="margin:0 auto;">
 
 				<tr>
-					<td>새로운 리뷰</td>
-					<td><span id="new-rev" class="font-bold"></span>개</td>
 					<td>총 리뷰</td>
 					<td><span id="all-rev" class="font-bold"></span>개</td>
 				</tr>
@@ -289,7 +281,7 @@ $(document).ready(function(){ // 로드되면
 		}
 				
 		var data = newStatusValue+","+qnaNo;
-		alert("data : "+ data);
+		
 		
 		$.ajax({
 			url:"/SemiProject/admin/REVchangeStatus.hb",
@@ -352,7 +344,7 @@ function func_revAll(searchCategory, searchName, start) {
 							+ "<td><input type='checkbox' value='"+item.rev_no+"'></td>"
 							+ "<td>"+item.rev_no+"</td>"
 							+ "<td>"+item.fk_prod_code+"</span></td>"
-							+ "<td><a id='rev_title' href='/SemiProject/board/REVview.hb?prodCode="+item.fk_prod_code+"&qnaNo="+item.rev_no+"'>"+item.rev_title+"</a></td>"
+							+ "<td><a id='rev_title' href='/SemiProject/board/REVview.hb?prodCode="+item.fk_prod_code+"&revNo="+item.rev_no+"'>"+item.rev_title+"</a></td>"
 							+ "<td>"+item.fk_userid+"</td>"
 							+ "<td>"+item.rev_write_date+"</td>"
 							+ "<td><span value="+item.rev_status+">"+status+"</span><button id='changeStatusButton' type='button' value='"+item.rev_no+"'>변경</button></td>"

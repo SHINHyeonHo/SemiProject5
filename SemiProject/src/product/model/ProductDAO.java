@@ -52,7 +52,7 @@ public class ProductDAO implements InterProductDAO {
 			if("new".equalsIgnoreCase(category)) {
 				
 				category = "";
-				newProd = " and (sysdate - prod_insert_date) < 10 ";
+				newProd = " and (sysdate - prod_insert_date) < 5 ";
 			}
 			
 			List<ProductVO> prodList = new ArrayList<>();
@@ -155,8 +155,6 @@ public class ProductDAO implements InterProductDAO {
 	        	prodBestList.add(pvo);
 
 	        }
-	        
-	        
 		} finally {
 			close();
 		}

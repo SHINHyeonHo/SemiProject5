@@ -21,7 +21,6 @@ public class NewsDetailAction extends AbstractController {
 		NewsVO nvo=ndao.newsDetail(news_no);
 		request.setAttribute("nvo", nvo);
 		
-		
 		super.setViewPage("/WEB-INF/habibi/news/detail.jsp");
 	}
 
