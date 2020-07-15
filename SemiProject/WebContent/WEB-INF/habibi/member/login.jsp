@@ -6,6 +6,7 @@
 <style type="text/css">
 td {
    padding: 5px;
+   margin: 0 auto;
 }
 </style>
 <script type="text/javascript">
